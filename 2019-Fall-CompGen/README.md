@@ -169,26 +169,33 @@ There are at least 5 categories of violations: cheating, fabrication, plagiarism
 ## Student-Wellness Services
 
 **Just in Case Web App**
+
 The web app can be found [here](http://www.justincaseforcolleges.com/). It provides access to helpful mental health information and resources for yourself or a friend in a mental health crisis on your smartphone or tablet and easily contact CAPS or RUPD.
 
 **Counseling, ADAP & Psychiatric Services (CAPS)**
+
 health.rutgers.edu/
 
 CAPS is a University mental health support service that includes counseling, alcohol and other drug assistance, and psychiatric services staffed by a team of professional within Rutgers Health services to support students’ efforts to succeed at Rutgers University. CAPS offer a variety of services that include: individual therapy, group therapy and workshops, crisis intervention, referral to specialists in the community and consultation and collaboration with campus partners.
 
 **Violence Prevention & Victim Assistance (VPVA)**
+
 vpva.rutgers.edu
+
 (848) 932-1181
 
 The Office for Violence Prevention and Victim Assistance provides confidential crisis intervention, counseling and advocacy for victims of sexual and relationship violence and stalking to students, staff and faculty.  To reach staff during office hours when the university is open or to reach an advocate after hours, call 848-932-1181.
 
 **Disability Services**
+
 https://ods.rutgers.edu/
 
 The Office of Disability Services works with students with a documented disability to determine the eligibility of reasonable accommodations, facilitates and coordinates those accommodations when applicable, and lastly engages with the Rutgers community at large to provide and connect students to appropriate resources.
 
 **Scarlet Listeners**
+
 https://rutgers.campuslabs.com/engage/organization/scarletlisteners
+
 (732) 214-9069
 
 Scarlet Listeners – get things off your chest in a non-judgmental, empathetic space facilitated by trained students. Sessions are held Monday-Thursday evenings during the Fall and Spring semesters.
