@@ -1,15 +1,15 @@
 # Computational Genomics
 
-* [Information and Policies](https://github.com/shahlab/teaching/2019-Fall-CompGen/README.md#information-and-policies)
-* [Description](https://github.com/shahlab/teaching/2019-Fall-CompGen/README.md#description)
-* [Goals](https://github.com/shahlab/teaching/2019-Fall-CompGen/README.md#goals)
-* [Pre-requisites](https://github.com/shahlab/teaching/2019-Fall-CompGen/README.md#pre-requisites)
-* [Course Materials](https://github.com/shahlab/teaching/2019-Fall-CompGen/README.md#course-materials)
-* [Website and Communication](https://github.com/shahlab/teaching/2019-Fall-CompGen/README.md#website-and-communication)
-* [Course Activities](https://github.com/shahlab/teaching/2019-Fall-CompGen/README.md#course-activities)
-* [Grading Information](https://github.com/shahlab/teaching/2019-Fall-CompGen/README.md#grading-information)
-* [Academic Integrity](https://github.com/shahlab/teaching/2019-Fall-CompGen/README.md#academic-integrity)
-* [Student-Wellness Services](https://github.com/shahlab/teaching/2019-Fall-CompGen/README.md#student-wellness-services)
+* [Information and Policies](https://github.com/shahlab/teaching/master//2019-Fall-CompGen/README.md#information-and-policies)
+* [Description](https://github.com/shahlab/teaching/master//2019-Fall-CompGen/README.md#description)
+* [Goals](https://github.com/shahlab/teaching/master//2019-Fall-CompGen/README.md#goals)
+* [Pre-requisites](https://github.com/shahlab/teaching/master//2019-Fall-CompGen/README.md#pre-requisites)
+* [Course Materials](https://github.com/shahlab/teaching/master//2019-Fall-CompGen/README.md#course-materials)
+* [Website and Communication](https://github.com/shahlab/teaching/master//2019-Fall-CompGen/README.md#website-and-communication)
+* [Course Activities](https://github.com/shahlab/teaching/master//2019-Fall-CompGen/README.md#course-activities)
+* [Grading Information](https://github.com/shahlab/teaching/master//2019-Fall-CompGen/README.md#grading-information)
+* [Academic Integrity](https://github.com/shahlab/teaching/master//2019-Fall-CompGen/README.md#academic-integrity)
+* [Student-Wellness Services](https://github.com/shahlab/teaching/master//2019-Fall-CompGen/README.md#student-wellness-services)
 
 ## Information and Policies
 
@@ -18,7 +18,7 @@
 |**Semester**| Fall 2019|
 |**Classroom**| Nelson Biology Labs B125|
 |**Meeting Times**|	Tuesday/Thursday  1:40 - 4:40 pm|
-|**Course URL**| https://github.com/shahlab/teaching/2019-Fall-CompGen|
+|**Course URL**| https://github.com/shahlab/teaching/master//2019-Fall-CompGen|
 |**Course Instructor**| Premal Shah <br> premal.shah@rutgers.edu <br> Ph: (848) 445 9664|
 |**Office hours**| By appointment|
 |**Teaching Assistant**| John Favate <br> john.favate@rutgers.edu|
@@ -90,7 +90,7 @@ Week | Date | Topic | Learning Materials
 ## Website and Communication
 
 ### Website
-This [GitHub repo](https://github.com/shahlab/teaching/2019-Fall-CompGen) will serve as the course website.  
+This [GitHub repo](https://github.com/shahlab/teaching/master//2019-Fall-CompGen) will serve as the course website.  
 
 ### Communication
 The primary mode of communication in this course (including major announcements), will be the course Slack account https://ru-compgen-fall19.slack.com. All of you should have invitations to join this account in your Rutgers email.  
