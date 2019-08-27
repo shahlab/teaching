@@ -1,6 +1,6 @@
 # Computational Genomics
 
-* [Information and Policies](https://github.com/shahlab/teaching/tree/master/2019-Fall-CompGen/README.md#information-and-policies)
+* [Information](https://github.com/shahlab/teaching/tree/master/2019-Fall-CompGen/README.md#information)
 * [Description](https://github.com/shahlab/teaching/tree/master/2019-Fall-CompGen/README.md#description)
 * [Goals](https://github.com/shahlab/teaching/tree/master/2019-Fall-CompGen/README.md#goals)
 * [Pre-requisites](https://github.com/shahlab/teaching/tree/master/2019-Fall-CompGen/README.md#pre-requisites)
@@ -11,9 +11,8 @@
 * [Academic Integrity](https://github.com/shahlab/teaching/tree/master/2019-Fall-CompGen/README.md#academic-integrity)
 * [Student-Wellness Services](https://github.com/shahlab/teaching/tree/master/2019-Fall-CompGen/README.md#student-wellness-services)
 
-## Information and Policies
+## Information
 
-|							|						|
 |-------------------|-------------------|
 |**Semester**| Fall 2019|
 |**Classroom**| Nelson Biology Labs B125|
@@ -54,38 +53,38 @@ The main objectives of this course are to enable students to learn:
 2. **Graduate students**:
 	While there are no pre-requisites for graduate students to join the class, they are STRONGLY encouraged to participate in the two-day [DataCarpentry workshop](http://www.datacarpentry.org/genomics-workshop/) that will be conducted during the winter break.
 
-## Materials
-Week | Date | Topic | Learning Materials
+## Course Materials
+Class | Date | Topic | Learning Materials
 :----- | ---: | :-- | :--
- 1 | Jan 24 | Introduction and Overview | In-coming survey - [Link]() <br> [Presentation]() <br> [R code for presentation]() <br> [Homework]()
- 2 | Jan 28 | Variables and data structures I | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
- 3 | Jan 31 | Variables and data structures II | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-4 | Feb 04 | Quiz 01 and recap | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-5 | Feb 07 | Conditional statements and loops | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-6 | Feb 11 | Lists, functions, and strings | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-7 | Feb 14 | Advanced data wrangling -- tidyverse I | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-8 | Feb 18 | Quiz 02 and recap | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-9 | Feb 21 | Advanced data wrangling -- tidyverse II | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-10 | Feb 25 | Visualization -- ggplot2 | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-11 | Feb 28 | Introduction to bioconductor -- IRanges | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-12 | Mar 04 | Quiz 03 and recap | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-13 | Mar 07 | Working with genome annotations -- GRanges | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-14 | Mar 11 | Working with genome sequences -- Biostrings | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-15 | Mar 14 | Advanced sequence analyses | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-16 | Mar 25 | Quiz 04 and recap | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-17 | Mar 28 | Statistics for life scientists I | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-18 | Apr 01 | Statistics for life scientists II | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-19 | Apr 04 | Introduction to RNA-seq | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-20 | Apr 08 | Quiz 05 and recap | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-21 | Apr 11 | Working with Illumina sequencing data | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-22 | Apr 15 | Working with short reads in R | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-23 | Apr 18 | Differential gene expression analyses I | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-24 | Apr 22 | Quiz 06 and recap | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-25 | Apr 25 | Differential gene expression analyses II | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-26 | Apr 29 | Gene Ontology and KEGG Pathway analyses | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-27 | May 02 | Review | [Presentation]()
-
-
+ 1 | Sep 3 | Introduction and Overview | In-coming survey - [Link]() <br> [Presentation]() <br> [R code for presentation]() <br> [Homework]()
+ 2 | Sep 5 | Variables and data structures I | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
+ 3 | Sep 10 | Variables and data structures II | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
+4 | Sep 12 | Quiz 01 and recap | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
+5 | Sep 17 | Conditional statements and loops | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
+6 | Sep 19 | Lists, functions, and strings | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
+7 | Sep 24 | Advanced data wrangling -- tidyverse I | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
+8 | Sep 26 | Quiz 02 and recap | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
+9 | Oct 1 | Advanced data wrangling -- tidyverse II | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
+10 | Oct 3 | Visualization -- ggplot2 | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
+11 | Oct 8 | Introduction to bioconductor -- IRanges | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
+12 | Oct 10 | Quiz 03 and recap | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
+13 | Oct 15 | Working with genome annotations -- GRanges | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
+14 | Oct 17 | Working with genome sequences -- Biostrings | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
+15 | Oct 22 | Advanced sequence analyses | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
+16 | Oct 24 | Quiz 04 and recap | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
+17 | Oct 29 | Statistics for life scientists I | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
+18 | Oct 31 | Statistics for life scientists II | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
+19 | Nov 5 | Introduction to RNA-seq | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
+20 | Nov 7 | Quiz 05 and recap | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
+21 | Nov 12 | Working with Illumina sequencing data | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
+22 | Nov 14 | Working with short reads in R | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
+23 | Nov 19 | Differential gene expression analyses I | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
+24 | Nov 21 | Quiz 06 and recap | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
+25 | Nov 26 | Differential gene expression analyses II | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
+26 | Dec 3 | Gene Ontology and KEGG Pathway analyses | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
+27 | Dec 5 | Shiny |[Presentation]() <br> [R code for presentation]() <br> [Homework]()
+28 | Dec 10 | Interactive data analysis | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
+29 | Dec 12 | Review | [Presentation]()
 
 ## Website and Communication
 
@@ -98,13 +97,13 @@ The primary mode of communication in this course (including major announcements)
 ### Emails  
 Although the bulk of the communication will take place via Slack, at times (rarely), we will send out important course information via email. This email is sent to your Rutgers email address. You are responsible for all information sent out to your University email account, and for checking this account on a regular basis.
 
-## Activities
+## Course Activities
 
 ### In-class exercises
 Each class will contain 2-4 modules. Each module will involve a ~15 min lecture followed by a programming exercise lasting ~20-30 min. Programming exercises will typically involve 2-5 questions. You will be asked to solve these questions on your own, which will involve applying the functions taught in the lecture part of the module. At the end of the individual exercise portion, I will go over the exercise as a group. Any piece of code written by me will be annotated and commented before being uploaded to the course website.   
 
 ### Homeworks
-In every lab, you will receive a homework assignment, typically a series of programming exercises that you must code based on the material you learn in class that day. You will upload solutions to these homework to Slack as a single R Notebook file before the beginning of the next lab. NO LATE SUBMISSIONS WILL BE ALLOWED. If you miss your due date for the homework, you will receive a 0 grade for that assignment.
+In every lab, you will receive a homework assignment, typically a series of programming exercises that you must code based on the material you learn in class that day. You will upload solutions to these homework as a single R Notebook file before the beginning of the next lab. NO LATE SUBMISSIONS WILL BE ALLOWED. If you miss your due date for the homework, you will receive a 0 points for that assignment.
 
 Each homework is worth 10 points.
 
@@ -113,10 +112,8 @@ Quizzes will be conducted once every 4 classes. They will last 1-hr and be simil
 
 Each Quiz is worth 10 points.
 
-### Final Quiz
-The final quiz will be cumulative. Half of the questions will be from previous in-class exercises, homeworks, and quizzes. The other half will involve new applications of the material we cover over the course of the semester. There will be a 15-25 questions. Once you start the Quiz, you will have FOUR hours to complete it. 
-
-The Final Quiz is worth 20% of the final grade.
+### Final Exam
+The final exam will be cumulative. Half of the questions will be from previous in-class exercises, homeworks, and quizzes. The other half will involve new applications of the material we cover over the course of the semester. There will be a 15-25 questions. Once you start the Quiz, you will have FOUR hours to complete it. 
 
 ### Final projects
 Towards the end of the course, all students will be split into teams of 2-3 individuals. Each team will complete a finals research project. Each team can select one of the two broad research topics lsited below:
@@ -127,7 +124,7 @@ Towards the end of the course, all students will be split into teams of 2-3 indi
 2. **RNA-seq analyses**:
 	This project will involve downloading raw sequencing datasets from GEO database and identification of differentially expressed genes and their functional characterization.
 
-Detailed instructions for the finals projects will be given 2 weeks prior to the last class. The final project accounts for 25% of the final grade.
+Detailed instructions for the finals projects will be given 2 weeks prior to the last class.
 
 ### [DataCamp](https://www.datacamp.com/groups/education) for Graduate Students
 All graduate students taking this course will be assigned one [DataCamp](https://www.datacamp.com/groups/education) module every two weeks. The modules will be parallel to the materials covered in the class. The students will be required to submit their certificates of completion from DataCamp. Failure to complete all DataCamp modules will lead to an automatic loss of one grade.
@@ -154,7 +151,7 @@ D+ | ≥ 65%
 D | ≥ 60%
 F | < 60%
 
-**Note:** Grades will not be curved. Your grade is based on your own effort and progress, not based on competition with your classmates.
+**Note:** Grades will not be curved. Your grade will be based on your own effort and progress, and not based on competition with your classmates.
 
 **Note for graduate students:** A grade of **D+** or below will automatically be marked as an **F**.
 
@@ -174,13 +171,13 @@ The web app can be found [here](http://www.justincaseforcolleges.com/). It provi
 
 **Counseling, ADAP & Psychiatric Services (CAPS)**
 
-health.rutgers.edu/
+https://health.rutgers.edu/
 
 CAPS is a University mental health support service that includes counseling, alcohol and other drug assistance, and psychiatric services staffed by a team of professional within Rutgers Health services to support students’ efforts to succeed at Rutgers University. CAPS offer a variety of services that include: individual therapy, group therapy and workshops, crisis intervention, referral to specialists in the community and consultation and collaboration with campus partners.
 
 **Violence Prevention & Victim Assistance (VPVA)**
 
-vpva.rutgers.edu
+https://vpva.rutgers.edu
 
 (848) 932-1181
 
