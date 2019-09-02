@@ -13,8 +13,8 @@
 
 ## Information
 
+|							|						|
 |-------------------|-------------------|
-
 |**Semester**| Fall 2019|
 |**Classroom**| Nelson Biology Labs B125|
 |**Meeting Times**|	Tuesday/Thursday  1:40 - 4:40 pm|
