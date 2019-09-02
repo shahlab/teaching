@@ -18,7 +18,8 @@
 |**Semester**| Fall 2019|
 |**Classroom**| Nelson Biology Labs B125|
 |**Meeting Times**|	Tuesday/Thursday  1:40 - 4:40 pm|
-|**Course URL**| https://github.com/shahlab/teaching/tree/master/2019-Fall-CompGen|
+|**Syllabus**| https://github.com/shahlab/teaching/tree/master/2019-Fall-CompGen|
+|**Computing Resource**| [Didact cluster](https://didact.oarc.rutgers.edu)|
 |**Course Instructor**| Premal Shah <br> premal.shah@rutgers.edu <br> Ph: (848) 445 9664|
 |**Office hours**| By appointment|
 |**Teaching Assistant**| John Favate <br> john.favate@rutgers.edu|
@@ -88,12 +89,12 @@ Class | Date | Topic | Learning Materials
 26 | Dec 3 | Gene Ontology and KEGG Pathway analyses | 
 27 | Dec 5 | Shiny |
 28 | Dec 10 | Interactive data analysis | 
-29 | Dec 12 | Review | [Presentation]()
+29 | Dec 12 | Review | 
 
 ## Website and Communication
 
 ### Website
-This [GitHub repo](https://github.com/shahlab/teaching/tree/master/2019-Fall-CompGen) will serve as the course website.  
+This [GitHub repo](https://github.com/shahlab/teaching/tree/master/2019-Fall-CompGen) will serve as the course syllabus. Course materials and computing resources for this course will be available at [Didact](https://didact.oarc.rutgers.edu). Grades will be posted on the [Canvas](https://rutgers.instructure.com/courses/30213) website.
 
 ### Communication
 The primary mode of communication in this course (including major announcements), will be the course Slack account https://ru-compgen-fall19.slack.com. All of you should have invitations to join this account in your Rutgers email.  
