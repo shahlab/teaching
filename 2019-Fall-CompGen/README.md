@@ -14,6 +14,7 @@
 ## Information
 
 |-------------------|-------------------|
+
 |**Semester**| Fall 2019|
 |**Classroom**| Nelson Biology Labs B125|
 |**Meeting Times**|	Tuesday/Thursday  1:40 - 4:40 pm|
@@ -59,7 +60,7 @@ All course materials can be downloaded from this [GitHub repo](https://github.co
 
 Class | Date | Topic | Learning Materials
 :----- | ---: | :-- | :--
- 1 | Sep 3 | Introduction and Overview | In-coming survey - [Link](shorturl.at/cdkvy) <br> [Presentation]() <br> [R code for presentation]() <br> [Homework]()
+ 1 | Sep 3 | Introduction and Overview | [Initial survey](shorturl.at/cdkvy) <br> [Presentation]() <br> [R code for presentation]() <br> [Homework]()
  2 | Sep 5 | Variables and data structures I | 
  3 | Sep 10 | Variables and data structures II | 
 4 | Sep 12 | Quiz 01 and recap | 
