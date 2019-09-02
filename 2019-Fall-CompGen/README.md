@@ -44,8 +44,8 @@ The main objectives of this course are to enable students to learn:
 	### Core Curriculum Learning Goals
 	Information Technology and Research [ITR] goals y and z:
 
-	y. Employ current technologies to access information, to conduct research, and to communicate findings.
-	z. Analyze and critically assess information from traditional and emergent technologies.
+	- y. Employ current technologies to access information, to conduct research, and to communicate findings.
+	- z. Analyze and critically assess information from traditional and emergent technologies.
 
 ## Pre-requisites
 1. **Undergraduates**:
@@ -97,10 +97,10 @@ Class | Date | Topic | Learning Materials
 This [GitHub repo](https://github.com/shahlab/teaching/tree/master/2019-Fall-CompGen) will serve as the course syllabus. Course materials and computing resources for this course will be available at [Didact](https://didact.oarc.rutgers.edu). Grades will be posted on the [Canvas](https://rutgers.instructure.com/courses/30213) website.
 
 ### Communication
-The primary mode of communication in this course (including major announcements), will be the course Slack account https://ru-compgen-fall19.slack.com. All of you should have invitations to join this account in your Rutgers email.  
+The primary mode of communication in this course (including major announcements) will be through the [Canvas](https://rutgers.instructure.com/courses/30213) website. 
 
 ### Emails  
-Although the bulk of the communication will take place via Slack, at times (rarely), we will send out important course information via email. This email is sent to your Rutgers email address. You are responsible for all information sent out to your University email account, and for checking this account on a regular basis.
+Although the bulk of the communication will take place via [Canvas](https://rutgers.instructure.com/courses/30213), at times (rarely), we will send out important course information via email. This email is sent to your Rutgers email address. You are responsible for all information sent out to your University email account, and for checking this account on a regular basis.
 
 ## Course Activities
 
