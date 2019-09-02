@@ -54,36 +54,39 @@ The main objectives of this course are to enable students to learn:
 	While there are no pre-requisites for graduate students to join the class, they are STRONGLY encouraged to participate in the two-day [DataCarpentry workshop](http://www.datacarpentry.org/genomics-workshop/) that will be conducted during the winter break.
 
 ## Course Materials
+
+All course materials can be downloaded from this [GitHub repo](https://github.com/shahlab/teaching/tree/master/2019-Fall-CompGen) as well as the **Lectures** and **Homework** folders on the [Didact](https://didact.oarc.rutgers.edu) cluster. The **Quizzes** will be available solely on the [Didact](https://didact.oarc.rutgers.edu) lcuster.
+
 Class | Date | Topic | Learning Materials
 :----- | ---: | :-- | :--
- 1 | Sep 3 | Introduction and Overview | In-coming survey - [Link]() <br> [Presentation]() <br> [R code for presentation]() <br> [Homework]()
- 2 | Sep 5 | Variables and data structures I | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
- 3 | Sep 10 | Variables and data structures II | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-4 | Sep 12 | Quiz 01 and recap | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-5 | Sep 17 | Conditional statements and loops | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-6 | Sep 19 | Lists, functions, and strings | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-7 | Sep 24 | Advanced data wrangling -- tidyverse I | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-8 | Sep 26 | Quiz 02 and recap | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-9 | Oct 1 | Advanced data wrangling -- tidyverse II | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-10 | Oct 3 | Visualization -- ggplot2 | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-11 | Oct 8 | Introduction to bioconductor -- IRanges | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-12 | Oct 10 | Quiz 03 and recap | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-13 | Oct 15 | Working with genome annotations -- GRanges | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-14 | Oct 17 | Working with genome sequences -- Biostrings | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-15 | Oct 22 | Advanced sequence analyses | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-16 | Oct 24 | Quiz 04 and recap | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-17 | Oct 29 | Statistics for life scientists I | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-18 | Oct 31 | Statistics for life scientists II | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-19 | Nov 5 | Introduction to RNA-seq | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-20 | Nov 7 | Quiz 05 and recap | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-21 | Nov 12 | Working with Illumina sequencing data | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-22 | Nov 14 | Working with short reads in R | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-23 | Nov 19 | Differential gene expression analyses I | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-24 | Nov 21 | Quiz 06 and recap | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-25 | Nov 26 | Differential gene expression analyses II | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-26 | Dec 3 | Gene Ontology and KEGG Pathway analyses | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
-27 | Dec 5 | Shiny |[Presentation]() <br> [R code for presentation]() <br> [Homework]()
-28 | Dec 10 | Interactive data analysis | [Presentation]() <br> [R code for presentation]() <br> [Homework]()
+ 1 | Sep 3 | Introduction and Overview | In-coming survey - [Link](shorturl.at/cdkvy) <br> [Presentation]() <br> [R code for presentation]() <br> [Homework]()
+ 2 | Sep 5 | Variables and data structures I | 
+ 3 | Sep 10 | Variables and data structures II | 
+4 | Sep 12 | Quiz 01 and recap | 
+5 | Sep 17 | Conditional statements and loops | 
+6 | Sep 19 | Lists, functions, and strings | 
+7 | Sep 24 | Advanced data wrangling -- tidyverse I | 
+8 | Sep 26 | Quiz 02 and recap | 
+9 | Oct 1 | Advanced data wrangling -- tidyverse II | 
+10 | Oct 3 | Visualization -- ggplot2 | 
+11 | Oct 8 | Introduction to bioconductor -- IRanges | 
+12 | Oct 10 | Quiz 03 and recap | 
+13 | Oct 15 | Working with genome annotations -- GRanges | 
+14 | Oct 17 | Working with genome sequences -- Biostrings | 
+15 | Oct 22 | Advanced sequence analyses | 
+16 | Oct 24 | Quiz 04 and recap | 
+17 | Oct 29 | Statistics for life scientists I | 
+18 | Oct 31 | Statistics for life scientists II | 
+19 | Nov 5 | Introduction to RNA-seq | 
+20 | Nov 7 | Quiz 05 and recap | 
+21 | Nov 12 | Working with Illumina sequencing data | 
+22 | Nov 14 | Working with short reads in R | 
+23 | Nov 19 | Differential gene expression analyses I | 
+24 | Nov 21 | Quiz 06 and recap | 
+25 | Nov 26 | Differential gene expression analyses II | 
+26 | Dec 3 | Gene Ontology and KEGG Pathway analyses | 
+27 | Dec 5 | Shiny |
+28 | Dec 10 | Interactive data analysis | 
 29 | Dec 12 | Review | [Presentation]()
 
 ## Website and Communication
