@@ -25,6 +25,7 @@ Course website(s)
 - Canvas :- Grades, e-mails
 - GitHub :- Syllabus, course materials, homework
 - Didact :- Computing resources, course materials, homework, quizzes
+- DataCamp :- For graduate students*
 
 
 Grading
