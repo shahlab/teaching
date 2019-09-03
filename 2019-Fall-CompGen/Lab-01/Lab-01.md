@@ -116,7 +116,7 @@ incremental:true
 
 ```r
 variable_x <- 4 # Assign a value of 4 to variable 'x'
-variable_y <- 5 # Assign a value of 4 to variable 'y'
+variable_y <- 5 # Assign a value of 5 to variable 'y'
 ```
 - See value of variable
 
@@ -270,7 +270,7 @@ Exercise 1.2 (Question, Code, Answer)
 3. What results when you add `NA` to numeric?
 4. What is the difference in output (if any) between adding a numeric to a complex number and adding an integer to a complex number?
 5. What is the difference when you add a numeric to a complex number versus multiplying a numeric to a complex number?
-# Do the results differ if you multiply instead of addition above?
+
 
 Homework in R Notebooks
 ========================================================

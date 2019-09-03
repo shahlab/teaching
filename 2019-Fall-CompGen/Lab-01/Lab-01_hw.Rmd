@@ -1,0 +1,18 @@
+---
+title: "Lab 01 Homework"
+output: html_notebook
+---
+
+- Each questions is 2 points.
+- Write the `codes` for all questions in a single R Notebook.
+- ALWAYS comment your code.
+- Name the file as "Lastname_lab01_homework.Rmd"
+- **<span style="color:red"> Due date : Thurs Sep 05, 1:40 pm EST</span>**
+
+### Questions
+1. If I am driving at a speed of 62 MPH (miles per hour), how long will it take me to drive from Philadelphia to New York City (94 miles)? How long will it take me for the reverse commute if I drive at 40 MPH?
+2. The molecular weights of amino acids are listed [here](https://www.thermofisher.com/us/en/home/references/ambion-tech-support/rna-tools-and-calculators/proteins-and-amino-acids.html). 
+Calculate the molecular weight of this polypeptide - "EKEYLKK"
+3. How would you check if the molecular weights of Isoleucine and Leucine are the same? Also check if the molecular weight of Proline is greater than that of Histidine.
+4. What happens when you add two variables WITHOUT assigning them values?
+5. Write a code to calculate the area and circumference of a circle with radius 2 meters.
