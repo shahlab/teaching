@@ -61,7 +61,7 @@ All course materials can be downloaded from this [GitHub repo](https://github.co
 
 Class | Date | Topic | Learning Materials
 :----- | ---: | :-- | :--
- 1 | Sep 3 | Introduction and Overview | [Initial survey](shorturl.at/cdkvy) <br> [Presentation]() <br> [R code for presentation]() <br> [Homework]()
+ 1 | Sep 3 | Introduction and Overview | [Initial survey](https://shorturl.at/cdkvy) <br> [Presentation]() <br> [R code for presentation]() <br> [Homework]()
  2 | Sep 5 | Variables and data structures I | 
  3 | Sep 10 | Variables and data structures II | 
 4 | Sep 12 | Quiz 01 and recap | 
