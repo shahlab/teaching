@@ -274,7 +274,7 @@ data <- read.table("filename.tsv", header=TRUE, stringsAsFactors=FALSE)
 
 Exercise 2.5
 ========================================================
-1. Read in the $~data.tsv~$ file from Sakai and load it as a data frame.
+1. Read in the **data.tsv** file from didact and load it as a data frame.
 2. Find the number of genes in the file using three different R commands.
 3. Create a new data frame which contains only the first three columns of the old data frame.
 4. What would the length of a genome be if it had only the genes in this file and no non-coding regions?
