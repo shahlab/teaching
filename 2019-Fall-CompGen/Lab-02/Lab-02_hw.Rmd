@@ -1,0 +1,22 @@
+---
+title: "Lab 02 Homework"
+output:
+  html_notebook: default
+---
+
+- Each question is 2 points.
+- Write the `codes` for all questions in a single R Notebook (file).
+- ALWAYS comment your code.
+- Name the file as "Lastname_lab02_homework.Rmd"
+- **<span style="color:red"> Due date: Tuesday, Sep 10, 1:40 pm EST</span>**
+
+### Questions
+
+1. Create a 3x3 numeric matrix. Rearrange the elements of this matrix using a single statement, such that no element is in the same place as the original matrix.
+2. Create a 3x4 numeric matrix and then transpose it to a new matrix. https://en.wikipedia.org/wiki/Transpose
+3. Create a 3x4 numeric matrix and then store the sums of its rows into a vector. Store the sums of its columns into another vector.
+4. Perform standard arithmetic operations (addition, subtraction, multiplication and division) on two 2x2 matrices and store the values in new matrices and describe them. What happens when the matrices are of different sizes (2x2 and 3x3)?
+5. Rearrage the following matrix such that all the rows sum to the same value.
+```{r, echo=FALSE}
+matrix(1:9,nrow=3)
+```
