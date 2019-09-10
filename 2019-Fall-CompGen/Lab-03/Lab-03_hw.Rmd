@@ -1,0 +1,21 @@
+---
+title: "Lab 03 Homework"
+output:
+  html_notebook: default
+---
+
+- Each question is 2 points.
+- Write the `codes` for all questions in a single R Notebook (file).
+- ALWAYS comment your code.
+- **<span style="color:red"> Name the file as "Lastname_lab03_homework.nb.html" </span>**
+- Due date: Thursday, Sep 12, 1:40 pm EST
+
+## Questions
+
+Download the homework_data.tsv file and answer the following questions.
+
+### 1. Create a new data frame with only genes longer than 400 codons and containing utrs.
+### 2. What is the difference in the average RPF values of genes with and without uATGs?
+### 3. What is the length of a genome which has only the genes with mRNA abundances greater than 250?
+### 4. What proportion of total mRNA is due to all short genes (less than 250 codons)?
+### 5. What is the average GC content of utr containing short genes (less than 250) ?
