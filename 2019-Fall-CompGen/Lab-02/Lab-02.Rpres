@@ -191,13 +191,13 @@ new_matrix[3, ]
 
 Exercise 2.4
 ========================================================
-1. Create the following matrix.
+- 1. Create the following matrix.
 ```{r,echo=FALSE}
 matrix(seq(1, 15, 1), nrow = 3, byrow = TRUE)
 ```
-2. Save the 4th column as a new vector.
-3. Create a new vector where each element is the sum of 2nd and 3rd row.
-4. Subset a new 2x2 matrix from the above matrix with the following values
+- 2. Save the 4th column as a new vector.
+- 3. Create a new vector where each element is the sum of 2nd and 3rd row.
+- 4. Subset a new 2x2 matrix from the above matrix with the following values
 ```{r,echo=FALSE}
 matrix_a <- matrix(seq(1, 15, 1),nrow = 3, byrow = TRUE)
 matrix_a[c(2, 3), c(2, 4)]

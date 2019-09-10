@@ -266,7 +266,7 @@ new_matrix[3, ]
 
 Exercise 2.4
 ========================================================
-1. Create the following matrix.
+- 1. Create the following matrix.
 
 ```
      [,1] [,2] [,3] [,4] [,5]
@@ -274,143 +274,13 @@ Exercise 2.4
 [2,]    6    7    8    9   10
 [3,]   11   12   13   14   15
 ```
-2. Save the 4th column as a new vector.
-3. Create a new vector where each element is the sum of 2nd and 3rd row.
-4. Subset a new 2x2 matrix from the above matrix with the following values
+- 2. Save the 4th column as a new vector.
+- 3. Create a new vector where each element is the sum of 2nd and 3rd row.
+- 4. Subset a new 2x2 matrix from the above matrix with the following values
 
 ```
      [,1] [,2]
 [1,]    7    9
 [2,]   12   14
-```
-
-Data structures
-========================================================
-incremental: true
-- What if you wanted different _types_ of data in each column?
-
-```
-     Gene Length    mRNA  uATG    UTR_GC
-1 YAL001C   1160   37.80 FALSE        NA
-2 YAL002W   1274   22.17  TRUE 0.3529412
-3 YAL003W    206 4621.93  TRUE 0.3636364
-4 YAL007C    215  212.43  TRUE 0.3815789
-5 YAL008W    198   49.96  TRUE 0.4081633
-6 YAL009W    259   34.96  TRUE 0.3846154
-```
-
-- **Data frames**
-
-```r
-# Creating data frames
-my_data <- data.frame(
-    Gene = c("Gene1", "Gene2", "Gene3"),
-    Length = c(100,200,300),
-    Disease = c(TRUE, FALSE, FALSE),
-    stringsAsFactors = FALSE
-)
-my_data
-```
-
-```
-   Gene Length Disease
-1 Gene1    100    TRUE
-2 Gene2    200   FALSE
-3 Gene3    300   FALSE
-```
-
-Accessing and subsetting data frames
-========================================================
-incremental:true
-- Like a matrix
-
-```r
-my_data[1:3,2]
-```
-
-```
-[1] 100 200 300
-```
-
-```r
-my_data[,3]
-```
-
-```
-[1]  TRUE FALSE FALSE
-```
-- Note: Like any **Matrix**, a **Data frame** can have only 2-dimensions
-- Using column names
-
-```r
-my_data$Gene
-```
-
-```
-[1] "Gene1" "Gene2" "Gene3"
-```
-
-```r
-my_data$Length[2]
-```
-
-```
-[1] 200
-```
-
-Some basic functions
-========================================================
-
-```r
-# Find the length of a vector 
-length()
-
-# Number of dimensions of a matrix, array or data frame
-dim()
-
-# Number of rows or columns of matrix or data frame
-nrow()
-ncol()
-
-# Structure of a data frame
-str()
-
-# Find data type
-class()
-
-# Convert and check type
-as.character()
-is.numeric()
-```
-
-Reading external files
-========================================================
-- Tab-separated (.tsv) or comma-separated (.csv) files can be read using
-
-```r
-data <- read.table("filename.tsv", header=TRUE, stringsAsFactors=FALSE)
-```
-- Files read using these commands will return a data frame 
-- Make sure you are working in the right folder or provide a detailed path to the file
-
-Exercise 2.5
-========================================================
-1. Read in the **data.tsv** file from didact and load it as a data frame.
-2. Find the number of genes in the file using three different R commands.
-3. Create a new data frame which contains only the first three columns of the old data frame.
-4. What would the length of a genome be if it had only the genes in this file and no non-coding regions?
-5. How many genes have uATGs in them?
-6. How many genes have utrs?
-7. Create a new data frame with only genes longer than 500 codons.
-
-Help for functions discussed today
-========================================================
-
-
-```r
-# Learn more about these functions by using the help function
-help(seq) or ?seq
-
-# Workout the examples at the bottom of the help sections
 ```
 
