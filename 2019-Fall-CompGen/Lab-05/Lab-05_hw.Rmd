@@ -11,8 +11,6 @@ output:
 
 ## Questions
 
-Use the homework_data.tsv file from Homework 3 and answer the following questions.
-
 ### 1. You have rolled an unbiased die 10000 times. How many times did you see identical numbers in two consecutive rolls of a die? (Hint: use for loops) (5pts)
 ### 2. Do you see a higher number when you use a biased die where even numbers are 3 times more likely than odd numbers? (2 pts)
 ### 3. Answer questions 1 and 2 without using for loops. (3 pts)
