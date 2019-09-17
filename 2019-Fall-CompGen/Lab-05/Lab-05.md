@@ -60,7 +60,7 @@ sample(vector_a, size = 5, replace = FALSE)
 ```
 
 ```
-[1]  1 10  3  9  5
+[1] 4 6 2 3 1
 ```
 
 ```r
@@ -68,7 +68,7 @@ sample(vector_a, size = 15, replace = TRUE)
 ```
 
 ```
- [1] 2 2 9 3 2 8 5 3 9 1 2 5 4 7 4
+ [1] 9 9 2 8 2 4 4 7 8 8 6 1 7 6 7
 ```
 
 ```r
@@ -77,7 +77,7 @@ sample(vector_a, size = 15, replace = TRUE, prob = vector_prob)
 ```
 
 ```
- [1]  5  8  9 10 10 10  3  1 10 10 10  2  6 10  6
+ [1] 10  9 10  7  6  9 10 10 10  4  4  9  5  6  7
 ```
 
 Exercise 5.2
@@ -89,7 +89,7 @@ Exercise 5.2
 
 |  1|  2|  3|  4|  5|  6|
 |--:|--:|--:|--:|--:|--:|
-|  6| 10|  4|  2|  7|  8|
+|  8|  6|  3|  1|  5|  9|
 
 Conditional statements
 ========================================================
@@ -162,7 +162,7 @@ for(VARIABLE in VALUES){
 ```
 
 ```r
-# Count the number of values greater than 5
+# Count the number of values greater than 2
 var_a <- 1:4
 counter <- 0
 for(var_i in var_a){
@@ -193,48 +193,3 @@ Exercise 5.4
 1. Count the number of 4s in sample of 1000 unbiased dice rolls using `for` loops.
 2. Using `for` loops, create a new vector of differences between RPF and mRNA values of genes such that there are only positive values in this vector. Save this vector in the data frame.
 3. Repeat question 2, without using `for` loops.
-
-Loops (indefinite)
-========================================================
-incremental:true
-class: small-code
-- `while` loops
-
-```r
-while(TRUE){
-    Do something 1 
-    Do something 2
-}
-```
-
-```r
-var_a <- 1
-while(var_a<3){
-    print(c("Variable 'a' is still less than 3",var_a))
-    var_a <- var_a+1
-}
-```
-
-```
-[1] "Variable 'a' is still less than 3" "1"                                
-[1] "Variable 'a' is still less than 3" "2"                                
-```
-- Be very careful of infinite loops
-
-```r
-var_a <- 1
-while(var_a<10){
-    print("Oops! this got out of hand pretty fast.")
-}
-```
-
-Exercise 5.5
-========================================================
-1. Keep rolling an unbiased dice until you see a 6. How many dice rolls did it take?
-2. Repeat the same process for a biased dice with the following odds.
-
-|  1|  2|  3|  4|  5|  6|
-|--:|--:|--:|--:|--:|--:|
-| 10|  9|  8|  7|  6|  5|
-3. Repeat the above process until you see a 6 or you have rolled the dice 10 times, whichever comes first.
-

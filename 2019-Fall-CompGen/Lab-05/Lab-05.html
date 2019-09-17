@@ -844,20 +844,20 @@ sample(WHAT,HOW_MANY,replace =, prob = )
 sample(vector_a, size = 5, replace = FALSE)
 </code></pre>
 
-<pre class="fragment"><code>[1]  1 10  3  9  5
+<pre class="fragment"><code>[1] 4 6 2 3 1
 </code></pre>
 
 <pre class="fragment"><code class="r">sample(vector_a, size = 15, replace = TRUE)
 </code></pre>
 
-<pre class="fragment"><code> [1] 2 2 9 3 2 8 5 3 9 1 2 5 4 7 4
+<pre class="fragment"><code> [1] 9 9 2 8 2 4 4 7 8 8 6 1 7 6 7
 </code></pre>
 
 <pre class="fragment"><code class="r">vector_prob &lt;- 1:10
 sample(vector_a, size = 15, replace = TRUE, prob = vector_prob)
 </code></pre>
 
-<pre class="fragment"><code> [1]  5  8  9 10 10 10  3  1 10 10 10  2  6 10  6
+<pre class="fragment"><code> [1] 10  9 10  7  6  9 10 10 10  4  4  9  5  6  7
 </code></pre>
 
 </div>
@@ -884,12 +884,12 @@ sample(vector_a, size = 15, replace = TRUE, prob = vector_prob)
 </tr>
 </thead><tbody>
 <tr>
-<td align="right">6</td>
-<td align="right">10</td>
-<td align="right">4</td>
-<td align="right">2</td>
-<td align="right">7</td>
 <td align="right">8</td>
+<td align="right">6</td>
+<td align="right">3</td>
+<td align="right">1</td>
+<td align="right">5</td>
+<td align="right">9</td>
 </tr>
 </tbody></table>
 
@@ -973,7 +973,7 @@ ifelse(var_a &gt; 5, 1, 0)
 }
 </code></pre>
 
-<pre class="fragment"><code class="r"># Count the number of values greater than 5
+<pre class="fragment"><code class="r"># Count the number of values greater than 2
 var_a &lt;- 1:4
 counter &lt;- 0
 for(var_i in var_a){
@@ -1006,78 +1006,6 @@ for(var_i in var_a){
 <li>Count the number of 4s in sample of 1000 unbiased dice rolls using <code>for</code> loops.</li>
 <li>Using <code>for</code> loops, create a new vector of differences between RPF and mRNA values of genes such that there are only positive values in this vector. Save this vector in the data frame.</li>
 <li>Repeat question 2, without using <code>for</code> loops.</li>
-</ol>
-
-</div>
-
-</section>
-<section data-transition="linear" data-transition-speed="default">
-<h3>Loops (indefinite)</h3>
-<div class="slideContent small-code" >
-<ul>
-<li class="fragment"><code>while</code> loops</li>
-</ul>
-
-<pre class="fragment"><code class="r">while(TRUE){
-    Do something 1 
-    Do something 2
-}
-</code></pre>
-
-<pre class="fragment"><code class="r">var_a &lt;- 1
-while(var_a&lt;3){
-    print(c(&quot;Variable &#39;a&#39; is still less than 3&quot;,var_a))
-    var_a &lt;- var_a+1
-}
-</code></pre>
-
-<pre class="fragment"><code>[1] &quot;Variable &#39;a&#39; is still less than 3&quot; &quot;1&quot;                                
-[1] &quot;Variable &#39;a&#39; is still less than 3&quot; &quot;2&quot;                                
-</code></pre>
-
-<ul>
-<li class="fragment">Be very careful of infinite loops</li>
-</ul>
-
-<pre class="fragment"><code class="r">var_a &lt;- 1
-while(var_a&lt;10){
-    print(&quot;Oops! this got out of hand pretty fast.&quot;)
-}
-</code></pre>
-
-</div>
-
-</section>
-<section data-transition="linear" data-transition-speed="default">
-<h3>Exercise 5.5</h3>
-<div class="slideContent" >
-<ol>
-<li>Keep rolling an unbiased dice until you see a 6. How many dice rolls did it take?</li>
-<li>Repeat the same process for a biased dice with the following odds.</li>
-</ol>
-
-<table><thead>
-<tr>
-<th align="right">1</th>
-<th align="right">2</th>
-<th align="right">3</th>
-<th align="right">4</th>
-<th align="right">5</th>
-<th align="right">6</th>
-</tr>
-</thead><tbody>
-<tr>
-<td align="right">10</td>
-<td align="right">9</td>
-<td align="right">8</td>
-<td align="right">7</td>
-<td align="right">6</td>
-<td align="right">5</td>
-</tr>
-</tbody></table>
-
-<ol>
-<li>Repeat the above process until you see a 6 or you have rolled the dice 10 times, whichever comes first.</li>
 </ol>
 
 </div>

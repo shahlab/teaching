@@ -124,7 +124,7 @@ for(VARIABLE in VALUES){
 }
 ```
 ```{r}
-# Count the number of values greater than 5
+# Count the number of values greater than 2
 var_a <- 1:4
 counter <- 0
 for(var_i in var_a){
@@ -141,42 +141,3 @@ Exercise 5.4
 1. Count the number of 4s in sample of 1000 unbiased dice rolls using `for` loops.
 2. Using `for` loops, create a new vector of differences between RPF and mRNA values of genes such that there are only positive values in this vector. Save this vector in the data frame.
 3. Repeat question 2, without using `for` loops.
-
-Loops (indefinite)
-========================================================
-incremental:true
-class: small-code
-- `while` loops
-```{r, eval=F}
-while(TRUE){
-    Do something 1 
-    Do something 2
-}
-```
-```{r}
-var_a <- 1
-while(var_a<3){
-    print(c("Variable 'a' is still less than 3",var_a))
-    var_a <- var_a+1
-}
-```
-- Be very careful of infinite loops
-```{r, eval=FALSE}
-var_a <- 1
-while(var_a<10){
-    print("Oops! this got out of hand pretty fast.")
-}
-
-```
-
-Exercise 5.5
-========================================================
-1. Keep rolling an unbiased dice until you see a 6. How many dice rolls did it take?
-2. Repeat the same process for a biased dice with the following odds.
-```{r, echo=FALSE}
-library(knitr)
-q <- as.data.frame(t(10:5))
-kable(q,col.names=1:6)
-```
-3. Repeat the above process until you see a 6 or you have rolled the dice 10 times, whichever comes first.
-
