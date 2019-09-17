@@ -64,8 +64,8 @@ Class | Date | Topic | Learning Materials
 1 | Sep 3 | Introduction and Variables | [Initial survey](https://shorturl.at/cdkvy) <br> [Presentation](Lab-01/Lab-01.html) <br> [R code for presentation](Lab-01/Lab-01.Rpres) <br> [Homework](Lab-01/Lab-01_hw.Rmd)
 2 | Sep 5 | Vectors and Matrices | [Presentation](Lab-02/Lab-02.html) <br> [R code for presentation](Lab-02/Lab-02.Rpres) <br> [Homework](Lab-02/Lab-02_hw.Rmd)
 3 | Sep 10 | Matrices and Dataframes | [Presentation](Lab-03/Lab-03.html) <br> [R code for presentation](Lab-03/Lab-03.Rpres) <br> [Homework](Lab-03/Lab-03_hw.Rmd)
-4 | Sep 12 | Quiz 01 and recap | [Presentation](Lab-04/Lab-04.html) <br> [R code for presentation](Lab-04/Lab-04.Rpres) 
-5 | Sep 17 | Conditional statements and loops | 
+4 | Sep 12 | Quiz 01 and recap | [Quiz](Lab-04/Lab-04_quiz.Rmd)  
+5 | Sep 17 | Conditional statements and loops | [Presentation](Lab-05/Lab-05.html) <br> [R code for presentation](Lab-05/Lab-05.Rpres) <br> Homework
 6 | Sep 19 | Lists, functions, and strings | 
 7 | Sep 24 | Advanced data wrangling -- tidyverse I | 
 8 | Sep 26 | Quiz 02 and recap | 

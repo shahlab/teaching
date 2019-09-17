@@ -1,0 +1,47 @@
+---
+title: "Quiz 01"
+output:
+  html_document: default
+  html_notebook: default
+---
+
+- Each question is 1 point.
+- Write the `codes` for all questions in a single R Notebook (file).
+- ALWAYS comment your code.
+- Name the file as "Lastname_Lab04_quiz.nb.html"
+
+1. Create two numeric vectors of length 3. Create a new combined vector EXCLUDING the second elements of both vectors.
+2. Create a vector of all multiples of 7 between 14 and 91 in DECREASING order?
+3. Create any 3x3 numeric matrix. Create a vector of sums of elements in each row using two different methods.
+4. Why do you get an error when you add two variables WITHOUT assigning them values?
+5. & 6. Create the following vectors using `rep` function
+```{r, echo=FALSE}
+rep(14:17,each=3)
+rep(sample(1:4),3)
+# library(knitr)
+# q <- as.data.frame(t(rep(" ",12)))
+# kable(q,col.names=rep(14:17,each=3))
+# kable(q,col.names=rep(sample(1:4),3))
+```
+
+7. Create a new data frame shown below
+```{r, echo=FALSE}
+# Creating data frames
+my_data <- data.frame(
+    Gene = c("Gene1", "Gene2", "Gene3"),
+    Length = c(100L,200L,300L),
+    Expression = floor(rnorm(3)*100),
+    Disease = c(TRUE, FALSE, FALSE),
+    Strand = c("+","+","-"),
+    stringsAsFactors = FALSE
+)
+my_data
+```
+
+8. What does the function `dim()` do?
+
+Read in the quiz_data.tsv file and answer the following
+
+9. What is the size of the genome comprising of only the last 100 genes in the dataset?
+
+10. Where in the dataset are the following genes - YBL006C, YBL025W, and YAL025C?
