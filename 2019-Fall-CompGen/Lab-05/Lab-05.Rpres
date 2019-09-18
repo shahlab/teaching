@@ -60,7 +60,7 @@ Exercise 5.2
 1. What happens when you sample more values than the number of elements from a vector with `replace=FALSE`?
 2. Generate 1000 coin tosses from a fair coin and tabulate the results?
 3. Generate 1000 coin tosses from a biased coin where the likelihood of HEADS is twice that of TAILS.
-4. Generate 1000 rolls of a biased dice with the following odds
+4. Generate 1000 rolls of a biased die with the following odds
 ```{r, echo=FALSE}
 library(knitr)
 q <- as.data.frame(t(sample(1:10,6)))
@@ -138,6 +138,6 @@ counter
 
 Exercise 5.4
 ========================================================
-1. Count the number of 4s in sample of 1000 unbiased dice rolls using `for` loops.
+1. Count the number of 4s in sample of 1000 unbiased die rolls using `for` loops.
 2. Using `for` loops, create a new vector of differences between RPF and mRNA values of genes such that there are only positive values in this vector. Save this vector in the data frame.
 3. Repeat question 2, without using `for` loops.

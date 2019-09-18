@@ -844,20 +844,20 @@ sample(WHAT,HOW_MANY,replace =, prob = )
 sample(vector_a, size = 5, replace = FALSE)
 </code></pre>
 
-<pre class="fragment"><code>[1] 4 6 2 3 1
+<pre class="fragment"><code>[1]  9  5 10  4  6
 </code></pre>
 
 <pre class="fragment"><code class="r">sample(vector_a, size = 15, replace = TRUE)
 </code></pre>
 
-<pre class="fragment"><code> [1] 9 9 2 8 2 4 4 7 8 8 6 1 7 6 7
+<pre class="fragment"><code> [1]  7  5  3  6  6  4  4  6  6  8  7 10  1  3  2
 </code></pre>
 
 <pre class="fragment"><code class="r">vector_prob &lt;- 1:10
 sample(vector_a, size = 15, replace = TRUE, prob = vector_prob)
 </code></pre>
 
-<pre class="fragment"><code> [1] 10  9 10  7  6  9 10 10 10  4  4  9  5  6  7
+<pre class="fragment"><code> [1]  9  9 10  9 10 10  1  5  8  9 10  5  7 10  8
 </code></pre>
 
 </div>
@@ -870,7 +870,7 @@ sample(vector_a, size = 15, replace = TRUE, prob = vector_prob)
 <li>What happens when you sample more values than the number of elements from a vector with <code>replace=FALSE</code>?</li>
 <li>Generate 1000 coin tosses from a fair coin and tabulate the results?</li>
 <li>Generate 1000 coin tosses from a biased coin where the likelihood of HEADS is twice that of TAILS.</li>
-<li>Generate 1000 rolls of a biased dice with the following odds</li>
+<li>Generate 1000 rolls of a biased die with the following odds</li>
 </ol>
 
 <table><thead>
@@ -884,12 +884,12 @@ sample(vector_a, size = 15, replace = TRUE, prob = vector_prob)
 </tr>
 </thead><tbody>
 <tr>
-<td align="right">8</td>
+<td align="right">2</td>
+<td align="right">4</td>
+<td align="right">10</td>
 <td align="right">6</td>
+<td align="right">7</td>
 <td align="right">3</td>
-<td align="right">1</td>
-<td align="right">5</td>
-<td align="right">9</td>
 </tr>
 </tbody></table>
 
@@ -1003,7 +1003,7 @@ for(var_i in var_a){
 <h3>Exercise 5.4</h3>
 <div class="slideContent" >
 <ol>
-<li>Count the number of 4s in sample of 1000 unbiased dice rolls using <code>for</code> loops.</li>
+<li>Count the number of 4s in sample of 1000 unbiased die rolls using <code>for</code> loops.</li>
 <li>Using <code>for</code> loops, create a new vector of differences between RPF and mRNA values of genes such that there are only positive values in this vector. Save this vector in the data frame.</li>
 <li>Repeat question 2, without using <code>for</code> loops.</li>
 </ol>

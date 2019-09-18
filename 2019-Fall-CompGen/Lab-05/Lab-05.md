@@ -60,7 +60,7 @@ sample(vector_a, size = 5, replace = FALSE)
 ```
 
 ```
-[1] 4 6 2 3 1
+[1]  9  5 10  4  6
 ```
 
 ```r
@@ -68,7 +68,7 @@ sample(vector_a, size = 15, replace = TRUE)
 ```
 
 ```
- [1] 9 9 2 8 2 4 4 7 8 8 6 1 7 6 7
+ [1]  7  5  3  6  6  4  4  6  6  8  7 10  1  3  2
 ```
 
 ```r
@@ -77,7 +77,7 @@ sample(vector_a, size = 15, replace = TRUE, prob = vector_prob)
 ```
 
 ```
- [1] 10  9 10  7  6  9 10 10 10  4  4  9  5  6  7
+ [1]  9  9 10  9 10 10  1  5  8  9 10  5  7 10  8
 ```
 
 Exercise 5.2
@@ -85,11 +85,11 @@ Exercise 5.2
 1. What happens when you sample more values than the number of elements from a vector with `replace=FALSE`?
 2. Generate 1000 coin tosses from a fair coin and tabulate the results?
 3. Generate 1000 coin tosses from a biased coin where the likelihood of HEADS is twice that of TAILS.
-4. Generate 1000 rolls of a biased dice with the following odds
+4. Generate 1000 rolls of a biased die with the following odds
 
 |  1|  2|  3|  4|  5|  6|
 |--:|--:|--:|--:|--:|--:|
-|  8|  6|  3|  1|  5|  9|
+|  2|  4| 10|  6|  7|  3|
 
 Conditional statements
 ========================================================
@@ -190,6 +190,6 @@ counter
 
 Exercise 5.4
 ========================================================
-1. Count the number of 4s in sample of 1000 unbiased dice rolls using `for` loops.
+1. Count the number of 4s in sample of 1000 unbiased die rolls using `for` loops.
 2. Using `for` loops, create a new vector of differences between RPF and mRNA values of genes such that there are only positive values in this vector. Save this vector in the data frame.
 3. Repeat question 2, without using `for` loops.
