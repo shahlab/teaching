@@ -1,0 +1,18 @@
+---
+title: "Lab 06 Homework"
+output:
+  html_document: default
+---
+
+- Each question is 2 points.
+- Write the `codes` for all questions in a single R notebook (file).
+- ALWAYS comment your code.
+- Name the file as "Lastname_lab05_homework.nb.html"
+- **<span style="color:red"> Due date: Thurs, Sep 26, 1:40 pm EST</span>**
+
+### Questions
+
+- Over the course of the last few lectures you have used several in-built functions in R. 
+- Write your own version of any 5 of these functions. 
+- Name the functions as LASTNAME_FUNCTION. For instance, if I were to write a function to calculate sums of values, the function name would be `shah_sum`.
+- Important note: You cannot use any in-built functions in writing your function. For instance, if you write a function to calculate `mean` of some values, you cannot use the `sum` function.
