@@ -1,0 +1,276 @@
+---
+title: "Lab 06 in-class"
+output: html_document
+---
+
+## Exercise 6.1
+### 1. Keep rolling an unbiased die until you see a 6. How many dice rolls did it take?
+```{r}
+# First - throw a die
+roll <- sample(1:6, size = 1)
+# Keep track of how many rolls
+counter <- 1
+print(roll)
+
+while(roll != 6){ # Check if the current throw is a 6
+  roll <- sample(1:6, size = 1) # If not 6, then throw another roll
+  counter <- counter + 1 # Increase the number of rolls by 1
+  print(roll)
+}
+counter
+```
+
+### 2. Repeat the same process for a biased dice with the following odds.
+1	2	3	4	5	6
+10	9	8	7	6	5
+```{r}
+odds <- c(10, 9, 8, 7, 6, 5)
+# First - throw a die
+roll <- sample(1:6, size = 1, prob = seq(from = 10, to = 5, by = -1))
+# Keep track of how many rolls
+counter <- 1
+print(roll)
+
+while(roll != 6){ # Check if the current throw is a 6
+  roll <- sample(1:6, size = 1, prob = odds) # If not 6, then throw another roll
+  counter <- counter + 1 # Increase the number of rolls by 1
+  print(roll)
+}
+counter
+```
+
+### 3. Repeat the above process until you see a 6 or you have rolled the dice 10 times, whichever comes first.
+```{r}
+odds <- c(10, 9, 8, 7, 6, 5)
+# First - throw a die
+roll <- sample(1:6, size = 1, prob = seq(from = 10, to = 5, by = -1))
+# Keep track of how many rolls
+counter <- 1
+print(roll)
+
+while(roll != 6 & counter < 10){ # Check if the current throw is a 6
+  roll <- sample(1:6, size = 1, prob = odds) # If not 6, then throw another roll
+  counter <- counter + 1 # Increase the number of rolls by 1
+  print(roll)
+}
+counter
+```
+
+
+## Exercise 6.2
+### 1. Write a function to calculate factorial of a value.
+```{r}
+# Method 1
+my_factorial1 <- function(n){
+  fact <- 1 # Initialize variable to store the value of the factorial
+  
+  # This starts at the values n and then decreases the value of n with each interation
+  # For instance for n = 5, it starts at 5, then goes to 4, 3, 2, and 1
+  while(n >= 1){ 
+    fact <- fact * n # Update the value of the factorial
+    n <- n - 1 # Decrease n by 1
+  }
+  return(fact)
+}
+
+# Method 2
+my_factorial2 <- function(n){
+  fact <- 1 # Initialize variable to store the value of the factorial
+  
+  # This creates a dummy variable whose value starts at 1 and then increases with each interation
+  for(dummy in 1:n){ # Either 1:n OR seq(n) OR seq(from = 1, to = n)
+    fact <- fact * dummy
+  }
+  
+  return(fact)
+}
+
+# Method 3
+my_factorial3 <- function(n){
+  temp_vec <- 1:n # This creates a temporary vector of all numbers between 1 and n
+  fact <- prod(temp_vec) # Take the product of all the elements
+  
+  return(fact)
+}
+
+```
+
+```{r}
+# Check the output
+factorial(5) # In-built factorial function
+my_factorial1(n = 5)
+my_factorial2(n = 5)
+my_factorial3(n = 5)
+```
+
+
+### 2. Write a function to calculate the fibonacci series up to n elements.
+```{r}
+# Method 1
+fib_series <- function(n){
+  fib_vec <- c(0, 1) # The first two elements of the series are fixed.
+  
+  # If the user requests first or first two elements, return the values 
+  # directly from the initial vector
+  if(n < 3){ 
+    return(fib_vec[1:n])
+  }else{ # If the use requests more elements
+    y <- 3
+    while(y <= n){
+      fib_vec <- c(fib_vec, fib_vec[y-1]+fib_vec[y-2]) # Add the sum of the previous two elements to the existing vector. This grows the fib_vec by one more element
+      y <- y + 1 # Increase the counter
+    }
+  }
+  
+  return(fib_vec)
+}
+
+fib_series2 <- function(n){
+  fib_vec <- c(0, 1) # The first two elements of the series are fixed.
+  
+  # If the user requests first or first two elements, return the values 
+  # directly from the initial vector
+  if(n < 3){
+    return(fib_vec[1:n])
+  }else{
+    for(dummy in 3:n)
+      fib_vec <- c(fib_vec, fib_vec[dummy-1] + fib_vec[dummy-2]) # Add the sum of the previous two elements to the existing vector. This grows the fib_vec by one more element
+    }
+  return(fib_vec)
+}
+```
+
+```{r}
+fib_series(n = 10)
+fib_series2(n = 10)
+```
+
+## Lists
+```{r}
+my_list <- list(
+    a = 1:5,
+    b = c("Gene1", "Gene2"),
+    mat = matrix(1:4, nrow = 2)
+)
+my_list
+```
+
+```{r}
+# Access elements like a dataframe
+my_list$b
+```
+
+```{r}
+# Access elements like a dataframe
+my_list$mat
+```
+
+```{r}
+my_list$mat[1, ]
+```
+
+## Exercise 6.3
+### 1. Create a list with the following elements - numeric vector, matrix, data frame.
+```{r}
+new_list <- list(
+  num_vec = c(1, 4, 5),
+  num_matrix = matrix(1:4, nrow = 2, byrow = TRUE),
+  my_data = data.frame(
+    Gene = c("gene1", "gene2"),
+    Length = c(100, 500)
+  )
+)
+
+new_list
+```
+
+### 2. Add a character vector to the above list without recreating the entire list.
+```{r}
+# Method 1
+new_list$char_vec <- c("A", "B", "D", "G", "K")
+new_list
+
+# Method 2
+char_vec <- c("A", "B", "D", "G", "K")
+new_list[[5]] <- char_vec
+new_list
+
+# Method 3
+new_list[["new_char_vec"]] <- char_vec
+new_list
+```
+Methods 1 and 3 create named elements. Method 2 creates an unnamed element.
+
+### Difference between using single brackets and double brackets
+```{r}
+# When you use a single bracket, you get the output in the form of a list
+new_list[1]
+class(new_list[1])
+
+# When you use a double bracket, you get the output in the dataclass of the element
+new_list[[1]]
+class(new_list[[1]])
+```
+
+```{r}
+new_list$num_matrix[2, 2]
+new_list[["num_matrix"]][2, 2]
+# new_list["num_matrix"][2, 2] - This creates an error because the output is a list
+
+```
+
+
+### 3. Create a list of two lists. How would you access elements in this data structure?
+```{r}
+new_list2 <- list(
+  num_vec = c(1, 4, 5),
+  num_matrix = matrix(1:4, nrow = 2, byrow = TRUE)
+)
+new_list2
+
+small_list <- list(
+  a = 1:2,
+  b = c("A", "B", "C")
+)
+small_list
+```
+
+```{r}
+# Use the list() function to combine two lists into a list of list
+list_of_list <- list(new_list2, small_list)
+list_of_list
+```
+
+
+```{r}
+# Accessing elements in a list of list
+list_of_list[[1]][[2]][2, 2]
+list_of_list[[1]]$num_matrix[2, 2]
+
+list_of_list[[2]]$b[3]
+list_of_list[[2]][[2]][3]
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
