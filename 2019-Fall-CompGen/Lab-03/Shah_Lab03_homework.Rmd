@@ -1,0 +1,121 @@
+---
+title: "Lab-03 Homework Solutions"
+output: html_notebook
+---
+
+## Questions
+
+Download the homework_data.tsv file and answer the following questions.
+```{r}
+# Load the home_data file
+hw_data <- read.table("homework_data.tsv", header = TRUE, stringsAsFactors = FALSE)
+hw_data
+```
+
+
+### 1. Create a new data frame with only genes longer than 400 codons and containing utrs.
+```{r}
+# Method 1
+new_data <- hw_data[(hw_data$Length) > 400 & !is.na(hw_data$utr), ]
+new_data
+
+# Method 2
+new_data1 <- hw_data[which(hw_data$Length > 400), ]
+new_data2 <- new_data1[which(new_data1$utr > 0), ]
+new_data2
+
+# # Method 3
+# new_data3 <- new_data1[which(new_data1$utr), ]
+# new_data3
+```
+
+### 2. What is the difference in the average RPF values of genes with and without uATGs?
+```{r}
+# Method 1
+genes_w_uATG <- hw_data[hw_data$uATG, ]
+genes_w_uATG
+genes_wo_uATG <- hw_data[!hw_data$uATG, ]
+genes_wo_uATG
+
+# Method 2
+genes_w_uATG <- hw_data[hw_data$uATG == TRUE, ]
+genes_w_uATG
+genes_wo_uATG <- hw_data[hw_data$uATG == FALSE, ]
+genes_wo_uATG
+
+avg_RPF_w_uATG <- sum(genes_w_uATG$RPF)/nrow(genes_w_uATG)
+avg_RPF_w_uATG
+avg_RPF_wo_uATG <- sum(genes_wo_uATG$RPF)/nrow(genes_wo_uATG)
+avg_RPF_wo_uATG
+
+avg_RPF_w_uATG - avg_RPF_wo_uATG
+
+
+avg_RPF_w_uATG <- mean(genes_w_uATG$RPF)
+avg_RPF_w_uATG
+avg_RPF_wo_uATG <- mean(genes_wo_uATG$RPF)
+avg_RPF_wo_uATG
+
+avg_RPF_w_uATG - avg_RPF_wo_uATG
+
+```
+
+### 3. What is the length of a genome which has only the genes with mRNA abundances greater than 250?
+```{r}
+mrna_gt_250 <- hw_data[hw_data$mRNA > 250, ]
+mrna_gt_250
+
+sum(mrna_gt_250$Length)
+
+# Method 2
+pos_mrna_gt_250 <- which(hw_data$mRNA > 250)
+
+sum(hw_data[pos_mrna_gt_250, "Length"])
+sum(hw_data$Length[pos_mrna_gt_250])
+```
+
+### 4. What proportion of total mRNA is due to all short genes (less than 250 codons)?
+```{r}
+short_genes <- hw_data[hw_data$Length < 250, ]
+long_genes <- hw_data[hw_data$Length >= 250, ]
+short_genes
+long_genes
+
+mrna_short <- sum(short_genes$mRNA)
+
+mrna_short/sum(hw_data$mRNA)
+```
+
+### 5. What is the average GC content of utr containing short genes (less than 250) ?
+```{r}
+short_genes <- hw_data[hw_data$Length < 250, ]
+short_w_utr <- short_genes[!is.na(short_genes$utr), ]
+
+mean(short_w_utr$gc)
+
+# 1
+short_w_utr_noNAgc <- short_w_utr[!is.na(short_w_utr$gc), ] # Remove any rows that have NA in gc column
+mean(short_w_utr_noNAgc$gc)
+
+# 2
+mean(short_w_utr$gc, na.rm = TRUE)
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
