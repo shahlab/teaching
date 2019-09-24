@@ -67,7 +67,7 @@ Class | Date | Topic | Learning Materials
 4 | Sep 12 | Quiz 01 and recap | [Quiz](Lab-04/Lab-04_quiz.Rmd) <br> [Quiz solns.](Lab-04/Shah_Lab04_quiz.Rmd)
 5 | Sep 17 | Conditional statements and loops | [Presentation](Lab-05/Lab-05.html) <br> [R code for presentation](Lab-05/Lab-05.Rpres) <br> [Homework](Lab-05/Lab-05_hw.Rmd) <br> [Homework solns.](Lab-05/Shah_Lab05_homework.Rmd) <br> [In-class](Lab-05/Lab-05_in-class.Rmd)
 6 | Sep 19 | Lists, functions, and strings | [Presentation](Lab-06/Lab-06.html) <br> [R code for presentation](Lab-06/Lab-06.Rpres) <br> [Homework](Lab-06/Lab-06_hw.Rmd) <br> [In-class](Lab-06/Lab-06_in-class.Rmd)
-7 | Sep 24 | Advanced data wrangling -- tidyverse I | Presentation](Lab-07/Lab-07.html) <br> [R code for presentation](Lab-07/Lab-07.Rpres) <br> Homework
+7 | Sep 24 | Advanced data wrangling -- tidyverse I | [Presentation](Lab-07/Lab-07.html) <br> [R code for presentation](Lab-07/Lab-07.Rpres) <br> Homework
 8 | Sep 26 | Quiz 02 and recap | 
 9 | Oct 1 | Advanced data wrangling -- tidyverse II | 
 10 | Oct 3 | Visualization -- ggplot2 | 
