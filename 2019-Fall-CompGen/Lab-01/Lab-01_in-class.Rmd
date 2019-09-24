@@ -1,0 +1,220 @@
+---
+title: "Lab 01 - in-class exercises"
+author: "Premal Shah"
+output: html_notebook
+---
+
+This is where the next piece of code will be written.
+```{r}
+2+2
+```
+
+## R is a giant calculator
+```{r}
+2+2       # Simple addition
+4*5*(7+9) # Complex calculation
+sqrt(96)  # Square root of 96
+exp(4)    # Exponentials e^4
+log(10)   # log of 10 (base e)
+log(10, base=10) # log of 10 (base 10)
+```
+When you run code chunks inside the notebook, all the output ends up together. However, in the *knitted* html file, each output comes right after the command.
+
+## Variables in R
+```{r}
+variable_x <- 4 # Assign a value of 4 to variable 'x'
+variable_y <- 5 # Assign a value of 4 to variable 'y'
+```
+No output is returned during variable assignment.
+
+```{r}
+variable_x # To see the value of a variable just type its name
+```
+
+### Working directly with variables
+```{r}
+variable_x + variable_y
+```
+
+```{r}
+variable_z <- 10
+```
+
+```{r}
+variable_z
+```
+
+### Creating new variables to store values from arithmetic operations performed on other variables
+```{r}
+variable_z <- variable_x + variable_y 
+variable_z
+```
+
+Changing the value of variable_x will not change the value of variable_z, until you rerun the arithmetic operation. Once a value is saved in a variable, it has no memory of how the value was arrived at. There is no auto-updating of variables.
+
+```{r}
+variable_x <- 17 # New value for variable_x
+variable_z # Value of variable_z remains unchagned
+
+variable_z <- variable_x + variable_y # Only after this operation, the value of variable_z will change
+variable_z
+```
+
+## Logical statements - comparing variables
+```{r}
+variable_x == variable_y # Are these two variables equal
+variable_x <- 1
+variable_y <- 0.99999999999999
+variable_x == variable_y # Are these two variables equal
+```
+The == sign requires identical output to return a `r TRUE` statement. It does not approximate values.
+
+```{r}
+variable_x <- 1
+variable_y <- 0.999999
+```
+
+```{r}
+variable_x != variable_y # Check if variable_x is NOT EQUAL to variable_y
+```
+
+```{r}
+variable_x =! variable_y
+variable_x
+```
+The order of operation is important. If  you switch != to =!, instead of checking for inequality, you are assigning a new value to variable_x. In this case, the value of NOT (!) which is stored as a logical FALSE value.
+
+
+```{r}
+## Two ways to assign a value to a variable
+var_a <- 4
+var_b = 4
+```
+
+```{r}
+variable_y
+!variable_y
+```
+
+```{r}
+variable_x <- 5
+variable_x <= variable_y # Is x less than or equal to y
+variable_x < variable_y # Is x less than y
+```
+
+### Complex comparisons between sets of variables
+```{r}
+(variable_x == variable_y) | (variable_x > variable_y) # Is x equal to y OR x greater than y
+```
+
+```{r}
+(variable_x != variable_y) & (variable_x < variable_y) # Is x different from y AND x less than y
+```
+
+## Exercise 1.1
+### 1. Create three variables and check if either of the first two variables are greater than the third.
+```{r}
+# Three new variables
+var_a <- 10
+var_b <- 20
+var_c <- 15
+```
+
+```{r}
+(var_a > var_c) | (var_b > var_c) # Check if A greater than C OR if B greater C -- This is correct
+(var_a | var_b) > var_c # Check if (A OR B) is greater than C -- This is incorrect
+```
+
+When asking var_a OR var_b, you are ONLY checking if the two varaibles exist, in which case the program will return a TRUE statement if the two variables have been previously defined.
+```{r}
+var_a | var_b 
+4 | 5
+```
+
+### 2. Create three variables and check if the sum of the first two variables is greater than the third variable.
+```{r}
+# Both the following codes will give the right answer. 
+# However, always use parentheses for clarity of code and to minimize errors
+(var_a + var_b) > var_c # Right
+var_a + var_b > var_c # Wrong (but works)
+```
+
+### 3. Create four variables and check if the product of the first two variables is the same as the product of the last two variables.
+```{r}
+var_d <- 7
+
+(var_a * var_b) == (var_c * var_d)
+```
+
+## Types of variables
+```{r}
+variable_u <- TRUE # Logical
+variable_v <- 13 # Numeric
+variable_w <- 10L # Integer
+variable_x <- 3+4i # Complex numbers (we will ignore these for this course)
+```
+
+### Comparing strings
+```{r}
+string_1 <- "hey"
+string_2 <- "hey"
+
+string_1 == string_2
+
+string_1 <- "hey"
+string_2 <- "they"
+
+string_1 == string_2
+
+```
+Logical statements can be used to compare strings.
+
+## Exercise 1.2
+### 1. What results when you add TRUE variable with a numeric?
+```{r}
+var_a <- 10 # Numeric varaible
+var_b <- TRUE # Logical variable
+
+var_a + var_b
+```
+Since the numeric value of a TRUE variable is 1, adding it to an integer or a numeric variable will increase the variable's value by 1.
+
+### 2. What results when you multiply FALSE with an integer?
+```{r}
+var_a <- 10L # Integer variable
+var_a * FALSE 
+TRUE + TRUE
+```
+Since the numeric value of a FALSE variable is 0, multiplying it to any integer or a numeric variable will return a 0.
+
+### 3. What results when you add NA to numeric?
+```{r}
+var_a + NA 
+```
+NA is a special case of logical variables. Any arithmetic operations with it will result in an NA.
+
+
+### 4. What is the difference in output (if any) between adding a numeric to a complex number and adding an integer to a complex number?
+```{r}
+var_numeric <- 10 # Numeric 
+var_integer <- 10L # Integer
+var_complex <- 3+5i # Complex
+```
+
+```{r}
+var_numeric + var_complex
+var_integer + var_complex
+```
+Adding a numeric or an integer value to a complex will change the Real part of the complex number without affecting the Imaginary part.
+
+### 5. What is the difference when you add a numeric to a complex number versus multiplying a numeric to a complex number? 
+```{r}
+var_numeric * var_complex
+```
+Multiplying a numeric or an integer value to a complex will change both the Real and the Imaginary parts, consistent with complex number arithmetic.
+
+
+
+
+
+

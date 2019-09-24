@@ -1,0 +1,84 @@
+---
+title: "Lab-02 in-class"
+author: "Premal Shah"
+output: html_notebook
+---
+
+## Homework 1
+### 1. If I am driving at a speed of 62 MPH (miles per hour), how long will it take me to drive from Philadelphia to New York City (94 miles)? How long will it take me for the reverse commute if I drive at 40 MPH?
+```{r}
+speed_forward <- 62
+dist_philly_nyc <- 94
+
+dist_philly_nyc/speed_forward
+
+forward_commute_time <- dist_philly_nyc/speed_forward
+forward_commute_time
+
+speed_reverse <- 40
+reverse_commute_time <- dist_philly_nyc/speed_reverse
+reverse_commute_time
+```
+It will take `r forward_commute_time` hours to go from Philly to NYC and it will take `r reverse_commute_time` hours for the reverse trip.
+
+### 2. The molecular weights of amino acids are listed [here](https://www.thermofisher.com/us/en/home/references/ambion-tech-support/rna-tools-and-calculators/proteins-and-amino-acids.html). 
+Calculate the molecular weight of this polypeptide - "EKEYLKK"
+```{r}
+MW_E <- 147.1
+MW_K <- 146.2
+MW_Y <- 181.2
+MW_L <- 131.2
+
+MW_polypeptide <- MW_E*2 + MW_K*3 + MW_Y + MW_L
+
+```
+The molecular weight of the polypetide "EKEYLKK" is `r MW_polypeptide`.
+
+### 3. How would you check if the molecular weights of Isoleucine and Leucine are the same? Also check if the molecular weight of Proline is greater than that of Histidine.
+```{r}
+MW_I <- 131.2
+MW_H <- 155.2
+MW_P <- 115.1
+
+MW_I == MW_L
+
+MW_P > MW_H
+```
+
+### 4. What happens when you add two variables WITHOUT assigning them values?
+```{r}
+var_a + var_b
+```
+Adding variables without assigning values throws an error.
+
+### 5. Write a code to calculate the area and circumference of a circle with radius 2 meters.
+```{r}
+pi # Pi is an in-built mathematical constant
+radius <- 2
+
+area_circle <- pi*radius*radius
+area_circle2 <- pi*radius^2
+
+circumference_circle <- 2*pi*radius
+
+area_circle
+area_circle2
+circumference_circle
+```
+The area of the circle is `r area_circle` and the circumference of the circle is `r circumference_circle`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
