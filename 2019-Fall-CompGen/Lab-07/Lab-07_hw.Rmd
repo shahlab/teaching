@@ -1,0 +1,27 @@
+---
+title: "Lab 07 Homework"
+output:
+  html_document:
+    df_print: paged
+  html_notebook: default
+---
+
+- Each question is 2 points.
+- Write the `codes` for all questions in a single R Notebook (file).
+- ALWAYS comment your code.
+- Name the file as "Lastname_lab07_homework.Rmd"
+- **<span style="color:red"> Due date: Thurs, Sep 26, 1:40 pm EST</span>**
+
+## Questions
+
+Using the cancer genome atlas dataset from class and the tidyverse set of functions, answer the following questions.
+
+### 1. How many biospecimen files have been collected for all instances of kidney cancer in the dataset combined?
+
+### 2. Do entries with transcriptome_profiling always have sequencing_reads files?
+
+### 3. Among unreported genders (that is, anything that is not male or female) which primary cancer site occurs the most?
+
+### 4. Submissions come with a unique ID in the submitter column. Have any submitters  submitted more than one entry?
+
+### 5. Which project_id has submitted the most entries? For that ID, what primary site did they submit the most entries for?

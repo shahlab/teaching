@@ -1,0 +1,279 @@
+---
+title: "Lab 07 in-class"
+output: 
+  html_document:
+    df_print: paged
+author: "John Favate"
+date: "`r format(Sys.Date())`"
+---
+
+## Load packages
+
+Load the tidyverse set of packages. All package loading should be done at the top of a document, in one code chunk.
+```{r}
+library(tidyverse)
+```
+Note package conflicts, if you wanted to use the `filter` function from the stats package, you would need to explicitly call that function like this `stats::filter()`. Otherwise, the tidyverse function `filter` takes precedence, so every time you use `filter`, the tidyverse one is called.
+
+## Load the TCGA data
+
+Load in our TCGA dataset. The exact filepath will depend on your operating system, whether you're working locally, or on didact, and possibly the location of your document relative to the file. 
+  
+Note that we use the `read_csv` function, which takes the file path and other arguments. It does not need `stringsAsFactors = FALSE`, as it inherently does not transform characters to factors. If you save your document and csv in the same location, you can load it by name only.  
+  
+We also specify the column types using shorthand notation, see `?read_csv` for more info on this. Otherwise the last column is considered as class logical, whereas it as actually numeric. 
+```{r}
+tcga <- read_csv("tcga_stats.csv", col_types = c("ccccnnnnnnnn"))
+
+head(tcga)
+```
+
+## group_by() and tally()
+
+`group_by` allows you to break data down into chunks based on values in some of the columns. `tally` allows you to count instances of chunked data. `group_by` takes unquoted or quoted column names as arguments and groups the data based on that. It has no obvious affects on the data frame until functions that utilize the grouping are called.
+
+## Piping with %>%
+
+Nesting functions within each other becomes hard to read. Piping, using the pipe operator `%>%`, eliminates the need for nesting functions. This
+```{r eval = FALSE}
+ungroup(tally(group_by(tcga, gender)))
+```
+
+Can become this
+```{r eval = FALSE}
+tcga %>%
+  group_by(gender) %>%
+  tally() %>%
+  ungroup()
+```
+
+They both group the data by gender, and count how many times each gender occurs in the data, resulting in a data frame. If given one argument, `group_by` is somewhat equivalent to `table`. But the result from `group_by` is a data frame instead a of a vector from `table`.
+
+```{r echo = FALSE}
+# Hidden block to get correct formatting in HTML output since collapse = TRUE
+# as a chunk argument doesn't seem to work.
+tcga %>%
+  group_by(gender) %>%
+  tally() %>%
+  ungroup()
+```
+
+Piping silently uses the `data dot` to represent the output from the last function. Note the presence of the period in the functions, it signifies the output of the previous function. It is not needed, but can be used in certain cases to perform other functions. See that the results here and above are the same.  
+```{r}
+tcga %>%
+  group_by(., gender) %>%
+  tally(.) %>%
+  ungroup(.)
+```
+
+
+## Exercise 7.1
+
+**1. How many entries occur for each project_id?**
+
+The logic here is to group the data by the project_id and use `tally` to count the occurrence of each unique element in the `project_id` column. This results in a data frame that tells us the `project_id` and how many times it shows up in the data. 
+```{r}
+tcga %>%
+  group_by(project_id) %>%
+  tally() %>%
+  ungroup()
+```
+
+**2. Each cancer affects a primary tissue. How many times does each “primary” site occur in the dataset?**
+
+The same logic is applied, except we group by a different column this time.
+```{r}
+tcga %>%
+  group_by(primary) %>%
+  tally() %>%
+  ungroup()
+```
+
+**3. How does the number of primary sites different among genders?**
+
+We apply similar logic, but group by two columns. In doing so, we are essentially asking, for each combination of `gender` and `primary` that occurs in the data, how many times does each combination occur? For exmample, there are 373 instances of female adrenal gland cancer in the data.
+```{r}
+tcga %>%
+  group_by(gender, primary) %>%
+  tally() %>%
+  ungroup()
+```
+
+**4. How would you find out the number of groups in the grouped data?**
+
+There are multiple approaches to solve this problem. The first, which is not obvious, is to just type `tcga %>% group_by(gender)` into the console, not the Rmd code block, and it will tell you how many groups there are.  
+  
+The second is to know that if only one column is used as the grouping column, there are many groups as there are unqiue elements in that column. The `unique` function returns unique elements of a vector, or unique rows of a data frame. From here, we can see there are 6 unique elements of gender, hence there are 6 groups.
+```{r}
+unique(tcga$gender)
+```
+
+If you group by more than one column, then counting the rows of the data frame tells you the number of combinations that occur. Using the above example of grouping on `gender` and `primary`, we can see that the data frame has 143 rows, hence 143 groups. We can also pipe that code to `nrow` to have the row count as the output.
+```{r}
+tcga %>%
+  group_by(gender, primary) %>%
+  tally() %>%
+  ungroup() %>%
+  nrow()
+```
+
+## The arrange() function
+
+The arrange function reorders rows based on values in one or more columns. Here, we reorder the entire data frame based on the `biospecimen` column, in ascending order.
+```{r}
+tcga %>%
+  arrange(biospecimen)
+```
+
+Here we reorder based on the same column, but in descending order.
+```{r}
+tcga %>%
+  arrange(desc(biospecimen))
+```
+
+It can also take multiple column names, though order matters here. This first rearranges the data based on `gender`, placing the rows in alphabetical order, creating large chunks of `female`, `male`, and the `unspecified` genders. Then, it reorders the rows within those chunks in order of decreasing amounts of `biospecimen` files.
+```{r}
+tcga %>%
+  arrange(gender, desc(biospecimen))
+```
+
+## Exercise 7.2
+
+**1. What is the cancer type with the most and least entires in the data?**
+
+First, we group the data by `primary` site and tally it, resulting in a data frame that shows us how many times each `primary` site occurs in the data. Then, we arrange the data in decreasing order of n, meaning the `primary` site that has the most entries will appear at the top. 
+```{r}
+tcga %>%
+  group_by(primary) %>%
+  tally() %>%
+  ungroup() %>%
+  arrange(desc(n))
+```
+
+**2. Which cancer type has the most clinical files associated with it?**
+
+We gave this example in class, but it actually wrong. What this code does is groups the data by `primary` and `clinical` columns. However, in doing so, the result it gives us isn't what we intended. The result is a data frame showing us for each unique combination of a `primary` site and `clinical` files count, how many times does that occur in the data. This means that it tells how many times an entry with `Bronchus and lung` `primary` site has 1 `clincal` file with it, which is 3769 times. This question actually requires use a of a function we did not cover.
+```{r}
+tcga %>%
+  group_by(primary, clinical) %>%
+  tally() %>%
+  ungroup() %>%
+  arrange(desc(n))
+```
+
+## The filter() function
+
+`filter` is the tidyverse equivalent of subsetting. `filter` takes conditional arguments and uses these as rules to generate a new data frame from an input data frame. It returns only rows which follow the rules. `filter` is easier to read and is computationally faster compared to the use of `[]`.  
+  
+There is also a small difference. Consider the example below, where we intend to return only rows where the `gender` is `male`. Each of these methods is piped to `nrow`, showing us the number of rows in each data frame.
+```{r}
+# Create filtered data frame with base R method
+tcga[tcga$gender == "male",] %>%
+  nrow()
+
+# Create filtered data frame with tidyverse method
+tcga %>%
+  filter(gender == "male") %>%
+  nrow()
+```
+
+Notice that the base R method produces a data frame that is 255 rows larger than the tidyverse method. Examining these data frames reveals that the base R method also grabs rows where `gender` is NA. We pipe each data frame to `head`, showing the first 10 rows and we can see that the 10th row from the first data frame has a gender of NA. 
+```{r}
+tcga[tcga$gender == "male",] %>%
+  head(n = 10)
+
+tcga %>%
+  filter(gender == "male") %>%
+  head(n = 10)
+```
+
+## Exercise 7.3
+
+**1. How many entries have no clincial files but do have transcriptome_profiling samples?**
+
+We want rows where `clinical` is NA *and* `transcriptome_profiling` is not NA. Hence, we give `filter` those rules. We pipe that to `nrow`, giving us the number of rows of the data frame that meets the conditions set in `filter.` There are 2161 entries that have no clinical data, but do have transcriptome profiling. 
+```{r}
+tcga %>%
+  filter(is.na(clinical) & !is.na(transcriptome_profiling)) %>%
+  nrow()
+```
+
+**2. Find entries where you have a “male” with “Kidney” cancer, a “female” with “Stomach” cancer, or a “male” or “female” with “Bladder” cancer.**
+
+Correct placement of parenthesis and use of `&` and `|` which signify "and" and "or", respectively, matter for filter. There are multiple ways to solve this problem.  
+  
+This is the simplest. We return only rows that
+```{r}
+tcga %>%
+  filter((gender == "male" & primary == "Kidney") | # are males with kidney cancer OR
+           (gender == "female" & primary == "Stomach") | # are females with stomach cancer OR
+           (gender %in% c("male", "female") & primary == "Bladder")) # are male or female with bladder cancer
+```
+Note the use of `%in%`, we ask that `filter` return only rows where `gender` is equal to one of the things in the vector `c("male", "female")`.
+
+You can also do this and explicitly ask for each of the possbile combinations. 
+```{r}
+tcga %>%
+  filter((gender == "male" & primary == "Kidney") | # are male with kidney cancer OR
+           (gender == "female" & primary == "Stomach") | # are female and have stomach cancer OR
+           (gender == "male" & primary == "Bladder") | # are male with bladder cancer OR
+           (gender == "female" & primary == "Bladder")) # are female with bladder cancer
+```
+
+**3. What is the third most common cancer affecting females?**
+
+There are multple ways to approach this problem. This answer involves grouping the data by `gender` and `primary` and tallying, then arranging the data in order of decreasing n, meaning the count for each unique combo of gender and primary. From that, we can see that the third row is Hematopoietic and reticuloendothelial systems.
+```{r}
+tcga %>%
+  group_by(gender, primary) %>% # group by gender and primary
+  tally() %>% # count the number of times each combo occurs
+  arrange(gender, desc(n)) # rearrange the rows in order of decreasing n
+```
+
+This answer first filters the data to only female cases, eliminating the need to group based on gender. It then uses the same strategy as above to reorder the rows based on n, and you can look at the third row to again find Hematopoietic and reticuloendothelial systems.
+```{r}
+tcga %>%
+  filter(gender == "female") %>% # create a female only data frame
+  group_by(primary) %>% # group on primary
+  tally() %>% # tally
+  ungroup() %>%
+  arrange(desc(n)) # arrange in descending order of n
+```
+
+If you wanted the code to output the result eactly, that is, you want the output to be "Hematopoietic and reticuloendothelial systems", you must take a different approach. We start with the same strategy as above but we add one more command to the chain. Here we make use of the `data dot`. Remember, the `data dot` represents the output from the previous function, which would be the above data frame. Because `.` is a data frame in this case, `.[3,1]` means we are indexing the thrid row and first column from the data frame. 
+```{r}
+tcga %>%
+  filter(gender == "female") %>% # create a female only data frame
+  group_by(primary) %>% # group on primary
+  tally() %>% # tally
+  ungroup() %>%
+  arrange(desc(n)) %>% # arrange in descending order of n
+  .[3,1] # take the cell of row 3, column 1
+```
+
+Importantly, if we pipe that result to `class`, which then checks the `class` of the result from the above code, it tells us that it is still a `data.frame`. `tbl` and `tbl_df` are tidyverse versions of data frames, but they are usually interchangable if tidyverse is loaded.
+```{r}
+tcga %>%
+  filter(gender == "female") %>% # create a female only data frame
+  group_by(primary) %>% # group on primary
+  tally() %>% # tally
+  ungroup() %>%
+  arrange(desc(n)) %>% # arrange in descending order of n
+  .[3,1] %>%
+  class()
+```
+
+## pull() function
+
+If we want out result to be of class character, we can use the `pull` function. `pull` takes a column from a data frame and turns it into a vector. We use the same code, but add pull to the end and index the third element of the resulting vector. 
+```{r}
+tcga %>%
+  filter(gender == "female") %>% # create a female only data frame
+  group_by(primary) %>% # group on primary
+  tally() %>% # tally
+  ungroup() %>%
+  arrange(desc(n)) %>% # arrange in descending order of n %>%
+  pull(primary) %>% # retrieve the primary column as a vector
+  .[3] # retrieve the 3rd element of the vector
+```
+
