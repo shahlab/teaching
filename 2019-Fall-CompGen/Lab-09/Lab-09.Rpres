@@ -1,0 +1,279 @@
+Lab 09
+========================================================
+author: 
+date: 
+autosize: true
+<style>
+.small-code pre code {
+  font-size: 1em;
+}
+</style>
+
+```{r include=FALSE, eval=TRUE, echo = FALSE}
+knitr::opts_chunk$set(eval = FALSE, echo = TRUE)
+```
+
+Last time:
+========================================================
+
+- Information is cheap or free
+- Datasets are getting larger and more numerous by the day
+- Raw data is not always amenable to analysis, needs tidying
+- **Your data was already tidy and it was only one file**
+- Two things we didn't get to last time
+
+The mutate() function
+========================================================
+incremental:true
+
+- Generate new columns based on existing ones
+```{r eval = FALSE}
+tcga <- read_csv("../datasets/tcga.csv")
+
+tcga %>%
+  mutate(new.col = col.1 + col.2)
+```
+
+- Can make more than one column at a time but order matters
+
+```{r}
+tcga %>%
+  mutate(new.col = col.1 + col.2,
+         test.col = ifelse(new.col > 5, TRUE, FALSE))
+```
+
+Exercise 9.1
+========================================================
+
+Answer these questions with a single chain of commands:
+
+1. How many total copy_number_variation and dna_methylation files are associated with each entry?
+2. Add a TRUE/FALSE column to show whether gender is male or female.
+3. How many entries are male or female and have at least 10 total cnv + methylation files associated with them?
+
+The summarise() function
+========================================================
+incremental:true
+
+- Custom summary functions compared to the base summary()
+- Summarise grouped data frames
+- Similar to mutate in that it generates new columns
+```{r eval = FALSE}
+tcga %>%
+  group_by(primary) %>%
+  summarise(mean.trans.files.per.primary = mean(transcriptome_profiling, na.rm = TRUE)) %>%
+  ungroup()
+```
+- Generates a new column showing the mean number of files per each primary type
+
+Exercise 9.2
+========================================================
+
+Answer these questions with one chain of commands:  
+
+1. For each primary cancer site, how many clincal samples exist?
+2. For each primary cancer site, How many clincal reports exist per biospecimen?
+
+Today's Goals
+========================================================
+incremental:true
+
+- Learn how to import data from excel spreadsheets into R with `readxl`
+- Learn how to combine data from multiple files with `tidyverse`
+
+Excel, R why use one over the other?
+========================================================
+incremental:true
+
+- Excel is widely used but less than ideal for high throughput analysis
+- Neither reproducible nor greatly automated
+- R is reproducible and scales well
+- Is free and open source software
+- Can deal with sequencing data/strings
+- Large develpoment community
+
+Excel files
+========================================================
+incremental:true
+
+- Excel file != csv file, csvs look like this
+```{r}
+col1,col2,col3
+a,yes,4
+b,no,5
+```
+- Excel files have sheets, making a single file a collection of csvs (sort of)
+- May have graphs or other stuff in the space for data, these can't be in csv
+
+Importing excel files with readxl package
+========================================================
+incremental:true
+
+- readxl is a tidyverse package, but must be loaded separately
+```{r}
+library(tidyverse)
+library(readxl)
+```
+- Allows us to import excel files 
+- Pick ranges of cells from within an excel file to import
+- Deal with sheets
+
+Importing excel files with readxl package
+========================================================
+incremental:true
+
+- Todays datasets are size and shape data of bacteria as determined by optical microscopy
+- Three excel files, each with 14 sheets
+- Each file is a replicate, each sheet is a sample
+- Overall goal: end up with a **single data frame of all the data**
+- For now, we'll start with three functions, dir(), excel_sheets(), and read_xlsx()
+
+dir() function
+========================================================
+incremental:true
+
+- Tells you what's in a directory
+```{r}
+dir("correct_path_to_directory",
+    pattern = "pattern to match, file extensions are a good choice",
+    full.names = "TRUE or FALSE (default), return entire file path, usually TRUE is better",
+    recursive = "TRUE or FALSE, should dir dig through directories in directories?")
+```
+- dir() == list.files()
+
+The excel_sheets() function 
+========================================================
+incremental:true
+
+- Tells you the names of the sheets in the file
+- set_names() names a vector with itself
+```{r}
+excel_sheets("path to excel file") %>%
+  set_names()
+```
+- Output is a vector of sheet names with names
+
+The read_xlsx() function
+========================================================
+incremental:true
+
+- Reads a specific sheet from an excel file in as a data frame
+```{r}
+read_xlsx(path = "path to excel file",
+          sheet = "specific sheet name, defaults to first",
+          skip = "n rows to skip before starting to read",
+          na = "Whatever encodes missing data, default is an empty cell",
+          col_names = "either the names, or TRUE for first row as header")
+```
+- **By design, if a string is piped to it, it assumes it's the sheet name**
+
+Exercise 9.3
+========================================================
+
+- We just learned about dir(), excel_sheets(), and read_xlsx(), use them to:
+1. Create a single vector that contains the file paths to the excel files, save this to a variable
+2. Preview the names of the sheets in one vector, no need to save as variable
+3. Read in a single sheet of your choosing as a data frame. *Important* skip the first line of the excel file, top row is the column names, and NAs are encoded as NaN in these files.
+4. Find the names of the sheets in one of the files, pipe the 6th one to read_xlsx to read in the 6th sheet
+
+How to read multiple sheets simultaneously
+========================================================
+incremental:true
+
+- We have 1 file with having 14 sheets
+- There's a defined workflow for reading in multiple sheets https://readxl.tidyverse.org/articles/articles/readxl-workflows.html
+- Makes use of the map() function
+
+The map() function
+========================================================
+
+- Applies functions to elements of a vector
+- We'll see this in action
+```{r}
+map(.x = "some input, typically piped",
+    .f = "some function",
+    "other options to that function")
+```
+
+Guided exercise 9.4
+========================================================
+
+- After seeing a simple example of the use of map(), try mapping your read_xlsx() function to the vector of sheet names. You should end up with a list of 14 data frames, save it to a variable.
+
+The bind_rows() function
+========================================================
+incremental:true
+
+- 14 data frames is harder to handle than 1
+- bind_rows() stitches data frames together by stacking them on top of each other
+- They have to have the same number and names of columns
+- Intelligent, if you feed it a list of data frames, it knows you want to stitch them all
+```{r}
+# Stitch two data frames together
+bind_rows(df1, df2, .id = "new column to denote frame that rows came from")
+
+# Stitch all the data frames in a list together
+bind_rows(list.of.dfs, .id = "new column to denote frame that rows came from")
+```
+
+Exercise 9.5
+========================================================
+
+- Make one data frame out of all 14.
+- Make one data frame from all 14, but with a column denoting the source of the rows.
+- Assuming each cell is a circle, use the SHAPE.area column to calculate the radius in a new column.
+
+Exercise 9.6
+========================================================
+
+- Write a custom function that takes an **excel file location as an input** and produces a single data frame from all the sheets as the result.
+
+Joining data frames column wise
+========================================================
+incremental:true
+
+- Tidyverse has a set of join functions for this purpose, here's some:
+```{r}
+left_join()
+right_join()
+full_join()
+semi_join()
+anti_join()
+```
+- We'll focus on left_join() and right_join()
+
+left_join() and right_join()
+========================================================
+
+- Joins matching values from df2 to df1
+```{r}
+left_join(df1, df2, by = "common column name to join by")
+```
+
+- Joins matching values from df1 to df2
+```{r}
+right_join(df1, df2, by = "common column name to join by")
+```
+
+- The direction in which values are moving is in the name
+- If data frames are unequal in terms of the "by" column, these act differently.
+
+Exercise 9.7
+========================================================
+
+These data frames are a dataset we had previously used, but split into two separate data frames. They have `Gene` in common.
+```{r}
+genes1 <- read_csv("../datasets/genes1.csv")
+
+genes2 <- read_csv("../datasets/genes2.csv")
+
+genes1
+genes2
+```
+Use one of the joining functions to merge the columns of these data frames.
+
+Joining unequal data frames
+========================================================
+
+- What if the data frames share only some row identifiers?
+- Randomly sample rows from genes1 and attempt to join them to genes2

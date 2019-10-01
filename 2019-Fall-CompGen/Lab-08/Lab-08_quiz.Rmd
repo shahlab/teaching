@@ -1,0 +1,17 @@
+---
+title: "Quiz 02"
+output:
+  html_document:
+    df_print: paged
+  html_notebook: default
+---
+
+- Write the `codes` for all questions in a single R Notebook (file).
+- ALWAYS comment your code.
+- Name the file as "Lastname_Lab-08_quiz.nb.html"
+- Read in the quiz02_data1.tsv to answer the questions 
+
+#### 1. Create a list that contains two elements. The first element has all the project ids with simple_nucleotide_variation files and the second element has all the project_ids with sequencing_reads files. (2 pts)
+#### 2. Which submitter has the most number of sequencing datasets for females? (2 pt)
+#### 3. Write a function where the user provides two inputs - (i) the current dataset and (ii) project id and returns the sum of all transcriptome_profiling files for that project. (3 pts)
+#### 4. How many submitters have a hyphen in their ids? (3 pt)

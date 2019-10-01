@@ -1,0 +1,95 @@
+---
+title: "Lab 07 Homework"
+output:
+  html_document:
+    df_print: paged
+  html_notebook: default
+---
+
+- Each question is 2 points.
+- Write the `codes` for all questions in a single R Notebook (file).
+- ALWAYS comment your code.
+- Name the file as "Lastname_lab02_homework.Rmd"
+- **<span style="color:red"> Due date: Tuesday, Sep 26, 1:40 pm EST</span>**
+
+## Questions
+
+Using the cancer genome atlas dataset from class and the tidyverse set of functions, answer the following questions.
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+df <- read_csv("tcga_stats.csv")
+
+df
+```
+
+### 1. How many biospecimen files have been collected for all instances of kidney cancer in the dataset?
+
+Filter the data frame to only kidney cancer, pull the biospecimen column as a vector and sum it.
+```{r}
+df %>%
+  filter(primary == "Kidney") %>%
+  pull(biospecimen) %>%
+  sum(na.rm = TRUE)
+```
+Any method that results in the correctly filtered data frame and sums the biospecimen column is fine.
+
+### 2. Do entries with transcriptome_profiling always have sequencing_reads files?
+
+Search the data frame for rows where there is some non-zero non-NA value in transcriptome_profiling, and an NA or 0 in sequencing reads.
+```{r}
+df %>%
+  filter((!is.na(transcriptome_profiling) | transcriptome_profiling != 0) & (is.na(sequencing_reads) | sequencing_reads == 0))
+```
+There are none, transcriptome having entries always have sequencing files.
+
+### 3. Which primary cancer site occurs the most among unreported genders (that is, anything that is not male or female)?
+
+Remove male and female entries, then group by the primary site and tally the them, arrange the results by count.
+```{r}
+df %>%
+  filter(gender != "male" & gender != "female") %>%
+  group_by(primary) %>%
+  tally() %>%
+  ungroup() %>%
+  arrange(desc(n))
+```
+It's Hematopoietic and reticuloendothelial systems.
+
+### 4. Submissions come with a unique ID in the submitter column, have any submitters have submitted more than one entry?
+
+Group by submitter, tally, then filter to n > 1, meaning they have submitted more than once.
+```{r}
+df %>%
+  group_by(submitter) %>%
+  tally() %>%
+  filter(n > 1)
+```
+
+### 5. Which project_id has submitted the most entries? For that ID, what primary site did they submit the most entries for?
+
+Find the biggest project by tallying the project_id column, arranging it by count, pulling project_id column as a vector, and taking the first element, which ends up being the project_id with the most submissions, it is assigned to a variable.
+```{r}
+biggest.project <- df %>%
+  group_by(project_id) %>%
+  tally() %>%
+  arrange(desc(n)) %>%
+  pull(project_id) %>%
+  .[1]
+
+biggest.project
+```
+
+Use that knowledge for figuring out the second part. Filter the data to only that project ID, group by the primary column and tally, arrange by count and find that Bronchus and lung is what most of their entries are.
+```{r}
+df %>%
+  filter(project_id == "FM-AD") %>%
+  group_by(primary) %>%
+  tally() %>%
+  ungroup() %>%
+  arrange(desc(n))
+```
+It's Bronchus and lung.

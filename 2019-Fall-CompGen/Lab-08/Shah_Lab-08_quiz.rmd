@@ -1,0 +1,137 @@
+---
+title: "Lab-08 quiz answers"
+output: 
+  html_document:
+    df_print: paged
+author: "Premal Shah"
+date: "`r format(Sys.Date())`"
+---
+
+```{r}
+library(tidyverse)
+```
+
+
+### 1. Create a list that contains two elements. The first element has all the project ids with simple_nucleotide_variation files and the second element has all the project_ids with sequencing_reads files. (2 pts)
+```{r}
+data_file <- read.table("~/Fall2019/Lab-08/quiz02_data1.tsv", header = TRUE, stringsAsFactors = FALSE, sep = "\t")
+data_file
+
+# Method 1 - create the two elements first
+pos_no_NA_snv <- !is.na(data_file$simple_nucleotide_variation)
+element_1 <- data_file[pos_no_NA_snv, "project_id"] # Works
+element_1 <- data_file$project_id[pos_no_NA_snv] # Works
+head(element_1)
+
+pos_no_NA_seq <- !is.na(data_file$sequencing_reads)
+element_2 <- data_file[pos_no_NA_seq, "project_id"] # Works
+element_2 <- data_file$project_id[pos_no_NA_seq] # Works
+head(element_2)
+
+list(element_1, element_2)
+
+# Method 2
+element_1 <- data_file %>%
+  filter(!is.na(simple_nucleotide_variation)) %>%
+  pull(project_id) %>%
+  unique()
+
+element_2 <- data_file %>%
+  filter(!is.na(sequencing_reads)) %>%
+  pull(project_id) %>%
+  unique()
+
+list(element_1, element_2)
+```
+
+### 2. Which submitter has the most number of sequencing datasets for females? (2 pt)
+```{r}
+data_females <- data_file[data_file$gender == "female" & !is.na(data_file$sequencing_reads), ]
+data_females
+
+summary(data_females$sequencing_reads)
+max_seq <- max(data_females$sequencing_reads, na.rm = TRUE)
+max_seq
+
+pos_seq_max <- which(data_females$sequencing_reads == max_seq)
+data_females[pos_seq_max, "submitter"]
+
+# Tidyverse
+data_females <- data_file %>%
+  filter(gender == "female" & !is.na(data_file$sequencing_reads)) %>%
+  arrange(desc(sequencing_reads)) %>%
+  .[1:2, "submitter"]
+data_females
+
+
+```
+
+### 3. Write a function where the user provides two inputs - (i) the current dataset and (ii) project id and returns the sum of all transcriptome_profiling files for that project. (3 pts)
+```{r}
+new_function <- function(data, project){
+  sub_data <- data[data$project_id == project & !is.na(data$transcriptome_profiling), ]
+  sum_trans_profl <- sum(sub_data$transcriptome_profiling)
+  
+  return(sum_trans_profl)
+}
+
+new_function(data = data_file, project = "CGCI-BLGSP")
+
+# data_file %>%
+#   filter(project_id == "CGCI-BLGSP")
+
+# Method 2
+new_function2 <- function(data, project){
+  temp_sum <- 0
+  for(dummy in 1:nrow(data)){
+    if(data$project_id[dummy] == project & !is.na(data$transcriptome_profiling[dummy])){
+      temp_sum <- temp_sum + data$transcriptome_profiling[dummy]
+    }
+  }
+  return(temp_sum)
+}
+new_function2(data = data_file, project = "CGCI-BLGSP")
+
+# Method 3
+new_function3 <- function(data, project){
+  out <- data %>%
+    filter(project_id == project) %>%
+    tally(transcriptome_profiling) %>%
+    .[1, "n"]
+  
+  return(out)
+}
+new_function3(data = data_file, project = "CGCI-BLGSP")
+
+```
+
+### 4. How many submitters have a hyphen in their ids? (3 pt)
+```{r}
+# Method 1
+hyph_sub1 <- 0
+for(dummy in data_file$submitter){
+  split_dummy <- strsplit(dummy, split = "")
+  check_for_hyphen <- "-" %in% split_dummy[[1]]
+  if(check_for_hyphen == TRUE){
+    hyph_sub1 <- hyph_sub1 + 1
+  }
+}
+hyph_sub1
+
+# Method 2
+sub_split <- strsplit(data_file$submitter, split = "-")
+hyph_sub2 <- 0
+for(dummy in 1:length(sub_split)){
+  if(length(sub_split[[dummy]]) > 1){
+    hyph_sub2 <- hyph_sub2 + 1
+  }
+}
+hyph_sub2
+```
+
+
+
+
+
+
+

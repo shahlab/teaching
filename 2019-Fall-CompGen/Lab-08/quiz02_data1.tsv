@@ -1,0 +1,1001 @@
+project_id	gender	primary	submitter	biospecimen	clinical	copy_number_variation	dna_methylation	sequencing_reads	transcriptome_profiling	simple_nucleotide_variation	combined_nucleotide_variation
+BEATAML1.0-COHORT	female	Hematopoietic and reticuloendothelial systems	2296	NA	NA	NA	NA	1	NA	NA	NA
+BEATAML1.0-COHORT	male	Hematopoietic and reticuloendothelial systems	2065	NA	NA	NA	NA	5	5	10	NA
+BEATAML1.0-COHORT	male	Hematopoietic and reticuloendothelial systems	2306	NA	NA	NA	NA	4	5	NA	NA
+BEATAML1.0-COHORT	male	Hematopoietic and reticuloendothelial systems	2590	NA	NA	NA	NA	1	NA	NA	NA
+BEATAML1.0-COHORT	male	Hematopoietic and reticuloendothelial systems	2210	NA	NA	NA	NA	10	10	30	NA
+BEATAML1.0-COHORT	female	Hematopoietic and reticuloendothelial systems	2572	NA	NA	NA	NA	4	5	NA	NA
+BEATAML1.0-COHORT	female	Hematopoietic and reticuloendothelial systems	2127	NA	NA	NA	NA	5	5	10	NA
+BEATAML1.0-COHORT	female	Hematopoietic and reticuloendothelial systems	2176	NA	NA	NA	NA	5	5	10	NA
+BEATAML1.0-COHORT	female	Hematopoietic and reticuloendothelial systems	2524	NA	NA	NA	NA	5	5	10	NA
+BEATAML1.0-COHORT	female	Hematopoietic and reticuloendothelial systems	2510	NA	NA	NA	NA	4	5	NA	NA
+BEATAML1.0-COHORT	female	Hematopoietic and reticuloendothelial systems	2163	NA	NA	NA	NA	1	NA	NA	NA
+BEATAML1.0-COHORT	unknown	Hematopoietic and reticuloendothelial systems	2152	NA	NA	NA	NA	3	5	NA	NA
+BEATAML1.0-COHORT	male	Hematopoietic and reticuloendothelial systems	2554	NA	NA	NA	NA	5	5	10	NA
+BEATAML1.0-COHORT	male	Hematopoietic and reticuloendothelial systems	2435	NA	NA	NA	NA	2	NA	10	NA
+BEATAML1.0-COHORT	male	Hematopoietic and reticuloendothelial systems	2135	NA	NA	NA	NA	4	5	NA	NA
+BEATAML1.0-COHORT	female	Hematopoietic and reticuloendothelial systems	2026	NA	NA	NA	NA	5	5	10	NA
+BEATAML1.0-COHORT	male	Hematopoietic and reticuloendothelial systems	2165	NA	NA	NA	NA	5	5	10	NA
+BEATAML1.0-COHORT	female	Hematopoietic and reticuloendothelial systems	2401	NA	NA	NA	NA	1	NA	NA	NA
+BEATAML1.0-CRENOLANIB	male	Hematopoietic and reticuloendothelial systems	1044	NA	1	NA	NA	3	NA	1	NA
+BEATAML1.0-CRENOLANIB	female	Hematopoietic and reticuloendothelial systems	1008	NA	1	NA	NA	4	NA	4	NA
+CGCI-BLGSP	female	Hematopoietic and reticuloendothelial systems	BLGSP-71-19-00104	3	1	NA	NA	5	5	NA	NA
+CGCI-BLGSP	female	Hematopoietic and reticuloendothelial systems	BLGSP-71-19-00122	3	1	NA	NA	1	NA	NA	NA
+CGCI-BLGSP	female	Hematopoietic and reticuloendothelial systems	BLGSP-71-08-00030	3	1	NA	NA	3	5	NA	NA
+CGCI-BLGSP	male	Hematopoietic and reticuloendothelial systems	BLGSP-71-08-00040	3	1	NA	NA	3	5	NA	NA
+CGCI-BLGSP	male	Hematopoietic and reticuloendothelial systems	BLGSP-71-08-00191	3	1	NA	NA	5	5	NA	NA
+CPTAC-3	female	Uterus, NOS	C3N-00836	NA	NA	NA	NA	7	5	10	NA
+CPTAC-3	female	Uterus, NOS	C3L-00361	NA	NA	NA	NA	12	10	10	NA
+CPTAC-3	male	Kidney	C3N-01214	NA	NA	NA	NA	12	10	10	NA
+CPTAC-3	female	Uterus, NOS	C3L-00136	NA	NA	NA	NA	7	5	10	NA
+CPTAC-3	female	Uterus, NOS	C3N-00866	NA	NA	NA	NA	10	10	10	NA
+CPTAC-3	female	Bronchus and lung	C3L-00093	NA	NA	NA	NA	12	10	10	NA
+CPTAC-3	male	Kidney	C3L-00607	NA	NA	NA	NA	12	10	10	NA
+CPTAC-3	male	Kidney	C3N-00320	NA	NA	NA	NA	9	5	10	NA
+CTSP-DLBCL1	male	Unknown	CTSP-ACY6	NA	NA	NA	NA	5	5	NA	NA
+FM-AD	male	Thyroid gland	AD8611	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Not Reported	AD16110	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bronchus and lung	AD15811	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD9417	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD11547	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Unknown	AD13078	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Pancreas	AD4817	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Liver and intrahepatic bile ducts	AD866	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD16710	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Esophagus	AD2754	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD3778	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Colon	AD16821	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Unknown	AD13345	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Kidney	AD4906	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Unknown	AD10377	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Kidney	AD6830	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Uterus, NOS	AD4800	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Colon	AD10956	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Unknown	AD13966	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Spinal cord, cranial nerves, and other parts of central nervous system	AD2073	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Colon	AD121	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bronchus and lung	AD7398	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Spinal cord, cranial nerves, and other parts of central nervous system	AD15271	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Liver and intrahepatic bile ducts	AD2854	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Pancreas	AD11835	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Other and ill-defined sites	AD16463	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD4578	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Liver and intrahepatic bile ducts	AD4553	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Spinal cord, cranial nerves, and other parts of central nervous system	AD12849	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Spinal cord, cranial nerves, and other parts of central nervous system	AD14119	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bladder	AD14246	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Pancreas	AD16032	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bladder	AD15484	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Esophagus	AD17353	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Ovary	AD6478	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD3683	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Colon	AD8147	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bronchus and lung	AD13065	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD7850	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Kidney	AD4499	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bronchus and lung	AD14313	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Esophagus	AD7137	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Other and unspecified parts of biliary tract	AD15643	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Colon	AD17279	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Other and unspecified major salivary glands	AD1820	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD4240	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Ovary	AD7732	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Ovary	AD6805	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Ovary	AD5181	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Unknown	AD17726	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD8200	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bronchus and lung	AD2789	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bladder	AD16522	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Stomach	AD13724	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Ovary	AD8984	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Pancreas	AD9704	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Other and unspecified major salivary glands	AD11739	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Thyroid gland	AD14855	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD8742	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD1362	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD16671	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Unknown	AD16030	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Stomach	AD8235	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD2534	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Ovary	AD4707	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD12022	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Ovary	AD242	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Unknown	AD8193	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Esophagus	AD2656	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD16724	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD5305	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD9690	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Unknown	AD2380	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD2312	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD17291	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD7857	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Liver and intrahepatic bile ducts	AD9687	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD10350	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Unknown	AD1341	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Pancreas	AD16399	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Colon	AD10467	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Colon	AD9599	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Other and unspecified urinary organs	AD3344	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD11311	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Unknown	AD7002	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bronchus and lung	AD7033	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bronchus and lung	AD1065	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Rectum	AD8874	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD11024	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD4071	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Esophagus	AD7190	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD3240	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD13765	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD14557	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Pancreas	AD4003	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Colon	AD6053	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD7228	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD8621	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD4354	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD14982	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Unknown	AD12806	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Esophagus	AD10037	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD2241	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD14281	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Stomach	AD17912	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Other and ill-defined sites	AD12856	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bronchus and lung	AD3221	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Other and ill-defined sites	AD13027	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Unknown	AD12695	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Colon	AD5296	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Other and ill-defined digestive organs	AD4181	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bronchus and lung	AD15948	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Retroperitoneum and peritoneum	AD16886	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Small intestine	AD11103	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Spinal cord, cranial nerves, and other parts of central nervous system	AD4167	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD14014	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Colon	AD7063	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Other and ill-defined sites	AD7941	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD16343	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Thyroid gland	AD9982	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Retroperitoneum and peritoneum	AD9002	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Uterus, NOS	AD7218	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Ovary	AD8622	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Esophagus	AD12075	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD13007	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD17222	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Breast	AD16072	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD2386	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD9643	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD12074	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Unknown	AD6200	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bronchus and lung	AD13849	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Unknown	AD655	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Unknown	AD14842	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Other and unspecified major salivary glands	AD3297	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD8997	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Stomach	AD16512	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Pancreas	AD7583	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bronchus and lung	AD14244	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Gallbladder	AD7214	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD17190	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD7890	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD2177	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Other and ill-defined sites	AD511	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Colon	AD11550	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Not Reported	AD5623	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD15962	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Pancreas	AD8573	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Gallbladder	AD705	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Unknown	AD10590	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Pancreas	AD1588	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Rectum	AD15503	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Anus and anal canal	AD13933	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Skin	AD1784	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD3192	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD4153	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD6505	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Colon	AD10691	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Stomach	AD17448	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD9620	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Esophagus	AD15	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Kidney	AD16601	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Unknown	AD10234	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Ovary	AD16812	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Unknown	AD4239	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Liver and intrahepatic bile ducts	AD853	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bronchus and lung	AD3449	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD878	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Prostate gland	AD14635	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Prostate gland	AD17106	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Ureter	AD2970	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Rectum	AD5988	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bronchus and lung	AD16148	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Cervix uteri	AD138	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bronchus and lung	AD4361	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Unknown	AD4720	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD1677	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Pancreas	AD875	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Cervix uteri	AD3542	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Colon	AD13863	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD11502	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Skin	AD7582	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Other and ill-defined sites	AD3284	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Stomach	AD5026	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Rectum	AD2715	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Colon	AD8187	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Unknown	AD16290	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Other and ill-defined sites	AD17719	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Colon	AD4068	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD13825	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Kidney	AD13192	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Colon	AD5221	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Ovary	AD8291	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Skin	AD6393	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD2195	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Heart, mediastinum, and pleura	AD4772	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Spinal cord, cranial nerves, and other parts of central nervous system	AD8789	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Other and ill-defined digestive organs	AD13968	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Unknown	AD6252	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD13887	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Pancreas	AD2549	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Unknown	AD115	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bronchus and lung	AD2700	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Unknown	AD2424	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Heart, mediastinum, and pleura	AD12824	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Kidney	AD12732	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Unknown	AD15324	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD11499	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD16696	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD4247	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Small intestine	AD4643	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Colon	AD1295	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Unknown	AD13604	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Pancreas	AD2158	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Nasopharynx	AD941	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bronchus and lung	AD17581	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Spinal cord, cranial nerves, and other parts of central nervous system	AD14140	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Penis	AD8576	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Other and ill-defined digestive organs	AD7198	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Cervix uteri	AD6812	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Thyroid gland	AD3943	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD12121	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Kidney	AD3990	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Spinal cord, cranial nerves, and other parts of central nervous system	AD13321	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Colon	AD7393	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Colon	AD16307	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Unknown	AD379	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Colon	AD3414	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Colon	AD2809	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD2200	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Nasopharynx	AD4542	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Unknown	AD14666	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Spinal cord, cranial nerves, and other parts of central nervous system	AD701	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD1735	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Prostate gland	AD13689	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Stomach	AD9164	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD14466	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Liver and intrahepatic bile ducts	AD4554	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Spinal cord, cranial nerves, and other parts of central nervous system	AD1167	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Liver and intrahepatic bile ducts	AD11248	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD6171	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Uterus, NOS	AD11631	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Unknown	AD12518	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Adrenal gland	AD17820	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Unknown	AD12917	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Esophagus	AD1006	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Colon	AD15273	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Other and ill-defined sites	AD2894	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Other and ill-defined digestive organs	AD13800	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Colon	AD14049	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Pancreas	AD11006	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Unknown	AD7348	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD10259	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD17635	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Spinal cord, cranial nerves, and other parts of central nervous system	AD15482	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD3662	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD16963	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Spinal cord, cranial nerves, and other parts of central nervous system	AD3172	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD11399	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD136	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD1131	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Other and ill-defined digestive organs	AD8882	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Unknown	AD2870	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bronchus and lung	AD12373	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD14911	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Stomach	AD17053	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Ovary	AD13456	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Spinal cord, cranial nerves, and other parts of central nervous system	AD6217	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Ovary	AD12609	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Other and ill-defined sites	AD13114	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Liver and intrahepatic bile ducts	AD4849	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Other and unspecified major salivary glands	AD4005	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Colon	AD7920	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Spinal cord, cranial nerves, and other parts of central nervous system	AD11646	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD3399	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Spinal cord, cranial nerves, and other parts of central nervous system	AD2674	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD3604	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Prostate gland	AD7561	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Other and unspecified major salivary glands	AD13702	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD1092	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Other and ill-defined sites	AD1226	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bladder	AD9302	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Spinal cord, cranial nerves, and other parts of central nervous system	AD5261	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Pancreas	AD8215	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bronchus and lung	AD12728	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD13173	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Not Reported	AD1911	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Colon	AD15126	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD12878	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Pancreas	AD14718	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD14747	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Uterus, NOS	AD151	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD12144	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Kidney	AD17096	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD2335	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bronchus and lung	AD17156	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD13910	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD7967	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bronchus and lung	AD10128	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Pancreas	AD8358	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Esophagus	AD17255	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bronchus and lung	AD9570	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Unknown	AD14174	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Unknown	AD8469	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD12140	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Unknown	AD10371	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bladder	AD13409	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD4902	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD14907	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Spinal cord, cranial nerves, and other parts of central nervous system	AD12687	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Stomach	AD3900	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Uterus, NOS	AD10070	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD1900	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Uterus, NOS	AD13158	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD2891	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bladder	AD12241	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Esophagus	AD12382	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Spinal cord, cranial nerves, and other parts of central nervous system	AD3531	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Unknown	AD2458	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Other and ill-defined digestive organs	AD1943	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Unknown	AD2292	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD5846	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bronchus and lung	AD12761	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Not Reported	AD16186	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Other and ill-defined sites	AD4879	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Other and unspecified urinary organs	AD10813	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD13374	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Unknown	AD10600	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Stomach	AD8603	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Retroperitoneum and peritoneum	AD17033	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD16294	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD15181	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD12425	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bronchus and lung	AD15298	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Cervix uteri	AD5529	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Colon	AD1388	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Other and unspecified major salivary glands	AD8005	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD4831	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Other and ill-defined sites	AD10610	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Colon	AD10218	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bronchus and lung	AD7500	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bronchus and lung	AD930	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Unknown	AD6607	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Ovary	AD14034	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Heart, mediastinum, and pleura	AD5920	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Other and ill-defined sites	AD11643	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bladder	AD10035	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Prostate gland	AD15369	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD4305	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD15585	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Unknown	AD6425	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Ovary	AD2875	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Pancreas	AD4535	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD10068	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Liver and intrahepatic bile ducts	AD9294	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD10772	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Spinal cord, cranial nerves, and other parts of central nervous system	AD2933	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD16237	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Other and ill-defined sites	AD9505	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Prostate gland	AD4579	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Unknown	AD11588	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Ovary	AD9831	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD6155	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bronchus and lung	AD11289	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Esophagus	AD11003	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Skin	AD16400	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Skin	AD4524	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Unknown	AD12510	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Colon	AD3991	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Stomach	AD14345	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Uterus, NOS	AD15317	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Spinal cord, cranial nerves, and other parts of central nervous system	AD10461	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Esophagus	AD5836	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Colon	AD4052	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD12796	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Pancreas	AD8151	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bronchus and lung	AD13642	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Rectum	AD6547	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Spinal cord, cranial nerves, and other parts of central nervous system	AD1835	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bronchus and lung	AD898	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bladder	AD15747	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Ovary	AD12718	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Heart, mediastinum, and pleura	AD7375	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Liver and intrahepatic bile ducts	AD12129	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Ovary	AD17811	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Unknown	AD16471	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Pancreas	AD14238	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Thyroid gland	AD13019	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Kidney	AD8159	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Skin	AD1521	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD12855	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Liver and intrahepatic bile ducts	AD1171	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bronchus and lung	AD12837	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Colon	AD2750	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Liver and intrahepatic bile ducts	AD11081	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Colon	AD13951	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Adrenal gland	AD7961	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bronchus and lung	AD5505	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD16282	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Nasopharynx	AD3546	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Spinal cord, cranial nerves, and other parts of central nervous system	AD3764	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bronchus and lung	AD14894	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Liver and intrahepatic bile ducts	AD8315	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Unknown	AD14651	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bronchus and lung	AD366	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bronchus and lung	AD17107	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Ovary	AD12500	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Prostate gland	AD12681	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Testis	AD11346	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Colon	AD10390	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Spinal cord, cranial nerves, and other parts of central nervous system	AD6247	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Pancreas	AD5097	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Spinal cord, cranial nerves, and other parts of central nervous system	AD5431	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bronchus and lung	AD8831	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bronchus and lung	AD6157	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD16520	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Spinal cord, cranial nerves, and other parts of central nervous system	AD7792	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD6582	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Colon	AD9077	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Uterus, NOS	AD1103	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Other and ill-defined sites	AD10078	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD16450	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Uterus, NOS	AD1057	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Prostate gland	AD11074	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD9930	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD14401	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD14136	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD3874	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Skin	AD1292	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Thyroid gland	AD1051	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Liver and intrahepatic bile ducts	AD9985	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD356	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bronchus and lung	AD10841	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bladder	AD4912	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Ovary	AD9445	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Ovary	AD8179	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Ovary	AD15337	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD8586	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Uterus, NOS	AD3927	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Colon	AD7681	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Vulva	AD3650	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD406	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Kidney	AD10828	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD837	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bronchus and lung	AD2760	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bronchus and lung	AD6023	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Other and ill-defined sites	AD10178	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bronchus and lung	AD15031	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Colon	AD2138	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Anus and anal canal	AD8416	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD7602	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Bronchus and lung	AD342	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bronchus and lung	AD13197	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bronchus and lung	AD8163	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Skin	AD13107	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Breast	AD579	1	1	NA	NA	NA	NA	3	NA
+FM-AD	female	Uterus, NOS	AD9362	1	1	NA	NA	NA	NA	3	NA
+FM-AD	male	Bronchus and lung	AD8837	1	1	NA	NA	NA	NA	3	NA
+MMRF-COMMPASS	female	Hematopoietic and reticuloendothelial systems	MMRF_1888	NA	NA	NA	NA	7	5	10	NA
+MMRF-COMMPASS	male	Hematopoietic and reticuloendothelial systems	MMRF_2090	NA	NA	NA	NA	4	NA	10	NA
+MMRF-COMMPASS	female	Hematopoietic and reticuloendothelial systems	MMRF_2292	NA	NA	NA	NA	4	NA	10	NA
+MMRF-COMMPASS	male	Hematopoietic and reticuloendothelial systems	MMRF_2413	NA	NA	NA	NA	7	5	10	NA
+MMRF-COMMPASS	male	Hematopoietic and reticuloendothelial systems	MMRF_2297	NA	NA	NA	NA	7	5	10	NA
+MMRF-COMMPASS	female	Hematopoietic and reticuloendothelial systems	MMRF_1061	NA	NA	NA	NA	9	5	20	NA
+MMRF-COMMPASS	female	Hematopoietic and reticuloendothelial systems	MMRF_2525	NA	NA	NA	NA	7	5	10	NA
+MMRF-COMMPASS	male	Hematopoietic and reticuloendothelial systems	MMRF_1838	NA	NA	NA	NA	10	5	30	NA
+MMRF-COMMPASS	female	Hematopoietic and reticuloendothelial systems	MMRF_2706	NA	NA	NA	NA	7	5	10	NA
+MMRF-COMMPASS	male	Hematopoietic and reticuloendothelial systems	MMRF_2734	NA	NA	NA	NA	7	5	10	NA
+MMRF-COMMPASS	female	Hematopoietic and reticuloendothelial systems	MMRF_2244	NA	NA	NA	NA	4	NA	10	NA
+MMRF-COMMPASS	female	Hematopoietic and reticuloendothelial systems	MMRF_2796	NA	NA	NA	NA	2	NA	10	NA
+MMRF-COMMPASS	male	Hematopoietic and reticuloendothelial systems	MMRF_1446	NA	NA	NA	NA	9	5	20	NA
+MMRF-COMMPASS	male	Hematopoietic and reticuloendothelial systems	MMRF_2727	NA	NA	NA	NA	7	5	10	NA
+MMRF-COMMPASS	male	Hematopoietic and reticuloendothelial systems	MMRF_1640	NA	NA	NA	NA	7	5	10	NA
+MMRF-COMMPASS	male	Hematopoietic and reticuloendothelial systems	MMRF_2532	NA	NA	NA	NA	7	5	10	NA
+MMRF-COMMPASS	female	Hematopoietic and reticuloendothelial systems	MMRF_2384	NA	NA	NA	NA	7	5	10	NA
+MMRF-COMMPASS	male	Hematopoietic and reticuloendothelial systems	MMRF_1735	NA	NA	NA	NA	7	5	10	NA
+MMRF-COMMPASS	female	Hematopoietic and reticuloendothelial systems	MMRF_1325	NA	NA	NA	NA	7	5	10	NA
+MMRF-COMMPASS	female	Hematopoietic and reticuloendothelial systems	MMRF_2834	NA	NA	NA	NA	7	5	10	NA
+MMRF-COMMPASS	female	Hematopoietic and reticuloendothelial systems	MMRF_1494	NA	NA	NA	NA	3	5	NA	NA
+MMRF-COMMPASS	female	Hematopoietic and reticuloendothelial systems	MMRF_1300	NA	NA	NA	NA	7	5	10	NA
+MMRF-COMMPASS	female	Hematopoietic and reticuloendothelial systems	MMRF_1408	NA	NA	NA	NA	7	5	10	NA
+MMRF-COMMPASS	female	Hematopoietic and reticuloendothelial systems	MMRF_1923	NA	NA	NA	NA	5	5	10	NA
+MMRF-COMMPASS	male	Hematopoietic and reticuloendothelial systems	MMRF_2677	NA	NA	NA	NA	7	5	10	NA
+MMRF-COMMPASS	male	Hematopoietic and reticuloendothelial systems	MMRF_1224	NA	NA	NA	NA	5	5	NA	NA
+MMRF-COMMPASS	female	Hematopoietic and reticuloendothelial systems	MMRF_2793	NA	NA	NA	NA	7	5	10	NA
+MMRF-COMMPASS	female	Hematopoietic and reticuloendothelial systems	MMRF_2595	NA	NA	NA	NA	7	5	10	NA
+MMRF-COMMPASS	female	Hematopoietic and reticuloendothelial systems	MMRF_1426	NA	NA	NA	NA	7	5	10	NA
+NCICCR-DLBCL	female	Lymph Nodes	DLBCL10986	NA	NA	NA	NA	5	5	NA	NA
+NCICCR-DLBCL	male	Lymph Nodes	DLBCL11353	NA	NA	NA	NA	5	5	NA	NA
+NCICCR-DLBCL	male	Lymph Nodes	DLBCL10499	NA	NA	NA	NA	5	5	NA	NA
+NCICCR-DLBCL	female	Lymph Nodes	DLBCL11507	NA	NA	NA	NA	5	5	NA	NA
+NCICCR-DLBCL	female	Lymph Nodes	DLBCL11493	NA	NA	NA	NA	5	5	NA	NA
+NCICCR-DLBCL	male	Lymph Nodes	DLBCL11509	NA	NA	NA	NA	5	5	NA	NA
+NCICCR-DLBCL	female	Lymph Nodes	DLBCL11516	NA	NA	NA	NA	5	5	NA	NA
+NCICCR-DLBCL	male	Lymph Nodes	DLBCL10958	NA	NA	NA	NA	5	5	NA	NA
+NCICCR-DLBCL	female	Lymph Nodes	DLBCL11448	NA	NA	NA	NA	5	5	NA	NA
+NCICCR-DLBCL	female	Lymph Nodes	DLBCL11191	NA	NA	NA	NA	5	5	NA	NA
+NCICCR-DLBCL	male	Lymph Nodes	DLBCL10537	NA	NA	NA	NA	5	5	NA	NA
+NCICCR-DLBCL	female	Lymph Nodes	DLBCL11461	NA	NA	NA	NA	5	5	NA	NA
+NCICCR-DLBCL	female	Lymph Nodes	DLBCL10942	NA	NA	NA	NA	5	5	NA	NA
+NCICCR-DLBCL	male	Lymph Nodes	DLBCL11483	NA	NA	NA	NA	5	5	NA	NA
+NCICCR-DLBCL	female	Lymph Nodes	DLBCL10782	NA	NA	NA	NA	5	5	NA	NA
+ORGANOID-PANCREATIC	female	Pancreas	19	NA	NA	NA	NA	7	5	2	NA
+ORGANOID-PANCREATIC	male	Pancreas	5	NA	NA	NA	NA	1	NA	2	NA
+ORGANOID-PANCREATIC	female	Pancreas	12	NA	NA	NA	NA	1	NA	2	NA
+ORGANOID-PANCREATIC	female	Pancreas	62	NA	NA	NA	NA	4	5	NA	NA
+TARGET-ALL-P2	female	Hematopoietic and reticuloendothelial systems	TARGET-10-PARUKW	1	4	NA	NA	5	5	10	NA
+TARGET-ALL-P2	female	Hematopoietic and reticuloendothelial systems	TARGET-10-PAPDVG	1	3	NA	NA	2	NA	10	NA
+TARGET-ALL-P2	male	Hematopoietic and reticuloendothelial systems	TARGET-10-PAREJZ	1	3	NA	NA	2	NA	10	NA
+TARGET-ALL-P2	male	Hematopoietic and reticuloendothelial systems	TARGET-10-PARSGM	1	3	NA	NA	2	NA	10	NA
+TARGET-ALL-P2	male	Hematopoietic and reticuloendothelial systems	TARGET-10-PANXIV	1	2	NA	NA	NA	NA	NA	NA
+TARGET-ALL-P2	male	Hematopoietic and reticuloendothelial systems	TARGET-10-PATEYS	1	4	NA	NA	4	5	NA	NA
+TARGET-ALL-P2	male	Hematopoietic and reticuloendothelial systems	TARGET-10-PARJBB	1	3	NA	NA	2	NA	10	NA
+TARGET-ALL-P2	female	Hematopoietic and reticuloendothelial systems	TARGET-10-PANRVB	1	2	NA	NA	NA	NA	NA	NA
+TARGET-ALL-P2	male	Hematopoietic and reticuloendothelial systems	TARGET-10-PANZXZ	1	2	NA	NA	3	5	NA	NA
+TARGET-ALL-P2	female	Hematopoietic and reticuloendothelial systems	TARGET-10-PAPCJB	1	2	NA	NA	NA	NA	NA	NA
+TARGET-ALL-P2	male	Hematopoietic and reticuloendothelial systems	TARGET-10-PAPHYH	1	2	NA	NA	NA	NA	NA	NA
+TARGET-ALL-P2	female	Hematopoietic and reticuloendothelial systems	TARGET-10-PAMYVH	1	2	NA	NA	NA	NA	NA	NA
+TARGET-ALL-P2	female	Hematopoietic and reticuloendothelial systems	TARGET-10-PAPADB	1	2	NA	NA	NA	NA	NA	NA
+TARGET-ALL-P2	female	Hematopoietic and reticuloendothelial systems	TARGET-10-PANZHD	1	2	NA	NA	NA	NA	NA	NA
+TARGET-ALL-P2	male	Hematopoietic and reticuloendothelial systems	TARGET-10-PAPBYU	1	2	NA	NA	NA	NA	NA	NA
+TARGET-ALL-P2	female	Hematopoietic and reticuloendothelial systems	TARGET-10-PANUXS	1	3	NA	NA	2	NA	10	NA
+TARGET-ALL-P2	female	Hematopoietic and reticuloendothelial systems	TARGET-10-PANSUF	1	2	NA	NA	NA	NA	NA	NA
+TARGET-ALL-P2	female	Hematopoietic and reticuloendothelial systems	TARGET-10-PANXEH	1	2	NA	NA	NA	NA	NA	NA
+TARGET-ALL-P2	male	Hematopoietic and reticuloendothelial systems	TARGET-10-PANRBJ	1	2	NA	NA	NA	NA	NA	NA
+TARGET-ALL-P2	male	Hematopoietic and reticuloendothelial systems	TARGET-10-PARUIT	1	3	NA	NA	2	NA	10	NA
+TARGET-ALL-P2	female	Hematopoietic and reticuloendothelial systems	TARGET-10-PANYPN	1	2	NA	NA	NA	NA	NA	NA
+TARGET-ALL-P2	male	Hematopoietic and reticuloendothelial systems	TARGET-10-PAPPGN	1	2	NA	NA	4	7	NA	NA
+TARGET-ALL-P2	male	Hematopoietic and reticuloendothelial systems	TARGET-10-PASSPP	1	4	NA	NA	5	5	10	NA
+TARGET-ALL-P2	male	Hematopoietic and reticuloendothelial systems	TARGET-10-PAREBA	1	3	NA	NA	1	NA	NA	NA
+TARGET-ALL-P2	male	Hematopoietic and reticuloendothelial systems	TARGET-10-PARNXJ	1	4	NA	NA	5	5	10	NA
+TARGET-ALL-P2	female	Hematopoietic and reticuloendothelial systems	TARGET-10-PANXLR	1	3	NA	NA	2	NA	10	NA
+TARGET-ALL-P2	male	Hematopoietic and reticuloendothelial systems	TARGET-10-PARSUV	1	3	NA	NA	2	NA	10	NA
+TARGET-ALL-P2	male	Hematopoietic and reticuloendothelial systems	TARGET-10-PANYNX	1	2	NA	NA	NA	NA	NA	NA
+TARGET-ALL-P2	female	Hematopoietic and reticuloendothelial systems	TARGET-10-PAPHWE	1	3	NA	NA	2	NA	10	NA
+TARGET-ALL-P2	male	Hematopoietic and reticuloendothelial systems	TARGET-10-PANEJT	1	2	NA	NA	NA	NA	NA	NA
+TARGET-ALL-P2	female	Hematopoietic and reticuloendothelial systems	TARGET-10-PANYXE	1	2	NA	NA	NA	NA	NA	NA
+TARGET-ALL-P2	female	Hematopoietic and reticuloendothelial systems	TARGET-10-PAPXED	1	2	NA	NA	NA	NA	NA	NA
+TARGET-ALL-P2	female	Hematopoietic and reticuloendothelial systems	TARGET-10-PARSRI	1	3	NA	NA	2	NA	10	NA
+TARGET-ALL-P2	female	Hematopoietic and reticuloendothelial systems	TARGET-10-PAPESW	1	2	NA	NA	4	7	NA	NA
+TARGET-ALL-P2	female	Hematopoietic and reticuloendothelial systems	TARGET-10-PASMIC	1	4	NA	NA	5	5	10	NA
+TARGET-ALL-P2	male	Hematopoietic and reticuloendothelial systems	TARGET-10-PAPCUI	1	3	NA	NA	2	NA	10	NA
+TARGET-ALL-P2	male	Hematopoietic and reticuloendothelial systems	TARGET-10-PANEZV	1	2	NA	NA	NA	NA	NA	NA
+TARGET-ALL-P2	female	Hematopoietic and reticuloendothelial systems	TARGET-10-PAPAGT	1	2	NA	NA	NA	NA	NA	NA
+TARGET-ALL-P2	male	Hematopoietic and reticuloendothelial systems	TARGET-10-PARPVU	1	2	NA	NA	NA	NA	NA	NA
+TARGET-ALL-P2	male	Hematopoietic and reticuloendothelial systems	TARGET-10-PASDYM	1	2	NA	NA	5	7	NA	NA
+TARGET-ALL-P2	male	Hematopoietic and reticuloendothelial systems	TARGET-10-PAMYNW	1	2	NA	NA	NA	NA	NA	NA
+TARGET-ALL-P2	female	Hematopoietic and reticuloendothelial systems	TARGET-10-PASEVJ	1	2	NA	NA	3	5	NA	NA
+TARGET-ALL-P2	female	Hematopoietic and reticuloendothelial systems	TARGET-10-PAPIDY	1	2	NA	NA	NA	NA	NA	NA
+TARGET-ALL-P2	male	Hematopoietic and reticuloendothelial systems	TARGET-10-PAPFGW	1	2	NA	NA	NA	NA	NA	NA
+TARGET-ALL-P3	male	Hematopoietic and reticuloendothelial systems	TARGET-15-SJMPAL005001	1	2	NA	NA	4	5	2	NA
+TARGET-ALL-P3	male	Hematopoietic and reticuloendothelial systems	TARGET-15-SJMPAL041119	1	2	NA	NA	12	12	20	NA
+TARGET-AML	female	Hematopoietic and reticuloendothelial systems	TARGET-20-PASWIM	1	3	NA	NA	1	2	NA	NA
+TARGET-AML	male	Hematopoietic and reticuloendothelial systems	TARGET-20-PAEDKB	2	3	NA	NA	2	5	NA	NA
+TARGET-AML	female	Hematopoietic and reticuloendothelial systems	TARGET-20-PAEAKL	1	2	NA	NA	2	5	NA	TRUE
+TARGET-AML	female	Hematopoietic and reticuloendothelial systems	TARGET-20-PARGDB	1	2	NA	NA	2	4	NA	NA
+TARGET-AML	male	Hematopoietic and reticuloendothelial systems	TARGET-20-PARPEK	1	4	NA	NA	1	2	NA	NA
+TARGET-AML	male	Hematopoietic and reticuloendothelial systems	TARGET-20-PARTYV	2	3	NA	NA	1	2	NA	NA
+TARGET-AML	female	Hematopoietic and reticuloendothelial systems	TARGET-20-PARMGX	1	2	NA	NA	NA	NA	NA	TRUE
+TARGET-AML	male	Hematopoietic and reticuloendothelial systems	TARGET-20-PATLDB	1	3	NA	NA	1	2	NA	NA
+TARGET-AML	male	Hematopoietic and reticuloendothelial systems	TARGET-20-PAPWFN	1	3	NA	NA	1	2	NA	NA
+TARGET-AML	male	Hematopoietic and reticuloendothelial systems	TARGET-20-PARXNP	1	3	NA	NA	1	2	NA	NA
+TARGET-AML	male	Hematopoietic and reticuloendothelial systems	TARGET-20-PAPRND	1	3	NA	NA	NA	NA	NA	NA
+TARGET-AML	male	Hematopoietic and reticuloendothelial systems	TARGET-20-PATAKC	1	3	NA	NA	1	2	NA	NA
+TARGET-AML	male	Hematopoietic and reticuloendothelial systems	TARGET-20-PARJUJ	1	3	NA	NA	NA	NA	NA	NA
+TARGET-AML	male	Hematopoietic and reticuloendothelial systems	TARGET-20-PATFZR	1	3	NA	NA	1	2	NA	NA
+TARGET-AML	female	Hematopoietic and reticuloendothelial systems	TARGET-20-PASWGS	1	3	NA	NA	1	2	NA	NA
+TARGET-AML	female	Hematopoietic and reticuloendothelial systems	TARGET-20-PARBXE	1	2	NA	NA	1	2	NA	NA
+TARGET-AML	male	Hematopoietic and reticuloendothelial systems	TARGET-20-PASGCE	2	4	NA	NA	1	2	NA	NA
+TARGET-AML	unknown	Hematopoietic and reticuloendothelial systems	TARGET-20-PATBFF	1	2	NA	NA	1	2	NA	NA
+TARGET-AML	male	Hematopoietic and reticuloendothelial systems	TARGET-20-PASDXR	1	2	NA	NA	NA	NA	NA	NA
+TARGET-AML	female	Hematopoietic and reticuloendothelial systems	TARGET-20-PATLXB	1	2	NA	NA	1	2	NA	NA
+TARGET-AML	male	Hematopoietic and reticuloendothelial systems	TARGET-20-PASYVX	1	3	NA	NA	NA	NA	NA	NA
+TARGET-AML	female	Hematopoietic and reticuloendothelial systems	TARGET-20-PARZMZ	2	4	NA	NA	1	2	NA	NA
+TARGET-NBL	female	Adrenal gland	TARGET-30-PARNEE	1	2	NA	NA	NA	NA	NA	NA
+TARGET-NBL	male	Other and ill-defined sites	TARGET-30-PASCUF	1	2	NA	NA	NA	NA	NA	NA
+TARGET-NBL	male	Retroperitoneum and peritoneum	TARGET-30-PASKFV	1	2	NA	NA	2	NA	14	NA
+TARGET-NBL	female	Other and ill-defined sites	TARGET-30-PANUVK	1	2	NA	NA	NA	NA	NA	NA
+TARGET-NBL	female	Adrenal gland	TARGET-30-PAMMFV	1	2	NA	NA	NA	NA	NA	NA
+TARGET-NBL	female	Adrenal gland	TARGET-30-PAMYCE	1	2	NA	NA	5	5	14	NA
+TARGET-NBL	male	Retroperitoneum and peritoneum	TARGET-30-PARMLF	1	2	NA	NA	2	NA	14	NA
+TARGET-NBL	female	Adrenal gland	TARGET-30-PAUIWS	1	3	NA	NA	NA	NA	NA	NA
+TARGET-NBL	male	Peripheral nerves and autonomic nervous system	TARGET-30-PADLPR	1	2	NA	NA	NA	NA	NA	NA
+TARGET-NBL	female	Lymph nodes	TARGET-30-PASAHC	1	3	NA	NA	NA	NA	NA	NA
+TARGET-NBL	female	Retroperitoneum and peritoneum	TARGET-30-PATAAV	1	3	NA	NA	NA	NA	NA	NA
+TARGET-NBL	male	Other and ill-defined sites	TARGET-30-PASLIH	1	3	NA	NA	NA	NA	NA	NA
+TARGET-NBL	male	Retroperitoneum and peritoneum	TARGET-30-PARZHA	1	2	NA	NA	3	5	NA	NA
+TARGET-NBL	male	Adrenal gland	TARGET-30-PAMZYM	1	2	NA	NA	NA	NA	NA	NA
+TARGET-NBL	male	Kidney	TARGET-30-PATDFU	1	3	NA	NA	NA	NA	NA	NA
+TARGET-NBL	male	Adrenal gland	TARGET-30-PALFJL	1	2	NA	NA	NA	NA	NA	NA
+TARGET-NBL	female	Retroperitoneum and peritoneum	TARGET-30-PANCYF	1	2	NA	NA	NA	NA	NA	NA
+TARGET-NBL	male	Adrenal gland	TARGET-30-PARUPT	1	3	NA	NA	NA	NA	NA	NA
+TARGET-NBL	female	Adrenal gland	TARGET-30-PAPTMM	1	2	NA	NA	NA	NA	NA	NA
+TARGET-NBL	male	Adrenal gland	TARGET-30-PAMXWF	1	2	NA	NA	NA	NA	NA	NA
+TARGET-NBL	male	Adrenal gland	TARGET-30-PATNPW	1	3	NA	NA	NA	NA	NA	NA
+TARGET-NBL	female	Other and ill-defined sites	TARGET-30-PAUGNL	1	3	NA	NA	NA	NA	NA	NA
+TARGET-NBL	female	Peripheral nerves and autonomic nervous system	TARGET-30-PAIRCP	1	2	NA	NA	NA	NA	NA	NA
+TARGET-NBL	female	Peripheral nerves and autonomic nervous system	TARGET-30-PAKIAP	1	2	NA	NA	NA	NA	NA	NA
+TARGET-NBL	female	Adrenal gland	TARGET-30-PALBUY	1	2	NA	NA	NA	NA	NA	NA
+TARGET-NBL	female	Heart, mediastinum, and pleura	TARGET-30-PATWZB	1	3	NA	NA	NA	NA	NA	NA
+TARGET-NBL	female	Adrenal gland	TARGET-30-PALKXJ	1	2	NA	NA	NA	NA	NA	NA
+TARGET-NBL	male	Adrenal gland	TARGET-30-PAMNVX	1	2	NA	NA	NA	NA	NA	NA
+TARGET-NBL	male	Kidney	TARGET-30-PAIXNG	1	2	NA	NA	NA	NA	NA	NA
+TARGET-NBL	female	Peripheral nerves and autonomic nervous system	TARGET-30-PAMANU	1	2	NA	NA	NA	NA	NA	NA
+TARGET-NBL	female	Heart, mediastinum, and pleura	TARGET-30-PAMEHH	1	2	NA	NA	NA	NA	NA	NA
+TARGET-NBL	female	Retroperitoneum and peritoneum	TARGET-30-PAUZSB	1	3	NA	NA	NA	NA	NA	NA
+TARGET-NBL	male	Kidney	TARGET-30-PAPNEP	1	2	NA	NA	2	NA	14	NA
+TARGET-NBL	female	Adrenal gland	TARGET-30-PATAFE	1	3	NA	NA	NA	NA	NA	NA
+TARGET-NBL	female	Heart, mediastinum, and pleura	TARGET-30-PAUKVC	1	3	NA	NA	NA	NA	NA	NA
+TARGET-NBL	male	Kidney	TARGET-30-PARYSR	1	3	NA	NA	NA	NA	NA	NA
+TARGET-OS	male	Bones, joints and articular cartilage of limbs	TARGET-40-0A4I3W	1	2	NA	NA	NA	NA	NA	NA
+TARGET-OS	female	Bones, joints and articular cartilage of limbs	TARGET-40-PAIXFY	1	3	NA	NA	NA	NA	NA	NA
+TARGET-OS	male	Bones, joints and articular cartilage of limbs	TARGET-40-PALHRL	1	3	NA	NA	5	5	NA	TRUE
+TARGET-OS	female	Bones, joints and articular cartilage of limbs	TARGET-40-NAAHDC	1	2	NA	NA	NA	NA	NA	NA
+TARGET-OS	NA	Not Reported	TARGET-40-NAAWEJ	1	1	NA	NA	NA	NA	NA	NA
+TARGET-OS	female	Bones, joints and articular cartilage of limbs	TARGET-40-PASRNE	1	3	NA	NA	3	5	NA	NA
+TARGET-OS	male	Bones, joints and articular cartilage of limbs	TARGET-40-NAAHBS	1	2	NA	NA	NA	NA	NA	NA
+TARGET-OS	female	Bones, joints and articular cartilage of other and unspecified sites	TARGET-40-NAAWHH	1	3	NA	NA	NA	NA	NA	NA
+TARGET-OS	NA	Not Reported	TARGET-40-NAAWET	1	1	NA	NA	NA	NA	NA	NA
+TARGET-OS	NA	Not Reported	TARGET-40-NAAWGF	1	1	NA	NA	NA	NA	NA	NA
+TARGET-OS	NA	Not Reported	TARGET-40-NAAWFD	1	1	NA	NA	NA	NA	NA	NA
+TARGET-RT	male	Kidney	TARGET-52-PAJNFZ	1	3	NA	NA	6	7	NA	NA
+TARGET-RT	female	Kidney	TARGET-52-PAVITI	1	4	NA	NA	7	7	NA	NA
+TARGET-RT	male	Kidney	TARGET-52-PAKLYZ	1	3	NA	NA	6	7	NA	NA
+TARGET-WT	female	Kidney	TARGET-50-PAKYFC	1	3	NA	NA	4	7	NA	TRUE
+TARGET-WT	female	Kidney	TARGET-50-PAJPEA	1	2	NA	NA	NA	NA	NA	NA
+TARGET-WT	female	Kidney	TARGET-50-PADWYZ	1	2	NA	NA	NA	NA	NA	NA
+TARGET-WT	male	Kidney	TARGET-50-PAKZHG	1	2	NA	NA	NA	NA	NA	NA
+TARGET-WT	female	Kidney	TARGET-50-PADZNH	1	2	NA	NA	NA	NA	NA	NA
+TARGET-WT	male	Kidney	TARGET-50-PAJLYD	1	2	NA	NA	NA	NA	NA	NA
+TARGET-WT	male	Kidney	TARGET-50-PAKKNS	1	3	NA	NA	6	7	10	NA
+TARGET-WT	female	Kidney	TARGET-50-PAKUMS	1	2	NA	NA	NA	NA	NA	NA
+TARGET-WT	male	Kidney	TARGET-50-PAJNIM	1	2	NA	NA	NA	NA	NA	NA
+TARGET-WT	female	Kidney	TARGET-50-PAJNRH	1	3	NA	NA	6	7	10	NA
+TARGET-WT	female	Kidney	TARGET-50-PAJMVK	1	3	NA	NA	NA	NA	NA	NA
+TCGA-ACC	female	Adrenal gland	TCGA-OR-A5LH	13	8	3	1	4	5	16	NA
+TCGA-ACC	female	Adrenal gland	TCGA-OR-A5JS	18	8	5	1	4	5	16	NA
+TCGA-ACC	female	Adrenal gland	TCGA-OR-A5LO	18	8	3	1	4	5	16	NA
+TCGA-ACC	female	Adrenal gland	TCGA-OR-A5LJ	13	8	5	1	4	5	16	NA
+TCGA-ACC	female	Adrenal gland	TCGA-OR-A5L3	13	8	5	1	4	5	16	NA
+TCGA-BLCA	male	Bladder	TCGA-R3-A69X	13	10	5	1	4	5	16	NA
+TCGA-BLCA	male	Bladder	TCGA-4Z-AA81	14	9	5	1	4	5	16	NA
+TCGA-BLCA	male	Bladder	TCGA-CF-A7I0	14	9	5	1	4	5	16	NA
+TCGA-BLCA	male	Bladder	TCGA-BT-A20N	15	10	5	2	6	10	16	NA
+TCGA-BLCA	male	Bladder	TCGA-E7-A5KF	14	9	5	1	4	5	16	NA
+TCGA-BLCA	male	Bladder	TCGA-G2-AA3D	14	10	5	1	4	5	16	NA
+TCGA-BLCA	male	Bladder	TCGA-CF-A9FL	14	10	5	1	4	5	16	NA
+TCGA-BLCA	male	Bladder	TCGA-XF-A9SV	14	10	5	1	4	5	16	NA
+TCGA-BLCA	female	Bladder	TCGA-UY-A78P	15	9	3	1	4	5	16	NA
+TCGA-BLCA	male	Bladder	TCGA-DK-A3IV	14	10	5	1	4	5	16	NA
+TCGA-BLCA	male	Bladder	TCGA-HQ-A5NE	14	9	5	1	4	5	16	NA
+TCGA-BLCA	male	Bladder	TCGA-CF-A47W	14	9	5	1	4	5	16	NA
+TCGA-BRCA	female	Breast	TCGA-BH-A0E0	17	10	7	2	7	8	16	NA
+TCGA-BRCA	female	Breast	TCGA-AR-A1AN	14	10	5	1	4	5	16	NA
+TCGA-BRCA	female	Breast	TCGA-AR-A1AO	14	10	5	1	4	5	16	NA
+TCGA-BRCA	female	Breast	TCGA-AC-A2FM	17	10	5	2	6	10	16	NA
+TCGA-BRCA	female	Breast	TCGA-A2-A3XV	14	10	5	1	4	5	16	NA
+TCGA-BRCA	female	Breast	TCGA-EW-A6SD	14	10	5	1	4	5	16	NA
+TCGA-BRCA	female	Breast	TCGA-AN-A0AR	15	10	5	1	4	5	16	NA
+TCGA-BRCA	female	Breast	TCGA-D8-A1JE	15	10	5	1	4	5	16	NA
+TCGA-BRCA	female	Breast	TCGA-E2-A14U	14	10	5	1	4	5	16	NA
+TCGA-BRCA	female	Breast	TCGA-A2-A3XY	14	10	3	1	4	5	16	NA
+TCGA-BRCA	female	Breast	TCGA-D8-A1XM	14	10	5	1	4	5	16	NA
+TCGA-BRCA	female	Breast	TCGA-XX-A89A	14	10	5	1	4	5	16	NA
+TCGA-BRCA	female	Breast	TCGA-D8-A1XO	14	10	5	1	4	5	16	NA
+TCGA-BRCA	female	Breast	TCGA-A2-A04R	15	10	5	1	4	5	16	NA
+TCGA-BRCA	female	Breast	TCGA-A2-A0EW	15	10	5	1	5	5	16	NA
+TCGA-BRCA	female	Breast	TCGA-A7-A26F	16	11	7	2	6	7	24	NA
+TCGA-BRCA	female	Breast	TCGA-D8-A1XY	15	10	5	1	4	5	16	NA
+TCGA-BRCA	female	Breast	TCGA-A8-A06R	15	10	5	1	4	5	16	NA
+TCGA-BRCA	female	Breast	TCGA-GM-A3NY	14	10	5	1	4	5	16	NA
+TCGA-BRCA	female	Breast	TCGA-A2-A3XT	14	10	5	1	4	5	16	NA
+TCGA-BRCA	female	Breast	TCGA-A8-A08S	15	11	5	1	4	5	16	NA
+TCGA-BRCA	female	Breast	TCGA-AO-A0JA	15	10	5	1	4	5	16	NA
+TCGA-BRCA	female	Breast	TCGA-AO-A03R	15	10	5	1	4	5	16	NA
+TCGA-BRCA	female	Breast	TCGA-A2-A0YK	15	10	5	1	5	5	16	NA
+TCGA-CESC	female	Cervix uteri	TCGA-VS-A8EI	16	9	5	1	4	5	16	NA
+TCGA-CESC	female	Cervix uteri	TCGA-C5-A7CK	16	9	5	1	4	5	16	NA
+TCGA-CESC	female	Cervix uteri	TCGA-DG-A2KL	16	9	5	1	4	5	16	NA
+TCGA-CESC	female	Cervix uteri	TCGA-MY-A5BE	19	9	5	1	4	5	16	NA
+TCGA-CESC	female	Cervix uteri	TCGA-EA-A439	16	9	5	1	4	5	16	NA
+TCGA-CESC	female	Cervix uteri	TCGA-C5-A2M1	16	9	5	1	4	5	16	NA
+TCGA-CESC	female	Cervix uteri	TCGA-IR-A3LC	16	9	5	1	4	5	16	NA
+TCGA-CESC	female	Cervix uteri	TCGA-Q1-A6DW	16	9	5	1	4	5	16	NA
+TCGA-CESC	female	Cervix uteri	TCGA-HM-A3JK	16	9	5	1	4	5	16	NA
+TCGA-CESC	female	Cervix uteri	TCGA-VS-A9UQ	16	9	5	1	4	5	16	NA
+TCGA-CESC	female	Cervix uteri	TCGA-LP-A5U2	16	9	5	1	4	5	16	NA
+TCGA-CESC	female	Cervix uteri	TCGA-EK-A2RA	15	9	5	1	4	5	16	NA
+TCGA-CHOL	female	Liver and intrahepatic bile ducts	TCGA-W5-AA38	14	8	5	1	4	5	16	NA
+TCGA-CHOL	male	Liver and intrahepatic bile ducts	TCGA-ZU-A8S4	15	8	7	2	7	10	16	NA
+TCGA-CHOL	female	Liver and intrahepatic bile ducts	TCGA-W5-AA36	14	8	5	1	4	5	16	NA
+TCGA-CHOL	male	Other and unspecified parts of biliary tract	TCGA-W5-AA2M	13	8	NA	NA	2	NA	16	NA
+TCGA-CHOL	male	Liver and intrahepatic bile ducts	TCGA-W5-AA2Q	15	8	7	2	7	10	16	NA
+TCGA-COAD	female	Colon	TCGA-G4-6295	18	8	7	2	5	5	16	NA
+TCGA-COAD	male	Colon	TCGA-AA-3712	18	8	5	2	5	8	16	NA
+TCGA-COAD	male	Colon	TCGA-AA-3530	18	9	9	1	5	5	16	NA
+TCGA-COAD	female	Colon	TCGA-D5-6539	17	8	5	1	4	5	16	NA
+TCGA-COAD	female	Colon	TCGA-NH-A8F7	17	9	7	2	8	10	24	NA
+TCGA-COAD	male	Colon	TCGA-5M-AATE	16	8	5	1	4	5	16	NA
+TCGA-COAD	male	Colon	TCGA-AA-3850	17	8	5	1	4	5	16	NA
+TCGA-DLBC	NA	Hematopoietic and reticuloendothelial systems	TCGA-GZ-6639	11	6	NA	NA	NA	NA	NA	NA
+TCGA-DLBC	female	Brain	TCGA-RQ-AAAT	14	7	5	1	4	5	16	NA
+TCGA-ESCA	male	Esophagus	TCGA-R6-A6DN	15	8	5	1	4	5	16	NA
+TCGA-ESCA	male	Esophagus	TCGA-L5-A8NS	16	8	5	1	4	5	16	NA
+TCGA-ESCA	male	Esophagus	TCGA-IG-A6QS	16	8	5	1	4	5	16	NA
+TCGA-ESCA	female	Esophagus	TCGA-L5-A4OG	17	9	5	2	6	10	16	NA
+TCGA-GBM	female	Brain	TCGA-28-5209	13	8	5	1	3	3	16	NA
+TCGA-GBM	female	Brain	TCGA-06-0201	15	8	5	NA	NA	NA	NA	NA
+TCGA-GBM	male	Brain	TCGA-32-2634	14	8	5	1	5	3	24	NA
+TCGA-GBM	female	Brain	TCGA-28-2513	13	8	5	1	5	3	24	NA
+TCGA-GBM	male	Brain	TCGA-16-1056	14	8	5	1	NA	NA	NA	NA
+TCGA-GBM	male	Brain	TCGA-08-0509	14	8	3	NA	NA	NA	NA	NA
+TCGA-GBM	female	Brain	TCGA-12-1598	18	8	5	1	2	NA	16	NA
+TCGA-GBM	male	Brain	TCGA-06-0132	13	8	5	NA	3	3	16	NA
+TCGA-GBM	male	Brain	TCGA-06-0139	17	8	7	1	3	3	16	NA
+TCGA-GBM	female	Brain	TCGA-02-0285	14	8	3	NA	NA	NA	NA	NA
+TCGA-GBM	female	Brain	TCGA-12-1597	14	8	5	1	5	3	24	NA
+TCGA-GBM	female	Brain	TCGA-08-0380	14	8	5	NA	NA	NA	NA	NA
+TCGA-GBM	female	Brain	TCGA-02-0281	15	8	3	NA	NA	NA	NA	NA
+TCGA-GBM	female	Brain	TCGA-76-6285	14	8	5	1	2	NA	16	NA
+TCGA-GBM	female	Brain	TCGA-06-0241	13	8	5	NA	2	NA	16	NA
+TCGA-GBM	female	Brain	TCGA-12-5295	14	8	5	1	3	3	16	NA
+TCGA-GBM	female	Brain	TCGA-14-1459	19	8	5	1	NA	NA	NA	NA
+TCGA-GBM	male	Brain	TCGA-06-0187	17	8	5	NA	3	3	16	NA
+TCGA-GBM	male	Brain	TCGA-12-1089	16	8	5	1	2	NA	16	NA
+TCGA-GBM	female	Brain	TCGA-06-1801	15	8	5	1	2	NA	16	NA
+TCGA-GBM	male	Brain	TCGA-14-0787	15	8	5	1	5	3	24	NA
+TCGA-GBM	female	Brain	TCGA-08-0355	14	8	5	NA	NA	NA	NA	NA
+TCGA-GBM	female	Brain	TCGA-02-0043	13	8	5	1	NA	NA	NA	NA
+TCGA-HNSC	female	Other and unspecified parts of tongue	TCGA-CQ-5327	16	9	5	1	4	5	16	NA
+TCGA-HNSC	female	Larynx	TCGA-KU-A66S	16	9	5	1	5	5	16	NA
+TCGA-HNSC	male	Other and unspecified parts of tongue	TCGA-D6-6823	18	9	5	1	4	5	16	NA
+TCGA-HNSC	male	Palate	TCGA-CN-A49A	15	9	5	1	4	5	16	NA
+TCGA-HNSC	male	Other and ill-defined sites in lip, oral cavity and pharynx	TCGA-CV-6938	18	9	7	2	7	10	16	NA
+TCGA-HNSC	male	Other and ill-defined sites in lip, oral cavity and pharynx	TCGA-CR-7367	15	9	5	1	4	5	16	NA
+TCGA-HNSC	female	Other and unspecified parts of tongue	TCGA-CV-A6JU	16	9	5	1	4	5	16	NA
+TCGA-HNSC	male	Floor of mouth	TCGA-CV-6936	18	9	7	2	7	10	16	NA
+TCGA-HNSC	male	Other and ill-defined sites in lip, oral cavity and pharynx	TCGA-CV-7100	17	9	5	1	4	5	16	NA
+TCGA-HNSC	male	Tonsil	TCGA-CR-6470	15	9	5	1	4	5	16	NA
+TCGA-HNSC	male	Other and unspecified parts of mouth	TCGA-CV-A45U	16	9	5	1	4	5	16	NA
+TCGA-HNSC	female	Larynx	TCGA-CN-4722	17	9	5	1	2	5	NA	NA
+TCGA-KICH	male	Kidney	TCGA-KN-8423	16	8	5	1	6	10	16	NA
+TCGA-KICH	female	Kidney	TCGA-KM-A7QE	13	8	NA	NA	NA	NA	NA	NA
+TCGA-KICH	female	Kidney	TCGA-NP-A5H7	14	8	NA	NA	NA	NA	NA	NA
+TCGA-KICH	male	Kidney	TCGA-UW-A7GI	14	8	NA	NA	NA	NA	NA	NA
+TCGA-KIRC	male	Kidney	TCGA-BP-4769	16	7	5	2	2	5	NA	NA
+TCGA-KIRC	male	Kidney	TCGA-BP-4992	16	7	5	2	4	5	16	NA
+TCGA-KIRC	male	Kidney	TCGA-B0-5711	16	7	5	2	6	10	16	NA
+TCGA-KIRC	male	Kidney	TCGA-BP-4999	16	8	5	2	3	3	16	NA
+TCGA-KIRC	female	Kidney	TCGA-B0-5085	16	7	5	2	4	5	16	NA
+TCGA-KIRC	male	Kidney	TCGA-BP-5000	16	7	5	2	4	5	16	NA
+TCGA-KIRC	male	Kidney	TCGA-CZ-4864	17	7	5	2	6	10	16	NA
+TCGA-KIRC	male	Kidney	TCGA-B8-A54D	14	7	5	1	4	5	16	NA
+TCGA-KIRC	male	Kidney	TCGA-B0-4846	17	7	5	2	2	5	NA	NA
+TCGA-KIRC	male	Kidney	TCGA-BP-4959	16	7	5	2	2	5	NA	NA
+TCGA-KIRC	male	Kidney	TCGA-BP-5200	16	7	5	2	4	5	16	NA
+TCGA-KIRC	male	Kidney	TCGA-B0-5700	16	7	2	1	4	5	16	NA
+TCGA-KIRC	male	Kidney	TCGA-BP-4343	17	7	5	2	2	5	NA	NA
+TCGA-KIRC	male	Kidney	TCGA-BP-4160	17	8	5	2	2	5	NA	NA
+TCGA-KIRC	male	Kidney	TCGA-BP-5182	16	7	5	2	4	5	16	NA
+TCGA-KIRC	female	Kidney	TCGA-BP-4165	17	7	5	2	2	5	NA	NA
+TCGA-KIRC	male	Kidney	TCGA-BP-4789	16	7	5	2	2	5	NA	NA
+TCGA-KIRC	female	Kidney	TCGA-G6-A8L7	14	8	5	1	4	5	16	NA
+TCGA-KIRC	female	Kidney	TCGA-B2-4098	18	7	9	2	2	5	NA	NA
+TCGA-KIRC	male	Kidney	TCGA-B0-5083	16	7	5	2	4	5	16	NA
+TCGA-KIRC	male	Kidney	TCGA-B8-5164	15	7	5	1	4	5	16	NA
+TCGA-KIRC	female	Kidney	TCGA-B0-4838	17	7	5	2	2	5	NA	NA
+TCGA-KIRC	male	Kidney	TCGA-CZ-5451	16	7	5	2	6	10	16	NA
+TCGA-KIRP	female	Kidney	TCGA-B3-3926	18	7	7	2	4	5	16	NA
+TCGA-KIRP	female	Kidney	TCGA-A4-A5Y0	15	7	5	1	4	5	16	NA
+TCGA-KIRP	female	Kidney	TCGA-5P-A9JZ	14	7	5	1	4	5	16	NA
+TCGA-KIRP	male	Kidney	TCGA-IZ-A6M8	14	8	5	1	4	5	16	NA
+TCGA-KIRP	male	Kidney	TCGA-2Z-A9JS	14	8	5	1	4	5	16	NA
+TCGA-KIRP	female	Kidney	TCGA-A4-7915	15	7	5	1	4	5	16	NA
+TCGA-KIRP	female	Kidney	TCGA-5P-A9K9	14	7	5	1	4	5	16	NA
+TCGA-LAML	male	Hematopoietic and reticuloendothelial systems	TCGA-AB-2934	6	2	5	2	6	5	40	NA
+TCGA-LAML	female	Hematopoietic and reticuloendothelial systems	TCGA-AB-2825	6	2	5	NA	6	5	40	NA
+TCGA-LAML	female	Hematopoietic and reticuloendothelial systems	TCGA-AB-2971	6	2	5	2	2	5	NA	NA
+TCGA-LAML	male	Hematopoietic and reticuloendothelial systems	TCGA-AB-2834	6	2	5	NA	4	5	16	NA
+TCGA-LAML	male	Hematopoietic and reticuloendothelial systems	TCGA-AB-2946	6	2	5	2	4	5	16	NA
+TCGA-LAML	male	Hematopoietic and reticuloendothelial systems	TCGA-AB-2817	6	2	5	NA	4	5	16	NA
+TCGA-LAML	male	Hematopoietic and reticuloendothelial systems	TCGA-AB-2828	6	2	5	2	5	5	24	NA
+TCGA-LGG	male	Brain	TCGA-DB-5277	16	7	5	1	4	5	16	NA
+TCGA-LGG	male	Brain	TCGA-VM-A8CE	22	7	5	1	4	5	16	NA
+TCGA-LGG	male	Brain	TCGA-DU-A76L	14	7	5	1	4	5	16	NA
+TCGA-LGG	female	Brain	TCGA-DH-5144	15	7	5	1	4	5	16	NA
+TCGA-LGG	male	Brain	TCGA-DB-5278	16	7	5	1	4	5	16	NA
+TCGA-LGG	male	Brain	TCGA-DU-6395	15	7	5	1	5	5	16	NA
+TCGA-LGG	female	Brain	TCGA-DU-5855	15	7	5	1	4	5	16	NA
+TCGA-LGG	male	Brain	TCGA-WY-A85B	14	7	5	1	4	5	16	NA
+TCGA-LGG	female	Brain	TCGA-P5-A5F2	13	7	5	1	4	5	16	NA
+TCGA-LGG	female	Brain	TCGA-DH-5140	15	7	5	1	4	5	16	NA
+TCGA-LGG	male	Brain	TCGA-DU-5849	15	7	5	1	4	5	16	NA
+TCGA-LGG	male	Brain	TCGA-QH-A6CY	14	7	5	1	4	5	16	NA
+TCGA-LGG	male	Brain	TCGA-DU-7304	16	7	7	2	7	10	24	NA
+TCGA-LGG	female	Brain	TCGA-DU-6401	15	7	5	1	4	5	16	NA
+TCGA-LGG	male	Brain	TCGA-WY-A85C	14	7	5	1	4	5	16	NA
+TCGA-LGG	male	Brain	TCGA-HT-8114	15	7	5	1	4	5	16	NA
+TCGA-LGG	female	Brain	TCGA-HT-7471	14	7	5	1	4	5	16	NA
+TCGA-LGG	female	Brain	TCGA-DU-7008	15	7	5	1	4	5	16	NA
+TCGA-LGG	male	Brain	TCGA-HW-7486	15	7	5	1	4	5	16	NA
+TCGA-LGG	female	Brain	TCGA-FG-A6J3	18	7	5	1	4	5	16	NA
+TCGA-LIHC	female	Liver and intrahepatic bile ducts	TCGA-ED-A7PX	14	9	5	1	4	5	16	NA
+TCGA-LIHC	male	Liver and intrahepatic bile ducts	TCGA-DD-A115	16	9	7	2	5	5	16	NA
+TCGA-LIHC	female	Liver and intrahepatic bile ducts	TCGA-DD-A1EJ	15	9	5	2	6	10	16	NA
+TCGA-LIHC	male	Liver and intrahepatic bile ducts	TCGA-DD-AAEK	14	9	5	1	4	5	16	NA
+TCGA-LIHC	male	Liver and intrahepatic bile ducts	TCGA-DD-AACC	14	9	5	1	4	5	16	NA
+TCGA-LIHC	female	Liver and intrahepatic bile ducts	TCGA-ED-A7PY	14	9	5	1	4	5	16	NA
+TCGA-LIHC	female	Liver and intrahepatic bile ducts	TCGA-2Y-A9H6	14	10	3	1	4	5	16	NA
+TCGA-LIHC	male	Liver and intrahepatic bile ducts	TCGA-ED-A66X	14	9	5	1	4	5	16	NA
+TCGA-LIHC	female	Liver and intrahepatic bile ducts	TCGA-2Y-A9H7	14	10	5	1	4	5	16	NA
+TCGA-LIHC	male	Liver and intrahepatic bile ducts	TCGA-DD-AAEA	14	10	5	1	4	5	16	NA
+TCGA-LUAD	female	Bronchus and lung	TCGA-MP-A4TK	20	7	5	1	4	5	16	NA
+TCGA-LUAD	male	Bronchus and lung	TCGA-95-7562	20	8	5	1	4	5	16	NA
+TCGA-LUAD	male	Bronchus and lung	TCGA-MP-A4TC	20	8	3	1	4	5	16	NA
+TCGA-LUAD	female	Bronchus and lung	TCGA-86-8668	21	7	5	1	4	5	16	NA
+TCGA-LUAD	male	Bronchus and lung	TCGA-55-8512	21	7	5	1	4	5	16	NA
+TCGA-LUAD	female	Bronchus and lung	TCGA-69-7980	20	7	5	1	4	5	16	NA
+TCGA-LUAD	female	Bronchus and lung	TCGA-64-1677	21	8	5	1	4	5	16	NA
+TCGA-LUAD	male	Bronchus and lung	TCGA-MN-A4N4	21	7	5	1	4	5	16	NA
+TCGA-LUAD	female	Bronchus and lung	TCGA-44-3398	22	7	11	1	7	10	16	NA
+TCGA-LUAD	female	Bronchus and lung	TCGA-69-A59K	20	7	5	1	4	5	16	NA
+TCGA-LUAD	male	Bronchus and lung	TCGA-44-2666	26	7	11	3	15	11	56	NA
+TCGA-LUAD	female	Bronchus and lung	TCGA-49-AARO	21	7	5	1	5	5	16	NA
+TCGA-LUAD	male	Bronchus and lung	TCGA-78-7162	20	7	5	1	4	5	16	NA
+TCGA-LUAD	male	Bronchus and lung	TCGA-MP-A4T2	20	7	5	1	3	2	16	NA
+TCGA-LUAD	male	Bronchus and lung	TCGA-86-8281	21	7	5	1	4	5	16	NA
+TCGA-LUAD	male	Bronchus and lung	TCGA-38-A44F	20	7	5	1	4	5	16	NA
+TCGA-LUAD	female	Bronchus and lung	TCGA-55-6543	21	7	5	1	4	5	16	NA
+TCGA-LUAD	male	Bronchus and lung	TCGA-97-7552	21	7	5	1	4	5	16	NA
+TCGA-LUAD	male	Bronchus and lung	TCGA-50-5946	23	7	5	2	7	10	24	NA
+TCGA-LUSC	female	Bronchus and lung	TCGA-56-8082	13	7	7	1	6	10	16	NA
+TCGA-LUSC	female	Bronchus and lung	TCGA-77-7142	16	7	5	1	6	10	16	NA
+TCGA-LUSC	male	Bronchus and lung	TCGA-85-A511	14	7	5	1	4	5	16	NA
+TCGA-LUSC	male	Bronchus and lung	TCGA-22-5477	15	7	5	2	4	5	16	NA
+TCGA-LUSC	male	Bronchus and lung	TCGA-NC-A5HH	14	7	5	1	4	5	16	NA
+TCGA-LUSC	female	Bronchus and lung	TCGA-66-2757	17	7	5	1	4	3	24	NA
+TCGA-LUSC	male	Bronchus and lung	TCGA-85-8287	15	7	5	1	4	5	16	NA
+TCGA-LUSC	male	Bronchus and lung	TCGA-63-6202	15	7	5	1	4	5	16	NA
+TCGA-LUSC	male	Bronchus and lung	TCGA-66-2793	17	7	5	1	4	5	16	NA
+TCGA-LUSC	female	Bronchus and lung	TCGA-22-5481	14	7	5	1	5	8	16	NA
+TCGA-LUSC	male	Bronchus and lung	TCGA-NC-A5HD	14	8	5	1	4	5	16	NA
+TCGA-LUSC	male	Bronchus and lung	TCGA-63-A5MT	14	7	5	1	4	5	16	NA
+TCGA-LUSC	male	Bronchus and lung	TCGA-21-1081	15	7	5	1	5	3	26	NA
+TCGA-LUSC	male	Bronchus and lung	TCGA-22-1016	15	7	5	1	5	3	24	NA
+TCGA-LUSC	male	Bronchus and lung	TCGA-85-A50M	14	7	5	1	5	5	16	NA
+TCGA-LUSC	male	Bronchus and lung	TCGA-77-A5GH	14	7	3	1	4	5	16	NA
+TCGA-LUSC	male	Bronchus and lung	TCGA-21-1075	15	7	5	1	4	5	16	NA
+TCGA-LUSC	male	Bronchus and lung	TCGA-60-2706	17	7	5	1	4	5	16	NA
+TCGA-LUSC	male	Bronchus and lung	TCGA-94-8035	14	7	5	1	4	5	16	NA
+TCGA-LUSC	male	Bronchus and lung	TCGA-66-2755	17	7	5	1	5	5	24	NA
+TCGA-LUSC	female	Bronchus and lung	TCGA-46-3765	15	7	5	1	4	5	16	NA
+TCGA-LUSC	female	Bronchus and lung	TCGA-85-8580	13	7	5	1	4	5	16	NA
+TCGA-OV	female	Ovary	TCGA-25-1878	15	8	5	1	1	2	NA	NA
+TCGA-OV	female	Ovary	TCGA-23-2649	15	8	4	1	2	NA	16	NA
+TCGA-OV	female	Ovary	TCGA-20-1683	14	8	5	1	4	5	16	NA
+TCGA-OV	female	Ovary	TCGA-23-2072	15	8	5	1	3	2	16	NA
+TCGA-OV	female	Ovary	TCGA-13-0760	13	8	5	1	5	2	40	NA
+TCGA-OV	female	Ovary	TCGA-24-1416	14	8	5	1	4	5	16	NA
+TCGA-OV	female	Ovary	TCGA-09-1668	14	8	5	1	2	5	NA	NA
+TCGA-OV	female	Ovary	TCGA-10-0930	14	8	5	1	6	2	56	NA
+TCGA-OV	NA	Ovary	TCGA-13-0922	13	7	NA	NA	NA	NA	NA	NA
+TCGA-OV	female	Ovary	TCGA-13-1494	14	8	5	1	3	2	16	NA
+TCGA-OV	female	Ovary	TCGA-10-0926	13	8	5	1	3	2	16	NA
+TCGA-OV	female	Ovary	TCGA-36-2534	14	8	5	1	2	NA	16	NA
+TCGA-OV	female	Ovary	TCGA-29-1764	14	8	5	1	3	2	16	NA
+TCGA-OV	female	Ovary	TCGA-31-1959	14	8	5	1	4	5	16	NA
+TCGA-OV	NA	Ovary	TCGA-13-0914	13	7	NA	NA	NA	NA	NA	NA
+TCGA-OV	female	Ovary	TCGA-61-2096	16	8	5	1	2	NA	16	NA
+TCGA-OV	female	Ovary	TCGA-29-1763	14	8	5	1	4	5	16	NA
+TCGA-OV	female	Ovary	TCGA-25-1627	15	8	5	1	2	5	NA	NA
+TCGA-OV	female	Ovary	TCGA-24-1843	14	8	5	1	4	5	16	NA
+TCGA-OV	female	Ovary	TCGA-24-1551	14	8	5	1	4	5	16	NA
+TCGA-PAAD	male	Pancreas	TCGA-2L-AAQA	17	8	5	1	4	5	16	NA
+TCGA-PAAD	male	Pancreas	TCGA-3A-A9IZ	16	8	5	1	4	5	16	NA
+TCGA-PAAD	male	Pancreas	TCGA-FB-AAPP	17	8	5	1	4	5	16	NA
+TCGA-PCPG	female	Adrenal gland	TCGA-QT-A5XN	14	8	5	1	5	5	16	NA
+TCGA-PCPG	female	Adrenal gland	TCGA-WB-A821	14	8	5	1	4	5	16	NA
+TCGA-PCPG	female	Adrenal gland	TCGA-QR-A6GX	14	8	5	1	4	5	16	NA
+TCGA-PCPG	male	Adrenal gland	TCGA-QR-A70W	14	8	5	1	4	5	16	NA
+TCGA-PRAD	male	Prostate gland	TCGA-EJ-7218	13	7	5	1	5	5	16	NA
+TCGA-PRAD	male	Prostate gland	TCGA-J4-A67M	14	7	5	1	4	5	16	NA
+TCGA-PRAD	male	Prostate gland	TCGA-EJ-A46I	14	7	5	1	4	5	16	NA
+TCGA-PRAD	male	Prostate gland	TCGA-G9-6363	15	7	7	2	7	10	16	NA
+TCGA-PRAD	male	Prostate gland	TCGA-TK-A8OK	14	7	5	1	4	5	16	NA
+TCGA-PRAD	male	Prostate gland	TCGA-J4-A83I	14	7	5	1	4	5	16	NA
+TCGA-PRAD	male	Prostate gland	TCGA-XK-AAJT	13	7	5	1	4	5	16	NA
+TCGA-PRAD	male	Prostate gland	TCGA-G9-6494	16	7	7	2	5	5	16	NA
+TCGA-PRAD	male	Prostate gland	TCGA-CH-5771	14	7	5	2	4	5	16	NA
+TCGA-PRAD	male	Prostate gland	TCGA-XA-A8JR	14	7	5	1	4	5	16	NA
+TCGA-PRAD	male	Prostate gland	TCGA-EJ-A8FS	13	7	5	1	4	5	16	NA
+TCGA-PRAD	male	Prostate gland	TCGA-YL-A9WJ	14	7	5	1	4	5	16	NA
+TCGA-PRAD	male	Prostate gland	TCGA-YL-A8SQ	14	7	5	1	4	5	16	NA
+TCGA-PRAD	male	Prostate gland	TCGA-VP-A87C	14	7	5	1	4	5	16	NA
+TCGA-PRAD	male	Prostate gland	TCGA-J9-A8CK	13	7	5	1	4	5	16	NA
+TCGA-PRAD	male	Prostate gland	TCGA-QU-A6IM	14	8	5	1	4	5	16	NA
+TCGA-PRAD	male	Prostate gland	TCGA-KK-A7B1	15	7	5	1	4	5	16	NA
+TCGA-PRAD	male	Prostate gland	TCGA-KK-A8I8	15	7	5	1	4	5	16	NA
+TCGA-PRAD	male	Prostate gland	TCGA-CH-5789	14	7	5	1	4	5	16	NA
+TCGA-READ	male	Rectum	TCGA-AF-4110	18	8	5	1	4	5	16	NA
+TCGA-READ	female	Rectum	TCGA-AG-3612	17	9	5	1	2	5	NA	NA
+TCGA-READ	male	Rectosigmoid junction	TCGA-AG-3601	17	8	3	1	2	5	NA	NA
+TCGA-SARC	male	Retroperitoneum and peritoneum	TCGA-DX-AB2G	16	8	5	1	4	5	16	NA
+TCGA-SARC	female	Uterus, NOS	TCGA-KD-A5QT	14	8	5	1	4	5	16	NA
+TCGA-SARC	male	Retroperitoneum and peritoneum	TCGA-DX-A6BE	15	8	5	1	4	5	16	NA
+TCGA-SARC	male	Retroperitoneum and peritoneum	TCGA-DX-A6BH	15	8	5	1	4	5	16	NA
+TCGA-SARC	male	Connective, subcutaneous and other soft tissues	TCGA-QQ-A5V2	14	8	5	1	4	5	16	NA
+TCGA-SARC	male	Retroperitoneum and peritoneum	TCGA-DX-A1KW	14	8	5	1	4	5	16	NA
+TCGA-SKCM	male	Skin	TCGA-FR-A3YN	14	7	5	1	4	5	16	NA
+TCGA-SKCM	female	Skin	TCGA-D3-A8GO	14	7	5	1	4	5	16	NA
+TCGA-SKCM	male	Skin	TCGA-ER-A19B	14	7	5	1	4	5	16	NA
+TCGA-SKCM	male	Skin	TCGA-EB-A24C	14	7	5	1	5	5	16	NA
+TCGA-SKCM	male	Skin	TCGA-EE-A184	14	8	5	1	4	5	16	NA
+TCGA-SKCM	female	Skin	TCGA-D3-A2JN	14	7	5	1	4	5	16	NA
+TCGA-SKCM	male	Skin	TCGA-EB-A51B	14	7	5	1	4	5	16	NA
+TCGA-SKCM	male	Skin	TCGA-D3-A8GJ	14	7	5	1	4	5	16	NA
+TCGA-SKCM	female	Skin	TCGA-BF-A1PZ	14	7	5	1	4	5	16	NA
+TCGA-SKCM	female	Skin	TCGA-ER-A19K	14	7	5	1	4	5	16	NA
+TCGA-SKCM	male	Skin	TCGA-FS-A1ZT	13	7	5	1	4	5	16	NA
+TCGA-STAD	male	Stomach	TCGA-F1-6875	18	7	5	1	4	5	16	NA
+TCGA-STAD	male	Stomach	TCGA-VQ-A8P5	16	7	5	1	4	5	16	NA
+TCGA-STAD	female	Stomach	TCGA-CD-8527	17	7	5	1	4	5	16	NA
+TCGA-STAD	male	Stomach	TCGA-HU-A4GD	16	7	3	1	5	7	16	NA
+TCGA-STAD	male	Stomach	TCGA-BR-4357	19	7	5	2	4	5	16	NA
+TCGA-STAD	female	Stomach	TCGA-CD-8524	17	7	5	1	4	5	16	NA
+TCGA-STAD	female	Stomach	TCGA-B7-5816	16	7	5	1	3	2	16	NA
+TCGA-STAD	female	Stomach	TCGA-BR-7704	18	7	7	1	7	10	16	NA
+TCGA-STAD	male	Stomach	TCGA-IN-8462	17	7	5	1	5	7	16	NA
+TCGA-STAD	male	Stomach	TCGA-CG-4300	17	7	5	1	3	2	16	NA
+TCGA-TGCT	male	Testis	TCGA-2G-AAKG	18	8	7	2	8	10	24	NA
+TCGA-TGCT	male	Testis	TCGA-VF-A8AE	14	8	5	1	4	5	16	NA
+TCGA-THCA	female	Thyroid gland	TCGA-EL-A3H4	14	10	5	1	4	5	16	NA
+TCGA-THCA	female	Thyroid gland	TCGA-EM-A4G1	14	10	5	1	4	5	16	NA
+TCGA-THCA	female	Thyroid gland	TCGA-EL-A3T9	15	10	5	1	4	5	16	NA
+TCGA-THCA	male	Thyroid gland	TCGA-FY-A3NP	14	10	5	1	4	5	16	NA
+TCGA-THCA	female	Thyroid gland	TCGA-EM-A3OB	14	10	5	1	4	5	16	NA
+TCGA-THCA	female	Thyroid gland	TCGA-E8-A242	14	10	5	1	4	5	16	NA
+TCGA-THCA	female	Thyroid gland	TCGA-ET-A25O	14	10	5	1	4	5	16	NA
+TCGA-THCA	female	Thyroid gland	TCGA-DJ-A2PS	14	10	5	1	4	5	16	NA
+TCGA-THCA	male	Thyroid gland	TCGA-DJ-A3VG	14	10	5	1	4	5	16	NA
+TCGA-THCA	female	Thyroid gland	TCGA-EM-A3SX	14	10	5	1	4	5	16	NA
+TCGA-THCA	female	Thyroid gland	TCGA-EL-A3T6	15	10	5	2	6	10	16	NA
+TCGA-THYM	female	Thymus	TCGA-X7-A8D9	14	8	5	1	4	5	16	NA
+TCGA-THYM	male	Thymus	TCGA-3S-A8YW	14	8	5	1	4	5	16	NA
+TCGA-THYM	male	Thymus	TCGA-5K-AAAP	14	8	5	1	4	5	16	NA
+TCGA-UCEC	female	Corpus uteri	TCGA-EY-A4KR	16	10	5	1	4	5	16	NA
+TCGA-UCEC	female	Corpus uteri	TCGA-B5-A0K0	17	10	5	1	4	5	16	NA
+TCGA-UCEC	female	Corpus uteri	TCGA-AX-A05U	17	10	3	1	4	5	16	NA
+TCGA-UCEC	female	Corpus uteri	TCGA-B5-A0K3	17	10	5	1	4	5	16	NA
+TCGA-UCEC	female	Corpus uteri	TCGA-PG-A7D5	16	10	5	1	4	5	16	NA
+TCGA-UCEC	female	Corpus uteri	TCGA-B5-A0K8	17	10	5	1	4	5	16	NA
+TCGA-UCEC	NA	Uterus, NOS	TCGA-FL-A1YL	14	9	2	1	3	5	NA	NA
+TCGA-UCEC	female	Corpus uteri	TCGA-B5-A1MY	16	10	5	1	4	5	16	NA
+TCGA-UCEC	female	Corpus uteri	TCGA-DI-A2QT	16	10	5	1	4	5	16	NA
+TCGA-UCEC	female	Corpus uteri	TCGA-BG-A0M6	17	11	5	1	4	5	16	NA
+TCGA-UCEC	female	Corpus uteri	TCGA-D1-A102	17	11	5	1	4	5	16	NA
+TCGA-UCEC	female	Corpus uteri	TCGA-B5-A0K2	17	10	5	1	4	5	16	NA
+TCGA-UCEC	female	Corpus uteri	TCGA-B5-A1MR	16	10	5	1	4	5	16	NA
+TCGA-UCEC	female	Corpus uteri	TCGA-D1-A16N	16	10	5	1	4	5	16	NA
+TCGA-UCEC	female	Corpus uteri	TCGA-EY-A212	16	11	5	1	4	5	16	NA
+TCGA-UCEC	female	Corpus uteri	TCGA-QS-A8F1	16	10	5	1	4	5	16	NA
+TCGA-UCEC	female	Corpus uteri	TCGA-B5-A11M	17	10	2	1	4	5	16	NA
+TCGA-UCS	female	Uterus, NOS	TCGA-ND-A4W6	20	8	3	1	4	5	16	NA
+TCGA-UCS	female	Uterus, NOS	TCGA-N5-A4RM	16	8	5	1	4	5	16	NA
+TCGA-UCS	female	Uterus, NOS	TCGA-N5-A59E	16	8	5	1	4	5	16	NA
+TCGA-UCS	female	Uterus, NOS	TCGA-NA-A4QV	16	8	5	1	4	5	16	NA
