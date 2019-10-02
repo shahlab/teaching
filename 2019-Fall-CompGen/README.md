@@ -69,7 +69,7 @@ Class | Date | Topic | Learning Materials
 6 | Sep 19 | Lists, functions, and strings | [Presentation](Lab-06/Lab-06.html) <br> [R code for presentation](Lab-06/Lab-06.Rpres) <br> [Homework](Lab-06/Lab-06_hw.Rmd) <br> [In-class](Lab-06/Lab-06_in-class.Rmd)
 7 | Sep 24 | Advanced data wrangling -- tidyverse I | [Presentation](Lab-07/Lab-07.html) <br> [R code for presentation](Lab-07/Lab-07.Rpres) <br> [Homework](Lab-07/Lab-07_hw.Rmd) <br> [Homework solns.](Lab-07/Favate_Lab-07_homework.Rmd) <br> [In-class](Lab-07/Lab-07_in-class.Rmd)
 8 | Sep 26 | Quiz 02 and recap | [Quiz](Lab-08/Lab-08_quiz.Rmd) <br> [Quiz solns.](Lab-08/Shah_Lab-08_quiz.Rmd)
-9 | Oct 1 | Advanced data wrangling -- tidyverse II | [Presentation](Lab-09/Lab-09.html) <br> [R code for presentation](Lab-09/Lab-09.Rpres) <br> Homework <br> In-class
+9 | Oct 1 | Advanced data wrangling -- tidyverse II | [Presentation](Lab-09/Lab-09.html) <br> [R code for presentation](Lab-09/Lab-09.Rpres) <br> [Homework](Lab-09/Lab-09_hw.Rmd) <br> [In-class](Lab-09/Lab-09_in-class.Rmd)
 10 | Oct 3 | Visualization -- ggplot2 | 
 11 | Oct 8 | Introduction to bioconductor -- IRanges | 
 12 | Oct 10 | Quiz 03 and recap | 

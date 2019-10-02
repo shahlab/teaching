@@ -1,0 +1,39 @@
+---
+title: "Lab 09 Homework"
+output:
+  html_document:
+    df_print: paged
+---
+
+- Each question is 2 points unless otherwise noted.
+- Write the `codes` for all questions in a single R Notebook (file).
+- ALWAYS comment your code.
+- Name the file as "Lastname_lab-09_homework.Rmd"
+- **<span style="color:red"> Due date: Tues, Oct 8, 1:40 pm EST</span>**
+
+The cell size data in Excel you worked with in the lab today contains 14 sheets. Each of the 14 sheets contains data for one strain of E. coli. Each row in a sheet contains data for one E. coli cell.
+
+## Questions
+
+#### 1. Which strain of E. coli has the largest `SHAPE.area` on average in cell_size1.xlsx? (3 pt)
+#### 2. cell_size2.xlsx is a biological replicate of the data in cell_size1.xlsx. Read in the data for `A+5` strain from both the files. Find out which replicate has the longest cell (`SHAPE.length`) and which replicate has longer cells on average.
+#### 3. Cells with length > 20 are considered long cells and length < 20 are short cells. Find out the average area (`SHAPE.area`) for short and long cells of `A+5` in both replicates. (Something *similar* to the table shown below)
+ Length | Replicate | Area
+------------- | ------------- | ----------
+Long | Replicate 1 | X
+Long | Replicate 2  | X
+Short | Replicate 1 | X
+Short | Replicate 2  | X
+### 4. Using the Proliferation data find out the average Expansion for all combinations of `Red-Blue`, `Passage` and `Media`. Which combinations have the highest and lowest expansion? (3 pt)
+
+## Bonus questions
+#### 5. Which strain of E. coli has the smallest `SHAPE.area` on average among all short cells (length < 20) in cell_size1.xlsx?
+#### 6. For which strains are shorter cells rounder (`SHAPE.roundness`) than longer cells in cell_size2.xlsx?
+#### 7. Find out how to rearrange columns of a dataframe (Google). Move `SHAPE.area` and SHAPE.roundness as the first two columns in the combined data for cell_size1.xlsx.
+#### 8. In proliferation dataset add a column to identify all assays that have `Karyotpe` data and are `Outlier?` value of 1.
+
+
+
+
+
+

@@ -1,0 +1,325 @@
+---
+title: "Lab 09 in class"
+output:
+  html_document:
+    df_print: paged
+---
+
+This code should run provided you are able to load the datasets in correctly. Otherwise, view the HTML.
+
+### Exercise 9.1, mutate() example
+
+`mutate` makes new columns in a data frame based on existing columns
+
+Answer these questions with a single chain of commands:
+
+1. How many total copy_number_variation and dna_methylation files are associated with each entry?  
+2. Add a TRUE/FALSE column to show whether gender is male or female.  
+3. How many entries are male or female and have at least 10 total cnv + methylation files associated with them?  
+
+First, we must read in the packages required for this document.
+```{r message = FALSE, warning = FALSE}
+library(tidyverse)
+library(readxl)
+```
+
+Read in the TCGA dataset, the exact location depends on you. If you save the Rmd and the csv in the same location, you may load it purely by name as is done below.
+```{r message = FALSE, warning = FALSE}
+tcga <- read_csv("tcga_stats.csv")
+
+tcga
+```
+
+It is possible to answer these questions in a single chain of commands. This takes the tcga dataset, makes two new columns  
+`bio.total` is the sum of `copy_number_variation` and `dna_methylation`  
+`new.gender` is `TRUE` if "male" or "female" is found in the `gender` column, and `FALSE` if anything else  
+Then we filter based on the new columns, reducing the dataset to only entries where `gender` is "male" or "female" and `bio.total` is greater than 10.
+```{r}
+# take the tcga dataset
+tcga %>% 
+  # make two new columns, bio.total and new.gender
+  mutate(bio.total = copy_number_variation + dna_methylation, 
+         new.gender = ifelse(gender == "female" | gender == "male", TRUE, FALSE)) %>% 
+  # filter the new data frame to rows that match these parameters
+  filter(new.gender == TRUE & bio.total > 10)
+```
+
+### Summarise example
+
+`summarise` allows you to create custom summary functions on grouped datasets. `summarise` creates new columns and gets rid of ones you're not using. It takes the argument of a dataset, the name of a new column and the way that column is defined. It always results in a data frame. This is an example, it won't run. 
+```{r eval = FALSE}
+df %>%
+  group_by(some_variable) %>%
+  summarise(new_col_name = way_to_get_new_col) %>%
+  ungroup()
+```
+
+For example, if we want to know the mean number of transcriptome files for each for each primary cancer site, we can do the following
+```{r}
+# Take the tcga dataset
+tcga %>%
+  # group by primary cancer site
+  group_by(primary) %>%
+  # define a custom function which takes the mean of the transcriptome column for each group
+  summarise(mean.trans.files.per.primary = mean(transcriptome_profiling, na.rm = TRUE)) %>%
+  ungroup()
+```
+
+### Exercise 9.2
+
+Answer these questions with one chain of commands:
+
+1. For each primary cancer site, how many clincal samples exist?
+2. For each primary cancer site, How many clincal reports exist per biospecimen?
+
+```{r}
+# take the tcga dataset
+tcga %>%
+  # group by primary cancer site
+  group_by(primary) %>%
+  # create two summary columns, the sum of all clincal files per group and
+  # the sum of all biospecimen files per group
+  summarise(clin.sum = sum(clinical, na.rm = TRUE),
+            bio.sum = sum(biospecimen, na.rm = TRUE)) %>%
+  ungroup() %>%
+  # add a new column that calculates the ratio of the two
+  mutate(ratio = clin.sum / bio.sum)
+```
+
+This method does the same thing but in a more condensed manner.
+```{r}
+tcga %>%
+  group_by(primary) %>%
+  summarise(ratio = sum(clinical, na.rm = TRUE) / sum(biospecimen, na.rm = TRUE)) %>%
+  ungroup()
+```
+
+### dir() function
+
+`dir` simply tells you the contents of a directory. The only necessary argument is a path to a directory in quotes. If none is supplied, it thinks you're asking about the directory where you're running your code from (where the Rmd is saved). The results of running this will vary depending on where you save your Rmd.
+```{r eval = FALSE}
+dir()
+```
+
+To find files with particular extensions, you can supply a pattern argument. To find all .xlsx files
+```{r eval = FALSE}
+dir("path/to/directory", pattern = ".xlsx")
+```
+
+To get the full file path, include `full.names = TRUE`, this is necessary if you plan to load files using the information derived from `dir`. This would get you all of the full filepaths to all xlsx files in this made up directory. You could use these as input to `read_xlsx`.
+```{r eval = FALSE}
+dir("path/to/directory", pattern = ".xlsx", full.names = TRUE)
+```
+
+`recursive = TRUE` will tell `dir` to look in subdirectories for files too.
+
+### excel_sheets
+
+This function simply takes the **path** to an excel file and returns the sheet names as a vector.
+```{r}
+# get the path to any excel files in this directory, there's only 1
+my_excel_file <- dir(".", pattern = ".xlsx", full.names = TRUE)
+
+# pass the path excel_sheets to figure out the sheet names
+my_excel_file %>%
+  excel_sheets()
+```
+
+### set_names
+
+`set_names` assigns names to an object, or elements of an object. If no names are supplied, it names a vector with itself. Each element of the sheet names vector is named with itself. The elements of the vector are in quotes and the names are not. 
+```{r}
+my_excel_file %>%
+  excel_sheets() %>%
+  set_names()
+```
+
+### read_xlsx
+
+This function takes the path to an excel file and reads it in as a data frame. It can choose a specific sheet if you ask for it, but otherwise reads in the first sheet with little indication of that. Remember, the `skip`, `na`, and `col_names` arguments are specific to this excel file and might not work for one you have.
+```{r}
+read_xlsx(path = my_excel_file, # the excel file is here
+          col_names = TRUE,     # the first row after the skip is column names
+          na = "NaN",           # NAs are written as NaN in this data
+          skip = 1)             # skip the first row
+```
+
+### Exercise 9.3
+
+We just learned about dir(), excel_sheets(), and read_xlsx(), use them to:
+
+1. Create a single vector that contains the file paths to the excel files, save this to a variable
+
+Simply use `dir` to find the file path of the .xlsx file.
+```{r}
+excel_file_data <- dir(".", pattern = ".xlsx", full.names = TRUE)
+
+excel_file_data
+```
+
+2. Preview the names of the sheets in one vector, no need to save as variable
+
+Pass the file path to `excel_sheets`, either of these ways is fine. `set_names` is unnecessary here.
+```{r}
+excel_file_data %>%
+  excel_sheets()
+
+excel_sheets(excel_file_data)
+```
+
+3. Read in a single sheet of your choosing as a data frame. Important, skip the first line of the excel file, top row is the column names, and NAs are encoded as NaN in these files.
+
+Pass our excel file path to the `read_xlsx` function with the given parameters.
+```{r}
+read_xlsx(path = excel_file_data, skip = 1, na = "NaN", col_names = TRUE)
+```
+
+4. Find the names of the sheets in one of the files, pipe the 6th one to read_xlsx to read in the 6th sheet
+
+You can do this all in one chain of commands
+```{r}
+# take the file path
+excel_file_data %>%
+  # determine the sheet names, returns a vector
+  excel_sheets() %>%
+  # take the 6th element of that vector
+  .[6] %>%
+  # pass that sheet name to read_xlsx, which automatically knows it's a sheet name
+  read_xlsx(path = excel_file_data, skip = 1, na = "NaN", col_names = TRUE)
+```
+
+### Reading in multiple sheets
+
+Reading in multiple sheets requires the use of the `map` function. `map` applies a function to elements of a vector and results in a list, one item generated for each element of the vector. In this case, we read each of the 14 sheets in as their own data frame and end up with a list of 14 data frames. Importantly, we do want the vector of sheet names to have names, so we use `set_names`.
+```{r}
+# find our file
+file.loc <- dir(".", pattern = ".xlsx")
+
+file.loc
+
+# take out file path
+df.list <- file.loc %>%
+  # get the sheet names
+  excel_sheets() %>%
+  # name the vector using itself
+  set_names() %>%
+  # for each item in that vector, read in that sheet from our 
+  # excel file as a data frame and store it in a list
+  map(read_xlsx, path = file.loc, col_names = TRUE, skip = 1, na = "NaN")
+
+# Uncomment this if you want to see the list of data frames, 14 dfs renders poorly in HTML
+#df.list
+```
+
+Importantly, note that the items in the list all have the same name as the sheet they came from. This is not the case if you omit `set_names`
+
+```{r}
+df.list.sans.names <- file.loc %>%
+  # get the sheet names
+  excel_sheets() %>%
+  # for each item in that vector, read in that sheet from our 
+  # excel file as a data frame and store it in a list
+  map(read_xlsx, path = file.loc, col_names = TRUE, skip = 1, na = "NaN")
+
+# commented out for the same reason, 14 dfs
+#df.list.sans.names
+```
+
+### bind_rows
+
+`bind_rows` stacks data frames on top of each other and only works if the data frames have the same number and names of columns. If fed a list, it knows you want to stack all the data frames in the list together. the `.id` argument allows you to use the names of data frames in a list in a new column so you know which rows came from where.
+
+```{r}
+
+```
+
+### Exercise 9.5
+
+1. Make one data frame out of all 14.
+
+Simply `bind_rows` the list
+```{r}
+bind_rows(df.list)
+```
+
+2. Make one data frame from all 14, but with a column denoting the source of the rows.
+
+Now, you must use the `.id` argument. Note the addition of the sample column.
+```{r}
+all.data <- bind_rows(df.list, .id = "sample")
+
+all.data
+```
+
+3. Find the average SHAPE.angularity for each sample
+
+Now that we have a single data frame, this is easy. group by sample and use summarise to make a mean SHAPE.angularity column.
+```{r}
+all.data %>%
+  group_by(sample) %>%
+  summarise(mean_shape_angularity = mean(SHAPE.angularity, na.rm = TRUE)) %>%
+  ungroup()
+```
+
+4. Assuming each cell is a circle, use the SHAPE.area column to calculate the radius in a new column.
+
+Using our single data frame, we can `mutate` in a new column that back calculates radius from area of a perfect circle. This new column appears at the right most end of the data frame.
+```{r}
+all.data %>%
+  mutate(radius = sqrt(SHAPE.area/pi))
+```
+
+### left and right joins
+
+We can also join data frames side by side. `left_join` and `right_join` perfomr this action. They are similar, but different.
+
+Given these two dataset, which have `Gene` in common between, we would like a single data frame that represents all the data.
+```{r}
+genes1 <- read_csv("genes1.csv")
+
+genes2 <- read_csv("genes2.csv")
+
+genes1
+genes2
+```
+
+For these data frames which each contain all of the genes, left and right joins are the same. Though the exact positions of the rows differ between the methods (this could be overidden by arranging each result by the same thing), all of the data is in both of them.
+```{r}
+left_join(genes1, genes2, by = "Gene")
+
+right_join(genes1, genes2, by = "Gene")
+```
+
+### Joining unequal data frames
+
+If one of the datasets is missing some of the genes, for example, we have a new dataset that is only long genes
+```{r}
+long.genes <- genes1 %>%
+  filter(Length > 900)
+
+long.genes
+```
+
+Anbd we still want to join the rest of the information in genes2 to it, `left_join` and `right_join` then produce different results.
+
+This attempts to join, where possible, all matching rows from `genes2` to `long.genes`. The join is to the left in that regard because it's `genes2` to `long.genes.` There's only 562 matching rows, so those are the only ones it adds
+```{r}
+left_join(long.genes, genes2, by = "Gene")
+```
+
+`right_join` has the opposite effect. This tries to join all rows from `long.genes` to `genes2`. Where it find mathcing rows, we get a complete set of data. Where there is no match, is jsut puts `NA` in that cell.
+```{r}
+right_join(long.genes, genes2, by = "Gene")
+```
+
+These results we then be reversed if we reversed the order in which we fed the data frames to the function. Notice that the row counts are different if we reverse the order.
+```{r}
+# originally gave us 562 rows
+left_join(genes2, long.genes, by = "Gene") %>%
+  nrow()
+
+# originally gave us 4839 rows
+right_join(genes2, long.genes, by = "Gene") %>%
+  nrow()
+```
+
