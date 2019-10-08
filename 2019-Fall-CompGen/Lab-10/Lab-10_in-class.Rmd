@@ -1,0 +1,557 @@
+---
+title: "Lab 10 - ggplot"
+output: 
+  html_notebook: 
+    toc: yes
+    toc_depth: 4
+    toc_float: TRUE
+---
+
+```{r}
+var_x <- 1:10
+var_y <- 11:20
+
+plot(var_x, var_y)
+
+rand_sample <- sample(var_x, size = 100, replace = TRUE)
+hist(rand_sample)
+```
+
+
+### Grammar Of Graphics
+- data
+- aesthetic mapping
+- geometric object
+- statistical transformations
+- scales
+- coordinate system
+- position adjustments
+- faceting
+
+### Load package and data
+```{r}
+library(tidyverse)
+```
+```{r}
+data <- read_csv("plot_data.csv")
+data
+```
+
+### Structure of ggplot
+```{r}
+my_plot <- ggplot(data = data, aes(x = mRNA, y = RPF))
+my_plot
+```
+
+### Simple scatterplot
+```{r}
+my_plot + 
+  geom_point()
+```
+
+
+### Changing scales of axes
+```{r}
+my_plot +
+  geom_point() +
+  scale_x_continuous(trans = "log10") +
+  scale_y_continuous(trans = "log10")
+
+my_plot +
+  geom_point() +
+  scale_x_continuous(trans = "log2") +
+  scale_y_continuous(trans = "log10")
+
+my_plot +
+  geom_point() +
+  scale_x_continuous(trans = "log2")
+```
+
+
+### Specify axis breakpoints
+```{r}
+my_plot +
+  geom_point() +
+  scale_x_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000)) +
+  scale_y_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000))
+
+```
+
+
+
+### Change limits and label styles of plots
+```{r}
+my_plot +
+  geom_point() +
+  scale_x_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000),
+                     labels = scales::comma) +
+  scale_y_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000),
+                     labels = scales::comma)
+
+my_plot +
+  geom_point() +
+  scale_x_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000),
+                     labels = scales::comma,
+                     limits = c(1000, 25000)) +
+  scale_y_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000),
+                     labels = scales::comma,
+                     limits = c(1000, 25000))
+
+my_plot +
+  geom_point() +
+  scale_x_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000, 25000),
+                     labels = scales::comma,
+                     limits = c(1000, 25000)) +
+  scale_y_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000, 25000),
+                     labels = scales::comma,
+                     limits = c(1000, 25000))
+```
+
+### Axis labels
+```{r}
+my_plot +
+  geom_point() +
+  scale_x_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000)) +
+  scale_y_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000)) +
+  labs(x = "Yeast mRNA abundance", 
+       y = "Yeast RPF abundance", 
+       title = "Scatterplot")
+```
+
+
+### Changing transparency of points
+```{r}
+my_plot +
+  geom_point(alpha = 0.1) +
+  scale_x_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000)) +
+  scale_y_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000)) +
+  labs(x = "Yeast mRNA abundance", 
+       y = "Yeast RPF abundance", 
+       title = "Scatterplot")
+```
+
+
+### Color points
+```{r}
+ggplot(data = data, aes(x = mRNA, y = RPF)) +
+  geom_point(alpha = 0.1,
+             color = "blue") +
+  scale_x_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000)) +
+  scale_y_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000)) +
+  labs(x = "Yeast mRNA abundance", 
+       y = "Yeast RPF abundance", 
+       title = "Scatterplot")
+```
+
+
+### Color points with a variables (aesthetic mapping) - continuous scale
+```{r}
+ggplot(data = data, aes(x = mRNA, y = RPF, color = Chromosome)) +
+  geom_point(alpha = 0.4) +
+  scale_x_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000)) +
+  scale_y_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000)) +
+  labs(x = "Yeast mRNA abundance", 
+       y = "Yeast RPF abundance", 
+       title = "Scatterplot")
+
+ggplot(data = data, aes(x = mRNA, y = RPF, color = uATG)) +
+  geom_point(alpha = 0.4) +
+  scale_x_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000)) +
+  scale_y_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000)) +
+  labs(x = "Yeast mRNA abundance", 
+       y = "Yeast RPF abundance", 
+       title = "Scatterplot")
+```
+
+
+### Color points with a variables (aesthetic mapping) - discrete scale and color brewer
+```{r}
+ggplot(data = data, aes(x = mRNA, y = RPF, color = uATG)) +
+  geom_point(alpha = 0.4) +
+  scale_x_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000)) +
+  scale_y_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000)) +
+  labs(x = "Yeast mRNA abundance", 
+       y = "Yeast RPF abundance", 
+       title = "Scatterplot") +
+  scale_color_brewer(palette = "Set1")
+
+```
+
+### Change shapes of points
+```{r}
+ggplot(data = data, aes(x = mRNA, y = RPF, shape = uATG, color = uATG)) +
+  geom_point(alpha = 0.4) +
+  scale_x_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000)) +
+  scale_y_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000)) +
+  labs(x = "Yeast mRNA abundance", 
+       y = "Yeast RPF abundance", 
+       title = "Scatterplot") +
+  scale_color_brewer(palette = "Set1")
+```
+
+
+### Change sizes of points
+```{r}
+ggplot(data = data, aes(x = mRNA, y = RPF, color = uATG)) +
+  geom_point(alpha = 0.4, 
+             size = 2) +
+  scale_x_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000)) +
+  scale_y_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000)) +
+  labs(x = "Yeast mRNA abundance", 
+       y = "Yeast RPF abundance", 
+       title = "Scatterplot") +
+  scale_color_brewer(palette = "Set1")
+
+ggplot(data = data, aes(x = mRNA, y = RPF, color = uATG, size = Size)) +
+  geom_point(alpha = 0.4) +
+  scale_x_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000)) +
+  scale_y_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000)) +
+  labs(x = "Yeast mRNA abundance", 
+       y = "Yeast RPF abundance", 
+       title = "Scatterplot") +
+  scale_color_brewer(palette = "Set1")
+
+ggplot(data = data, aes(x = mRNA, y = RPF, color = Size, shape = uATG)) +
+  geom_point(alpha = 0.4) +
+  scale_x_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000)) +
+  scale_y_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000)) +
+  labs(x = "Yeast mRNA abundance", 
+       y = "Yeast RPF abundance", 
+       title = "Scatterplot") +
+  scale_color_gradient(low = "red", high = "blue")
+```
+
+
+### Adding trendlines and regression lines
+```{r}
+ggplot(data = data, aes(x = mRNA, y = RPF)) +
+  geom_point(alpha = 0.4, 
+             size = 2) +
+  scale_x_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000)) +
+  scale_y_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000)) +
+  labs(x = "Yeast mRNA abundance", 
+       y = "Yeast RPF abundance", 
+       title = "Scatterplot") +
+  geom_smooth(method = "lm",
+              color = "red")
+```
+
+
+### Statistical tests
+```{r}
+library(ggpubr)
+```
+```{r}
+ggplot(data = data, aes(x = mRNA, y = RPF)) +
+  geom_point(alpha = 0.4, 
+             size = 2) +
+  scale_x_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000)) +
+  scale_y_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000)) +
+  labs(x = "Yeast mRNA abundance", 
+       y = "Yeast RPF abundance", 
+       title = "Scatterplot") +
+  stat_cor() + 
+  geom_smooth(method = "lm")
+
+ggplot(data = data, aes(x = mRNA, y = RPF, color = uATG)) +
+  geom_point(alpha = 0.4, 
+             size = 2) +
+  scale_x_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000)) +
+  scale_y_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000)) +
+  labs(x = "Yeast mRNA abundance", 
+       y = "Yeast RPF abundance", 
+       title = "Scatterplot") +
+  scale_color_brewer(palette = "Set1") +
+  stat_cor() +
+  geom_smooth(method = "lm")
+
+
+ggplot(data = data, aes(x = mRNA, y = RPF, color = Chromosome)) +
+  geom_point(alpha = 0.4, 
+             size = 2) +
+  scale_x_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000)) +
+  scale_y_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000)) +
+  labs(x = "Yeast mRNA abundance", 
+       y = "Yeast RPF abundance", 
+       title = "Scatterplot") +
+  stat_cor() +
+  geom_smooth(method = "lm")
+```
+
+### Separate panels
+```{r}
+ggplot(data = data, aes(x = mRNA, y = RPF, color = uATG)) +
+  geom_point(alpha = 0.4, 
+             size = 2) +
+  scale_x_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000)) +
+  scale_y_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000)) +
+  labs(x = "Yeast mRNA abundance", 
+       y = "Yeast RPF abundance", 
+       title = "Scatterplot") +
+  stat_cor() +
+  geom_smooth(method = "lm") +
+  facet_grid(.~uATG)
+
+ggplot(data = data, aes(x = mRNA, y = RPF, color = uATG)) +
+  geom_point(alpha = 0.4, 
+             size = 2) +
+  scale_x_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000)) +
+  scale_y_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000)) +
+  labs(x = "Yeast mRNA abundance", 
+       y = "Yeast RPF abundance", 
+       title = "Scatterplot") +
+  stat_cor() +
+  geom_smooth(method = "lm") +
+  facet_grid(uATG~.)
+
+ggplot(data = data, aes(x = mRNA, y = RPF, color = uATG)) +
+  geom_point(alpha = 0.4, 
+             size = 2) +
+  scale_x_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000)) +
+  scale_y_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000)) +
+  labs(x = "Yeast mRNA abundance", 
+       y = "Yeast RPF abundance", 
+       title = "Scatterplot") +
+  stat_cor() +
+  geom_smooth(method = "lm") +
+  facet_grid(.~Chromosome)
+
+ggplot(data = data, aes(x = mRNA, y = RPF, color = uATG)) +
+  geom_point(alpha = 0.4, 
+             size = 2) +
+  scale_x_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000)) +
+  scale_y_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000)) +
+  labs(x = "Yeast mRNA abundance", 
+       y = "Yeast RPF abundance", 
+       title = "Scatterplot") +
+  stat_cor() +
+  geom_smooth(method = "lm") +
+  facet_wrap(.~Chromosome)
+```
+
+### Histograms
+```{r}
+ggplot(data = data, aes(x = mRNA)) +
+  geom_histogram() +
+  scale_x_continuous(trans = "log10") +
+  labs(x = "Yeast mRNA abundance", 
+       y = "Frequency", 
+       title = "Histogram")
+
+ggplot(data = data, aes(x = mRNA)) +
+  geom_histogram(bins = 100) +
+  scale_x_continuous(trans = "log10") +
+  labs(x = "Yeast mRNA abundance", 
+       y = "Frequency", 
+       title = "Histogram")
+
+ggplot(data = data, aes(x = mRNA, color = uATG)) +
+  geom_histogram(bins = 100) +
+  scale_x_continuous(trans = "log10") +
+  labs(x = "Yeast mRNA abundance", 
+       y = "Frequency", 
+       title = "Histogram")
+
+ggplot(data = data, aes(x = mRNA, color = uATG)) +
+  geom_histogram(bins = 100, position = "dodge") +
+  scale_x_continuous(trans = "log10") +
+  labs(x = "Yeast mRNA abundance", 
+       y = "Frequency", 
+       title = "Histogram")
+```
+
+
+### Density plots
+```{r}
+ggplot(data = data, aes(x = mRNA, fill = uATG)) +
+  geom_density(alpha = 0.5) +
+  scale_x_continuous(trans = "log10") +
+  labs(x = "Yeast mRNA abundance", 
+       y = "Frequency", 
+       title = "Density plot") +
+  scale_fill_brewer(palette = "Set1")
+```
+
+
+
+### Multi-panel density plots
+```{r}
+ggplot(data = data, aes(x = mRNA, fill = uATG)) +
+  geom_density(alpha = 0.5) +
+  scale_x_continuous(trans = "log10") +
+  labs(x = "Yeast mRNA abundance", 
+       y = "Frequency", 
+       title = "Density plot") +
+  scale_fill_brewer(palette = "Set1") +
+  facet_wrap(~Chromosome)
+```
+
+
+
+### Boxplots and Violin plots
+```{r}
+ggplot(data = data, aes(x = uATG, y = mRNA, fill = uATG)) +
+  geom_boxplot() +
+  scale_y_continuous(trans = "log10") +
+  labs(x = "uATGs", 
+       y = "Yeast mRNA abundance", 
+       title = "Boxplot") +
+  scale_fill_brewer(palette = "Set1")
+
+ggplot(data = data, aes(x = uATG, y = mRNA, fill = uATG)) +
+  geom_boxplot() +
+  scale_y_continuous(trans = "log10") +
+  labs(x = "uATGs", 
+       y = "Yeast mRNA abundance", 
+       title = "Boxplot") +
+  scale_fill_brewer(palette = "Set1") +
+  stat_compare_means(method = "t.test")
+```
+
+```{r}
+my_comparisons <- list(c("Chr-1", "Chr-2"),
+                       c("Chr-1", "Chr-9"))
+
+ggplot(data = data, aes(x = Chromosome, y = mRNA, fill = Chromosome)) +
+  geom_boxplot() +
+  scale_y_continuous(trans = "log10") +
+  labs(x = "uATGs", 
+       y = "Yeast mRNA abundance", 
+       title = "Boxplot") +
+  stat_compare_means(comparisons = my_comparisons, method = "t.test")
+```
+
+```{r}
+my_comparisons <- list(c("Chr-1", "Chr-2"),
+                       c("Chr-1", "Chr-9"))
+
+ggplot(data = data, aes(x = Chromosome, y = mRNA, fill = Chromosome)) +
+  geom_violin() +
+  scale_y_continuous(trans = "log10") +
+  labs(x = "uATGs", 
+       y = "Yeast mRNA abundance", 
+       title = "Violin plot") +
+  stat_compare_means(comparisons = my_comparisons, method = "t.test")
+
+```
+
+
+### Boxplots with scatter points
+```{r}
+ggplot(data = data, aes(x = uATG, y = mRNA, fill = uATG)) +
+  geom_boxplot() +
+  scale_y_continuous(trans = "log10") +
+  labs(x = "uATGs", 
+       y = "Yeast mRNA abundance", 
+       title = "Boxplot") +
+  scale_fill_brewer(palette = "Set1") +
+  stat_compare_means(method = "t.test") +
+  geom_jitter(alpha = 0.3, width = 0.1, height = 0)
+```
+
+
+### Saving plots
+```{r}
+myboxplot <- ggplot(data = data, aes(x = uATG, y = mRNA, fill = uATG)) +
+  geom_boxplot() +
+  scale_y_continuous(trans = "log10") +
+  labs(x = "uATGs", 
+       y = "Yeast mRNA abundance", 
+       title = "Boxplot") +
+  scale_fill_brewer(palette = "Set1") +
+  stat_compare_means(method = "t.test") +
+  geom_jitter(alpha = 0.3, width = 0.1, height = 0)
+```
+
+```{r}
+myboxplot
+ggsave(myboxplot, filename = "myboxplot.png")
+```
+
+### Interactive plots
+```{r}
+myscatterplot <- ggplot(data = data, aes(x = mRNA, y = RPF, color = uATG, label = Gene)) +
+  geom_point(alpha = 0.4, 
+             size = 2) +
+  scale_x_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000)) +
+  scale_y_continuous(trans = "log10",
+                     breaks = c(1, 5, 10, 50, 100, 500, 1000, 5000, 10000)) +
+  labs(x = "Yeast mRNA abundance", 
+       y = "Yeast RPF abundance", 
+       title = "Scatterplot") +
+  scale_color_brewer(palette = "Set1") +
+  stat_cor() +
+  geom_smooth(method = "lm")
+
+```
+
+```{r}
+library(plotly)
+```
+
+```{r}
+ggplotly(myscatterplot)
+```
+
+### Themes
+```{r}
+myscatterplot +
+  theme_pubr()
+```
+
+
+
+
+
+
+
+
+
+
+
+
