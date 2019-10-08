@@ -67,14 +67,14 @@ Class | Date | Topic | Learning Materials
 4 | Sep 12 | Quiz 01 and recap | [Quiz](Lab-04/Lab-04_quiz.Rmd) <br> [Quiz solns.](Lab-04/Shah_Lab-04_quiz.Rmd)
 5 | Sep 17 | Conditional statements and loops | [Presentation](Lab-05/Lab-05.html) <br> [R code for presentation](Lab-05/Lab-05.Rpres) <br> [Homework](Lab-05/Lab-05_hw.Rmd) <br> [Homework solns.](Lab-05/Shah_Lab-05_homework.Rmd) <br> [In-class](Lab-05/Lab-05_in-class.Rmd)
 6 | Sep 19 | Lists, functions, and strings | [Presentation](Lab-06/Lab-06.html) <br> [R code for presentation](Lab-06/Lab-06.Rpres) <br> [Homework](Lab-06/Lab-06_hw.Rmd) <br> [In-class](Lab-06/Lab-06_in-class.Rmd)
-7 | Sep 24 | Advanced data wrangling -- tidyverse I | [Presentation](Lab-07/Lab-07.html) <br> [R code for presentation](Lab-07/Lab-07.Rpres) <br> [Homework](Lab-07/Lab-07_hw.Rmd) <br> [Homework solns.](Lab-07/Favate_Lab-07_homework.Rmd) <br> [In-class](Lab-07/Lab-07_in-class.Rmd)
+7 | Sep 24 | Advanced data wrangling - tidyverse I | [Presentation](Lab-07/Lab-07.html) <br> [R code for presentation](Lab-07/Lab-07.Rpres) <br> [Homework](Lab-07/Lab-07_hw.Rmd) <br> [Homework solns.](Lab-07/Favate_Lab-07_homework.Rmd) <br> [In-class](Lab-07/Lab-07_in-class.Rmd)
 8 | Sep 26 | Quiz 02 and recap | [Quiz](Lab-08/Lab-08_quiz.Rmd) <br> [Quiz solns.](Lab-08/Shah_Lab-08_quiz.Rmd)
-9 | Oct 1 | Advanced data wrangling -- tidyverse II | [Presentation](Lab-09/Lab-09.html) <br> [R code for presentation](Lab-09/Lab-09.Rpres) <br> [Homework](Lab-09/Lab-09_hw.Rmd) <br> [In-class](Lab-09/Lab-09_in-class.Rmd)
-10 | Oct 3 | Visualization -- ggplot2 | [In-class](Lab-10/Lab-10_in-class.Rmd)
-11 | Oct 8 | Introduction to bioconductor -- IRanges | [Presentation](Lab-11/Lab-11.html) <br> [R code for presentation](Lab-11/Lab-11.Rpres) <br> Homework 
+9 | Oct 1 | Advanced data wrangling - tidyverse II | [Presentation](Lab-09/Lab-09.html) <br> [R code for presentation](Lab-09/Lab-09.Rpres) <br> [Homework](Lab-09/Lab-09_hw.Rmd) <br> [In-class](Lab-09/Lab-09_in-class.Rmd)
+10 | Oct 3 | Visualization - ggplot2 | [In-class](Lab-10/Lab-10_in-class.Rmd) <br> [In-class with plots](Lab-10/Lab-10_in-class.nb.html)
+11 | Oct 8 | Introduction to bioconductor - IRanges | [Presentation](Lab-11/Lab-11.html) <br> [R code for presentation](Lab-11/Lab-11.Rpres) <br> Homework 
 12 | Oct 10 | Quiz 03 and recap | 
-13 | Oct 15 | Working with genome annotations -- GRanges | 
-14 | Oct 17 | Working with genome sequences -- Biostrings | 
+13 | Oct 15 | Working with genome annotations - GRanges | 
+14 | Oct 17 | Working with genome sequences - Biostrings | 
 15 | Oct 22 | Advanced sequence analyses | 
 16 | Oct 24 | Quiz 04 and recap | 
 17 | Oct 29 | Statistics for life scientists I | 
