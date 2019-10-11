@@ -1,0 +1,130 @@
+---
+title: "Lab 07 - in class exercises"
+output: 
+  html_notebook: 
+    toc: yes
+    toc_depth: 4
+    toc_float: TRUE
+---
+
+### Exercise 7.1
+#### 1. Imagine a genome consisting of only five consecutive genes of lengths 100, 200, 300, 400 and 500, in that order. How would you represent this genome as an IRanges object?
+```{r}
+gene.widths <- seq(100,500,100) 
+gene.start <- 1 # Start of gene 1
+
+# For loop for creating start positions of genes 2 through 5
+# Start of each gene is the sum of the previous start and length of the previous gene
+for(dummy in 2:length(gene.widths)){
+  gene.start[dummy] <- gene.start[dummy-1] + gene.widths[dummy-1]
+}
+
+genome.5.irange <- IRanges(start = gene.start,
+                           width = gene.widths,
+                           names = paste("Gene", 1:5, sep = ""))
+genome.5.irange
+```
+
+#### 2. Create an IRanges genome using the genes and their lengths in homework_data.csv file (lab 03).
+```{r}
+data <- read.csv("~/Google Drive/rutgers/2018_S/lab04/homework_data.csv",
+                 header = TRUE,
+                 stringsAsFactors = FALSE)
+
+data.widths <- data$Length
+data.start <- 1
+
+for(dummy in 2:length(data.widths)){
+  data.start[dummy] <- data.start[dummy-1] + data.widths[dummy-1]
+}
+
+genome.hw.irange <- IRanges(start = data.start,
+                           width = data.widths,
+                           names = data$Gene)
+genome.hw.irange
+
+```
+
+### Exercise 7.2
+#### 1. Starting with the 5-gene genome from the previous exercise, extend the lengths of first 3 genes at the 5' ends and last 2 genes at their 3' ends by 50bp.
+
+```{r}
+genome.5.irange
+
+resized.genome.5.range <- resize(genome.5.irange,
+                                 width = width(genome.5.irange) + 50,
+                                 fix = c(rep("end", 3), rep("start", 2)))
+resized.genome.5.range
+```
+
+#### 2. Assuming all 5 genes have a promoter of 75 bp. Create a new IRanges object for the promoters.
+```{r}
+genome.5.irange
+
+flank(genome.5.irange,
+      width = 75,
+      start = TRUE)
+```
+
+### Download and load yeast GRanges object
+```{r}
+yeast.gr <- readGFFAsGRanges("~/Google Drive/rutgers/2018_S/lab07/saccharomyces_cerevisiae.gff")
+
+yeast.gr
+```
+
+### Exercise 7.3
+#### 1. How many chromosomes are there in the yeast genome?
+```{r}
+length(seqlevels(yeast.gr))
+
+seqinfo(yeast.gr)
+
+length(table(seqnames(yeast.gr)))
+```
+
+#### 2. How many genes encode proteins?
+```{r}
+table(yeast.gr$type)
+
+yeast.genes <- yeast.gr[yeast.gr$type=="gene"]
+yeast.genes.names <- yeast.genes$Name
+
+yeast.rRNA.gene.names <- yeast.gr$Name[yeast.gr$type=="rRNA_gene"]
+yeast.rRNA.gene.names
+
+yeast.tRNA.gene.names <- yeast.gr$Name[yeast.gr$type=="tRNA_gene"]
+yeast.tRNA.gene.names
+
+yeast.pseudo.gene.names <- yeast.gr$Name[yeast.gr$type=="pseudogene"]
+yeast.pseudo.gene.names
+
+non.protein.coding.genes <- c(yeast.rRNA.gene.names, yeast.tRNA.gene.names, yeast.pseudo.gene.names)
+
+genes.match <- which(non.protein.coding.genes %in% yeast.genes.names)
+genes.match
+```
+Since there are no matches between gene lists of non-protein-coding genes and `yeast.genes.names`, this indicates that the `yeast.genes.names` contains only protein-coding genes.
+
+#### 3. How many genes are on the positive strand versus negative strand?
+```{r}
+table(strand(yeast.gr[yeast.gr$type=="gene"]))
+```
+
+#### 4. How many genes have introns?
+```{r}
+genes.with.introns <- yeast.gr[yeast.gr$type=="intron" | yeast.gr$type=="five_prime_UTR_intron"]
+# genes.with.introns
+length(genes.with.introns)
+length(table(genes.with.introns$Name))
+
+length(unique(genes.with.introns$Name))
+```
+
+#### 5. What fraction of the genes are on the mitochondria?
+```{r}
+yeast.genes
+
+table(seqnames(yeast.genes))
+```
+

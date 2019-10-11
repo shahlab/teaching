@@ -1,0 +1,152 @@
+Lab 12
+========================================================
+author: Premal Shah
+date: Oct 10, 2019
+autosize: true
+<style>
+.small-code pre code {
+  font-size: 1em;
+}
+</style>
+
+IRanges
+========================================================
+incremental: true
+class: small-code
+```{r, eval=F}
+IRanges(start = , end =, width =, names =)
+```
+- Create an IRanges object
+```{r}
+library(IRanges)
+var.irange <- IRanges(start = c(4, 5, 6), end = c(11, 12, 13))
+var.irange
+```
+- Width and Names of IRanges
+```{r}
+var.named.irange <- IRanges(start = c(4, 5, 6), 
+                            width = 4, 
+                            names = c("Gene1", "Gene2", "Gene3"))
+var.named.irange
+```
+
+Accessing IRanges
+========================================================
+incremental:true
+class: small-code
+```{r}
+start(var.named.irange)
+end(var.named.irange)
+width(var.named.irange)
+names(var.named.irange)
+```
+
+Accessing IRanges
+========================================================
+incremental:true
+- How many dimensions does IRanges have?
+- Accessing individual elements
+```{r, eval=F}
+var.named.irange[1] # Like a vector
+var.named.irange["b"] # Like a named vector
+c(var.irange, var.named.irange) # Can be combined
+```
+
+GRanges
+========================================================
+class: small-code
+incremental:true
+```{r}
+library(GenomicRanges)
+```
+
+```{r, eval=F}
+GRanges(seqnames = , 
+        strand = , 
+        ranges = IRanges)
+```
+
+GRanges
+========================================================
+class: small-code
+```{r, eval=T}
+var.grange <- GRanges(seqnames = "chr1", 
+                      strand = c("+","-","+"), 
+                      ranges = var.irange)
+```
+
+GRanges
+========================================================
+```{r}
+var.grange
+```
+
+GRanges with metadata
+========================================================
+class: small-code
+incremental:true
+```{r}
+values(var.grange) <- DataFrame(gname = c("gene1","gene2","gene3"),
+                                type = c("enzyme","structural","enzyme"))
+```
+```{r}
+var.grange
+```
+
+GRanges with metadata
+========================================================
+class: small-code
+incremental:true
+```{r}
+var.grange
+seqinfo(var.grange)
+```
+```{r}
+seqlevels(var.grange) <- c("chr1", "chr-mt", "chr2")
+seqlengths(var.grange) <- c("chr1" = 100, "chr-mt" = 200, "chr2" = 400)
+isCircular(var.grange) <- c(FALSE, TRUE,FALSE)
+genome(var.grange) <- "Mouse"
+```
+
+GRanges with metadata
+========================================================
+class: small-code
+```{r}
+var.grange
+```
+
+Yeast dataset
+========================================================
+- Download yeast GFF file
+https://downloads.yeastgenome.org/curation/chromosomal_feature/saccharomyces_cerevisiae.gff
+(Fix file extensions - sometimes it defaults to .txt)
+
+```{r, eval=F}
+# Load the rtracklayer package
+library(rtracklayer)
+
+# Read in the yeast GFF file as GRanges. 
+yeast.gr <- readGFFAsGRanges("saccharomyces_cerevisiae.gff")
+```
+
+Exercise 12
+========================================================
+1. How many chromosomes are there in the yeast genome?
+2. How many genes encode proteins?
+3. How many genes are on the positive strand versus negative strand?
+4. How many genes have introns?
+5. What fraction of the genes are on the mitochondria?
+6. Find the longest gene on chromosome II
+7. Which chromosome has the most number of tRNA genes?
+
+Annotation Hub
+========================================================
+```{r,eval=F}
+library(AnnotationHub)
+
+# Download the Annotation Hub database
+ah <- AnnotationHub()
+
+# Display the database
+display(ah)
+```

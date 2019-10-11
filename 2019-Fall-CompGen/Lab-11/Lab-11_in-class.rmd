@@ -1,0 +1,103 @@
+---
+title: "Lab-11 in-class"
+output: html_document
+---
+
+```{r}
+library(IRanges)
+```
+
+```{r}
+var.named.irange <- IRanges(start = 4:6, 
+                            width = 4,
+                            names = c("Gene1", "Gene2", "Gene3"))
+var.named.irange
+```
+```{r}
+var.named.irange[1]
+var.named.irange["Gene3"]
+```
+
+## Exercise 11.1
+### 1. Imagine a genome consisting of only five consecutive genes of lengths 100, 200, 300, 400 and 500, in that order. How would you represent this genome as an IRanges object?
+```{r}
+
+gene.widths <- c(100, 200, 300, 400, 500)
+vec.start <- 1
+
+for(dummy in 1:(length(gene.widths)-1)){
+  vec.start[dummy + 1] <- vec.start[dummy] + gene.widths[dummy]
+}
+
+vec.start
+gene5.irange <- IRanges(start = vec.start, 
+        width = gene.widths, 
+        names = c("G1", "G2", "G3", "G4", "G5"))
+gene5.irange
+```
+
+
+### 2. Create an IRanges genome using the genes and their lengths in yeast_data.csv file.
+```{r}
+yeast_data <- read.table("yeast_data.tsv", header = TRUE)
+yeast_data
+
+yeast.widths <- yeast_data$Length
+
+vec.start <- 1
+
+for(dummy in 1:(length(yeast.widths)-1)){
+  vec.start[dummy + 1] <- vec.start[dummy] + yeast.widths[dummy]
+}
+
+IRanges(start = vec.start, 
+        width = yeast.widths, 
+        names = yeast_data$Gene)
+```
+
+## Exercise 11.2
+
+### 1. Starting with the 5-gene genome from the previous exercise, extend the lengths of first 3 genes at the 5' ends and last 2 genes at their 3' ends by 50bp.
+```{r}
+gene5.irange
+
+new.gene5.irange <- resize(gene5.irange,
+                           width = width(gene5.irange) + 50,
+                           fix = c(rep("end", 3), rep("start", 2)))
+new.gene5.irange
+
+new.gene5.irange <- resize(gene5.irange,
+                           width = width(gene5.irange) + 50,
+                           fix = c("end", "end", "end", "start", "start"))
+new.gene5.irange
+```
+
+### 2. Assuming all 5 genes have a promoter of 75 bp. Create a new IRanges object for the promoters.
+```{r}
+promoter5.irange <- flank(gene5.irange, 
+      width = 75)
+names(promoter5.irange) <- c("pG1", "pG2", "pG3", "pG4", "pG5")
+
+c(promoter5.irange, gene5.irange)
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

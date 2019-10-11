@@ -1,0 +1,113 @@
+---
+title: "Quiz 3 answers"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+library(ggpubr)
+```
+
+```{r}
+pokemon <- read_csv("pokemon_go_captures.csv")
+pokemon
+```
+
+
+### 1. Find out which height_bin has the smallest combat_power on average.
+```{r}
+pokemon %>%
+  group_by(height_bin) %>%
+  summarise(mean.combat = mean(combat_power)) %>%
+  arrange(mean.combat) %>%
+  .[1,]
+```
+
+### 2. Assume that the total awesomeness of a pokemon is the product of combat_power and hit_points. Which pokemon species has the highest awesomeness?
+```{r}
+pokemon %>%
+  group_by(species) %>%
+  mutate(awesomeness = combat_power*hit_points) %>%
+  arrange(desc(awesomeness)) 
+
+pokemon %>%
+  mutate(awesomeness = combat_power*hit_points) %>%
+  arrange(desc(awesomeness)) %>%
+  select(species, awesomeness, everything())
+```
+
+### 3. Plot height vs weight of all pokemons. Make appropriate transformations of axes and points. Add a correlation coefficient and regression line to the plot.
+```{r}
+ggplot(data = pokemon, aes(x = weight_kg, y = height_m)) +
+  geom_point(alpha = 0.3) +
+  labs(x = "Weight (Kg)", y = "Height (m)") +
+  scale_x_continuous(trans = "log10") +
+  scale_y_continuous(trans = "log10") +
+  geom_smooth(method = "lm", col = "red") +
+  stat_cor(aes(label = ..rr.label..))
+```
+
+
+### 4. Make a boxplot of combat_power (y) for weight_bin (x) category. Compare the means of combat_power betwen “extra_large” and “extra_small” weight_bin and plot the p-value on the boxplot.
+```{r}
+ggplot(data = pokemon, aes(x = weight_bin, y = combat_power)) +
+  geom_boxplot() +
+  labs(x = "Weight category", y = "Combat power") +
+  stat_compare_means(comparisons = list(c("extra_large", "extra_small")), method = "t.test")
+
+ggplot(data = pokemon, aes(x = weight_bin, y = combat_power)) +
+  geom_boxplot() +
+  scale_y_continuous(trans = "log10") +
+  labs(x = "Weight category", y = "Combat power") +
+  stat_compare_means(comparisons = list(c("extra_large", "extra_small")), method = "t.test")
+```
+
+### 5. Some pokemons have a unique fast_attack (not shared by any other pokemon). How many pokemons have a unique fast_attack? Bonus (+1) Which pokemons have a unique fast_attack?
+```{r}
+# Method 1
+pokemon %>%
+  group_by(fast_attack) %>%
+  tally() %>%
+  filter(n == 1)
+
+unq.fast <- pokemon %>%
+  group_by(fast_attack) %>%
+  tally() %>%
+  filter(n == 1) %>%
+  pull(fast_attack)
+unq.fast
+
+# Method 2
+pokemon %>%
+  filter(fast_attack %in% unq.fast)
+
+unq.fast.df <- pokemon %>%
+  group_by(fast_attack) %>%
+  tally() %>%
+  filter(n == 1)
+unq.fast.df
+
+left_join(unq.fast.df, pokemon, by = "fast_attack")
+
+# Method 3
+pokemon %>%
+  group_by(fast_attack) %>%
+  tally() %>%
+  filter(n == 1) %>%
+  left_join(., pokemon, by = "fast_attack")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

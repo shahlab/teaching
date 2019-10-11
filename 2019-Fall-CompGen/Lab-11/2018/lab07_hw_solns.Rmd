@@ -1,0 +1,124 @@
+---
+title: "Lab 07 - homework solutions"
+output: 
+  html_notebook: 
+    toc: yes
+    toc_depth: 4
+    toc_float: TRUE
+---
+
+### Packages
+```{r}
+library(rtracklayer)
+library(GenomicRanges)
+```
+
+#### 1. How many protein-coding genes are on the mitochondria?
+```{r}
+yeast.gr <- readGFFAsGRanges("~/Google Drive/rutgers/2018_S/lab07/saccharomyces_cerevisiae.gff")
+yeast.gr
+
+# Method 1
+mt.gr <- yeast.gr[seqnames(yeast.gr)=="chrmt"]
+genes.mt.gr <- mt.gr[mt.gr$type=="gene"]
+genes.mt.gr
+
+# Method 2
+genes.gr <- yeast.gr[yeast.gr$type=="gene"]
+genes.mt.gr2 <- genes.gr[seqnames(genes.gr)=="chrmt"]
+genes.mt.gr2
+
+# Method 3
+genes.mt.gr3 <- yeast.gr[seqnames(yeast.gr)=="chrmt" & yeast.gr$type=="gene"]
+genes.mt.gr3
+```
+
+#### 2. Which chromosome has the most number of protein-coding genes beginning with “YA”? (+1 Bonus)
+```{r}
+genes.gr <- yeast.gr[yeast.gr$type=="gene"]
+list.of.first2char <- substr(genes.gr$Name, start = 1, stop = 2)
+
+genes.YA.gr <- genes.gr[list.of.first2char=="YA"]
+table(seqnames(genes.YA.gr))
+```
+
+#### 3. Which chromosome has the most number of tRNA genes?
+```{r}
+tRNA.gr <- yeast.gr[yeast.gr$type == "tRNA_gene"]
+table(seqnames(tRNA.gr))
+```
+
+#### 4. Which chromosome has the longest protein-coding gene?
+```{r}
+gene.lengths <- width(genes.gr)
+max(gene.lengths)
+
+which(gene.lengths == max(gene.lengths))
+which.max(gene.lengths)
+genes.gr[which.max(gene.lengths)]
+
+as.character(seqnames(genes.gr[which.max(gene.lengths)]))
+```
+
+#### 5. Find the longest gene on the smallest nuclear chromosome.
+```{r}
+chromosome.gr <- yeast.gr[yeast.gr$type=="chromosome" & seqnames(yeast.gr)!="chrmt"]
+
+# Alternate way to get nuclear chromosomes
+nuclear.gr <- dropSeqlevels(yeast.gr, value = "chrmt", pruning.mode = "coarse")
+nuclear.chromosomes.gr <- nuclear.gr[nuclear.gr$type=="chromosome"]
+
+chrom.length <- width(nuclear.chromosomes.gr)
+nuclear.chromosomes.gr[which(chrom.length == min(chrom.length))]
+
+# Chr I is the smallest chromosome
+
+chrI.genes.gr <- genes.gr[seqnames(genes.gr)=="chrI"]
+chrI.genes.gr2 <- keepSeqlevels(genes.gr, "chrI", pruning.mode = "coarse")
+
+gene.lengths.chrI <- width(chrI.genes.gr)
+which.max(gene.lengths.chrI)
+
+chrI.genes.gr[which.max(gene.lengths.chrI)]
+```
+
+#### 6. How many protein-coding genes have a hyphen in their name? Use Name column.
+```{r}
+# Method 1
+genenames <- genes.gr$Name
+split.genenames <- strsplit(genenames, "-")
+
+split.lengths <- c()
+
+for(counter in 1:length(split.genenames)){
+  split.lengths[counter] <- length(split.genenames[[counter]])
+}
+
+table(split.lengths)
+sum(split.lengths>1)
+
+# Method 2
+genenames <- genes.gr$Name
+grep.output <- grep("-", genenames)
+length(grep.output)
+```
+
+#### 7. Find the second longest gene on the negative strand. (+1 Bonus)
+```{r}
+negative.strand.genes.gr <- genes.gr[strand(genes.gr)=="-"]
+gene.lengths.neg <- width(negative.strand.genes.gr)
+
+which.max(gene.lengths.neg)
+
+negative.strand.genes.without.max.gr <- negative.strand.genes.gr[-which.max(gene.lengths.neg)]
+
+which.max(width(negative.strand.genes.without.max.gr))
+
+negative.strand.genes.without.max.gr[1958]
+```
+
+
+
+
+
+

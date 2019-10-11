@@ -72,7 +72,7 @@ Class | Date | Topic | Learning Materials
 9 | Oct 1 | Advanced data wrangling - tidyverse II | [Presentation](Lab-09/Lab-09.html) <br> [R code for presentation](Lab-09/Lab-09.Rpres) <br> [Homework](Lab-09/Lab-09_hw.Rmd) <br> [In-class](Lab-09/Lab-09_in-class.Rmd)
 10 | Oct 3 | Visualization - ggplot2 | [In-class](Lab-10/Lab-10_in-class.Rmd) <br> [In-class with plots](Lab-10/Lab-10_in-class.nb.html)
 11 | Oct 8 | Introduction to bioconductor - IRanges | [Presentation](Lab-11/Lab-11.html) <br> [R code for presentation](Lab-11/Lab-11.Rpres) <br> Homework 
-12 | Oct 10 | Quiz 03 and recap | 
+12 | Oct 10 | Quiz 03 and recap | [Quiz](Lab-12/Lab-12_quiz.Rmd) <br> [Quiz solns.](Lab-12/Shah_Lab-12_quiz.Rmd) <br> [Presentation](Lab-12/Lab-12.html) <br> [R code for presentation](Lab-12/Lab-12.Rpres) <br> [Homework](Lab-12/Lab-12_hw.Rmd) <br> [In-class](Lab-12/Lab-12_in-class.Rmd)
 13 | Oct 15 | Working with genome annotations - GRanges | 
 14 | Oct 17 | Working with genome sequences - Biostrings | 
 15 | Oct 22 | Advanced sequence analyses | 

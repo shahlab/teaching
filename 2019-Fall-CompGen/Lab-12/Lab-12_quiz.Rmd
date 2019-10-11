@@ -1,0 +1,18 @@
+---
+title: "Quiz 03"
+output:
+  html_document:
+    df_print: paged
+  html_notebook: default
+---
+
+- Write the `codes` for all questions in a single R Notebook (file).
+- ALWAYS comment your code.
+- Name the file as "Lastname_Lab-08_quiz.nb.html"
+- Read in the pokemon_go_captures.csv to answer the questions 
+
+### 1. Find out which `height_bin` has the smallest `combat_power` on average.
+### 2. Assume that the total awesomeness of a pokemon is the product of `combat_power` and `hit_points`. Which pokemon species has the highest awesomeness?
+### 3. Plot height vs weight of all pokemons. Make appropriate transformations of axes and points. Add a correlation coefficient and regression line to the plot.
+### 4. Make a boxplot of `combat_power` (y) for `weight_bin` (x) category. Compare the means of `combat_power` betwen "extra_large" and "extra_small" `weight_bin` and plot the p-value on the boxplot.
+### 5. Some pokemons have a unique `fast_attack` (not shared by any other pokemon). How many pokemons have a unique `fast_attack`? Bonus (+1) Which pokemons have a unique `fast_attack`?

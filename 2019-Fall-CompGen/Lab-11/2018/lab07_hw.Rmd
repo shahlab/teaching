@@ -1,0 +1,22 @@
+---
+title: "Lab 07 Homework"
+output:
+  html_document: default
+---
+
+- Each question is 2 point.
+- Write the `codes` for all questions in a single R notebook (file).
+- ALWAYS comment your code.
+- Name the file as "Lastname_lab07_homework.nb.html"
+- **<span style="color:red"> Due date: Thursday, Feb 15, 1:00 pm EST</span>**
+
+### Questions
+Using the `saccharomyces_cerevisiae.gff` from class, answer any 5 of the following questions. Note some questions carry bonus points.
+
+1. How many protein-coding genes are on the mitochondria?
+2. Which chromosome has the most number of protein-coding genes beginning with "YA"? (+1 Bonus)
+3. Which chromosome has the most number of tRNA genes?
+4. Which chromosome has the longest protein-coding gene?
+5. Find the longest gene on the smallest nuclear chromosome.
+6. How many protein-coding genes have a hyphen in their name? Use `Name` column.
+7. Find the second longest gene on the negative strand. (+1 Bonus)
