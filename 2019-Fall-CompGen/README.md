@@ -69,9 +69,9 @@ Class | Date | Topic | Learning Materials
 6 | Sep 19 | Lists, functions, and strings | [Presentation](Lab-06/Lab-06.html) <br> [R code for presentation](Lab-06/Lab-06.Rpres) <br> [Homework](Lab-06/Lab-06_hw.Rmd) <br> [In-class](Lab-06/Lab-06_in-class.Rmd)
 7 | Sep 24 | Advanced data wrangling - tidyverse I | [Presentation](Lab-07/Lab-07.html) <br> [R code for presentation](Lab-07/Lab-07.Rpres) <br> [Homework](Lab-07/Lab-07_hw.Rmd) <br> [Homework solns.](Lab-07/Favate_Lab-07_homework.Rmd) <br> [In-class](Lab-07/Lab-07_in-class.Rmd)
 8 | Sep 26 | Quiz 02 and recap | [Quiz](Lab-08/Lab-08_quiz.Rmd) <br> [Quiz solns.](Lab-08/Shah_Lab-08_quiz.Rmd)
-9 | Oct 1 | Advanced data wrangling - tidyverse II | [Presentation](Lab-09/Lab-09.html) <br> [R code for presentation](Lab-09/Lab-09.Rpres) <br> [Homework](Lab-09/Lab-09_hw.Rmd) <br> [In-class](Lab-09/Lab-09_in-class.Rmd)
+9 | Oct 1 | Advanced data wrangling - tidyverse II | [Presentation](Lab-09/Lab-09.html) <br> [R code for presentation](Lab-09/Lab-09.Rpres) <br> [Homework](Lab-09/Lab-09_hw.Rmd) <br> [Homework solns.](Lab-07/Shah_Lab-09_homework.Rmd) <br> [In-class](Lab-09/Lab-09_in-class.Rmd)
 10 | Oct 3 | Visualization - ggplot2 | [In-class](Lab-10/Lab-10_in-class.Rmd) <br> [In-class with plots](Lab-10/Lab-10_in-class.nb.html)
-11 | Oct 8 | Introduction to bioconductor - IRanges | [Presentation](Lab-11/Lab-11.html) <br> [R code for presentation](Lab-11/Lab-11.Rpres) <br> Homework 
+11 | Oct 8 | Introduction to bioconductor - IRanges | [Presentation](Lab-11/Lab-11.html) <br> [R code for presentation](Lab-11/Lab-11.Rpres) 
 12 | Oct 10 | Quiz 03 and recap | [Quiz](Lab-12/Lab-12_quiz.Rmd) <br> [Quiz solns.](Lab-12/Shah_Lab-12_quiz.Rmd) <br> [Presentation](Lab-12/Lab-12.html) <br> [R code for presentation](Lab-12/Lab-12.Rpres) <br> [Homework](Lab-12/Lab-12_hw.Rmd) <br> [In-class](Lab-12/Lab-12_in-class.Rmd)
 13 | Oct 15 | Working with genome annotations - GRanges | 
 14 | Oct 17 | Working with genome sequences - Biostrings | 
