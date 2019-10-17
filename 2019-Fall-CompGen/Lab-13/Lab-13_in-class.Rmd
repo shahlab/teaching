@@ -1,0 +1,232 @@
+---
+title: "Lab 13 in-class"
+output: html_document
+---
+
+# DNAStrings
+```{r}
+library(Biostrings)
+```
+
+```{r}
+dna.seq <- DNAString("ACGCTTA")
+dna.seq
+```
+
+```{r}
+dna.set <- DNAStringSet(c("ACG","GGG","CTCAGGAGTT"))
+dna.set
+```
+
+```{r}
+width(dna.set)
+length(dna.set)
+```
+
+```{r}
+dna.set %>%
+  as.data.frame()
+```
+
+```{r}
+dna.set[[1]]
+```
+```{r}
+dna.set[1]
+
+```
+
+```{r}
+# Read in yeast genome
+
+yeast.fasta <- readDNAStringSet("~/Fall2019/Lab-13/yeast.fasta")
+yeast.fasta
+```
+
+```{r}
+yeast.gff
+```
+
+```{r}
+# yeast.gff[2]
+# yeast.fasta
+telomere.seq <- yeast.fasta[yeast.gff[2]]
+telomere.seq
+```
+
+```{r}
+yeast.xv <- yeast.fasta[names(yeast.fasta) == "chrXV"]
+yeast.xv.dnastring <- yeast.xv[[1]]
+yeast.xv.dnastring[100:105]
+```
+ 
+```{r}
+char.string <- "AATTGGAATTGGAAGGGG$"
+char.string
+substr(char.string, start = 1, stop = 4)
+
+temp.biostring <- DNAString("AATTGGAATTGGAAGGGGN")
+temp.biostring
+temp.biostring[1:4]
+
+```
+
+```{r}
+DNA_ALPHABET
+```
+
+# Useful functions to work with biostring
+```{r, eval = F}
+width() # Get the lengths of each DNAString in a DNAStringSet
+reverseComplement() # Find the DNA sequence of the opposite strand
+translate() # Convert DNA sequence to amino acid sequence
+codons() # Split a DNAString sequence into codons
+alphabetFrequency() # Find out the frequency of individual nucleotides in a StringSet
+letterFrequency() # Find out the frequency of multiple nucleotides in a StringSet
+dinucleotideFrequency() # Find out the frequency of dinucleotides in a StringSet
+oligonucleotideFrequency() # Find out the frequency of any N-mer in a StringSet
+```
+
+```{r}
+width(yeast.fasta)
+width(telomere.seq)
+```
+
+```{r}
+telomere.seq
+reverseComplement(telomere.seq)
+```
+
+```{r}
+telomere.seq
+translate(telomere.seq)
+
+telomere.seq[[1]]
+translate(telomere.seq[[1]])
+
+# Translate in reading frame 2
+translate(telomere.seq[[1]][2:width(telomere.seq)])
+```
+
+```{r}
+codons(telomere.seq[[1]])
+```
+
+```{r}
+alphabetFrequency(yeast.fasta)
+```
+
+```{r}
+alphabetFrequency(translate(yeast.fasta))
+alphabetFrequency(translate(yeast.fasta[1]))
+
+```
+
+```{r}
+# G OR C (GC-content)
+letterFrequency(yeast.fasta, "GC")
+letterFrequency(yeast.fasta, "GC", as.prob = TRUE)
+```
+
+```{r}
+dinucleotideFrequency(yeast.fasta)
+```
+
+```{r}
+yeast.gff
+yeast.fasta
+```
+
+```{r}
+yeast.cds <- yeast.gff[yeast.gff$type == "CDS"]
+yeast.cds
+```
+
+```{r}
+genes.wo.introns <- yeast.cds %>%
+  as.data.frame() %>%
+  group_by(Name) %>%
+  tally() %>%
+  filter(n == 1) %>%
+  pull(Name)
+
+yeast.cds.no.introns <- yeast.cds[yeast.cds$Name %in% genes.wo.introns]
+yeast.cds.no.introns
+```
+
+```{r}
+yeast.cds.seq <- yeast.fasta[yeast.cds.no.introns]
+yeast.cds.seq
+
+# Add gene names to the new DNAStringSet
+names(yeast.cds.seq) <- yeast.cds.no.introns$Name
+yeast.cds.seq
+
+# Make sure all sequences are in the right orientation
+yeast.cds.seq[strand(yeast.cds.no.introns) == "-"] 
+
+yeast.cds.seq[strand(yeast.cds.no.introns) == "-"] <-
+  reverseComplement(yeast.cds.seq[strand(yeast.cds.no.introns) == "-"])
+```
+
+
+```{r}
+yeast.cds.seq
+```
+
+```{r}
+yeast.cds.start <- subseq(yeast.cds.seq, start = 1, end = 3)
+yeast.cds.start
+```
+```{r}
+oligonucleotideFrequency(yeast.cds.start, 3) %>%
+  colSums()
+
+table(yeast.cds.start)
+```
+
+```{r}
+yeast.cds.stop <- subseq(yeast.cds.seq, 
+                         start = width(yeast.cds.seq) - 2,
+                         end = width(yeast.cds.seq))
+yeast.cds.stop
+
+table(yeast.cds.stop)
+```
+
+## Pattern matching
+```{r}
+# yeast.fasta
+
+cpg.pattern = "CGCGCGCGCG"
+vcountPattern(pattern = cpg.pattern, 
+              subject = yeast.fasta, 
+              max.mismatch = 0)
+
+vcountPattern(pattern = cpg.pattern, 
+              subject = yeast.fasta, 
+              max.mismatch = 1)
+```
+
+```{r}
+all.perfect.matches <- vmatchPattern(pattern = cpg.pattern, 
+              subject = yeast.fasta, 
+              max.mismatch = 0)
+all.perfect.matches[4]
+
+mismatch.cpg <- vmatchPattern(pattern = cpg.pattern,
+              subject = yeast.fasta,
+              max.mismatch = 1)
+mismatch.cpg[4]
+```
+
+
+
+
+
+
+
+
+
+
+

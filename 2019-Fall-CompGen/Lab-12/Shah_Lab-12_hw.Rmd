@@ -1,0 +1,159 @@
+---
+title: "Homework-12 solutions"
+output: html_document
+---
+
+## Questions
+
+```{r}
+library(GenomicRanges)
+library(rtracklayer)
+```
+
+```{r}
+# Read in the GFF file
+yeast.gff <- readGFFAsGRanges("~/Fall2019/Lab-12/saccharomyces_cerevisiae.gff.txt")
+yeast.gff
+
+```
+
+
+#### 1. How many genes are on the positive strand versus negative strand?
+```{r}
+# Method 1
+yeast.gff %>%
+  as.data.frame() %>%
+  filter(type == "gene" & strand == "+") %>%
+  nrow()
+
+yeast.gff %>%
+  as.data.frame() %>%
+  filter(type == "gene" & strand == "-") %>%
+  nrow()
+
+# Method 2
+yeast.gff %>%
+  as.data.frame() %>%
+  filter(type == "gene") %>%
+  group_by(strand) %>%
+  tally()
+
+# Method 3
+yeast.gff %>%
+  as.data.frame() %>%
+  filter(type == "gene") %>%
+  select(strand) %>%
+  table()
+```
+
+#### 2. How many genes have introns?
+```{r}
+# Method 1
+yeast.gff %>% 
+  as.data.frame() %>%
+  filter(type == "intron") %>%
+  pull(Name) %>%
+  unique() %>%
+  length()
+
+# Method 2
+yeast.gff %>% 
+  as.data.frame() %>%
+  filter(type == "intron") %>%
+  select(Name) %>%
+  n_distinct()
+
+# Method 3
+yeast.gff %>% 
+  as.data.frame() %>%
+  filter(type == "intron") %>%
+  group_by(Name) %>%
+  tally() %>%
+  nrow()
+```
+
+
+#### 3. What fraction of the genes are on the mitochondria?
+```{r}
+# Method 1
+mt.genes <- yeast.gff %>%
+  as.data.frame() %>%
+  filter(type == "gene" & seqnames == "chrmt") %>%
+  nrow()
+
+all.yeast.genes <- yeast.gff %>%
+  as.data.frame() %>%
+  filter(type == "gene") %>%
+  nrow()
+
+mt.genes/all.yeast.genes
+
+# Method 2 (all genes including non-protein coding genes)
+yeast.gff %>%
+  as.data.frame() %>%
+  group_by(type) %>%
+  tally()
+
+gene.types <- c("gene", "rRNA_gene", "tRNA_gene", "snRNA_gene", "telomerase_RNA_gene", "snoRNA_gene", "ncRNA_gene")
+
+mt.genes <- yeast.gff %>%
+  as.data.frame() %>%
+  filter((type %in% gene.types ) & seqnames == "chrmt") %>%
+  nrow()
+
+all.yeast.genes <- yeast.gff %>%
+  as.data.frame() %>%
+  filter(type %in% gene.types) %>%
+  nrow()
+
+mt.genes/all.yeast.genes
+```
+
+#### 4. Find the longest gene on chromosome II
+```{r}
+# Method 1
+yeast.gff %>%
+  as.data.frame() %>%
+  filter(type == "gene" & seqnames == "chrII") %>%
+  arrange(desc(width))
+
+# Method 2
+yeast.gff %>%
+  as.data.frame() %>%
+  filter(type == "gene" & seqnames == "chrII") %>%
+  mutate(gene.length = width(yeast.gff[yeast.gff$type == "gene" & seqnames(yeast.gff) == "chrII"])) %>%
+  select(Name, gene.length) %>%
+  arrange(desc(gene.length))
+
+```
+
+
+#### 5. Which chromosome has the most number of tRNA genes?
+```{r}
+yeast.gff %>%
+  as.data.frame() %>%
+  filter(type == "tRNA_gene") %>%
+  group_by(seqnames) %>%
+  tally() %>%
+  arrange(desc(n)) %>%
+  .[1, ]
+```
+
+
+```{r}
+yeast.gff %>% 
+  as.data.frame()
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
