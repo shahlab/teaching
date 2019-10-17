@@ -1,0 +1,175 @@
+---
+title: "Lab-09 Homework solutions"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+library(readxl)
+```
+
+## Questions
+
+#### 1. Which strain of E. coli has the largest `SHAPE.area` on average in cell_size1.xlsx? (3 pt)
+```{r}
+# Find out the location of the excel files
+file.loc <- dir("~/Fall2019/homework/", pattern = ".xlsx", full.names = TRUE)
+file.loc
+```
+
+```{r}
+file.loc[1] %>% # Select which file to work with
+  excel_sheets() %>% # Get sheet names
+  set_names() %>% # Create a named vector of sheet names
+  map(read_xlsx, skip = 1, na = "NaN", path = file.loc[1], col_names = TRUE) %>% # Read each sheet as an element of a list
+  bind_rows(.id = "Strain") %>% # Combine all sheets into a dataframe
+  group_by(Strain) %>% # Group cells by their strains
+  summarise(Avg.area = mean(SHAPE.area, na.rm = TRUE)) %>% # Calculate the average area for each strain
+  arrange(desc(Avg.area)) %>% # Sort the average area in descending order
+  .[1, ] # Select the first row
+
+
+
+excel_sheets(file.loc[1])
+```
+
+
+
+#### 2. cell_size2.xlsx is a biological replicate of the data in cell_size1.xlsx. Read in the data for `A+5` strain from both the files. Find out which replicate has the longest cell (`SHAPE.length`) and which replicate has longer cells on average.
+```{r}
+rep1 <- read_xlsx(path = file.loc[1], sheet = "A+5", skip = 1, na = "NaN", col_names = TRUE)
+rep2 <- read_xlsx(path = file.loc[2], sheet = "A+5", skip = 1, na = "NaN", col_names = TRUE)
+
+# Longest cell
+bind_rows(rep1, rep2, .id = "Replicate") %>%
+  arrange(desc(SHAPE.length))%>%
+  .[1, "Replicate"]
+  
+# Long cells on average
+bind_rows(rep1, rep2, .id = "Replicate") %>%
+  group_by(Replicate) %>%
+  summarise(Avg.length = mean(SHAPE.length, na.rm = TRUE)) %>%
+  arrange(desc(Avg.length))
+
+# Doing them together
+bind_rows(rep1, rep2, .id = "Replicate") %>%
+  group_by(Replicate) %>%
+  summarise(Avg.length = mean(SHAPE.length, na.rm = TRUE),
+            Max.length = max(SHAPE.length)) %>%
+  arrange(desc(Avg.length))
+  
+```
+
+
+
+#### 3. Cells with length > 20 are considered long cells and length < 20 are short cells. Find out the average area (`SHAPE.area`) for short and long cells of `A+5` in both replicates. (Something *similar* to the table shown below)
+ Length | Replicate | Area
+------------- | ------------- | ----------
+Long | Replicate 1 | X
+Long | Replicate 2  | X
+Short | Replicate 1 | X
+Short | Replicate 2  | X
+```{r}
+bind_rows(rep1, rep2, .id = "Replicate") %>%
+  mutate(Length = ifelse(SHAPE.length > 20, "Long", "Short")) %>%
+  group_by(Length, Replicate) %>%
+  summarise(Avg.area = mean(SHAPE.area, na.rm = TRUE))
+```
+
+
+
+### 4. Using the Proliferation data find out the average Expansion for all combinations of `Red-Blue`, `Passage` and `Media`. Which combinations have the highest and lowest expansion? (3 pt)
+```{r}
+profl.data <- read_xlsx(path = file.loc[3], skip = 4, na = "8?")
+profl.data %>%
+  group_by(`Red-Blue`, Passage, Media) %>%
+  summarise(Avg.exp = mean(Expansion, na.rm = TRUE))
+
+```
+
+## Bonus questions
+#### 5. Which strain of E. coli has the smallest `SHAPE.area` on average among all short cells (length < 20) in cell_size1.xlsx?
+```{r}
+file.loc[1] %>%
+  excel_sheets() %>%
+  set_names() %>%
+  map(read_xlsx, skip = 1, na = "NaN", path = file.loc[1], col_names = TRUE) %>%
+  bind_rows(.id = "Strain") %>%
+  filter(SHAPE.length < 20) %>%
+  group_by(Strain) %>%
+  summarise(Avg.area = mean(SHAPE.area, na.rm = T)) %>%
+  arrange(Avg.area)
+```
+
+
+#### 6. For which strains are shorter cells rounder (`SHAPE.roundness`) than longer cells in cell_size2.xlsx?
+```{r}
+file.loc[2] %>%
+  excel_sheets() %>%
+  set_names() %>%
+  map(read_xlsx, skip = 1, na = "NaN", path = file.loc[2], col_names = TRUE) %>%
+  bind_rows(.id = "Strain") %>%
+  mutate(Length = ifelse(SHAPE.length > 20, "Long", "Short")) %>%
+  group_by(Strain, Length) %>%
+  summarise(Avg.round = mean(SHAPE.roundness, na.rm = T))
+
+# Method 2
+long.cells <- file.loc[2] %>%
+  excel_sheets() %>%
+  set_names() %>%
+  map(read_xlsx, skip = 1, na = "NaN", path = file.loc[2], col_names = TRUE) %>%
+  bind_rows(.id = "Strain") %>%
+  mutate(Length = ifelse(SHAPE.length > 20, "Long", "Short")) %>%
+  filter(SHAPE.length >= 20) %>%
+  group_by(Strain, Length) %>%
+  summarise(Avg.round = mean(SHAPE.roundness, na.rm = T))
+
+short.cells <- file.loc[2] %>%
+  excel_sheets() %>%
+  set_names() %>%
+  map(read_xlsx, skip = 1, na = "NaN", path = file.loc[2], col_names = TRUE) %>%
+  bind_rows(.id = "Strain") %>%
+  mutate(Length = ifelse(SHAPE.length > 20, "Long", "Short")) %>%
+  filter(SHAPE.length < 20) %>%
+  group_by(Strain, Length) %>%
+  summarise(Avg.round = mean(SHAPE.roundness, na.rm = T))
+  
+long.cells
+short.cells
+
+left_join(long.cells, short.cells, by = "Strain", suffix = c(".long", ".short")) %>%
+  mutate(Long.gt.Short = ifelse(Avg.round.long > Avg.round.short, TRUE, FALSE))
+```
+
+#### 7. Find out how to rearrange columns of a dataframe (Google). Move `SHAPE.area` and SHAPE.roundness as the first two columns in the combined data for cell_size1.xlsx.
+```{r}
+tmp.data <- file.loc[1] %>%
+  excel_sheets() %>%
+  set_names() %>%
+  map(read_xlsx, skip = 1, na = "NaN", path = file.loc[1], col_names = TRUE) %>%
+  bind_rows(.id = "Strain") 
+names(tmp.data)
+
+tmp.data[, c(35, 45, 1:34, 36:44, 46:55)]
+
+file.loc[1] %>%
+  excel_sheets() %>%
+  set_names() %>%
+  map(read_xlsx, skip = 1, na = "NaN", path = file.loc[1], col_names = TRUE) %>%
+  bind_rows(.id = "Strain") %>%
+  select(SHAPE.area, SHAPE.roundness, everything())
+```
+
+
+#### 8. In proliferation dataset add a column to identify all assays that have `Karyotpe` data and are `Outlier?` value of 1.
+```{r}
+# Method 1
+profl.data %>%
+  mutate(Idenity = ifelse(Karyotype== "Y" & `Outlier?` == 1, TRUE, FALSE))
+
+# Method 2
+profl.data %>%
+  mutate(Idenity = (Karyotype== "Y" & `Outlier?` == 1))
+
+```
+
