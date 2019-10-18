@@ -806,7 +806,245 @@ hljs.initHighlightingOnLoad();
 <li class="fragment">Create an IRanges object</li>
 </ul>
 
-<pre class="fragment"><code>Error in library(IRanges) : there is no package called &#39;IRanges&#39;
+<pre class="fragment"><code class="r">library(IRanges)
+var.irange &lt;- IRanges(start = c(4, 5, 6), end = c(11, 12, 13))
+var.irange
+</code></pre>
+
+<pre class="fragment"><code>IRanges object with 3 ranges and 0 metadata columns:
+          start       end     width
+      &lt;integer&gt; &lt;integer&gt; &lt;integer&gt;
+  [1]         4        11         8
+  [2]         5        12         8
+  [3]         6        13         8
+</code></pre>
+
+<ul>
+<li class="fragment">Width and Names of IRanges</li>
+</ul>
+
+<pre class="fragment"><code class="r">var.named.irange &lt;- IRanges(start = c(4, 5, 6), 
+                            width = 4, 
+                            names = c(&quot;Gene1&quot;, &quot;Gene2&quot;, &quot;Gene3&quot;))
+var.named.irange
+</code></pre>
+
+<pre class="fragment"><code>IRanges object with 3 ranges and 0 metadata columns:
+            start       end     width
+        &lt;integer&gt; &lt;integer&gt; &lt;integer&gt;
+  Gene1         4         7         4
+  Gene2         5         8         4
+  Gene3         6         9         4
+</code></pre>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>Accessing IRanges</h3>
+<div class="slideContent small-code" >
+<pre class="fragment"><code class="r">start(var.named.irange)
+</code></pre>
+
+<pre class="fragment"><code>[1] 4 5 6
+</code></pre>
+
+<pre class="fragment"><code class="r">end(var.named.irange)
+</code></pre>
+
+<pre class="fragment"><code>[1] 7 8 9
+</code></pre>
+
+<pre class="fragment"><code class="r">width(var.named.irange)
+</code></pre>
+
+<pre class="fragment"><code>[1] 4 4 4
+</code></pre>
+
+<pre class="fragment"><code class="r">names(var.named.irange)
+</code></pre>
+
+<pre class="fragment"><code>[1] &quot;Gene1&quot; &quot;Gene2&quot; &quot;Gene3&quot;
+</code></pre>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>Accessing IRanges</h3>
+<div class="slideContent" >
+<ul>
+<li class="fragment">How many dimensions does IRanges have?</li>
+<li class="fragment">Accessing individual elements</li>
+</ul>
+
+<pre class="fragment"><code class="r">var.named.irange[1] # Like a vector
+var.named.irange[&quot;b&quot;] # Like a named vector
+c(var.irange, var.named.irange) # Can be combined
+</code></pre>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>GRanges</h3>
+<div class="slideContent small-code" >
+<pre class="fragment"><code class="r">library(GenomicRanges)
+</code></pre>
+
+<pre class="fragment"><code class="r">GRanges(seqnames = , 
+        strand = , 
+        ranges = IRanges)
+</code></pre>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>GRanges</h3>
+<div class="slideContent small-code" >
+<pre><code class="r">var.grange &lt;- GRanges(seqnames = &quot;chr1&quot;, 
+                      strand = c(&quot;+&quot;,&quot;-&quot;,&quot;+&quot;), 
+                      ranges = var.irange)
+</code></pre>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>GRanges</h3>
+<div class="slideContent" >
+<pre><code class="r">var.grange
+</code></pre>
+
+<pre><code>GRanges object with 3 ranges and 0 metadata columns:
+      seqnames    ranges strand
+         &lt;Rle&gt; &lt;IRanges&gt;  &lt;Rle&gt;
+  [1]     chr1      4-11      +
+  [2]     chr1      5-12      -
+  [3]     chr1      6-13      +
+  -------
+  seqinfo: 1 sequence from an unspecified genome; no seqlengths
+</code></pre>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>GRanges with metadata</h3>
+<div class="slideContent small-code" >
+<pre class="fragment"><code class="r">values(var.grange) &lt;- DataFrame(gname = c(&quot;gene1&quot;,&quot;gene2&quot;,&quot;gene3&quot;),
+                                type = c(&quot;enzyme&quot;,&quot;structural&quot;,&quot;enzyme&quot;))
+</code></pre>
+
+<pre class="fragment"><code class="r">var.grange
+</code></pre>
+
+<pre class="fragment"><code>GRanges object with 3 ranges and 2 metadata columns:
+      seqnames    ranges strand |       gname        type
+         &lt;Rle&gt; &lt;IRanges&gt;  &lt;Rle&gt; | &lt;character&gt; &lt;character&gt;
+  [1]     chr1      4-11      + |       gene1      enzyme
+  [2]     chr1      5-12      - |       gene2  structural
+  [3]     chr1      6-13      + |       gene3      enzyme
+  -------
+  seqinfo: 1 sequence from an unspecified genome; no seqlengths
+</code></pre>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>GRanges with metadata</h3>
+<div class="slideContent small-code" >
+<pre class="fragment"><code class="r">var.grange
+</code></pre>
+
+<pre class="fragment"><code>GRanges object with 3 ranges and 2 metadata columns:
+      seqnames    ranges strand |       gname        type
+         &lt;Rle&gt; &lt;IRanges&gt;  &lt;Rle&gt; | &lt;character&gt; &lt;character&gt;
+  [1]     chr1      4-11      + |       gene1      enzyme
+  [2]     chr1      5-12      - |       gene2  structural
+  [3]     chr1      6-13      + |       gene3      enzyme
+  -------
+  seqinfo: 1 sequence from an unspecified genome; no seqlengths
+</code></pre>
+
+<pre class="fragment"><code class="r">seqinfo(var.grange)
+</code></pre>
+
+<pre class="fragment"><code>Seqinfo object with 1 sequence from an unspecified genome; no seqlengths:
+  seqnames seqlengths isCircular genome
+  chr1             NA         NA   &lt;NA&gt;
+</code></pre>
+
+<pre class="fragment"><code class="r">seqlevels(var.grange) &lt;- c(&quot;chr1&quot;, &quot;chr-mt&quot;, &quot;chr2&quot;)
+seqlengths(var.grange) &lt;- c(&quot;chr1&quot; = 100, &quot;chr-mt&quot; = 200, &quot;chr2&quot; = 400)
+isCircular(var.grange) &lt;- c(FALSE, TRUE,FALSE)
+genome(var.grange) &lt;- &quot;Mouse&quot;
+</code></pre>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>GRanges with metadata</h3>
+<div class="slideContent small-code" >
+<pre><code class="r">var.grange
+</code></pre>
+
+<pre><code>GRanges object with 3 ranges and 2 metadata columns:
+      seqnames    ranges strand |       gname        type
+         &lt;Rle&gt; &lt;IRanges&gt;  &lt;Rle&gt; | &lt;character&gt; &lt;character&gt;
+  [1]     chr1      4-11      + |       gene1      enzyme
+  [2]     chr1      5-12      - |       gene2  structural
+  [3]     chr1      6-13      + |       gene3      enzyme
+  -------
+  seqinfo: 3 sequences (1 circular) from Mouse genome
+</code></pre>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>Yeast dataset</h3>
+<div class="slideContent" >
+<ul>
+<li>Download yeast GFF file
+<a href="https://downloads.yeastgenome.org/curation/chromosomal_feature/saccharomyces_cerevisiae.gff">https://downloads.yeastgenome.org/curation/chromosomal_feature/saccharomyces_cerevisiae.gff</a>
+(Fix file extensions - sometimes it defaults to .txt)</li>
+</ul>
+
+<pre><code class="r"># Load the rtracklayer package
+library(rtracklayer)
+
+# Read in the yeast GFF file as GRanges. 
+yeast.gr &lt;- readGFFAsGRanges(&quot;saccharomyces_cerevisiae.gff&quot;)
+</code></pre>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>Exercise 12</h3>
+<div class="slideContent" >
+<ol>
+<li>How many chromosomes are there in the yeast genome?</li>
+<li>How many genes encode proteins?</li>
+</ol>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>Annotation Hub</h3>
+<div class="slideContent" >
+<pre><code class="r">library(AnnotationHub)
+
+# Download the Annotation Hub database
+ah &lt;- AnnotationHub()
+
+# Display the database
+display(ah)
 </code></pre>
 
 </div>
