@@ -1,0 +1,17 @@
+---
+title: "Lab 14 Homework"
+output:
+  html_document:
+    df_print: paged
+---
+
+- Write the `codes` for all questions in a single R Notebook (file).
+- ALWAYS comment your code.
+- Name the file as "Lastname_Lab-14_homework.Rmd"
+- **<span style="color:red"> Due date: Tues, Oct 22, 1:40 pm EST</span>**
+
+### 1. Create forward and reverse primers that are 30bp long for each CDS in the yeast genome. (3 pts)
+### 2. Which CDS in the yeast genome have long stretches (15 bp) of same nucleotide? Which bases are repeated more often? (3 pts)
+### 3. Which amino acids are most abundant in the C-terminal ends (last 5 residues) of yeast proteins? (4 pts)
+
+### +3 Bonus points: Repeat any one of the above questions for an organism other than yeast.
