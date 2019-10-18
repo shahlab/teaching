@@ -1,0 +1,242 @@
+---
+title: "Lab-14 in-class"
+output:
+  html_document:
+    df_print: paged
+  html_notebook: default
+---
+
+```{r}
+library(Biostrings)
+library(rtracklayer)
+library(tidyverse)
+```
+
+## Exercise 14.1
+
+### 1. Which chromosome has the highest GC content?
+```{r}
+yeast.fasta <- readDNAStringSet("~/Fall2019/Lab-14/yeast.fasta")
+yeast.fasta
+```
+```{r}
+gc.chrs <- letterFrequency(yeast.fasta, letters = "GC", as.prob = TRUE)
+gc.chrs
+
+class(gc.chrs)
+```
+
+```{r}
+# Method 1
+pos.maxgc.chr <- which(gc.chrs[, 1] == max(gc.chrs[, 1]))
+
+names(yeast.fasta)[pos.maxgc.chr]
+
+# Method 2
+gc.chrs.dataframe <- data.frame(Chromosome = names(yeast.fasta),
+                                GC = gc.chrs[, 1])
+gc.chrs.dataframe %>%
+  arrange(desc(GC)) %>%
+  .[1, ]
+```
+
+
+### 2. Which gene has the most arginine amino acids and which one has the highest proportion of arginine amino acids?
+```{r, eval=FALSE}
+width() # Get the lengths of each DNAString in a DNAStringSet
+reverseComplement() # Find the DNA sequence of the opposite strand
+translate() # Convert DNA sequence to amino acid sequence
+codons() # Split a DNAString sequence into codons
+alphabetFrequency() # Find out the frequency of individual nucleotides in a StringSet
+letterFrequency() # Find out the frequency of multiple nucleotides in a StringSet
+dinucleotideFrequency() # Find out the frequency of dinucleotides in a StringSet
+oligonucleotideFrequency() # Find out the frequency of any N-mer in a StringSet
+```
+
+```{r}
+yeast.cds.seq
+yeast.aa.seq <- translate(yeast.cds.seq)
+yeast.aa.seq
+```
+
+```{r}
+arg.counts.genes <- letterFrequency(yeast.aa.seq, letters = "R")
+
+arg.gene.dataframe <- data.frame(Genes = names(yeast.cds.seq),
+                                 Arg.counts = arg.counts.genes[, 1])
+arg.gene.dataframe %>%
+  arrange(desc(Arg.counts))
+
+arg.gene.dataframe %>%
+  arrange(desc(Arg.counts)) %>%
+  .[1, ]
+
+
+
+arg.freq.genes <- letterFrequency(yeast.aa.seq, letters = "R", as.prob = TRUE)
+arg.gene.dataframe <- data.frame(Genes = names(yeast.cds.seq),
+                                 Arg.counts = arg.counts.genes[, 1],
+                                 Arg.freq = arg.freq.genes[, 1])
+arg.gene.dataframe %>%
+  arrange(desc(Arg.freq)) 
+```
+
+### 3. Lysine is encoded by AAA and AAG amino acids. Which gene has the highest proportion of AAG encoded lysines?
+```{r}
+freq.codons <- oligonucleotideFrequency(yeast.cds.seq, width = 3, step = 3)
+freq.codons[1, ]
+
+sum(freq.codons[1, ])
+
+
+freq.codons.taseen <- oligonucleotideFrequency(yeast.cds.seq, width = 3, step = 3, as.prob = TRUE)
+freq.codons.taseen
+
+lys.df1 <- data.frame(Gene = names(yeast.cds.seq),
+                     AAA = freq.codons.taseen[, "AAA"],
+                     AAG = freq.codons.taseen[, "AAG"])
+
+lys.df2 <- data.frame(Gene = names(yeast.cds.seq),
+                     AAA = freq.codons[, "AAA"],
+                     AAG = freq.codons[, "AAG"])
+
+lys.df1 %>%
+  mutate(freq.AAG.rel.all.lys = AAG/(AAA + AAG)) %>%
+  arrange(desc(freq.AAG.rel.all.lys))
+
+lys.df2 %>%
+  mutate(freq.AAG.rel.all.lys = AAG/(AAA + AAG)) %>%
+  arrange(desc(freq.AAG.rel.all.lys)) %>%
+  filter(freq.AAG.rel.all.lys == 1) %>%
+  arrange(desc(AAG))
+```
+
+
+### Dealing with genes with introns
+```{r}
+# Read in genome seq and genome annotations
+yeast.fasta <- readDNAStringSet("~/Fall2019/Lab-14/yeast.fasta")
+yeast.gff <- readGFFAsGRanges("~/Fall2019/Lab-14/saccharomyces_cerevisiae.gff.txt")
+```
+
+
+```{r}
+# Get all CDS annotations
+yeast.cds.annot <- yeast.gff[yeast.gff$type == "CDS"]
+yeast.cds.annot
+```
+
+```{r}
+# Get the sequences for all CDS
+yeast.cds.all.seq <- yeast.fasta[yeast.cds.annot]
+names(yeast.cds.all.seq) <- yeast.cds.annot$Name
+yeast.cds.all.seq
+```
+
+```{r}
+# Reverse complement sequences of CDS on negative strand
+cds.on.neg.strand <- strand(yeast.cds.annot) == "-"
+
+yeast.cds.all.seq[cds.on.neg.strand] <-
+  reverseComplement(yeast.cds.all.seq[cds.on.neg.strand])
+yeast.cds.all.seq
+```
+
+```{r}
+# Testing how to combine DNAStrings
+q0255 <- yeast.cds.all.seq[names(yeast.cds.all.seq) == "Q0255_CDS"]
+q0255
+
+c(q0255) # Does not work
+paste(q0255, collapse = "") # Works but not ideal
+unlist(q0255)
+```
+
+```{r}
+cds.names <- unique(names(yeast.cds.all.seq))
+list.of.combd.seq <- list()
+
+for(dummy in cds.names){
+  cds.dna <- yeast.cds.all.seq[names(yeast.cds.all.seq) == dummy]
+  collapsed.cds <- unlist(cds.dna)
+  
+  list.of.combd.seq[[dummy]] <- collapsed.cds
+}
+
+# Method 2
+collapse_seq <- function(x){
+  cds.dna <- yeast.cds.all.seq[names(yeast.cds.all.seq) == x]
+  collapsed.cds <- unlist(cds.dna)
+}
+list.of.combd.seq2 <- lapply(cds.names, FUN = collapse_seq)
+names(list.of.combd.seq2) <- cds.names
+```
+
+```{r}
+list.of.combd.seq[1:5]
+list.of.combd.seq2[1:5]
+
+all.yeast.cds.seq <- DNAStringSet(list.of.combd.seq)
+all.yeast.cds.seq
+
+all.yeast.cds.seq2 <- DNAStringSet(list.of.combd.seq2)
+all.yeast.cds.seq2
+
+```
+
+## Apply function
+#### 1. Create a 10 x 10 matrix of number and calculate mean and standard deviation of values in rows and columns.
+```{r}
+num_matrix <- matrix(101:200, nrow = 10, ncol = 10)
+# num_matrix
+
+row.means.matrix <- apply(num_matrix, MARGIN = 1, FUN = mean)
+row.means.matrix
+col.means.matrix <- apply(num_matrix, MARGIN = 2, FUN = mean)
+col.means.matrix
+
+rowMeans(num_matrix)
+colMeans(num_matrix)
+
+row.sd.matrix <- apply(num_matrix, MARGIN = 1, FUN = sd)
+row.sd.matrix
+col.sd.matrix <- apply(num_matrix, MARGIN = 2, FUN = sd)
+col.sd.matrix
+
+my_func <- function(x){
+  y <- mean(x)/100
+  return(y)
+}
+
+usr.row.func <- apply(num_matrix, MARGIN = 1, FUN = my_func)
+usr.row.func
+```
+
+
+#### 2. Create a list of 10 elements where each element is a vector of numbers from 1 to N.
+```{r}
+tmp.list <- list()
+
+for(dummy in 1:10){
+  tmp.list[[dummy]] <- seq(dummy)
+}
+tmp.list
+
+lapply(1:10, FUN = seq)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,34 +1,43 @@
 ---
 title: "Lab 13 in-class"
-output: html_document
+output:
+  html_document:
+    df_print: paged
+  html_notebook: default
 ---
 
-# DNAStrings
+### DNAStrings
 ```{r}
 library(Biostrings)
+library(rtracklayer)
+library(tidyverse)
 ```
 
 ```{r}
+# Create a DNA string
 dna.seq <- DNAString("ACGCTTA")
 dna.seq
 ```
 
 ```{r}
+# Create a set of DNA string
 dna.set <- DNAStringSet(c("ACG","GGG","CTCAGGAGTT"))
 dna.set
 ```
 
 ```{r}
-width(dna.set)
-length(dna.set)
+width(dna.set) # Gives the length of each string
+length(dna.set) # Gives the number of strings
 ```
 
 ```{r}
+# Do not use tidyverse with biostrings
 dna.set %>%
   as.data.frame()
 ```
 
 ```{r}
+# DNAStringSets work like a list()
 dna.set[[1]]
 ```
 ```{r}
@@ -38,9 +47,11 @@ dna.set[1]
 
 ```{r}
 # Read in yeast genome
-
 yeast.fasta <- readDNAStringSet("~/Fall2019/Lab-13/yeast.fasta")
 yeast.fasta
+
+# Read in yeast GRanges
+yeast.gff <- readGFFAsGRanges("~/Fall2019/Lab-13/saccharomyces_cerevisiae.gff.txt")
 ```
 
 ```{r}
@@ -48,34 +59,43 @@ yeast.gff
 ```
 
 ```{r}
-# yeast.gff[2]
-# yeast.fasta
+# Subsetting a genome seq to get a seq of a particular range
 telomere.seq <- yeast.fasta[yeast.gff[2]]
 telomere.seq
 ```
 
 ```{r}
-yeast.xv <- yeast.fasta[names(yeast.fasta) == "chrXV"]
+# Extract chromosome 15
+yeast.xv <- yeast.fasta[names(yeast.fasta) == "chrXV"] # This is still a DNAStringSet
+
+# Extract the DNAString from the string set using list notation
 yeast.xv.dnastring <- yeast.xv[[1]]
+
+# Extract bases at positions 100 to 105
 yeast.xv.dnastring[100:105]
 ```
  
+### Similarities between character string and biostrings
 ```{r}
-char.string <- "AATTGGAATTGGAAGGGG$"
+char.string <- "AATTGGAATTGGAAGGGG"
 char.string
-substr(char.string, start = 1, stop = 4)
+substr(char.string, start = 1, stop = 4) # Getting a substring from a character string
 
 temp.biostring <- DNAString("AATTGGAATTGGAAGGGGN")
 temp.biostring
-temp.biostring[1:4]
+temp.biostring[1:4] # Getting a substring from a biostrings
 
 ```
 
 ```{r}
+# All characters that can be used in DNAStrings
 DNA_ALPHABET
+
+# All characters that can be used in AAStrings
+AA_ALPHABET
 ```
 
-# Useful functions to work with biostring
+### Useful functions to work with biostring
 ```{r, eval = F}
 width() # Get the lengths of each DNAString in a DNAStringSet
 reverseComplement() # Find the DNA sequence of the opposite strand
@@ -87,16 +107,19 @@ dinucleotideFrequency() # Find out the frequency of dinucleotides in a StringSet
 oligonucleotideFrequency() # Find out the frequency of any N-mer in a StringSet
 ```
 
+### Lengths of DNAStrings
 ```{r}
 width(yeast.fasta)
 width(telomere.seq)
 ```
 
+### Reverse complements of sequences
 ```{r}
 telomere.seq
 reverseComplement(telomere.seq)
 ```
 
+### Convert DNA sequence to amino-acid sequence
 ```{r}
 telomere.seq
 translate(telomere.seq)
@@ -108,41 +131,43 @@ translate(telomere.seq[[1]])
 translate(telomere.seq[[1]][2:width(telomere.seq)])
 ```
 
+### Get codons from a sequence
 ```{r}
+# Works only on DNAStrings not DNAStringSets
 codons(telomere.seq[[1]])
 ```
 
+### Frequency of all bases on each chromosome
 ```{r}
 alphabetFrequency(yeast.fasta)
 ```
 
 ```{r}
-alphabetFrequency(translate(yeast.fasta))
+alphabetFrequency(yeast.fasta[1])
 alphabetFrequency(translate(yeast.fasta[1]))
-
 ```
 
+### Get GC content of each chromosome
 ```{r}
 # G OR C (GC-content)
-letterFrequency(yeast.fasta, "GC")
-letterFrequency(yeast.fasta, "GC", as.prob = TRUE)
+letterFrequency(yeast.fasta, "GC") # GC counts
+letterFrequency(yeast.fasta, "GC", as.prob = TRUE) # GC frequency
 ```
 
+### Frequency of all pairs of nucleotides
 ```{r}
 dinucleotideFrequency(yeast.fasta)
 ```
 
+## Create CDS sequences of all genes without introns
 ```{r}
-yeast.gff
-yeast.fasta
-```
-
-```{r}
+# Filter all CDS ranges from the GFF file
 yeast.cds <- yeast.gff[yeast.gff$type == "CDS"]
 yeast.cds
 ```
 
 ```{r}
+# Get a list of genes without any introns
 genes.wo.introns <- yeast.cds %>%
   as.data.frame() %>%
   group_by(Name) %>%
@@ -155,6 +180,7 @@ yeast.cds.no.introns
 ```
 
 ```{r}
+# Get the sequences of aCDS
 yeast.cds.seq <- yeast.fasta[yeast.cds.no.introns]
 yeast.cds.seq
 
@@ -163,17 +189,11 @@ names(yeast.cds.seq) <- yeast.cds.no.introns$Name
 yeast.cds.seq
 
 # Make sure all sequences are in the right orientation
-yeast.cds.seq[strand(yeast.cds.no.introns) == "-"] 
-
-yeast.cds.seq[strand(yeast.cds.no.introns) == "-"] <-
-  reverseComplement(yeast.cds.seq[strand(yeast.cds.no.introns) == "-"])
-```
-
-
-```{r}
+yeast.cds.seq[strand(yeast.cds.no.introns) == "-"] <- reverseComplement(yeast.cds.seq[strand(yeast.cds.no.introns) == "-"])
 yeast.cds.seq
 ```
 
+### Check if the CDS sequences begin with start and stop codons
 ```{r}
 yeast.cds.start <- subseq(yeast.cds.seq, start = 1, end = 3)
 yeast.cds.start
@@ -196,8 +216,6 @@ table(yeast.cds.stop)
 
 ## Pattern matching
 ```{r}
-# yeast.fasta
-
 cpg.pattern = "CGCGCGCGCG"
 vcountPattern(pattern = cpg.pattern, 
               subject = yeast.fasta, 
