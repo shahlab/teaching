@@ -37,7 +37,7 @@ vmatchPattern(PATTERN, SUBJECT, MISMATCH ARGS)
 ```
 - Use `data(HNF4alpha)`
 
-Exercise 14.2
+Exercise 15.1
 ========================================================
 How many coding sequences contain an AAA within a 10 bp region upstream of the start site? 
   - Create GFF of flanking regions.
@@ -48,6 +48,21 @@ Consensus matrices and sequence logos
 
 https://en.wikipedia.org/wiki/Sequence_logo#/media/File:KozakConsensus.jpg
 
+```r
+library(ggseqlogo)
+```
+
+Pairwise alignments and distance between strings
+========================================================
+
+```r
+stringDist(DNAStringSet, method = )
+```
+
+
+```r
+pairwiseAlignment(PATTERN, SUBJECT, TYPE)
+```
 
 BSgenome
 ========================================================
@@ -59,3 +74,7 @@ library(BSgenome)
 # List of all available genomes
 available.genomes()
 ```
+
+
+
+
