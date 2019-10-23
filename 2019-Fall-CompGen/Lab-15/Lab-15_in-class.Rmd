@@ -1,0 +1,142 @@
+---
+title: "Lab 15 in-class"
+output: html_document
+---
+
+```{r}
+library(Biostrings)
+library(rtracklayer)
+library(tidyverse)
+library(ggseqlogo, lib = "~/")
+```
+
+```{r}
+data(HNF4alpha)
+HNF4alpha
+```
+
+```{r}
+countPattern(pattern = "GGG", subject = HNF4alpha[[1]])
+
+vcountPattern(pattern = "GGG", subject = HNF4alpha)
+```
+
+```{r}
+matchPattern(pattern = "GGG", subject = HNF4alpha[[2]])
+
+vmatchPattern(pattern = "GGG", subject = HNF4alpha) %>%
+  as.data.frame()
+
+# vmatchPattern(pattern = "AAAAAAAAAAAAAAA", subject = all.yeast.cds.seq) %>%
+#  as.data.frame()
+```
+
+## Exercise 15.1
+### 1. How many coding sequences contain an AAA within a 10 bp region upstream of the start site?
+
+- Create GFF of flanking regions.
+- Make sure to keep the strand information in mind.
+
+```{r}
+# Read in genome seq and genome annotations
+yeast.fasta <- readDNAStringSet("~/Fall2019/Lab-14/yeast.fasta")
+yeast.gff <- readGFFAsGRanges("~/Fall2019/Lab-14/saccharomyces_cerevisiae.gff.txt")
+```
+
+```{r}
+yeast.gff %>%
+  as.data.frame() %>%
+  group_by(type) %>%
+  tally()
+```
+
+```{r}
+yeast.cds.annot <- yeast.gff[yeast.gff$type == "CDS"]
+
+genes.w.no.introns <- yeast.cds.annot %>%
+  as.data.frame() %>%
+  group_by(Name) %>%
+  tally() %>%
+  filter(n == 1) %>%
+  pull(Name)
+
+head(genes.w.no.introns)
+```
+
+
+```{r}
+yeast.cds.annot.no.introns <- yeast.cds.annot[yeast.cds.annot$Name %in% genes.w.no.introns]
+yeast.cds.annot.no.introns
+
+flank.10bp <- flank(yeast.cds.annot.no.introns, width = 10)
+flank.10bp
+
+flank.10bp.seq <- yeast.fasta[flank.10bp]
+flank.10bp.seq
+
+# Fix names
+names(flank.10bp.seq) <- flank.10bp$Name
+
+# Fix sequences on the negative strand
+flank.10bp.seq[strand(flank.10bp) == "-"] <- reverseComplement(flank.10bp.seq[strand(flank.10bp) == "-"])
+
+flank.10bp.seq
+
+aaa.flank.10bp <- vcountPattern(pattern = "AAA", subject = flank.10bp.seq)
+
+sum(aaa.flank.10bp>0)
+```
+
+
+## Consensus matrix of HNF4alpha
+```{r}
+HNF4alpha
+# consensusMatrix(HNF4alpha)
+hnf4_mat <- consensusMatrix(HNF4alpha, as.prob = TRUE)
+
+hnf4_mat <- hnf4_mat[1:4, ]
+hnf4_mat
+```
+
+```{r}
+ggseqlogo(hnf4_mat)
+```
+
+
+```{r}
+flank.10bp.seq
+
+flank.10bp.consensus <- consensusMatrix(flank.10bp.seq, as.prob = TRUE)
+flank.10bp.consensus <- flank.10bp.consensus[1:4, ]
+flank.10bp.consensus
+```
+
+```{r}
+ggseqlogo(flank.10bp.consensus)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

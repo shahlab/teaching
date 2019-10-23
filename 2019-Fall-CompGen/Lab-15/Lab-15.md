@@ -48,33 +48,14 @@ Consensus matrices and sequence logos
 
 https://en.wikipedia.org/wiki/Sequence_logo#/media/File:KozakConsensus.jpg
 
-```r
-library(ggseqlogo)
+
+
+
+
+
+
+
+
 ```
-
-Pairwise alignments and distance between strings
-========================================================
-
-```r
-stringDist(DNAStringSet, method = )
+Error in library(ggseqlogo) : there is no package called 'ggseqlogo'
 ```
-
-
-```r
-pairwiseAlignment(PATTERN, SUBJECT, TYPE)
-```
-
-BSgenome
-========================================================
-- Installing genome sequences as DNAStringSets
-
-```r
-library(BSgenome)
-
-# List of all available genomes
-available.genomes()
-```
-
-
-
-

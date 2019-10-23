@@ -1,0 +1,196 @@
+---
+title: "Lab 14 Homework solutions"
+output: html_document
+---
+
+```{r}
+library(Biostrings)
+library(rtracklayer)
+library(tidyverse)
+```
+
+
+### 1. Create forward and reverse primers that are 30bp long for each CDS in the yeast genome. (3 pts)
+```{r}
+# Get yeast CDS sequences
+
+# Read in genome seq and genome annotations
+yeast.fasta <- readDNAStringSet("~/Fall2019/Lab-14/yeast.fasta")
+yeast.gff <- readGFFAsGRanges("~/Fall2019/Lab-14/saccharomyces_cerevisiae.gff.txt")
+```
+
+```{r}
+# Get all CDS annotations
+yeast.cds.annot <- yeast.gff[yeast.gff$type == "CDS"]
+# yeast.cds.annot
+```
+
+```{r}
+# Get the sequences for all CDS
+yeast.cds.all.seq <- yeast.fasta[yeast.cds.annot]
+names(yeast.cds.all.seq) <- yeast.cds.annot$Name
+# yeast.cds.all.seq
+```
+
+```{r}
+# Reverse complement sequences of CDS on negative strand
+cds.on.neg.strand <- strand(yeast.cds.annot) == "-"
+
+yeast.cds.all.seq[cds.on.neg.strand] <-
+  reverseComplement(yeast.cds.all.seq[cds.on.neg.strand])
+# yeast.cds.all.seq
+```
+
+```{r}
+cds.names <- unique(names(yeast.cds.all.seq))
+# list.of.combd.seq <- list()
+# 
+# for(dummy in cds.names){
+#   cds.dna <- yeast.cds.all.seq[names(yeast.cds.all.seq) == dummy]
+#   collapsed.cds <- unlist(cds.dna)
+#   
+#   list.of.combd.seq[[dummy]] <- collapsed.cds
+# }
+
+# Method 2
+collapse_seq <- function(x){
+  cds.dna <- yeast.cds.all.seq[names(yeast.cds.all.seq) == x]
+  collapsed.cds <- unlist(cds.dna)
+}
+list.of.combd.seq2 <- lapply(cds.names, FUN = collapse_seq)
+names(list.of.combd.seq2) <- cds.names
+```
+
+```{r}
+all.yeast.cds.seq <- DNAStringSet(list.of.combd.seq2)
+all.yeast.cds.seq
+```
+
+```{r}
+# Method 1
+forward_primers <- subseq(all.yeast.cds.seq, start = 1, end = 30)
+forward_primers
+
+reverse_primers <- subseq(reverseComplement(all.yeast.cds.seq), start = 1, end = 30)
+reverse_primers
+
+# Method 2
+reverse_primers2 <- reverseComplement(subseq(all.yeast.cds.seq, 
+                           start = width(all.yeast.cds.seq) - 29, 
+                           end = width(all.yeast.cds.seq)))
+reverse_primers2
+```
+
+### 2. Which CDS in the yeast genome have long stretches (15 bp) of same nucleotide? Which bases are repeated more often? (3 pts)
+```{r}
+strng.of.5 <- oligonucleotideFrequency(all.yeast.cds.seq, width = 5)
+dim(strng.of.5)
+
+# Create 15-mers
+create_rep_element <- function(x, y){
+  tmp <- paste(rep(x, y), collapse = "")
+  return(tmp)
+}
+
+list.15.mers <- lapply(c("A", "T", "C", "G"), create_rep_element, y = 15)
+list.15.mers
+
+# vcountPattern(pattern = list.15.mers[[1]], subject = all.yeast.cds.seq)
+
+# Find 15-mers in each CDS
+## Method 1 (lapply)
+counts.15.per.gene.lapply <- lapply(list.15.mers, vcountPattern, subject = all.yeast.cds.seq)
+
+## Method 2 (sapply)
+counts.15.per.gene.sapply <- sapply(list.15.mers, vcountPattern, subject = all.yeast.cds.seq)
+
+head(counts.15.per.gene.sapply)
+colnames(counts.15.per.gene.sapply) <- list.15.mers
+rownames(counts.15.per.gene.sapply) <- names(all.yeast.cds.seq)
+
+# Which CDS have at least one 15-mer
+atleast.1.15mer <- rowSums(counts.15.per.gene.sapply)
+atleast.1.15mer[atleast.1.15mer>0]
+
+all.genes.with.atleast1.15mer <- counts.15.per.gene.sapply[atleast.1.15mer>0, ]
+all.genes.with.atleast1.15mer
+
+# colSums(all.genes.with.atleast1.15mer)
+
+
+### Working with lapply solution - Method 2
+length(counts.15.per.gene.lapply)
+
+counts.15mer.df <- data.frame(Gene = names(all.yeast.cds.seq),
+                              A = counts.15.per.gene.lapply[[1]],
+                              T = counts.15.per.gene.lapply[[2]],
+                              C = counts.15.per.gene.lapply[[3]],
+                              G = counts.15.per.gene.lapply[[4]])
+
+counts.15mer.df %>%
+  mutate(sum = A + T + C + G) %>%
+  filter(sum > 0) %>%
+  pull(Gene)
+
+counts.15mer.df %>%
+  select(A, T, C, G) %>%
+  colSums()
+
+
+```
+
+
+
+### 3. Which amino acids are most abundant in the C-terminal ends (last 5 residues) of yeast proteins? (4 pts)
+```{r}
+# all.yeast.cds.seq
+
+# Method 1
+all.yeast.aa.seq <- translate(all.yeast.cds.seq)
+# all.yeast.aa.seq
+
+last.5.aa <- subseq(all.yeast.aa.seq, 
+                    start = width(all.yeast.aa.seq) - 5, 
+                    end = width(all.yeast.aa.seq) - 1)
+last.5.aa
+
+alphabetFrequency(last.5.aa) %>% 
+  colSums() %>%
+  sort(decreasing = TRUE)
+
+# Method 2
+last.5.aa.m2 <- lapply(all.yeast.aa.seq, tail, n = 6)
+head(last.5.aa.m2)
+
+last.5.aa.stringset <- AAStringSet(last.5.aa.m2)
+# last.5.aa.stringset
+
+alphabetFrequency(last.5.aa.stringset) %>% 
+  colSums() %>%
+  sort(decreasing = TRUE)
+```
+
+
+### +3 Bonus points: Repeat any one of the above questions for an organism other than yeast.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
