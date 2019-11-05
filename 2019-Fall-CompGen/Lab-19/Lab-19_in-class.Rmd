@@ -1,0 +1,70 @@
+---
+title: "Lab 19 - Statistics"
+output: 
+  html_document: 
+    toc: yes
+    toc_depth: 4
+    toc_float: TRUE
+---
+
+### Correlation
+```{r, eval = F}
+cor(x, y)
+```
+
+```{r, eval = F}
+cor(x, y, method = c("pearson", "kendall", "spearman"))
+```
+
+- Using the $data.csv$ file, compute the correlation between RPF and mRNA.
+- Use appropriate transformations.
+
+### Regression
+Simple linear regression
+```{r, eval = F}
+lm(y ~ x)
+```
+
+Multiple linear regression
+```{r, eval = F}
+lm(y ~ x1 + x2 + x3)
+```
+
+- Find out how mRNA abundances changes as a function of gene length.
+- Find out how mRNA abundances changes as a function of various sequence features such as gene length, FEcap, uATG, utr, and gc.
+- Use `tidy(), augment(), glance()`
+
+### Random number generation
+
+### Comparisons of mean
+Student's t-test (equal variance)
+```{r, eval = F}
+t.test(x, mu = , alternative = c("two.sided", "less", "greater"), var.equal = TRUE) # One-sample
+t.test(x, y, alternative = c("two.sided", "less", "greater"), var.equal = TRUE) # Two-sample
+```
+
+Welch t-test (unequal variance)
+```{r, eval = F}
+t.test(x, y, alternative = c("two.sided", "less", "greater"), var.equal = FALSE)
+```
+
+Paired t-test
+```{r, eval = F}
+t.test(x, y, alternative = c("two.sided", "less", "greater"), paired = TRUE)
+```
+
+Wilcoxon/Mann-Whitney signed-rank test
+```{r, eval = F}
+wilcox.test(x, y, alternative = c("two.sided", "less", "greater"))
+```
+
+### Comparisons of distributions
+Kolmogorov-Smirnov test
+```{r, eval = F}
+ks.test(x, y, alternative = c("two.sided", "less", "greater"))
+```
+
+### Multiple hypothesis testing
+- Bonferroni Correction
+- False Discovery Rate (FDR)
+ 

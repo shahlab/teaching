@@ -76,10 +76,10 @@ Class | Date | Topic | Learning Materials
 13 | Oct 15 | Working with genome annotations and sequences - GRanges + Biostrings | [Presentation](Lab-13/Lab-13.html) <br> [R code for presentation](Lab-13/Lab-13.Rpres) <br> [In-class](Lab-13/Lab-13_in-class.Rmd)
 14 | Oct 17 | Working with genome sequences - Biostrings | [Presentation](Lab-14/Lab-14.html) <br> [R code for presentation](Lab-14/Lab-14.Rpres) <br> [Homework](Lab-14/Lab-14_hw.Rmd) <br> [Homework solns.](Lab-14/Shah_Lab-14_homework.Rmd) <br> [In-class](Lab-14/Lab-14_in-class.Rmd)
 15 | Oct 22 | Advanced sequence analyses |  [Presentation](Lab-15/Lab-15.html) <br> [R code for presentation](Lab-15/Lab-15.Rpres) <br> [In-class](Lab-15/Lab-15_in-class.Rmd)
-16 | Oct 24 | Quiz 04 and recap | 
-17 | Oct 29 | Statistics for life scientists I | 
-18 | Oct 31 | Statistics for life scientists II | 
-19 | Nov 5 | Introduction to RNA-seq | 
+16 | Oct 24 | Quiz 04 and recap | [Quiz](Lab-16/Lab-16_quiz.Rmd) <br> [Quiz solns.](Lab-16/Favate_Lab-16_quiz.Rmd)
+17 | Oct 29 | Statistics I | [DataCamp - Introduction to Data](https://www.datacamp.com/courses/introduction-to-data) <br> [DataCamp - Exploratory Data Analysis](https://www.datacamp.com/courses/exploratory-data-analysis)
+18 | Oct 31 | Statistics II | [DataCamp - Correlation and Regression](https://www.datacamp.com/courses/correlation-and-regression)
+19 | Nov 5 | Statistics III | [In-class](Lab-19/Lab-19_in-class.Rmd) <br> [In-class knitted](Lab-19/Lab-19_in-class.html)
 20 | Nov 7 | Quiz 05 and recap | 
 21 | Nov 12 | Working with Illumina sequencing data | 
 22 | Nov 14 | Working with short reads in R | 

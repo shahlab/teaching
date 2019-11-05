@@ -1,0 +1,126 @@
+---
+title: "Quiz 04 Answers"
+output:
+  html_document:
+    df_print: paged
+---
+
+### Load required packages and files
+
+```{r message = FALSE, warning = FALSE}
+library(tidyverse)
+library(rtracklayer)
+library(ggseqlogo, lib = "~/")
+library(Biostrings)
+```
+
+```{r}
+fasta <- readDNAStringSet("yeast.fasta")
+
+gff <- readGFFAsGRanges("saccharomyces_cerevisiae.gff.txt")
+```
+
+
+### 1. Using the genome annotation file, create a histogram of gene lengths of all `tRNA_gene`. (3 pt)
+
+You could coerce the gff into a data frame, filter to tRNA genes, and plot it.
+```{r fig.align = "center"}
+gff %>%                           # take the gff
+  as.data.frame() %>%             # make it a data frame
+  filter(type == "tRNA_gene") %>% # get all the tRNA genes
+  ggplot(., aes(width))+          # using the previous data frame (represented by the period), plot the width column
+  geom_histogram()                # with a histogram
+```
+
+You could also pull the width column from the gff in a tidyverse manner and assign it to a variable, and plot that.
+```{r}
+trna.lengths <- gff %>%           # take the gff
+  as.data.frame() %>%             # make it a data frame
+  filter(type == "tRNA_gene") %>% # get all the tRNA genes
+  pull(width)                     # pull the width column as a vector
+
+hist(trna.lengths)                # plot a histogram of the vector trna.lengths
+```
+
+You could also extract the widths directly from the gff like this and plot those.
+```{r}
+trna.lengths2 <- width(gff[gff$type == "tRNA_gene"])
+
+hist(trna.lengths2)
+```
+
+### 2. Create a DNAStringSet of all `tRNA_gene` sequences of length 72 bp. (2 pt)
+
+You can do this with only the gff
+```{r}
+# reduce the gff to tRNAs of length 72, this could also be done in two steps
+trna.gff <- gff[gff$type == "tRNA_gene" & width(gff) == 72]
+
+# use the new gff to get the sequences from the DNAstringset object
+trna.stringset <- fasta[trna.gff]
+
+# fix the (-) strand
+trna.stringset[strand(trna.gff) == "-"] <- reverseComplement(trna.stringset[strand(trna.gff) == "-"])
+
+# fix the names, this step was not necessary to answer this quesiton but would be helpful
+names(trna.stringset) <- trna.gff$Name
+
+trna.stringset
+```
+
+You could also do this with tidyverse. `trna.gff2` could then be used in place of `trna.gff` in the previous code block and yielded the same result.
+```{r}
+# get the names of all the tRNAs that fit the conditions and assign them to a variable
+my.trnas <- gff %>%                             # take the gff
+  as.data.frame() %>%                           # make it a data frame
+  filter(type == "tRNA_gene" & width == 72) %>% # get all the tRNA genes of length 72
+  pull(Name)                                    # pull the name column as a vector, ID would also suffice
+
+# reduce the gff to rows where the Name matches one of the names in our vector
+trna.gff2 <- gff[gff$Name %in% my.trnas]
+```
+
+### 3. Create a sequence logo of the tRNA gene sequences of length 72 bp. (3 pt)
+
+To make the seqlogo plot, you can do this, which turns the stringset in charcater vector of all the sequences. `ggseqlogo` will internally make the consensus matrix and plot for you. 
+```{r eval = FALSE}
+ggseqlogo(as.character(trna.stringset))
+```
+
+Or you can make the matrix yourself, and pass it to the plotting command.
+```{r fig.width = 15, fig.height = 6, fig.align = "center"}
+consensusMatrix(trna.stringset, as.prob = TRUE) %>% # make the consensus matrix
+  .[1:4,] %>%                                       # retain only the first 4 rows of the matrix, i.e. the ones for A T C G
+  ggseqlogo()                                       # plot
+```
+If you didn't retain only the top 4 rows, ggseqlogo thinks it's an amino acid sequence because you gave it letters besides A T C G.
+
+### 4. There are some nucleotide positions in the tRNA sequences of length 72 where there is only one base is present for all sequences. Which nucleotdie positions have a single base in all sequences? (2 pt)
+
+Realistically, you cannot do this by looking at the graph and must do it by looking at the matrix. The logic is that any column where a probability is 1 means that that was the only base in that position.
+```{r}
+consensusMatrix(trna.stringset, as.prob = TRUE) %>% # make the consensus matrix
+  .[1:4,] %>%                                    # retain only rows 1:4
+  as.data.frame() %>%                            # coerce to a data frame, this is necessary to cause column names
+  apply(., 2, max) %>%                           # apply the max function to each column of the matrix, returns a vector
+  .[. == 1]                                      # give me only elements where the value is 1
+```
+
+This also works and is overall better.
+```{r}
+# make the matrix
+my.matrix <- consensusMatrix(trna.stringset, as.prob = TRUE)
+
+# which cells are equal to one, this returns the row and column for cells where our condition is true
+# for example, base position 10 (column 10, look at the matrix) and row G (row 3, look at the matrix) are all T
+which(my.matrix == 1, arr.ind = TRUE)
+```
+
+Creative solutions also utilized the `t()` function. From this data frame, you could `pull` the `base.position` column to get your positions or leave it like this so you can see the letter.
+```{r}
+t(my.matrix[1:4,]) %>%                      # transpose the first 4 rows of the matrix
+  as.data.frame() %>%                       # make it a data frame so we can use mutate
+  mutate(base.position = 1:nrow(.)) %>%     # add a new column that represents the base position
+  filter(A == 1 | C == 1 | G == 1 | T == 1) # return only rows where a 1 is found in any of the base columns
+```
+

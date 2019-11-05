@@ -1,0 +1,17 @@
+---
+title: "Quiz 04"
+output:
+  html_document:
+    df_print: paged
+  html_notebook: default
+---
+
+- Write the `codes` for all questions in a single R Notebook (file).
+- ALWAYS comment your code.
+- Name the file as "Lastname_Lab-16_quiz.nb.html"
+- Read in the yeast.fasta and saccharomyces_cerevisiae.gff.txt to answer the questions 
+
+### 1. Using the genome annotation file, create a histogram of gene lengths of all `tRNA_gene`. (3 pt)
+### 2. Create a DNAStringSet of all `tRNA_gene` sequences of length 72 bp. (2 pt)
+### 3. Create a sequence logo of the tRNA gene sequences of length 72 bp. (3 pt)
+### 4. There are some nucleotide positions in the tRNA sequences of length 72 where there is only one base is present for all sequences. Which nucleotide positions have a single base in all sequences? (2 pt)
