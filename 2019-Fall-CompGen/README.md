@@ -79,7 +79,7 @@ Class | Date | Topic | Learning Materials
 16 | Oct 24 | Quiz 04 and recap | [Quiz](Lab-16/Lab-16_quiz.Rmd) <br> [Quiz solns.](Lab-16/Favate_Lab-16_quiz.Rmd)
 17 | Oct 29 | Statistics I | [DataCamp - Introduction to Data](https://www.datacamp.com/courses/introduction-to-data) <br> [DataCamp - Exploratory Data Analysis](https://www.datacamp.com/courses/exploratory-data-analysis)
 18 | Oct 31 | Statistics II | [DataCamp - Correlation and Regression](https://www.datacamp.com/courses/correlation-and-regression)
-19 | Nov 5 | Statistics III | [In-class](Lab-19/Lab-19_in-class.Rmd) <br> [In-class knitted](Lab-19/Lab-19_in-class.html)
+19 | Nov 5 | Statistics III | [In-class](Lab-19/Lab-19_in-class.Rmd) <br> [In-class knitted](Lab-19/Lab-19_in-class.html) <br> [Homework](Lab-19/Lab-19_hw.Rmd)
 20 | Nov 7 | Quiz 05 and recap | 
 21 | Nov 12 | Working with Illumina sequencing data | 
 22 | Nov 14 | Working with short reads in R | 

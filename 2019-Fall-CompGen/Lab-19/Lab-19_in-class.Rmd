@@ -12,6 +12,39 @@ output:
 cor(x, y)
 ```
 
+```{r}
+x <- 1:10
+y <- sample(1:10)
+
+x
+y
+
+cor(x, y)
+cor(x, x)
+```
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+my_data <- data.frame(x = c(1, 2, 4, 10, 100, 101, 105, 200),
+                      y = 1:8)
+my_data
+
+ggplot(my_data, aes(x = x, y = y)) +
+  geom_point()
+```
+
+```{r}
+cor(my_data$x, my_data$y, method = "pearson")
+cor(my_data$x, my_data$y, method = "spearman")
+
+```
+
+
+
+
 ```{r, eval = F}
 cor(x, y, method = c("pearson", "kendall", "spearman"))
 ```
@@ -19,16 +52,109 @@ cor(x, y, method = c("pearson", "kendall", "spearman"))
 - Using the $data.csv$ file, compute the correlation between RPF and mRNA.
 - Use appropriate transformations.
 
+```{r}
+yeast <- read_csv("data.csv")
+yeast
+```
+```{r}
+ggplot(yeast, aes(x = mRNA, y = RPF)) +
+  geom_point()
+
+ggplot(yeast, aes(x = mRNA, y = RPF)) +
+  geom_point() + 
+  scale_x_continuous(trans = "log10") +
+  scale_y_continuous(trans = "log10")
+```
+
+```{r}
+yeast %>%
+  summarize(pearson.linear = cor(RPF, mRNA, method = "pearson"),
+            pearson.log = cor(log(RPF), log(mRNA), method = "pearson"),
+            spearman.linear = cor(RPF, mRNA, method = "spearman"),
+            spearman.log = cor(log(RPF), log(mRNA), method = "spearman"))
+```
+
+
+
 ### Regression
 Simple linear regression
 ```{r, eval = F}
 lm(y ~ x)
 ```
 
+```{r}
+cor(log(yeast$RPF), log(yeast$mRNA))
+cor(log(yeast$mRNA), log(yeast$RPF))
+
+rpf.on.mrna <- lm(log(RPF) ~ log(mRNA), data = yeast)
+summary(rpf.on.mrna)
+mrna.on.rpf <- lm(log(mRNA) ~ log(RPF), data = yeast)
+summary(mrna.on.rpf)
+```
+
+```{r}
+library(broom)
+```
+
+```{r}
+rpf.on.mrna
+class(rpf.on.mrna)
+
+tidy(rpf.on.mrna)
+glance(rpf.on.mrna)
+augment(rpf.on.mrna)
+```
+
+
+
+
 Multiple linear regression
 ```{r, eval = F}
 lm(y ~ x1 + x2 + x3)
 ```
+
+```{r}
+ggplot(yeast, aes(x = Length, y = mRNA)) +
+  geom_point() +
+  scale_x_continuous(trans = "log10") +
+  scale_y_continuous(trans = "log10") +
+  geom_smooth(method = "lm")
+```
+
+```{r}
+mrna.vs.len <- lm(log(mRNA) ~ log(Length), data = yeast)
+glance(mrna.vs.len)
+tidy(mrna.vs.len)
+```
+
+```{r}
+yeast
+```
+
+```{r}
+full.mRNA.model <- lm(log(mRNA) ~ log(Length) + FEcap + uATG + log(utr) + gc, data = yeast)
+glance(full.mRNA.model)
+tidy(full.mRNA.model)
+
+
+noUTR.mRNA.model <- lm(log(mRNA) ~ log(Length) + FEcap + uATG + gc, data = yeast)
+glance(noUTR.mRNA.model)
+tidy(noUTR.mRNA.model)
+```
+
+```{r}
+ggplot(yeast, aes(x = gc)) +
+  geom_density(fill = "black")
+```
+
+```{r}
+library(MASS)
+```
+
+```{r}
+stepAIC(full.mRNA.model)
+```
+
 
 - Find out how mRNA abundances changes as a function of gene length.
 - Find out how mRNA abundances changes as a function of various sequence features such as gene length, FEcap, uATG, utr, and gc.
@@ -36,8 +162,25 @@ lm(y ~ x1 + x2 + x3)
 
 ### Random number generation
 
+```{r}
+rand.uniform <- runif(10000)
+hist(rand.uniform, breaks = 30)
+
+rand.norm <- rnorm(10000)
+hist(rand.norm)
+
+x <- seq(-10, 10, 0.01)
+norm.density <- dnorm(x, mean = 0, sd = 1)
+
+plot(x, norm.density)
+```
+
+
+
+
 ### Comparisons of mean
 Student's t-test (equal variance)
+
 ```{r, eval = F}
 t.test(x, mu = , alternative = c("two.sided", "less", "greater"), var.equal = TRUE) # One-sample
 t.test(x, y, alternative = c("two.sided", "less", "greater"), var.equal = TRUE) # Two-sample
@@ -58,13 +201,65 @@ Wilcoxon/Mann-Whitney signed-rank test
 wilcox.test(x, y, alternative = c("two.sided", "less", "greater"))
 ```
 
+Tests
+```{r}
+rand.normal.m10 <- rnorm(n = 100, mean = 10)
+hist(rand.normal.m10)
+mean(rand.normal.m10)
+t.test(rand.normal.m10, mu = 10)
+t.test(rand.normal.m10, mu = 11, alternative = "less")
+t.test(rand.normal.m10, mu = 11, alternative = "greater")
+```
+
+
 ### Comparisons of distributions
 Kolmogorov-Smirnov test
+
 ```{r, eval = F}
 ks.test(x, y, alternative = c("two.sided", "less", "greater"))
 ```
 
+
+
 ### Multiple hypothesis testing
 - Bonferroni Correction
 - False Discovery Rate (FDR)
+
+```{r}
+rand.pvalues <- rbeta(10000, shape1 = 0.4, shape2 = 0.4)
+hist(rand.pvalues, breaks = 50)
+
+sum(rand.pvalues < 0.05)
+
+adj.pvalues.bonf <- p.adjust(rand.pvalues, method = "bonferroni")
+sum(adj.pvalues.bonf < 0.05)
+
+adj.pvalues.fdr <- p.adjust(rand.pvalues, method = "fdr")
+sum(adj.pvalues.fdr < 0.05)
+```
+
+```{r}
+rand.pvalues <- rbeta(10000, shape1 = 0.4, shape2 = 1)
+hist(rand.pvalues, breaks = 50)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  

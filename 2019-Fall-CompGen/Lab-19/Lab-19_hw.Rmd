@@ -1,0 +1,26 @@
+---
+title: "Lab 19 Homework"
+output:
+  html_document:
+    df_print: paged
+---
+
+- Write the `codes` for all questions in a single R Notebook (file).
+- ALWAYS comment your code.
+- Name the file as "Lastname_Lab-19_homework.Rmd"
+- **<span style="color:red"> Due date: Thur, Nov 7, 1:40 pm EST</span>**
+
+### Exploratory data analysis using the movies.csv data
+Using variables of your choice, perform 
+
+- 1 correlation (1 pt)
+- 1 simple regression (1 pt)
+- 2 multiple regressions (2 pts)
+- 2 model selections on the above multiple regressions (2 pt)
+
+Explain why you chose to perform each of these comparisons and what are the findings for each analysis.
+
+- Is there any difference in Runtime of movies between 20th and 21st centuries? What tests would you do and why? (2 pts)
+- Were movies more popular (Ratings.y) in the 20th century than in 21st? What tests would you do and why? (2 pts)
+
+### +3 Bonus points: Write a function to calculate the q-values based on false discovery rate. Check your results with the existing p.adjust function.
