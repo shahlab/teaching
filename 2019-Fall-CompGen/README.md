@@ -17,7 +17,7 @@
 |-------------------|-------------------|
 |**Semester**| Fall 2019|
 |**Classroom**| Nelson Biology Labs B125|
-|**Meeting Times**|	Tuesday/Thursday  1:40 - 4:40 pm|
+|**Meeting Times**|	Tuesday/Thursday  1:40 - 4:00 pm|
 |**Syllabus**| https://github.com/shahlab/teaching/tree/master/2019-Fall-CompGen|
 |**Computing Resource**| [Didact cluster](https://didact.oarc.rutgers.edu)|
 |**Course Instructor**| Premal Shah <br> premal.shah@rutgers.edu <br> Ph: (848) 445 9664|
@@ -80,16 +80,14 @@ Class | Date | Topic | Learning Materials
 17 | Oct 29 | Statistics I | [DataCamp - Introduction to Data](https://www.datacamp.com/courses/introduction-to-data) <br> [DataCamp - Exploratory Data Analysis](https://www.datacamp.com/courses/exploratory-data-analysis)
 18 | Oct 31 | Statistics II | [DataCamp - Correlation and Regression](https://www.datacamp.com/courses/correlation-and-regression)
 19 | Nov 5 | Statistics III | [In-class](Lab-19/Lab-19_in-class.Rmd) <br> [In-class knitted](Lab-19/Lab-19_in-class.html) <br> [Homework](Lab-19/Lab-19_hw.Rmd)
-20 | Nov 7 | Quiz 05 and recap | 
-21 | Nov 12 | Working with Illumina sequencing data | 
-22 | Nov 14 | Working with short reads in R | 
-23 | Nov 19 | Differential gene expression analyses I | 
-24 | Nov 21 | Quiz 06 and recap | 
-25 | Nov 26 | Differential gene expression analyses II | 
-26 | Dec 3 | Gene Ontology and KEGG Pathway analyses | 
-27 | Dec 5 | Shiny |
-28 | Dec 10 | Interactive data analysis | 
-29 | Dec 12 | Review | 
+20 | Nov 7 | Quiz 05 and recap | [Quiz](Lab-20/Lab-20_quiz.Rmd) <br> [Quiz solns.](Lab-20/Shah_Lab-20_quiz.Rmd)
+21 | Nov 12 | Basics of RNA-seq | [RNA-seqlopedia](https://rnaseq.uoregon.edu/)
+22 | Nov 14 | Class cancelled | 
+23 | Nov 19 | Working with RNA-seq data | [Simple Library](Lab-RNAseq/simple/Lab-RNAseq_simple.Rmd) <br> [Muliplexed Library](Lab-RNAseq/complex/Lab-RNAseq_complex.Rmd)
+24 <br> 25 | Nov 21 <br> Nov 26| Differential gene expression analyses <br> Funcational analyses of differentially expressed genes | [DGE_GO](Lab-RNAseq/DGE_GO.Rmd)
+26 | Dec 3 | Finals Group Project | 
+27 | Dec 5 | Finals Group Project |
+28 | Dec 10 | Review | 
 
 ## Website and Communication
 
@@ -117,9 +115,6 @@ Quizzes will be conducted once every 4 classes. They will last 1-hr and be simil
 
 Each Quiz is worth 10 points.
 
-### Final Exam
-The final exam will be cumulative. Half of the questions will be from previous in-class exercises, homeworks, and quizzes. The other half will involve new applications of the material we cover over the course of the semester. There will be a 15-25 questions. Once you start the Quiz, you will have FOUR hours to complete it. 
-
 ### Final projects
 Towards the end of the course, all students will be split into teams of 2-3 individuals. Each team will complete a finals research project. Each team can select one of the two broad research topics lsited below:
 
@@ -129,7 +124,7 @@ Towards the end of the course, all students will be split into teams of 2-3 indi
 2. **RNA-seq analyses**:
 	This project will involve downloading raw sequencing datasets from GEO database and identification of differentially expressed genes and their functional characterization.
 
-Detailed instructions for the finals projects will be given 2 weeks prior to the last class.
+Detailed instructions for the finals projects will be given 4 weeks prior to the last class.
 
 ### [DataCamp](https://www.datacamp.com/groups/education) for Graduate Students
 All graduate students taking this course will be assigned one [DataCamp](https://www.datacamp.com/groups/education) module every two weeks. The modules will be parallel to the materials covered in the class. The students will be required to submit their certificates of completion from DataCamp. Failure to complete all DataCamp modules will lead to an automatic loss of one grade.
@@ -141,8 +136,7 @@ Activity | Percentage
 :----- | ---------:
 Programming homeworks | 25%
 Quizzes | 25%
-Final Exam | 25%
-Final project | 25%
+Final project | 50%
 
 ### Grading Scale
 Grade | Percentage

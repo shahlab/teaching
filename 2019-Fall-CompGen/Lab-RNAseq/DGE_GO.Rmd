@@ -1,0 +1,356 @@
+---
+title: "DESeq and GO analysis"
+output: 
+  html_document:
+    df_print: paged
+author: "John Favate"
+---
+
+<style type="text/css">
+.main-container {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+```{r echo = FALSE}
+knitr::opts_chunk$set(fig.align = "center", warning = FALSE, message = FALSE)
+```
+
+# Data processing section
+
+We did not go over this in todays class but this is what I did in order to get the kallisto results we did use. It's mostly to be for reference, in case you wanted or needed to do this. It encompasses a series of `bash` for loops that remove the adapters from the original data, and then run kallisto on them. This code reflects my file paths, you would have to change them and other aspects of the code to get it to work for you. Also, to reduce the memory footprint, I only print the first few rows of all the previewed data frames into the HTML file.
+
+### Remove adapters
+
+This for loop removes the adapters from each of the files and also writes the output that cutadapt would normally print to the screen to a file for our record. `&>>../../seqdata/2-adapter_removed/cutadapt_report.txt` redirects both `stdout` and `stderr` to the indicated file.
+```{bash eval = FALSE}
+for file in ../../seqdata/1-raw/*.gz; do
+  # define the file name
+  file_name=`echo $file | cut -d '/' -f 5 | cut -d '.' -f 1-2`
+  
+  # define the output file location
+  output_file=../../seqdata/2-adapter_removed/ar-$file_name
+  
+  # echo the filename to the cutadapt report, prior to that files report
+  echo ----------$file_name---------- >>../../seqdata/2-adapter_removed/cutadapt_report.txt
+  
+  # run cutadapt
+  cutadapt -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA -o $output_file $file &>>../../seqdata/2-adapter_removed/cutadapt_report.txt
+done
+```
+  
+  
+The sample names are in the SRA database, we rename so we know what is what. Hnf4αɣDKO = DK0
+```{bash eval = FALSE}
+mv ../../seqdata/2-adapter_removed/ar-SRR6979501.fastq ../../seqdata/2-adapter_removed/WT-rep1.fq
+mv ../../seqdata/2-adapter_removed/ar-SRR6979502.fastq ../../seqdata/2-adapter_removed/WT-rep2.fq
+mv ../../seqdata/2-adapter_removed/ar-SRR6979503.fastq ../../seqdata/2-adapter_removed/WT-rep3.fq
+mv ../../seqdata/2-adapter_removed/ar-SRR6979510.fastq ../../seqdata/2-adapter_removed/DKO-rep1.fq
+mv ../../seqdata/2-adapter_removed/ar-SRR6979511.fastq ../../seqdata/2-adapter_removed/DKO-rep2.fq
+mv ../../seqdata/2-adapter_removed/ar-SRR6979512.fastq ../../seqdata/2-adapter_removed/DKO-rep3.fq
+```
+  
+  
+### Kallisto alignment and quantification
+
+Kallisto (and other aligners) require an index for alignment. We must first make that. Download the file that is to be the reference, I'm downloading a protein coding trancript fasta from gencode ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M22/gencode.vM22.pc_transcripts.fa.gz
+```{bash eval = FALSE}
+wget -P ../../alignment/files_to_make_indices/ ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M22/gencode.vM22.pc_transcripts.fa.gz
+```
+  
+  
+Make the kallisto index. I'm naming it mouse_cDNA.kidx, the .kidx is arbitray and doesn't matter but it stands for kallisto index.
+```{bash eval = FALSE}
+kallisto index -i ../../alignment/kallisto/indices/mouse_cDNA.kidx ../../alignment/files_to_make_indices/gencode.vM22.pc_transcripts.fa.gz
+```
+  
+  
+Kallisto needs output directories to write to, we make them here.
+```{bash eval = FALSE}
+for file in ../../seqdata/2-adapter_removed/*.fq; do
+  # derive the filename from the path
+  file_name=`echo $file | cut -d '/' -f 5 | cut -d '.' -f 1`
+  
+  # make output directories
+  mkdir -p ../../alignment/kallisto/output/$file_name
+done
+```
+  
+  
+Because these are single end reads, we would like to estimate the length and standard deviation for the reads. This appears to only work with non-compressed files. You would use `gunzip file.fq.gz` to uncompress a file, where `file.fq.gz` needs to be replaced with your filename and/or path.
+```{bash eval = FALSE}
+for file in ../../seqdata/2-adapter_removed/*.fq; do
+  awk 'BEGIN { t=0.0;sq=0.0; n=0;} ;NR%4==2 {n++;L=length($0);t+=L;sq+=L*L;}END{m=t/n;printf("total %d avg=%f stddev=%f\n",n,m,sqrt(sq/n-m*m));}' $file 
+done
+```
+  
+  
+Then perform the alignment and quantification. This also saves a report file for what kallisto would print to the screen.
+```{bash eval = FALSE}
+for file in ../../seqdata/2-adapter_removed/*.fq; do
+  # derive the filename from the path
+  file_name=`echo $file | cut -d '/' -f 5 | cut -d '.' -f 1`
+  
+  # define the output file location
+  output_file=../../alignment/kallisto/output/$file_name
+  
+  # echo the filename to the kallisto report, prior to that files report
+  echo ----------$file_name---------- >>../../alignment/kallisto/output/kallisto_report.txt
+  
+  # define the index location
+  index=../../alignment/kallisto/indices/mouse_cDNA.kidx
+  
+  # run the quantification
+  kallisto quant -i $index -o $output_file --single -s 1 -l 50 -t 8 $file &>>../../alignment/kallisto/output/kallisto_report.txt
+done
+```
+`--single` specifies single end reads with a standard deviation of 1 `-s 1` and length of 50 `-l 50` and uses 8 threads `-t 8`. Like in cutadapt, this creates a report file with `&>>../../alignment/kallisto/output/kallisto_report.txt`.
+  
+  
+# Move to R for analysis
+
+### Import the data
+
+Due to some software quirks, you must load the packages in this order.
+```{r}
+library(tidyverse)
+library(DESeq2)
+library(ggpubr)
+library(org.Mm.eg.db)
+```
+
+```{r}
+.libPaths("/projects/community/gen303/")
+library(clusterProfiler)
+```
+  
+  
+Kallisto outputs a series of TSVs, though they're all named the same thing. Note the use of `sapply` instead of `lapply`. `sapply` with `simplify = FALSE` reads the data frames into list and makes the names of each item in the list whatever the input to `sapply` is, the file path in this case. `lapply` does not do that.  
+```{r}
+# find the tsv locations
+tsv.locs <- dir("../kallisto_results", recursive = TRUE, full.names = TRUE, pattern = ".tsv")
+
+# read them all into a list, then bind_rows that list to get a single data frame
+tsv.df <- sapply(tsv.locs, read_tsv, simplify = FALSE) %>%
+  bind_rows(.id = "sample")
+
+head(tsv.df)
+```
+  
+  
+Critically, the entire file path is now the sample name. We can utilize this to extract the sample names, and other information if it was present.
+```{r}
+tsv.df2 <- tsv.df %>%                                     # take the data frame
+  separate(sample, into = letters[1:4], sep = "/") %>%    # split sample column into new columns about the /, giving them letters as names
+  dplyr::select(-c(letters[c(1:2, 4)])) %>%               # remove the columns we don't need
+  dplyr::rename("sample" = "c")                           # rename the c column to sample
+
+head(tsv.df2)
+```
+  
+  
+Confirm that this worked
+```{r}
+unique(tsv.df2$sample)
+```
+  
+  
+Now, we look at the target_id column, it has a lot of information in it. Currently we have splice isoforms, but we want to sum the counts for all of the isoforms to a single gene. We're interested in the gene name and ID for now, the 2nd and 6th things separated by `|`. A preview of one of the target_id columns:
+```{r}
+as.character(tsv.df2[1,2])
+```
+  
+  
+We separate out the target_id column. Note that the pipe needs to be double escaped `\\|` in order for this to work properly. The pipe would be interpreted as "or", escaping it (the addition of the `\\`) tells the computer to interpret it as the pipe, not "or".
+```{r}
+tsv.df3 <- tsv.df2 %>%                                       # take the df
+  separate(target_id, into = letters[1:10], sep = "\\|") %>% # split target_id into letters about the pipe
+  dplyr::select(-c(letters[c(1, 3:5,7:10)])) %>%             # remove the letter columns we don't want
+  dplyr::rename("gene_id" = "b", "gene" = "f")               # rename the columns we do want
+
+head(tsv.df3)
+```
+  
+  
+So we group sample, gene_id, and gene name, summing the counts for each gene. We also round the counts because down the line, DESeq will require integers.
+```{r}
+tsv.df4 <- tsv.df3 %>%
+  group_by(sample, gene_id, gene) %>%
+  summarise(est_counts = round(sum(est_counts)))
+
+head(tsv.df4)
+```
+  
+  
+### Basic plots
+
+It's easy to make lots of plots with this data, for example, the distribution of read counts. This was very high coverage data, so many of the genes have around 1000 reads mapping to them.
+```{r}
+tsv.df4 %>%
+  ggplot(., aes(est_counts))+
+  geom_histogram(fill = "grey50", bins = 50)+
+  scale_x_log10()+
+  facet_wrap(~sample, ncol = 3)
+```
+  
+  
+### Differential gene expression
+
+Most RNAseq studies aim to find differentially expressed genes given some condition. DEseq2 is one program that is used for this. DEseq2 requires a few things to work, the first being a count matrix where the rows are genes and the columns are samples. This is the opposite of a tidy data frame but we can use tidyverse functions to make it.
+
+The first thing we need to do is rejoin our gene identifier and names with `unite`, essentially the opposite of `separate`. Then we reshape the data with `spread`. We also need to make the column with identifiers into rownames and then the data frame into an actual matrix. Matrices only contain one type of data, integers in this case, so the rownames must not be included in the actual matrix. 
+```{r}
+count.matrix <- tsv.df4 %>%                        # take the data frame
+  unite(target_id, gene_id, gene, sep = "_") %>%   # join the column, the reverse of separate
+  spread(sample, est_counts) %>%                   # reshape the data
+  column_to_rownames("target_id") %>%              # turn the column target_id to rownames
+  as.matrix()                                      # convert to matrix
+
+head(count.matrix)
+```
+  
+  
+The next thing DEseq2 needs is a data frame that tells it what the columns are. It can see the names, but it wants to know what treatment each column is so it knows which replicates belong to which. **Important:** this must be a factor with levels. If you want your reported fold changes to be change from WT to DKO, WT must be the first level.
+```{r}
+# make the data frame where the column is a factor with levels
+conditions.df <- data.frame(condition = factor(c("DKO", "DKO", "DKO", "WT", "WT", "WT"), levels = c("WT", "DKO")))
+
+# check those levels
+levels(conditions.df$condition)
+
+conditions.df
+```
+  
+  
+Now we can actually run DEseq2. The first step is feed it the count matrix and conditions data frame. The design specifies how the counts in the matrix depend upon the variables in the conditions data frame, we use "condition" because that's what our column in the data frame is named. This creates a DEseq object.
+```{r}
+ds1 <- DESeqDataSetFromMatrix(countData = count.matrix, # identify the count matrix
+                              colData = conditions.df,  # identify the conditions data frame
+                              design = ~ condition)     # specify the formula for DESeq to use 
+```
+  
+  
+Then you run DEseq2 by simply calling this on the DEseq object.
+```{r}
+ds2 <- DESeq(ds1)
+```
+  
+  
+Then we perform what is referred to as "shrinkage", to limit the effects of extreme fold changes due to genes with low counts and/or high variability.
+```{r}
+ds3 <- lfcShrink(ds2, coef = "condition_DKO_vs_WT", type = "apeglm")
+```
+  
+  
+### MA plots
+
+In class, we looked at the effect if the shrinking process, which is easily illustrated if you look at these plots. The left plot is without the shrink, you can see that a lot of the points with low counts (left on the x axis) have large fold changes (large absolute value on the y axis), and that many of these points are relocated after shrinking. The shrinking effect diminishes as you move higher up the x axis (i.e. have higher counts).
+```{r fig.width = 10, fig.height = 5}
+par(mfrow=c(1,2))
+
+plotMA(ds2)
+
+plotMA(ds3)
+```
+  
+  
+### Continue with DESeq
+  
+Finally, we an retrieve our results in a data frame, converting the rownames back to a column.
+```{r}
+deseq.df <- as.data.frame(ds3) %>%
+  rownames_to_column("target_id")
+
+head(deseq.df)
+```
+  
+  
+First, we'll want to again separate our gene names and IDs using the same strategy as before. I knew in advance what I wanted to rename these columns to.
+```{r}
+deseq.df2 <- deseq.df %>%
+  separate(target_id, into = letters[1:2], sep = "_") %>%
+  dplyr::rename("ENSEMBL" = "a",
+                "SYMBOL" = "b")
+
+head(deseq.df2)
+```
+  
+  
+Finally, we have a data frame we can work with. Most people want a volcano plot. But this one isn't so nice looking.
+```{r fig.width = 6, fig.height = 5}
+deseq.df2 %>%
+  ggplot(., aes(log2FoldChange, -log10(padj)))+
+  geom_point()+
+  geom_hline(aes(yintercept = -log10(.01)), color = "red")
+```
+  
+  
+One issue is that there are a ton of "significant" genes with q-values way above the line in the above plot. We can edit those so they are lower on the y axis by adding new columns to our data frame, essentially changing all values greater than some threshold, to that threshold. In this case, we choose 5. All genes with -log10(q-value) > 5 will become 5. We also want to mark these points so we can make them a different shape. We actually do this in reverse order, by assigning a category of too high or low to each, then changing the q-values accordingly. 
+```{r fig.width = 6, fig.height = 5}
+plot.df <- deseq.df2 %>%
+  mutate(logq = -log10(padj),                        # Make a new column that is the -log10() transform of the padj
+         category = ifelse(logq > 5, "high", "low"), # Assign genes a category, if logq > 5, it's high, otherwise low
+         newq = ifelse(category == "high", 5, logq)) # make new qval, if category is high, then 5, otherwise use the original one
+
+# we color points a red only if they're statistically significant and have a fold change of greater than 2x or .5x
+plot.df %>%
+  ggplot(., aes(log2FoldChange, newq, shape = category, color = padj <= .01 & abs(log2FoldChange) >= 1))+
+    geom_point(size = 1)+
+    scale_shape_manual(values = c(2,19), guide = FALSE)+
+    scale_color_manual(values = c("grey60", "firebrick3"), guide = FALSE)+
+    scale_y_continuous(limits = c(0, 5))+
+    scale_x_continuous(limits = c(-10, 10))+
+    theme_pubr()
+```
+  
+  
+### GO analysis
+
+GO (gene ontology) attempts to classify genes into functional categories. This helps make sense out of the around 6500 differentially expressed genes in this study. Unfortunately, we need to convert our gene names into some other form to do GO. Gene names across databases vary and change over time and it's hard to keep track of it all. There's no good solution for this.
+
+First we need to convert our gene names, the `clusterProfiler` function `bitr` can do this for us. Clusterprofiler help page: https://yulab-smu.github.io/clusterProfiler-book/index.html
+```{r}
+names.df <- bitr(deseq.df2$SYMBOL,         # our input is our gene symbols
+                 fromType = "SYMBOL",      # they are gene symbols, you need to read the help file to know what to put here
+                 toType = c("ENTREZID"),   # we want them as entrezid's (NCBI), again, help files
+                 OrgDb = org.Mm.eg.db) %>% # the organism database to use, mouse in this case
+  group_by(SYMBOL) %>%                     # we group the resulting data frame by the symbol
+  summarise(ENTREZID = ENTREZID[1])        # and only take the first entry we get from this
+
+head(names.df)
+```
+We need to only take the first entry because there are gene with multiple entrezids and vice versa.
+  
+  
+We then want to join these names to our deseq data frame. We also remove genes that don't have an entrezid because we can't do anything with those.
+```{r}
+named.deseq.df <- left_join(deseq.df2, names.df, by = "SYMBOL") %>%
+  filter(!is.na(ENTREZID))
+
+head(named.deseq.df)
+```
+  
+  
+Then we want a list of upregulated genes, for example. We have some strict cutoffs on what upregulated means in this case.
+```{r}
+sig.up <- named.deseq.df %>%
+  filter(padj <= .01 & log2FoldChange > 4) %>%
+  pull(ENTREZID)
+```
+  
+  
+Then we can run a GO enrichment test. Didact is currently taking exception to running this, so it's commented out. 
+```{r}
+# go.up <- enrichGO(gene = sig.up,        # our query is the upregulated genes
+#                   OrgDb = org.Mm.eg.db, # use the mouse database object
+#                   ont = "BP")           # only search for GO "Biological Processes"
+```
+  
+  
+Then we can view our results as a data frame or use the various built in plotting functions (see the website). We only got two categories, but our criteria our pretty strict. This is also commented out because it depends on the above chunk. 
+```{r}
+# as.data.frame(go.up)
+```
+

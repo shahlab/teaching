@@ -1,0 +1,148 @@
+---
+title: "Quiz 05 solutions"
+output: html_notebook
+---
+
+```{r}
+library(tidyverse)
+library(MASS)
+library(broom)
+```
+
+
+1. Find the correlation between x and y in data1.csv. Which correlation coefficient is most appropriate here and why? (2 pts)
+```{r}
+data1 <- read_csv("data1.csv")
+data1
+```
+```{r}
+ggplot(data1, aes(x = x, y = y)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+```
+```{r}
+cor(data1$x, data1$y, method = "spearman")
+cor(data1$x, data1$y, method = "pearson")
+
+```
+
+```{r}
+ggplot(data1, aes(x = x, y = y)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  scale_y_continuous(trans = "log10")
+```
+
+
+2. What test would be appropriate to compare x and y in data2.csv and why? Do you find similar results when you use other statistical tests? (2 pts)
+```{r}
+data2 <- read_csv("data2.csv")
+data2 %>%
+  summary()
+```
+```{r}
+ggplot(data2, aes(x = x)) +
+  geom_density()
+
+ggplot(data2, aes(x = y)) +
+  geom_density()
+
+ggplot(data2, aes(x = x)) +
+  geom_density(col = "red") +
+  geom_density(aes(y), col = "black")
+```
+
+```{r}
+t.test(data2$x, data2$y)
+wilcox.test(data2$x, data2$y)
+ks.test(data2$x, data2$y)
+```
+
+
+3. You’ve performed differential gene expression analyses on a sample. The data is in data3.csv. How many genes can be classified as significantly different at a false discovery rate of 0.05? (2 pts)
+```{r}
+data3 <- read_csv("data3.csv")
+data3
+```
+
+```{r}
+data3 <- data3 %>%
+  mutate(padjust = p.adjust(pvalue, method = "fdr"))
+```
+
+```{r}
+data3 %>%
+  filter(padjust < 0.05) %>%
+  nrow()
+
+data3 %>%
+  mutate(signif = ifelse(padjust<0.05, TRUE, FALSE)) %>%
+  pull(signif) %>%
+  sum()
+```
+
+
+4. Is there a difference in the log2FoldChange.rna between genes that are significantly different and the ones that are not? Perform appropriate statistical test. (1 pt)
+```{r}
+ggplot(data3, aes(x = log2FoldChange.rna, color = padjust < 0.05)) +
+  geom_density()
+```
+
+```{r}
+data3.sig <- data3 %>%
+  filter(padjust < 0.05)
+data3.nonsig <- data3 %>%
+  filter(padjust >= 0.05)
+
+t.test(data3.sig$log2FoldChange.rna, data3.nonsig$log2FoldChange.rna)
+wilcox.test(data3.sig$log2FoldChange.rna, data3.nonsig$log2FoldChange.rna)
+```
+
+
+5. Using human_features.csv, identify features that best predict the CAI values of genes. Which feature has the biggest effect on predicting CAI values? Perform appropriate transformations of the variables. (3 pt)
+```{r}
+human <- read_csv("human_features.csv")
+human
+
+summary(human)
+```
+
+```{r}
+human[1, ]
+```
+
+```{r}
+human %>%
+  gather(Variables, Value, 3:11) %>%
+  ggplot(., aes(x = Value)) +
+    geom_density() +
+    facet_wrap(~Variables, scales = "free")
+```
+
+```{r}
+cai.lm <- lm(CAI ~ CDS_GC_Content + Transcript_FE + Translate_FE + UTR3_GC_Content +
+               UTR5_GC_Content + log10(CDS_Length) + log10(UTR3_Length + 1) + log10(UTR5_Length + 1) + log10(uATG_count + 0.1), data = human)
+
+cai.lm %>% tidy()
+cai.lm %>% glance()
+```
+
+
+```{r}
+stepAIC(cai.lm)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

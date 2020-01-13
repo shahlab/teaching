@@ -1,0 +1,85 @@
+---
+title: "Lab-RNAseq Simple "
+output: html_notebook
+---
+
+## Paths
+```{bash, eval = F}
+echo 'export PATH="$PATH:/projects/community/gen303/software/:/projects/community/gen303/miniconda/bin:/projects/community/gen303/miniconda/condabin/"' >> ~/.bash_profile
+cat /projects/community/gen303/env.txt >> ~/.bash_profile
+```
+
+## Estimate mean and sd of reads
+```{bash, eval = F}
+awk 'BEGIN { t=0.0;sq=0.0; n=0;} ;NR%4==2 {n++;L=length($0);t+=L;sq+=L*L;}END{m=t/n;printf("total %d avg=%f stddev=%f\n",n,m,sqrt(sq/n-m*m));}'  *.fastq
+```
+
+## GEO Database
+[GEO database](https://www.ncbi.nlm.nih.gov/geo/)
+
+## Verzi study
+[GEO data](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE112946)
+[Illumina](https://support.illumina.com/content/dam/illumina-support/documents/documentation/chemistry_documentation/experiment-design/illumina-adapter-sequences-1000000002694-11.pdf)
+SRR6979501
+SRR6979502	
+SRR6979503
+SRR6979510	
+SRR6979511
+SRR6979512
+
+## Make sure you are working in the right directory (~/lectures/Lab-22)
+
+We will use [sratools](https://github.com/ncbi/sra-tools)
+```{bash, eval = F}
+fasterq-dump SRR6979501 SRR6979502 SRR6979503 SRR6979510 SRR6979511 SRR6979512
+```
+
+## Remove sequencing adapters
+```{bash, eval = F}
+cutadapt -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA -o WT_1.fastq.gz SRR6979501.fastq.gz
+cutadapt -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA -o WT_2.fastq.gz SRR6979502.fastq.gz
+cutadapt -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA -o WT_3.fastq.gz SRR6979503.fastq.gz
+
+cutadapt -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA -o HNF_1.fastq.gz SRR6979510.fastq.gz
+cutadapt -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA -o HNF_2.fastq.gz SRR6979511.fastq.gz
+cutadapt -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA -o HNF_3.fastq.gz SRR6979512.fastq.gz
+```
+
+
+## Mapping
+[Gencode](https://www.gencodegenes.org/)
+```{bash, eval = F}
+wget ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M22/gencode.vM22.pc_transcripts.fa.gz
+```
+
+## Kallisto
+[Kallisto](https://pachterlab.github.io/kallisto/)
+```{bash}
+kallisto index -i mouse_trans.kallisto gencode.vM22.pc_transcripts.fa.gz
+```
+
+## Estimate mean and std of read lengths (insert sizes)
+```{bash, eval = F}
+zcat WT_3.fastq.gz | awk 'BEGIN { t=0.0;sq=0.0; n=0;} ;NR%4==2 {n++;L=length($0);t+=L;sq+=L*L;}END{m=t/n;printf("total %d avg=%f stddev=%f\n",n,m,sqrt(sq/n-m*m));}' 
+```
+
+```{bash, eval = F}
+kallisto quant -i mouse_trans.kallisto -o out_WT_1 --single -l 50 -s 1 WT_1.fastq.gz
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

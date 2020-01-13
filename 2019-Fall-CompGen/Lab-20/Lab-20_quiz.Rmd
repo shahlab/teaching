@@ -1,0 +1,19 @@
+---
+title: "Quiz 05"
+output:
+  html_document:
+    df_print: paged
+  html_notebook: default
+---
+
+- Write the `codes` for all questions in a single R Notebook (file).
+- ALWAYS comment your code.
+- Name the file as "Lastname_Lab-20_quiz.nb.html"
+
+#### Visually explore each dataset, before answering any of the questions. 
+
+1. Find the correlation between x and y in data1.csv. Which correlation coefficient is most appropriate here and why? (2 pts)
+2. What test would be appropriate to compare x and y in data2.csv and why? Do you find similar results when you use other statistical tests? (2 pts)
+3. You've performed differential gene expression analyses on a sample. The data is in data3.csv. How many genes can be classified as significantly different at an false discovery rate of 0.05? (2 pts)
+4. Is there a difference in the log2FoldChange.rna between genes that are significantly different and the ones that are not? Perform appropriate statistical test. (1 pt)
+5. Using human_features.csv, identify features that best predict the CAI values of genes. Which feature has the biggest effect on predicting CAI values? Perform appropriate transformations of the variables. (3 pt)

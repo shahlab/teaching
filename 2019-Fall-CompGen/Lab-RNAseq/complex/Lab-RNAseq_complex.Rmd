@@ -1,0 +1,40 @@
+---
+title: "Lab-RNA-seq Complex"
+output: html_notebook
+---
+
+## Complex data
+1. Remove 3' adaptor - [cutadapt](https://cutadapt.readthedocs.io/)
+Adapter sequence - AGATCGGAAGAGCACACGTCTGAACTCCAGTCA from [Illumina](https://support.illumina.com/content/dam/illumina-support/documents/documentation/chemistry_documentation/experiment-design/illumina-adapter-sequences-1000000002694-11.pdf)
+```{bash, eval = F}
+# cutadapt -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA -o mouse.no.adaptor.fastq ten_mil_mouse_riboseq_reads.fq.gz
+```
+
+2. Demultiplex using the barcode information
+[FASTX Splitter](http://hannonlab.cshl.edu/fastx_toolkit/)
+```{bash, eval = F}
+# cat mouse.no.adaptor.fastq | fastx_barcode_splitter.pl --bcfile sample_barcodes.txt --eol --prefix ./ --suffix .fastq
+```
+
+3. Deduplicate using UMIs
+[BBtools](https://jgi.doe.gov/data-and-tools/bbtools/)
+```{bash, eval = F}
+dedupe.sh in=GCN_1.fastq out=GCN_1.no.dups.fastq e=0 s=0
+```
+
+4. Remove the UMIs and barcode
+```{bash}
+cutadapt -u 4 -u -10 -o GCN_1.clean.fastq GCN_1.no.dups.fastq
+```
+
+
+
+
+
+
+
+
+
+
+
+
