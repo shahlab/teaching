@@ -16,13 +16,14 @@
 |							|						|
 |-------------------|-------------------|
 |**Semester**| Fall 2020|
-|**Classroom**| Nelson Biology Labs B125|
+|**Classroom**| Zoom Meeting (see below) |
 |**Meeting Times**|	Tuesday/Thursday  1:40 - 4:10 pm|
 |**Syllabus**| https://github.com/shahlab/teaching/tree/master/2020-Fall-CompGen|
 |**Computing Resource**| [Amarel cluster](https://ondemand.hpc.rutgers.edu/)|
 |**Course Instructor**| Premal Shah <br> premal.shah@rutgers.edu <br> Ph: (848) 445 9664|
-|**Office hours**| By appointment|
-|**Teaching Assistant**| John Favate <br> john.favate@rutgers.edu|
+|**Office hours**| Whereby.com (See below) |
+|**Primary Teaching Assistant**| Sukanya Das <br> sd882@gsbs.rutgers.edu|
+|**Secondary Teaching Assistant**| John Favate <br> john.favate@rutgers.edu|
 
 
 ## Description
@@ -61,35 +62,40 @@ All course materials can be downloaded from this [GitHub repo](https://github.co
 
 Class | Date | Topic | Learning Materials
 :----- | ---: | :-- | :--
-1 | Sep 3 | Introduction and Variables | [Initial survey](https://shorturl.at/cdkvy) <br> [Presentation](Lab-01/Lab-01.html) <br> [R code for presentation](Lab-01/Lab-01.Rpres) <br> [Homework](Lab-01/Lab-01_hw.Rmd) <br> [Homework solns.](Lab-01/Shah_Lab01_homework.Rmd) <br> [In-class](Lab-01/Lab-01_in-class.Rmd)
-2 | Sep 5 | Vectors and Matrices | [Presentation](Lab-02/Lab-02.html) <br> [R code for presentation](Lab-02/Lab-02.Rpres) <br> [Homework](Lab-02/Lab-02_hw.Rmd) <br> [Homework solns.](Lab-02/Shah_Lab02_homework.Rmd) <br> [In-class](Lab-02/Lab-02_in-class.Rmd)
-3 | Sep 10 | Matrices and Dataframes | [Presentation](Lab-03/Lab-03.html) <br> [R code for presentation](Lab-03/Lab-03.Rpres) <br> [Homework](Lab-03/Lab-03_hw.Rmd) <br> [Homework solns.](Lab-03/Shah_Lab-03_homework.Rmd) <br> [In-class](Lab-03/Lab-03_in-class.Rmd)
-4 | Sep 12 | Quiz 01 and recap | [Quiz](Lab-04/Lab-04_quiz.Rmd) <br> [Quiz solns.](Lab-04/Shah_Lab-04_quiz.Rmd)
-5 | Sep 17 | Conditional statements and loops | [Presentation](Lab-05/Lab-05.html) <br> [R code for presentation](Lab-05/Lab-05.Rpres) <br> [Homework](Lab-05/Lab-05_hw.Rmd) <br> [Homework solns.](Lab-05/Shah_Lab-05_homework.Rmd) <br> [In-class](Lab-05/Lab-05_in-class.Rmd)
-6 | Sep 19 | Lists, functions, and strings | [Presentation](Lab-06/Lab-06.html) <br> [R code for presentation](Lab-06/Lab-06.Rpres) <br> [Homework](Lab-06/Lab-06_hw.Rmd) <br> [In-class](Lab-06/Lab-06_in-class.Rmd)
-7 | Sep 24 | Advanced data wrangling - tidyverse I | [Presentation](Lab-07/Lab-07.html) <br> [R code for presentation](Lab-07/Lab-07.Rpres) <br> [Homework](Lab-07/Lab-07_hw.Rmd) <br> [Homework solns.](Lab-07/Favate_Lab-07_homework.Rmd) <br> [In-class](Lab-07/Lab-07_in-class.Rmd)
-8 | Sep 26 | Quiz 02 and recap | [Quiz](Lab-08/Lab-08_quiz.Rmd) <br> [Quiz solns.](Lab-08/Shah_Lab-08_quiz.Rmd)
-9 | Oct 1 | Advanced data wrangling - tidyverse II | [Presentation](Lab-09/Lab-09.html) <br> [R code for presentation](Lab-09/Lab-09.Rpres) <br> [Homework](Lab-09/Lab-09_hw.Rmd) <br> [Homework solns.](Lab-07/Shah_Lab-09_homework.Rmd) <br> [In-class](Lab-09/Lab-09_in-class.Rmd)
-10 | Oct 3 | Visualization - ggplot2 | [In-class](Lab-10/Lab-10_in-class.Rmd) <br> [In-class with plots](Lab-10/Lab-10_in-class.nb.html)
-11 | Oct 8 | Introduction to bioconductor - IRanges | [Presentation](Lab-11/Lab-11.html) <br> [R code for presentation](Lab-11/Lab-11.Rpres) 
-12 | Oct 10 | Quiz 03 and recap | [Quiz](Lab-12/Lab-12_quiz.Rmd) <br> [Quiz solns.](Lab-12/Shah_Lab-12_quiz.Rmd) <br> [Presentation](Lab-12/Lab-12.html) <br> [R code for presentation](Lab-12/Lab-12.Rpres) <br> [Homework](Lab-12/Lab-12_hw.Rmd) <br> [Homework solns.](Lab-12/Shah_Lab-12_homework.Rmd) <br> [In-class](Lab-12/Lab-12_in-class.Rmd)
-13 | Oct 15 | Working with genome annotations and sequences - GRanges + Biostrings | [Presentation](Lab-13/Lab-13.html) <br> [R code for presentation](Lab-13/Lab-13.Rpres) <br> [In-class](Lab-13/Lab-13_in-class.Rmd)
-14 | Oct 17 | Working with genome sequences - Biostrings | [Presentation](Lab-14/Lab-14.html) <br> [R code for presentation](Lab-14/Lab-14.Rpres) <br> [Homework](Lab-14/Lab-14_hw.Rmd) <br> [Homework solns.](Lab-14/Shah_Lab-14_homework.Rmd) <br> [In-class](Lab-14/Lab-14_in-class.Rmd)
-15 | Oct 22 | Advanced sequence analyses |  [Presentation](Lab-15/Lab-15.html) <br> [R code for presentation](Lab-15/Lab-15.Rpres) <br> [In-class](Lab-15/Lab-15_in-class.Rmd)
-16 | Oct 24 | Quiz 04 and recap | [Quiz](Lab-16/Lab-16_quiz.Rmd) <br> [Quiz solns.](Lab-16/Favate_Lab-16_quiz.Rmd)
-17 | Oct 29 | Statistics I | [DataCamp - Introduction to Data](https://www.datacamp.com/courses/introduction-to-data) <br> [DataCamp - Exploratory Data Analysis](https://www.datacamp.com/courses/exploratory-data-analysis)
-18 | Oct 31 | Statistics II | [DataCamp - Correlation and Regression](https://www.datacamp.com/courses/correlation-and-regression)
-19 | Nov 5 | Statistics III | [In-class](Lab-19/Lab-19_in-class.Rmd) <br> [In-class knitted](Lab-19/Lab-19_in-class.html) <br> [Homework](Lab-19/Lab-19_hw.Rmd)
-20 | Nov 7 | Quiz 05 and recap | [Quiz](Lab-20/Lab-20_quiz.Rmd) <br> [Quiz solns.](Lab-20/Shah_Lab-20_quiz.Rmd)
-21 | Nov 12 | Basics of RNA-seq | [RNA-seqlopedia](https://rnaseq.uoregon.edu/)
-22 | Nov 14 | Class cancelled | 
-23 | Nov 19 | Working with RNA-seq data | [Simple Library](Lab-RNAseq/simple/Lab-RNAseq_simple.Rmd) <br> [Muliplexed Library](Lab-RNAseq/complex/Lab-RNAseq_complex.Rmd)
-24 <br> 25 | Nov 21 <br> Nov 26| Differential gene expression analyses <br> Funcational analyses of differentially expressed genes | [DGE_GO](Lab-RNAseq/DGE_GO.Rmd)
-26 | Dec 3 | Finals Group Project | 
-27 | Dec 5 | Finals Group Project |
-28 | Dec 10 | Review | 
+1 | Sep 1 | Introduction and Variables | 
+2 | Sep 3 | Vectors and Matrices | 
+3 | Sep 8 | Matrices and Dataframes | 
+4 | Sep 10 | Quiz 01 and recap | 
+5 | Sep 15 | Conditional statements and loops |
+6 | Sep 17 | Lists, functions, and strings |
+7 | Sep 22 | Advanced data wrangling - tidyverse I |
+8 | Sep 24 | Quiz 02 and recap | 
+9 | Sep 29 | Advanced data wrangling - tidyverse II |
+10 | Oct 1 | Visualization - ggplot2 |
+11 | Oct 6 | Introduction to bioconductor - IRanges |
+12 | Oct 8 | Quiz 03 and recap | 
+13 | Oct 13 | Working with genome annotations and sequences - GRanges + Biostrings | 
+14 | Oct 15 | Working with genome sequences - Biostrings |
+15 | Oct 20 | Advanced sequence analyses | 
+16 | Oct 22 | Quiz 04 and recap | 
+17 | Oct 27 | Statistics I | 
+18 | Oct 29 | Statistics II | 
+19 | Nov 3 | Statistics III | 
+20 | Nov 5 | Quiz 05 and recap | 
+21 | Nov 10 | Basics of RNA-seq |
+22 | Nov 12 | Working with RNA-seq data I| 
+23 | Nov 17 | Working with RNA-seq data II| 
+24 | Nov 19 | Differential gene expression analyses |
+25 | Nov 24 | Funcational analyses of differentially expressed genes |
+26 | Dec 1 | Finals Group Project | 
+27 | Dec 3 | Finals Group Project |
+27 | Dec 8 | Shiny |
+28 | Dec 10 | Shiny | 
 
 ## Website and Communication
+
+### Online classes
+The class will be entirely online this semester. We will use [Zoom]( https://rutgers.zoom.us/j/99158883478?pwd=RDNldjFQTjRXeEsrWnR4SmdyeVFPUT09) for online instructions. All meetings will also be recorded and made available on [YouTube](https://www.youtube.com/playlist?list=PLKfoJIuERmwqS4yTkC6RBMWsLxJwPRgRu).
 
 ### Website
 This [GitHub repo](https://github.com/shahlab/teaching/tree/master/2020-Fall-CompGen) will serve as the course syllabus. Course materials and computing resources for this course will be available at [Amarel](https://ondemand.hpc.rutgers.edu/). Grades will be posted on Canvas.
@@ -103,6 +109,9 @@ The primary mode of communication in this course (including major announcements)
 
 ### Emails  
 Although the bulk of the communication will take place via Canvas, at times (rarely), we will send out important course information via email. This email is sent to your Rutgers email address. You are responsible for all information sent out to your University email account, and for checking this account on a regular basis.
+
+### Virtual office hours
+Virtual office hours will be held via whereby.com or Zoom by the two teaching assistant on Wed and Fri. The instructor will hold office hours by prior appointment.
 
 ## Course Activities
 
@@ -127,7 +136,7 @@ Quizzes will be conducted once every 4 classes. They will last 1-hr and be simil
 Each Quiz is worth 10 points.
 
 ### Final projects
-Towards the end of the course, all students will be split into teams of 2-3 individuals. Each team will complete a finals research project. Each team can select one of the two broad research topics lsited below:
+Towards the end of the course, all students will be split into teams of 2-3 individuals. Each team will complete a finals research project. Each team can select one of the two broad research topics listed below:
 
 1. **Comparative genomic analyses**:
 	This project will involve downloading genome sequences and annotations of 2 or more organisms and performing various sequence level analyses.
