@@ -92,18 +92,29 @@ Class | Date | Topic | Learning Materials
 ## Website and Communication
 
 ### Website
-This [GitHub repo](https://github.com/shahlab/teaching/tree/master/2020-Fall-CompGen) will serve as the course syllabus. Course materials and computing resources for this course will be available at [Amarel](https://ondemand.hpc.rutgers.edu/). Grades will be posted on the [Canvas](https://rutgers.instructure.com/courses/30213) website.
+This [GitHub repo](https://github.com/shahlab/teaching/tree/master/2020-Fall-CompGen) will serve as the course syllabus. Course materials and computing resources for this course will be available at [Amarel](https://ondemand.hpc.rutgers.edu/). Grades will be posted on Canvas.
+[Canvas - Ungrads](https://rutgers.instructure.com/courses/66482).
+[Canvas - Grads](https://rutgers.instructure.com/courses/74920).
 
 ### Communication
-The primary mode of communication in this course (including major announcements) will be through the [Canvas](https://rutgers.instructure.com/courses/30213) website. 
+The primary mode of communication in this course (including major announcements) will be through Canvas. 
+[Canvas - Ungrads](https://rutgers.instructure.com/courses/66482).
+[Canvas - Grads](https://rutgers.instructure.com/courses/74920).
 
 ### Emails  
-Although the bulk of the communication will take place via [Canvas](https://rutgers.instructure.com/courses/30213), at times (rarely), we will send out important course information via email. This email is sent to your Rutgers email address. You are responsible for all information sent out to your University email account, and for checking this account on a regular basis.
+Although the bulk of the communication will take place via Canvas, at times (rarely), we will send out important course information via email. This email is sent to your Rutgers email address. You are responsible for all information sent out to your University email account, and for checking this account on a regular basis.
 
 ## Course Activities
 
 ### In-class exercises
 Each class will contain 2-4 modules. Each module will involve a ~15 min lecture followed by a programming exercise lasting ~20-30 min. Programming exercises will typically involve 2-5 questions. You will be asked to solve these questions on your own, which will involve applying the functions taught in the lecture part of the module. At the end of the individual exercise portion, I will go over the exercise as a group. Any piece of code written by me will be annotated and commented before being uploaded to the course website.   
+
+### [DataCamp](https://www.datacamp.com/groups/education) for Students
+All students taking this course will be assigned [DataCamp](https://www.datacamp.com/groups/education) modules every week. The modules will be parallel to the materials covered in the class. All students will be required to complete DataCamp modules by the assigned due date. 
+
+Each module is worth 10 points.
+
+<!--- The students will be required to submit their certificates of completion from DataCamp. --->
 
 ### Homeworks
 In every lab, you will receive a homework assignment, typically a series of programming exercises that you must code based on the material you learn in class that day. You will upload solutions to these homework as a single R Notebook file before the beginning of the next lab. NO LATE SUBMISSIONS WILL BE ALLOWED. If you miss your due date for the homework, you will receive a 0 points for that assignment.
@@ -126,16 +137,12 @@ Towards the end of the course, all students will be split into teams of 2-3 indi
 
 Detailed instructions for the finals projects will be given 4 weeks prior to the last class.
 
-### [DataCamp](https://www.datacamp.com/groups/education) for Graduate Students
-All graduate students taking this course will be assigned one [DataCamp](https://www.datacamp.com/groups/education) module every two weeks. The modules will be parallel to the materials covered in the class. The students will be required to submit their certificates of completion from DataCamp. Failure to complete all DataCamp modules will lead to an automatic loss of one grade.
-
-While not required, undergraduates are also encouraged to work through DataCamp modules. No submission of completion certificates is required.
-
 ## Grading Information
 Activity | Percentage
 :----- | ---------:
-Programming homeworks | 40%
-Quizzes | 40%
+DataCamp modules | 20%
+Programming homeworks | 30%
+Quizzes | 30%
 Final project | 20%
 
 ### Grading Scale
