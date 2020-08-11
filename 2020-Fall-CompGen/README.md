@@ -58,7 +58,7 @@ The main objectives of this course are to enable students to learn:
 
 ## Course Materials
 
-All course materials can be downloaded from this [GitHub repo](https://github.com/shahlab/teaching/tree/master/2020-Fall-CompGen) as well as the **Lectures** and **Homework** folders on the [Amarel](https://ondemand.hpc.rutgers.edu/) cluster. The **Quizzes** will be available solely on the [Amarel](https://ondemand.hpc.rutgers.edu/) lcuster.
+All course materials can be downloaded from this [GitHub repo](https://github.com/shahlab/teaching/tree/master/2020-Fall-CompGen) as well as the **Lectures** and **Homework** folders on the [Amarel](https://ondemand.hpc.rutgers.edu/) cluster. The **Quizzes** will be available solely on the [Amarel](https://ondemand.hpc.rutgers.edu/) cluster.
 
 Class | Date | Topic | Learning Materials
 :----- | ---: | :-- | :--
@@ -98,17 +98,17 @@ Class | Date | Topic | Learning Materials
 The class will be entirely online this semester. We will use [Zoom]( https://rutgers.zoom.us/j/99158883478?pwd=RDNldjFQTjRXeEsrWnR4SmdyeVFPUT09) for online instructions. All meetings will also be recorded and made available on [YouTube](https://www.youtube.com/playlist?list=PLKfoJIuERmwqS4yTkC6RBMWsLxJwPRgRu).
 
 ### Website
-This [GitHub repo](https://github.com/shahlab/teaching/tree/master/2020-Fall-CompGen) will serve as the course syllabus. Course materials and computing resources for this course will be available at [Amarel](https://ondemand.hpc.rutgers.edu/). Grades will be posted on Canvas.
-[Canvas - Ungrads](https://rutgers.instructure.com/courses/66482).
-[Canvas - Grads](https://rutgers.instructure.com/courses/74920).
+This [GitHub repo](https://github.com/shahlab/teaching/tree/master/2020-Fall-CompGen) will serve as the course syllabus. Course materials and computing resources for this course will be available at [Amarel](https://ondemand.hpc.rutgers.edu/). Grades will be posted on [Canvas](https://rutgers.instructure.com/courses/66482).
+
+**All students will need to sign up for Amarel accounts.** 
+Please use this [link](https://docs.google.com/forms/d/1aeuvPrWYLdPQmaDT_wmLPFZVKnJKHNoFgWJE4Xw-r6o/viewform?edit_requested=true) to sign up.
 
 ### Communication
-The primary mode of communication in this course (including major announcements) will be through Canvas. 
-[Canvas - Ungrads](https://rutgers.instructure.com/courses/66482).
-[Canvas - Grads](https://rutgers.instructure.com/courses/74920).
+The primary mode of communication in this course (including major announcements) will be through [Canvas](https://rutgers.instructure.com/courses/66482).
+
 
 ### Emails  
-Although the bulk of the communication will take place via Canvas, at times (rarely), we will send out important course information via email. This email is sent to your Rutgers email address. You are responsible for all information sent out to your University email account, and for checking this account on a regular basis.
+Although the bulk of the communication will take place via [Canvas](https://rutgers.instructure.com/courses/66482), at times (rarely), we will send out important course information via email. This email is sent to your Rutgers email address. You are responsible for all information sent out to your University email account, and for checking this account on a regular basis.
 
 ### Virtual office hours
 Virtual office hours will be held via whereby.com or Zoom by the two teaching assistant on Wed and Fri. The instructor will hold office hours by prior appointment.
