@@ -20,8 +20,8 @@
 |**Meeting Times**|	Tuesday/Thursday  1:40 - 4:10 pm|
 |**Syllabus**| https://github.com/shahlab/teaching/tree/master/2020-Fall-CompGen|
 |**Computing Resource**| [Amarel cluster](https://ondemand.hpc.rutgers.edu/)|
-|**Course Instructor**| Premal Shah <br> premal.shah@rutgers.edu <br> Ph: (848) 445 9664|
-|**Office hours**| Whereby.com (See below) |
+|**Course Instructor**| Premal Shah <br> premal.shah@rutgers.edu|
+|**Office hours**| Zoom Meetings (See below) |
 |**Primary Teaching Assistant**| Sukanya Das <br> sd882@gsbs.rutgers.edu|
 |**Secondary Teaching Assistant**| John Favate <br> john.favate@rutgers.edu|
 
@@ -87,10 +87,10 @@ Class | Date | Topic | Learning Materials
 23 | Nov 17 | Working with RNA-seq data II| 
 24 | Nov 19 | Differential gene expression analyses |
 25 | Nov 24 | Funcational analyses of differentially expressed genes |
-26 | Dec 1 | Finals Group Project | 
-27 | Dec 3 | Finals Group Project |
-27 | Dec 8 | Shiny |
-28 | Dec 10 | Shiny | 
+26 | Dec 1 | Shiny |
+27 | Dec 3 | Shiny | 
+28 | Dec 8 | Finals Group Project | 
+29 | Dec 10 | Finals Group Project |
 
 ## Website and Communication
 
@@ -111,7 +111,15 @@ The primary mode of communication in this course (including major announcements)
 Although the bulk of the communication will take place via [Canvas](https://rutgers.instructure.com/courses/66482), at times (rarely), we will send out important course information via email. This email is sent to your Rutgers email address. You are responsible for all information sent out to your University email account, and for checking this account on a regular basis.
 
 ### Virtual office hours
-Virtual office hours will be held via whereby.com or Zoom by the two teaching assistant on Wed and Fri. The instructor will hold office hours by prior appointment.
+Virtual office hours will be held via Zoom by the two teaching assistant during the following hours. The instructor will hold office hours by prior appointment.
+
+Tue 4:00 pm - 5:30 pm
+Fri 4:00 pm - 5:30 pm
+[Sukanya Das Zoom](https://rutgers-hipaa.zoom.us/j/91688172735)
+
+Wed 4:00 pm - 5:30 pm
+Thu 4:00 pm - 5:30 pm
+[John Favate Zoom](https://rutgers-hipaa.zoom.us/j/91006054779)
 
 ## Course Activities
 
