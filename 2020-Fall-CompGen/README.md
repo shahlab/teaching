@@ -62,7 +62,7 @@ All course materials can be downloaded from this [GitHub repo](https://github.co
 
 Class | Date | Topic | Learning Materials
 :----- | ---: | :-- | :--
-1 | Sep 1 | Introduction and Variables | [Initial survey](https://shorturl.at/cdkvy) <br> [In-class](Lab-01/Lab-01.Rmd) <br> Homework <br> Homework solns. 
+1 | Sep 1 | Introduction and Variables |[Amarel instructions](Lab-01/Amarel_instructions.rtf) <br> [In-class](Lab-01/Lab-01.Rmd) <br> Homework <br> Homework solns. 
 2 | Sep 3 | Vectors and Matrices | 
 3 | Sep 10 | Matrices and Dataframes | 
 4 | Sep 15 | Quiz 01 and recap | 
