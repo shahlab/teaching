@@ -62,32 +62,31 @@ All course materials can be downloaded from this [GitHub repo](https://github.co
 
 Class | Date | Topic | Learning Materials
 :----- | ---: | :-- | :--
-1 | Sep 1 | Introduction and Variables | 
+1 | Sep 1 | Introduction and Variables | [Initial survey](https://shorturl.at/cdkvy) <br> [In-class](Lab-01/Lab-01.Rmd) <br> Homework <br> Homework solns. 
 2 | Sep 3 | Vectors and Matrices | 
-3 | Sep 8 | Matrices and Dataframes | 
-4 | Sep 10 | Quiz 01 and recap | 
-5 | Sep 15 | Conditional statements and loops |
-6 | Sep 17 | Lists, functions, and strings |
-7 | Sep 22 | Advanced data wrangling - tidyverse I |
-8 | Sep 24 | Quiz 02 and recap | 
-9 | Sep 29 | Advanced data wrangling - tidyverse II |
-10 | Oct 1 | Visualization - ggplot2 |
-11 | Oct 6 | Introduction to bioconductor - IRanges |
-12 | Oct 8 | Quiz 03 and recap | 
-13 | Oct 13 | Working with genome annotations and sequences - GRanges + Biostrings | 
-14 | Oct 15 | Working with genome sequences - Biostrings |
-15 | Oct 20 | Advanced sequence analyses | 
-16 | Oct 22 | Quiz 04 and recap | 
-17 | Oct 27 | Statistics I | 
-18 | Oct 29 | Statistics II | 
-19 | Nov 3 | Statistics III | 
-20 | Nov 5 | Quiz 05 and recap | 
-21 | Nov 10 | Basics of RNA-seq |
-22 | Nov 12 | Working with RNA-seq data I| 
-23 | Nov 17 | Working with RNA-seq data II| 
-24 | Nov 19 | Differential gene expression analyses |
-25 | Nov 24 | Funcational analyses of differentially expressed genes |
-26 | Dec 1 | Shiny |
+3 | Sep 10 | Matrices and Dataframes | 
+4 | Sep 15 | Quiz 01 and recap | 
+5 | Sep 17 | Conditional statements and loops |
+6 | Sep 22 | Lists, functions, and strings |
+7 | Sep 24 | Advanced data wrangling - tidyverse I |
+8 | Sep 29 | Quiz 02 and recap | 
+9 | Oct 1 | Advanced data wrangling - tidyverse II |
+10 | Oct 6 | Visualization - ggplot2 |
+11 | Oct 8 | Introduction to bioconductor - IRanges |
+12 | Oct 13 | Quiz 03 and recap | 
+13 | Oct 15 | Working with genome annotations and sequences - GRanges + Biostrings | 
+14 | Oct 20 | Working with genome sequences - Biostrings |
+15 | Oct 22 | Advanced sequence analyses | 
+16 | Oct 27 | Quiz 04 and recap | 
+17 | Oct 29 | Statistics I | 
+18 | Nov 3 | Statistics II | 
+19 | Nov 5 | Statistics III | 
+20 | Nov 10 | Quiz 05 and recap | 
+21 | Nov 12 | Basics of RNA-seq |
+22 | Nov 17 | Working with RNA-seq data I| 
+23 | Nov 19 | Working with RNA-seq data II| 
+24 | Nov 24 | Differential gene expression analyses |
+25 | Dec 1 | Funcational analyses of differentially expressed genes |
 27 | Dec 3 | Shiny | 
 28 | Dec 8 | Finals Group Project | 
 29 | Dec 10 | Finals Group Project |

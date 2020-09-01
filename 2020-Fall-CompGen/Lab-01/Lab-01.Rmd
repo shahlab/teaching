@@ -21,6 +21,7 @@ The course syllabus can be found [here](https://github.com/shahlab/teaching/tree
 ## Working on Amarel
 - VPN
 - [OnDemand](ondemand.hpc.rutgers.edu)
+- Set up scripts 
 
 ## Where is everything in RStudio?
 - Source 
@@ -63,15 +64,7 @@ The course syllabus can be found [here](https://github.com/shahlab/teaching/tree
 ## Logical operators (==, <, >, !, &, |)
 
 ## Exercise 1.1 (Question, Code, Answer)
-1. Create three variables and check if either of the first two variables are greater than the third.
-2. Create three variables and check if the sum of the first two variables is greater than the third variable.
-3. Create four variables and check if the product of the first two variables is the same as the product of the last two variables.
 
 ## Types of variables
 
 ## Exercise 1.2 (Question, Code, Answer)
-1. What results when you add `TRUE` variable with a numeric?
-2. What results when you multiply `FALSE` with an integer?
-3. What results when you add `NA` to numeric?
-4. If I am driving at a speed of 62 MPH (miles per hour), how long will it take me to drive from Philadelphia to New York City (94 miles)? How long will it take me for the reverse commute if I drive at 40 MPH?
-5. Write a code to calculate the area and circumference of a circle with radius 2 meters.
