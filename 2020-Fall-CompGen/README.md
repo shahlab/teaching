@@ -64,9 +64,9 @@ Class | Date | Topic | Learning Materials
 :----- | ---: | :-- | :--
 1 | Sep 1 | Introductions and setup |[Amarel instructions](Lab-01/Amarel_instructions.txt)
 2 | Sep 3 | Variables | [In-class](Lab-02/Lab-02.Rmd) 
-3 | Sep 10 | Variables, Vectors, and Matrices | [In-class](Lab-03/Lab-03.Rmd) <br> Homework <br> Homework solns. 
-4 | Sep 15 | Quiz 01 and recap | 
-5 | Sep 17 | Conditional statements and loops |
+3 | Sep 10 | Variables and Vectors | [In-class](Lab-03/Lab-03.Rmd) <br> [Homework](Lab-03/Lab-03_homework.Rmd) <br> Homework solns. 
+4 | Sep 15 | Matrices and Dataframes | 
+5 | Sep 17 | Quiz 01 and Conditional statements and loops |
 6 | Sep 22 | Lists, functions, and strings |
 7 | Sep 24 | Advanced data wrangling - tidyverse I |
 8 | Sep 29 | Quiz 02 and recap | 
