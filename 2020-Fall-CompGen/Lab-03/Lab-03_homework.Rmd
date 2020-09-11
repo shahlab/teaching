@@ -1,0 +1,23 @@
+---
+title: "Lab 03 - Homework"
+author: ""
+date: "Due on Sep 15, 2020"
+output: 
+  html_notebook:
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+---
+
+- Each question is 2 points.
+- Write the `codes` for all questions in this R Notebook.
+- Type your name in the Author section above
+- ALWAYS comment your code.
+- **<span style="color:red"> Due date: Tuesday, Sep 15, 1:30 pm EST</span>**
+
+1. What happens when you add two variables WITHOUT assigning them values?
+2. Write a code to calculate the area and circumference of a circle with radius 2 meters.
+3. The molecular weights of amino acids are listed [here](https://www.thermofisher.com/us/en/home/references/ambion-tech-support/rna-tools-and-calculators/proteins-and-amino-acids.html). 
+Calculate the molecular weight of this polypeptide - "EKEYLKK"
+4. How would you check if the molecular weights of Isoleucine and Leucine are the same? Also check if the molecular weight of Proline is greater than that of Histidine.
+5. Create a vector of any 5 numbers between 1 and 10. Find the sum of all elements of this vector whose values are less than or equal to 5.
