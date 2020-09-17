@@ -64,23 +64,23 @@ Class | Date | Topic | Learning Materials
 :----- | ---: | :-- | :--
 1 | Sep 1 | Introductions and setup |[Amarel instructions](Lab-01/Amarel_instructions.txt)
 2 | Sep 3 | Variables | [In-class](Lab-02/Lab-02.Rmd) 
-3 | Sep 10 | Variables and Vectors | [In-class](Lab-03/Lab-03.Rmd) <br> [Homework](Lab-03/Lab-03_homework.Rmd) <br> Homework solns. 
+3 | Sep 10 | Variables and Vectors | [In-class](Lab-03/Lab-03.Rmd) <br> [Homework](Lab-03/Lab-03_homework.Rmd) 
 4 | Sep 15 | Matrices and Dataframes | [In-class](Lab-04/Lab-04.Rmd) 
-5 | Sep 17 | Quiz 01 and Conditional statements and loops |
-6 | Sep 22 | Lists, functions, and strings |
-7 | Sep 24 | Advanced data wrangling - tidyverse I |
-8 | Sep 29 | Quiz 02 and recap | 
-9 | Oct 1 | Advanced data wrangling - tidyverse II |
-10 | Oct 6 | Visualization - ggplot2 |
-11 | Oct 8 | Introduction to bioconductor - IRanges |
-12 | Oct 13 | Quiz 03 and recap | 
-13 | Oct 15 | Working with genome annotations and sequences - GRanges + Biostrings | 
-14 | Oct 20 | Working with genome sequences - Biostrings |
-15 | Oct 22 | Advanced sequence analyses | 
-16 | Oct 27 | Quiz 04 and recap | 
-17 | Oct 29 | Statistics I | 
-18 | Nov 3 | Statistics II | 
-19 | Nov 5 | Statistics III | 
+5 | Sep 17 | Quiz 01 | [Quiz](Lab-05/Lab-05_quiz.Rmd)
+6 | Sep 22 | Conditional statements and loops |
+7 | Sep 24 | Lists, functions, and strings |
+7 | Sep 29 | Advanced data wrangling - tidyverse I |
+8 | Oct 1 | Quiz 02 and recap | 
+9 | Oct 6 | Advanced data wrangling - tidyverse II |
+10 | Oct 8 | Visualization - ggplot2 |
+11 | Oct 13 | Introduction to bioconductor - IRanges |
+12 | Oct 15 | Quiz 03 and recap | 
+13 | Oct 20 | Working with genome annotations and sequences - GRanges + Biostrings | 
+14 | Oct 22 | Working with genome sequences - Biostrings |
+15 | Oct 27 | Advanced sequence analyses | 
+16 | Oct 29 | Quiz 04 and recap | 
+17 | Nov 3 | Statistics I | 
+18 | Nov 5 | Statistics II | 
 20 | Nov 10 | Quiz 05 and recap | 
 21 | Nov 12 | Basics of RNA-seq |
 22 | Nov 17 | Working with RNA-seq data I| 
