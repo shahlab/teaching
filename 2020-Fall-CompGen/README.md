@@ -94,7 +94,7 @@ Class | Date | Topic | Learning Materials
 ## Website and Communication
 
 ### Online classes
-The class will be entirely online this semester. We will use [Zoom]( https://rutgers.zoom.us/j/99158883478?pwd=RDNldjFQTjRXeEsrWnR4SmdyeVFPUT09) for online instructions. All meetings will also be recorded and made available on [YouTube](https://www.youtube.com/playlist?list=PLKfoJIuERmwqS4yTkC6RBMWsLxJwPRgRu).
+The class will be entirely online this semester. We will use [Zoom]( https://rutgers.zoom.us/j/99158883478) for online instructions. All meetings will also be recorded and made available on [YouTube](https://www.youtube.com/playlist?list=PLKfoJIuERmwqS4yTkC6RBMWsLxJwPRgRu).
 
 ### Website
 This [GitHub repo](https://github.com/shahlab/teaching/tree/master/2020-Fall-CompGen) will serve as the course syllabus. Course materials and computing resources for this course will be available at [Amarel](https://ondemand.hpc.rutgers.edu/). Grades will be posted on [Canvas](https://rutgers.instructure.com/courses/66482).
