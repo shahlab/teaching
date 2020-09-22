@@ -1,0 +1,50 @@
+---
+title: "Lab-06 Conditional statements and loops"
+author: "Premal Shah"
+date: "Sep 17, 2020"
+output: 
+  html_notebook:
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+---
+
+## Vectorized operations (detour)
+
+## Locating and extracting values
+- Using logical variables
+- __which__ function
+- __%in%__ function
+
+## Exercise 4.2
+1. How many observations are there for the `United States` in the data frame?
+2. Which country has the lowest median age? 
+3. Describe one way to check if the country with the oldest median age has a higher number of average `new_cases` than the country with the lowest median age.
+
+## Tabulate
+
+## Sample
+- Sampling with/without replacement
+- Biased sampling
+
+### Exercise 6.1
+1. What happens when you sample more values than the number of elements from a vector with `replace=FALSE`?
+2. Generate 1000 coin tosses from a fair coin and tabulate the results?
+3. Generate 1000 coin tosses from a biased coin where the likelihood of HEADS is twice that of TAILS.
+4. Generate 1000 rolls of a biased die with where even numbers are three times as likely as odd numbers.
+
+## Conditional statements
+- if, else statement
+- `ifelse` for vectorized operations
+
+## Exercise 6.2
+1. Create a new vector with data from `new_tests` column. Replace all NAs with 0. Tabulate your results.
+3. How would you add/append this above result to the original dataset?
+
+## Loops
+- `for` loops with indices
+- `for` loops with values
+
+## Exercise 6.3
+1. Count the number of 4s in sample of 1000 unbiased die rolls using `for` loops.
+2. Using `for` loops, count the number of NAs in `new_tests`.
