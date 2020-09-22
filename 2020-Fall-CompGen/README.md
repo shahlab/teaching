@@ -67,7 +67,7 @@ Class | Date | Topic | Learning Materials
 3 | Sep 10 | Variables and Vectors | [In-class](Lab-03/Lab-03.Rmd) <br> [Homework](Lab-03/Lab-03_homework.Rmd) 
 4 | Sep 15 | Matrices and Dataframes | [In-class](Lab-04/Lab-04.Rmd) 
 5 | Sep 17 | Quiz 01 | [Quiz](Lab-05/Lab-05_quiz.Rmd)
-6 | Sep 22 | Conditional statements and loops |
+6 | Sep 22 | Conditional statements and loops | [In-class](Lab-06/Lab-06.Rmd) 
 7 | Sep 24 | Lists, functions, and strings |
 7 | Sep 29 | Advanced data wrangling - tidyverse I |
 8 | Oct 1 | Quiz 02 and recap | 
