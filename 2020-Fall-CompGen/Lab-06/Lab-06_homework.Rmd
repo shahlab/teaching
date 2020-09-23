@@ -1,0 +1,24 @@
+---
+title: "Lab 06 - Homework"
+author: ""
+date: "Due on Sep 29, 2020"
+output: 
+  html_notebook:
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+---
+
+- Write the `codes` for all questions in this R Notebook.
+- Type your name in the Author section above
+- ALWAYS comment your code.
+- **<span style="color:red"> Due date: Tuesday, Sep 29, 1:30 pm EST</span>**
+
+Using the owid-covid-data.csv from Lab-04 answer the following questions
+
+1. What is the location with the highest number of `new_cases_per_million`? (3 pts)
+2. Create a data frame with only positive values of `new_tests` (remove NAs and negative values). (2 pts)
+
+3.  - Find the country with the most smokers (male and female). (2 pts)
+    - Find the maximum positive_rate for this country on any day. (1 pt) 
+    - Is this positive rate greater than the maximum positive rate for United States? (2 pts)
