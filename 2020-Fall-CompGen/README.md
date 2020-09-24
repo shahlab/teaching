@@ -68,8 +68,8 @@ Class | Date | Topic | Learning Materials
 4 | Sep 15 | Matrices and Dataframes | [In-class](Lab-04/Lab-04.Rmd) 
 5 | Sep 17 | Quiz 01 | [Quiz](Lab-05/Lab-05_quiz.Rmd)
 6 | Sep 22 | Conditional statements | [In-class](Lab-06/Lab-06.Rmd) 
-7 | Sep 24 | Loops |
-7 | Sep 29 | Lists, functions, and strings |
+7 | Sep 24 | Loops and functions | [In-class](Lab-07/Lab-07.Rmd) 
+7 | Sep 29 | Lists and strings |
 8 | Oct 1 | Quiz 02 and recap | 
 9 | Oct 6 | Advanced data wrangling - tidyverse |
 10 | Oct 8 | Visualization - ggplot2 |

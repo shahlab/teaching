@@ -1,0 +1,35 @@
+---
+title: "Lab-07 Loops and functions"
+author: "Premal Shah"
+date: "Sep 24, 2020"
+output: 
+  html_notebook:
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+---
+
+## Loops
+- `for` loops with indices
+
+## Exercise 6.3
+1. Count the number of 4s in sample of 1000 unbiased die rolls using `for` loops.
+2. Using `for` loops, count the number of NAs in `new_tests`.
+
+## Exercise 7.1
+1. Write a `for` loop to estimate the 5-day running average of `new_tests` for `United States`.
+
+## Nested loops
+
+## Indefinite loops
+- `while` loop
+
+## Exercise 7.2
+1. Keep rolling an unbiased dice until you see a 1. How many dice rolls did it take?
+2. You have a biased dice where even numbers are 3 times as likely as odd numbers. Keep rolling it until you see a 1. How many dice or you have rolled the dice 10 times, whichever comes first.
+
+## Functions
+
+## Exercise 7.3
+1. Write a function to calculate factorial of a value.
+2. Write a function to calculate the fibonacci series up to n elements.

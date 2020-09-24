@@ -1,7 +1,7 @@
 ---
-title: "Lab-06 Conditional statements and loops"
+title: "Lab-06 Conditional statements"
 author: "Premal Shah"
-date: "Sep 17, 2020"
+date: "Sep 22, 2020"
 output: 
   html_notebook:
     theme: spacelab
@@ -40,11 +40,3 @@ output:
 ## Exercise 6.2
 1. Create a new vector with data from `new_tests` column. Replace all NAs with 0. Tabulate your results.
 3. How would you add/append this above result to the original dataset?
-
-## Loops
-- `for` loops with indices
-- `for` loops with values
-
-## Exercise 6.3
-1. Count the number of 4s in sample of 1000 unbiased die rolls using `for` loops.
-2. Using `for` loops, count the number of NAs in `new_tests`.
