@@ -1,0 +1,36 @@
+---
+title: "Lab-08 Loops, functions, and lists"
+author: "Premal Shah"
+date: "Sep 29, 2020"
+output: 
+  html_notebook:
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+---
+
+## Indefinite loops
+- `while` loop
+
+## Exercise 8.1
+1. Keep rolling an unbiased dice until you see a 1. How many dice rolls did it take?
+2. You have a biased dice where even numbers are 3 times as likely as odd numbers. Keep rolling it until you see a 1. How many dice or you have rolled the dice 10 times, whichever comes first.
+
+## Functions
+
+## Exercise 8.2
+1. Write your version of the `which` function using `for` loops.
+2. Write a function to calculate factorial of a value.
+
+## Lists
+- Comparisons with data frames
+
+### Accessing and subsetting Lists
+- Like a data frame
+- Using indices
+
+Exercise 8.3
+========================================================
+1. Create a list with the following elements - numeric vector, matrix, data frame.
+2. Add a character vector to the above list without recreating the entire list.
+3. Create a list of two lists. How would you access elements in this data structure?

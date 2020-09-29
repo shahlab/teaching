@@ -67,17 +67,17 @@ Class | Date | Topic | Learning Materials
 3 | Sep 10 | Variables and Vectors | [In-class](Lab-03/Lab-03.Rmd) <br> [Homework](Lab-03/Lab-03_homework.Rmd) 
 4 | Sep 15 | Matrices and Dataframes | [In-class](Lab-04/Lab-04.Rmd) 
 5 | Sep 17 | Quiz 01 | [Quiz](Lab-05/Lab-05_quiz.Rmd)
-6 | Sep 22 | Conditional statements | [In-class](Lab-06/Lab-06.Rmd) 
-7 | Sep 24 | Loops and functions | [In-class](Lab-07/Lab-07.Rmd) 
-7 | Sep 29 | Lists and strings |
-8 | Oct 1 | Quiz 02 and recap | 
-9 | Oct 6 | Advanced data wrangling - tidyverse |
-10 | Oct 8 | Visualization - ggplot2 |
-11 | Oct 13 | Introduction to bioconductor - IRanges |
+6 | Sep 22 | Conditional statements | [In-class](Lab-06/Lab-06.Rmd) <br> [Homework](Lab-06/Lab-06_homework.Rmd) 
+7 | Sep 24 | Loops | [In-class](Lab-07/Lab-07.Rmd) 
+7 | Sep 29 | Functions and lists | [In-class](Lab-08/Lab-08.Rmd) 
+8 | Oct 1 | Quiz 02 and strings | 
+9 | Oct 6 | Advanced data wrangling - tidyverse I |
+10 | Oct 8 | Advanced data wrangling - tidyverse II |
+11 | Oct 13 | Visualization - ggplot2 |
 12 | Oct 15 | Quiz 03 and recap | 
-13 | Oct 20 | Working with genome annotations and sequences - GRanges + Biostrings | 
-14 | Oct 22 | Working with genome sequences - Biostrings |
-15 | Oct 27 | Advanced sequence analyses | 
+13 | Oct 20 | Introduction to bioconductor - IRanges | 
+14 | Oct 22 | Working with genome annotations and sequences - GRanges + Biostrings |
+15 | Oct 27 | Working with genome sequences - Biostrings  | 
 16 | Oct 29 | Quiz 04 and recap | 
 17 | Nov 3 | Statistics I | 
 18 | Nov 5 | Statistics II | 
