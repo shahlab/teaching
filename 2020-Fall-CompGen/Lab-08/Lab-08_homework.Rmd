@@ -1,0 +1,26 @@
+---
+title: "Lab 08 - Homework"
+author: ""
+date: "Due on Oct 08, 2020"
+output: 
+  html_notebook:
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+---
+
+- Write the `codes` for all questions in this R Notebook.
+- Type your name in the Author section above
+- ALWAYS comment your code.
+- **<span style="color:red"> Due date: Thursday, Oct 08, 1:30 pm EST</span>**
+
+Create your own version of **any 5** of the following functions.
+
+1. `mean` (you cannot use `sum` function.)
+2. `factorial`
+3. `length` (use `while` loops.)
+4. `sd` - standard deviation (you can use your own `mean` function from above.)
+5. `rowSums`
+6. `t` - transpose a matrix
+7. `ifelse`
+8. `rev` - reverse the order of elements in a vector

@@ -1,5 +1,5 @@
 ---
-title: "Lab-08 Loops, functions, and lists"
+title: "Lab-08 Loops and functions"
 author: "Premal Shah"
 date: "Sep 29, 2020"
 output: 
