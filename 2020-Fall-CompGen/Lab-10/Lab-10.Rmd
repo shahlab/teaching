@@ -1,0 +1,26 @@
+---
+title: "Lab-10 Introduction to tidyverse"
+author: "Premal Shah"
+date: "Oct 06, 2020"
+output: 
+  html_notebook:
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+---
+
+## Load packages
+
+## Read in new owid covid data
+
+## Tibbles and pipes
+
+## Verbs
+- `filter`
+- `arrange`
+- `mutate`
+- `select`
+- `summarise`
+- `group_by`
+- `left_join` and `full_join`
+
