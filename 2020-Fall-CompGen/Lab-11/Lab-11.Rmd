@@ -1,0 +1,37 @@
+---
+title: "Lab-11 Introduction to tidyverse II"
+author: "Premal Shah"
+date: "Oct 08, 2020"
+output: 
+  html_notebook:
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+---
+
+## Verbs
+##`summarise`
+
+1. Find the mean and variance, and mode of new_cases.
+
+### Exercise 11.1
+2. Find the mean and variance of new_cases in Asia.
+3. Classify countries based on their gdp_per_capita into "Low" (<= 13000) and "High" (> 13000). 
+4. Find the mean and variance of new_cases for "Low" and "High" gdp_per_capita countries.
+
+### Exercise 11.2
+1. How will you find the mean and variance of new_cases for each country?
+
+## `group_by`
+- `tally`
+
+### Exercise 11.3
+1. Which country has the fewest number of observations?
+2. Which country in Africa ranks second for the highest number of new_cases on any given day?
+3. Which letter of the alphabet do most names of country begin with?
+4. Try answering question 2 using only base R functions.
+
+## `left_join` and `full_join`
+
+
+
