@@ -1,0 +1,20 @@
+---
+title: "Lab 11 - Homework"
+author: ""
+date: "Due on Oct 15, 2020"
+output: 
+  html_notebook:
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+---
+
+- Write the `codes` for all questions in this R Notebook.
+- Type your name in the Author section above
+- ALWAYS comment your code.
+- **<span style="color:red"> Due date: Thursday, Oct 15, 1:30 pm EST</span>**
+
+1. Find the country with the highest positive_rate for any day in June? (2 pts)
+2. Learn how to use the dplyr function [case_when()](https://dplyr.tidyverse.org/reference/case_when.html). Use case_when to classify countries based on their median age into 3 groups - "young" (<= 26), "moderate" (> 26 & <= 37), and "old" (>37). (3 pts)
+3. There are 210 countries in the dataset. Classify them based on their population into high and low population countries such that there are equal number of countries in both groups. (2 pts)
+4. Which group of countries had a higher total number of new_cases on July 4? (3 pts)
