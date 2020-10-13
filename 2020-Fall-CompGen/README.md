@@ -73,7 +73,7 @@ Class | Date | Topic | Learning Materials
 9 | Oct 1 | Lists and strings | [In-class](Lab-09/Lab-09.Rmd) 
 10 | Oct 6 | Advanced data wrangling - tidyverse I | [In-class](Lab-10/Lab-10.Rmd) 
 11 | Oct 8 | Advanced data wrangling - tidyverse II | [In-class](Lab-11/Lab-11.Rmd) <br> [Homework](Lab-11/Lab-11_homework.Rmd)
-12 | Oct 13 | Visualization - ggplot2 |
+12 | Oct 13 | Data visualization - ggplot2 | [In-class](Lab-12/Lab-12.Rmd)
 13 | Oct 15 | Quiz 03 and recap | 
 14 | Oct 20 | Introduction to bioconductor - IRanges | 
 15 | Oct 22 | Working with genome annotations and sequences - GRanges + Biostrings |

@@ -1,0 +1,80 @@
+---
+title: "Lab-12 Data visualization - ggplot2"
+author: "Premal Shah"
+date: "Oct 13, 2020"
+output: 
+  html_notebook:
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+---
+
+## Base R plots
+
+## Grammar Of Graphics
+- data
+- aesthetic mapping
+- geometric object
+- statistical transformations
+- scales
+- coordinate system
+- position adjustments
+- faceting
+
+### Load package and data
+
+### Structure of ggplot
+
+### Simple scatterplot
+
+### Changing scales of axes
+
+### Specify axis breakpoints
+
+### Change limits
+
+### Axis labels
+
+### Changing transparency of points
+
+### Color points
+
+### Color points with a variables (aesthetic mapping) - continuous scale
+
+### Color points with a variables (aesthetic mapping) - discrete scale and color brewer
+
+### Change shapes of points
+
+### Change sizes of points
+
+### Adding trendlines and regression lines
+
+### Statistical tests
+
+### Faceting plots- separate panels
+
+### Histograms
+
+### Density plots
+
+### Multi-panel density plots
+
+### Boxplots and Violin plots
+
+### Boxplots with scatter points
+
+### Saving plots
+
+### Interactive plots
+
+### Themes
+
+
+
+
+
+
+
+
+
+
