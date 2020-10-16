@@ -1,0 +1,30 @@
+---
+title: "Quiz 02"
+author: ""
+date: "Oct 15, 2020"
+output: 
+  html_notebook:
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+---
+
+## Instructions
+- **Each question is 2 points.**
+- **Type your name in the Author section above**
+- **Write the `codes` for all questions in this R Notebook (file).**
+- **ALWAYS comment your code.**
+
+## Using the plot_data.csv file (Lab-12), answer the following questions:
+
+1. Ribosome-density of a gene is a ratio of its RPF value to it mRNA value. Calculate ribosome-densities of all genes and identify the chromosome that has the highest average ribosome-density.
+2. Make a boxplot of ribosome-densities of genes where x-axis has chromosome ids. Appropriately transform the axis. Test whether the ribosome densities on Chr-1 is significantly different from ribosome-densities on Chr-3.
+
+## Using the quiz_data.csv file (Lab-11), answer the following questions:
+
+3. How many observations in the file do not have NAs in any of the columns?
+4. Classify countries based on their population in to 'low' (< 1M people), 'moderate' (>= 1M and < 10 M), and 'high' (>= 10 M). Which groups have the highest and lowest number of countries? 
+5. Which group of countries based on their populations above have the highest average positive_rate on June 15.
+
+Bonus: (2 pts):
+6. Which country has the biggest difference in the total number of new_cases on even-dates and odd-dates?

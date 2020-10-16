@@ -74,14 +74,14 @@ Class | Date | Topic | Learning Materials
 10 | Oct 6 | Advanced data wrangling - tidyverse I | [In-class](Lab-10/Lab-10.Rmd) 
 11 | Oct 8 | Advanced data wrangling - tidyverse II | [In-class](Lab-11/Lab-11.Rmd) <br> [Homework](Lab-11/Lab-11_homework.Rmd)
 12 | Oct 13 | Data visualization - ggplot2 | [In-class](Lab-12/Lab-12.Rmd)
-13 | Oct 15 | Quiz 03 and recap | 
+13 | Oct 15 | Quiz 02 and recap | [Quiz](Lab-13/Lab-13_quiz.Rmd)
 14 | Oct 20 | Introduction to bioconductor - IRanges | 
 15 | Oct 22 | Working with genome annotations and sequences - GRanges + Biostrings |
 16 | Oct 27 | Working with genome sequences - Biostrings  | 
-17 | Oct 29 | Quiz 04 and recap | 
+17 | Oct 29 | Quiz 03 and recap | 
 18 | Nov 3 | Statistics I | 
 19 | Nov 5 | Statistics II | 
-20 | Nov 10 | Quiz 05 and recap | 
+20 | Nov 10 | Quiz 04 and recap | 
 21 | Nov 12 | Basics of RNA-seq |
 22 | Nov 17 | Working with RNA-seq data I| 
 23 | Nov 19 | Working with RNA-seq data II| 
