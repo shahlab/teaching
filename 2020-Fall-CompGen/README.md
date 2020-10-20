@@ -75,7 +75,7 @@ Class | Date | Topic | Learning Materials
 11 | Oct 8 | Advanced data wrangling - tidyverse II | [In-class](Lab-11/Lab-11.Rmd) <br> [Homework](Lab-11/Lab-11_homework.Rmd)
 12 | Oct 13 | Data visualization - ggplot2 | [In-class](Lab-12/Lab-12.Rmd)
 13 | Oct 15 | Quiz 02 and recap | [Quiz](Lab-13/Lab-13_quiz.Rmd)
-14 | Oct 20 | Introduction to bioconductor - IRanges | 
+14 | Oct 20 | Introduction to bioconductor - Rle and IRanges | [In-class](Lab-14/Lab-14.Rmd)
 15 | Oct 22 | Working with genome annotations and sequences - GRanges + Biostrings |
 16 | Oct 27 | Working with genome sequences - Biostrings  | 
 17 | Oct 29 | Quiz 03 and recap | 
@@ -86,7 +86,7 @@ Class | Date | Topic | Learning Materials
 22 | Nov 17 | Working with RNA-seq data I| 
 23 | Nov 19 | Working with RNA-seq data II| 
 24 | Nov 24 | Differential gene expression analyses |
-25 | Dec 1 | Funcational analyses of differentially expressed genes |
+25 | Dec 1 | Functional analyses of differentially expressed genes |
 27 | Dec 3 | Shiny | 
 28 | Dec 8 | Finals Group Project | 
 29 | Dec 10 | Finals Group Project |

@@ -1,0 +1,51 @@
+---
+title: "Lab-14 Introduction to Bioconductor - Rle and IRanges"
+author: "Premal Shah"
+date: "Oct 20, 2020"
+output: 
+  html_notebook:
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+---
+
+## Bioconductor 
+[Website](https://www.bioconductor.org/)
+
+## Installing Bioconductor packages (in console)
+
+```{r, eval=F}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install()
+```
+
+## S4 objects
+
+## Running length encoding
+
+## IRanges
+
+### Create an IRanges object
+### Structure (S4) of an IRanges object
+### Working with IRanges
+### Combining IRanges
+
+## Exercise 14.1
+1. Imagine a genome consisting of only five consecutive genes of lengths 100, 200, 300, 400 and 500, in that order. How would you represent this genome as an IRanges object?
+
+## Manipulating IRanges
+
+```{r, eval=F}
+shift(IR, shift =)
+
+flank(IR, width =, start = T/F)
+
+resize(IR, width =, fix = "start"/"end"/"center")
+
+gaps()
+```
+
+## Exercise 14.2
+1. Starting with the 5-gene genome from the previous exercise, extend the lengths of first 3 genes at the 5' ends and last 2 genes at their 3' ends by 50bp.
+2. Assuming all 5 genes have a promoter of 75 bp. Create a new IRanges object for the promoters.
