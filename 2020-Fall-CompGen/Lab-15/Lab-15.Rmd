@@ -1,0 +1,59 @@
+---
+title: "Lab-15 Working with genome annotations and sequences - GRanges + Biostrings"
+author: "Premal Shah"
+date: "Oct 22, 2020"
+output: 
+  html_notebook:
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+---
+
+## Genomic Ranges
+
+### Structure of genomic ranges
+### Creating genomic ranges
+### Sequence information of GRanges
+### Genomic ranges with metadata
+
+## Yeast dataset
+http://sgd-archive.yeastgenome.org/sequence/S288C_reference/genome_releases/
+### Load in yeast genome annotation file
+
+## Exercise 15.1
+1. How many chromosomes are there in the yeast genome?
+2. How many genes encode proteins?
+
+## Annotation Hub
+```{r,eval=F}
+library(AnnotationHub)
+
+# Download the Annotation Hub database
+ah <- AnnotationHub()
+
+# Display the database
+display(ah)
+```
+
+## Biostrings
+### Strings, StringSet, and alphabet
+### Working with FASTA file
+- Read in FASTA file
+- Extract sequence corresponding to a GRanges object
+
+## Working with Biostrings
+```{r, eval=F}
+width() # Get the lengths of each DNAString in a DNAStringSet
+sort() # Sort the DNAStringSet by lengths/widths of DNAStrings
+reverseComplement() # Find the DNA sequence of the opposite strand
+translate() # Convert DNA sequence to amino acid sequence
+codons() # Split a DNAString sequence into codons
+alphabetFrequency() # Find out the frequency of individual nucleotides in a StringSet
+letterFrequency() # Find out the frequency of multiple nucleotides in a StringSet
+dinucleotideFrequency() # Find out the frequency of dinucleotides in a StringSet
+oligonucleotideFrequency() # Find out the frequency of any N-mer in a StringSet
+```
+
+## Exercise 15.2
+1. Create a DNAStringSet of CDS of all intron-less genes. Make sure all CDS start with a START codon and end with a STOP codon. 
+

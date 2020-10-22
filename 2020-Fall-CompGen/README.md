@@ -76,7 +76,7 @@ Class | Date | Topic | Learning Materials
 12 | Oct 13 | Data visualization - ggplot2 | [In-class](Lab-12/Lab-12.Rmd)
 13 | Oct 15 | Quiz 02 and recap | [Quiz](Lab-13/Lab-13_quiz.Rmd)
 14 | Oct 20 | Introduction to bioconductor - Rle and IRanges | [In-class](Lab-14/Lab-14.Rmd)
-15 | Oct 22 | Working with genome annotations and sequences - GRanges + Biostrings |
+15 | Oct 22 | Working with genome annotations and sequences - GRanges + Biostrings | [In-class](Lab-15/Lab-15.Rmd)
 16 | Oct 27 | Working with genome sequences - Biostrings  | 
 17 | Oct 29 | Quiz 03 and recap | 
 18 | Nov 3 | Statistics I | 
