@@ -53,7 +53,3 @@ letterFrequency() # Find out the frequency of multiple nucleotides in a StringSe
 dinucleotideFrequency() # Find out the frequency of dinucleotides in a StringSet
 oligonucleotideFrequency() # Find out the frequency of any N-mer in a StringSet
 ```
-
-## Exercise 15.2
-1. Create a DNAStringSet of CDS of all intron-less genes. Make sure all CDS start with a START codon and end with a STOP codon. 
-

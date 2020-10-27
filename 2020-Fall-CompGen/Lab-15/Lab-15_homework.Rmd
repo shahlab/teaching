@@ -1,0 +1,23 @@
+---
+title: "Lab 15 - Homework"
+author: ""
+date: "Due on Oct 29, 2020"
+output: 
+  html_notebook:
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+---
+
+- Write the `codes` for all questions in this R Notebook.
+- Type your name in the Author section above
+- ALWAYS comment your code.
+- **<span style="color:red"> Due date: Thursday, Oct 29, 1:30 pm EST</span>**
+
+Read in saccharomyces_cerevisiae.gff file and answer the following questions.
+
+1. How many genes are on the positive strand versus negative strand?
+2. How many genes have introns?
+3. What fraction of the genes are on the mitochondria?
+4. Find the longest gene on chromosome II
+5. Which chromosome has the most number of tRNA genes?

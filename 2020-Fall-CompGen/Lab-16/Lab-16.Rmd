@@ -1,0 +1,65 @@
+---
+title: "Lab-16 Working with genome sequences - Biostrings"
+author: "Premal Shah"
+date: "Oct 27, 2020"
+output: 
+  html_notebook:
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+---
+
+## Read in yeeast annotation and genome sequences
+
+## Working with Biostrings
+```{r, eval=F}
+width() # Get the lengths of each DNAString in a DNAStringSet
+sort() # Sort the DNAStringSet by lengths/widths of DNAStrings
+reverseComplement() # Find the DNA sequence of the opposite strand
+translate() # Convert DNA sequence to amino acid sequence
+codons() # Split a DNAString sequence into codons
+alphabetFrequency() # Find out the frequency of individual nucleotides in a StringSet
+letterFrequency() # Find out the frequency of multiple nucleotides in a StringSet
+dinucleotideFrequency() # Find out the frequency of dinucleotides in a StringSet
+oligonucleotideFrequency() # Find out the frequency of any N-mer in a StringSet
+```
+
+## Exercise 16.1
+1. Create a DNAStringSet of CDS of all intron-less genes. Keep only genes whose CDS start with an ATG codon and end with a STOP codon (TAA/TAG/TGA). 
+
+## Exercise 16.2
+1. Which chromosome has the highest GC content?
+2. Which gene has the most arginine amino acids and which one has the highest proportion of arginine amino acids?
+3. Lysine is encoded by AAA and AAG codons. Which gene has the highest proportion of AAG encoded lysines? Consider only genes with at least 20 lysine amino acids. Hint: read the help file of `oligonucleotideFrequency` carefully.
+
+## Subsetting Biostrings
+```{r, eval=FALSE}
+subseq(DNAString/DNAStringSet, start = , end = , width = )
+```
+
+## Pattern Matching
+- Count the number of times a pattern is found in Biostrings
+```{r, eval=FALSE}
+# For single DNAString/AAString
+countPattern(PATTERN, SUBJECT, MISMATCH ARGS)
+
+# For DNAStringSet/AAStringSet
+vcountPattern(PATTERN, SUBJECT, MISMATCH ARGS)
+```
+- Use `data(HNF4alpha)`
+
+## Pattern Matching
+- Find locations of patterns in Biostrings
+```{r, eval=FALSE}
+# For single DNAString/AAString
+matchPattern(PATTERN, SUBJECT, MISMATCH ARGS)
+
+# For DNAStringSet/AAStringSet
+vmatchPattern(PATTERN, SUBJECT, MISMATCH ARGS)
+```
+- Use `data(HNF4alpha)`
+
+## Exercise 16.3
+1. Create forward and reverse primers that are 30bp long for each CDS in the yeast genome. (3 pts)
+2. Which CDS in the yeast genome have long stretches (15 bp) of same nucleotide? Which bases are repeated more often? (3 pts)
+3. Which amino acids are most abundant in the C-terminal ends (last 5 residues) of yeast proteins? (4 pts)
