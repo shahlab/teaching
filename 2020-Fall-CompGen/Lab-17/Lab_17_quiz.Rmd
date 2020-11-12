@@ -1,0 +1,23 @@
+---
+title: "Quiz 03"
+author: ""
+date: "Oct 29, 2020"
+output: 
+  html_notebook:
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+---
+
+## Instructions
+- **Each question is 2 points.**
+- **Type your name in the Author section above**
+- **Write the `codes` for all questions in this R Notebook (file).**
+- **ALWAYS comment your code.**
+
+- Read in the saccharomyces_cerevisiae.fasta and saccharomyces_cerevisiae.gff to answer the questions 
+
+1. Using the genome annotation file, create a histogram of gene lengths of all `tRNA_gene`. (2 pt)
+2. Create a DNAStringSet of all `tRNA_gene` sequences of length 72 bp. Be aware of strand orientation. (2 pt)
+3. Use the code from Lab-16 to create a DNAStringSet of intron-less CDS in yeast. Create forward and reverse primers that are 30bp long for each CDS in the yeast genome. (3 pts)
+4. Arginine is basic residues. How many genes have stretches of 5 arginines, and which gene has the most? (3 pt)

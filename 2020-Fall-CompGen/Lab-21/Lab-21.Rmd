@@ -1,0 +1,69 @@
+---
+title: "Lab-21 Basics of RNA-seq and working with RNA-seq data"
+author: "Premal Shah"
+date: "Nov 12, 2020"
+output: 
+  html_notebook:
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+---
+
+## RNA-seqlopedia
+https://rnaseq.uoregon.edu/
+
+## Sequencing technologies
+- Next-gen (2nd gen): [Illumina](https://www.youtube.com/watch?v=fCd6B5HRaZ8)
+- Third-gen: [Nanopore](https://www.youtube.com/watch?v=E9-Rm5AoZGw)
+## 
+
+## Paths
+```{bash}
+echo 'export PATH=/projects/community/py-image/2019.10A/bd387/anaconda3-intel17/bin:$PATH' >> ~/.bash_profile
+```
+
+## GEO Database
+[GEO database](https://www.ncbi.nlm.nih.gov/geo/)
+
+## Nedialkova study
+[GEO data](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE67387)
+[Illumina adapaters](https://support.illumina.com/content/dam/illumina-support/documents/documentation/chemistry_documentation/experiment-design/illumina-adapter-sequences-1000000002694-14.pdf)
+
+SRR1944924
+SRR1944925
+SRR1944926
+SRR1944927
+SRR1944928
+SRR1944929
+
+## Make sure you are working in the right directory (~/gen303/Lab-21)
+```{bash}
+source activate shahclass
+```
+
+We will use [parallel-fastq-dump](https://github.com/rvalieris/parallel-fastq-dump)
+
+## Remove sequencing adapters
+
+## Mapping
+
+## Kallisto
+
+## Estimate mean and std of read lengths (insert sizes)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

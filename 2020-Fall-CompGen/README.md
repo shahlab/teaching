@@ -78,11 +78,11 @@ Class | Date | Topic | Learning Materials
 14 | Oct 20 | Introduction to bioconductor - Rle and IRanges | [In-class](Lab-14/Lab-14.Rmd)
 15 | Oct 22 | Working with genome annotations and sequences - GRanges + Biostrings | [In-class](Lab-15/Lab-15.Rmd)
 16 | Oct 27 | Working with genome sequences - Biostrings  | [In-class](Lab-16/Lab-16.Rmd)
-17 | Oct 29 | Quiz 03 and recap | 
-18 | Nov 3 | Statistics I | 
-19 | Nov 5 | Statistics II | 
-20 | Nov 10 | Quiz 04 and recap | 
-21 | Nov 12 | Basics of RNA-seq |
+17 | Oct 29 | Quiz 03 and recap | [Quiz](Lab-17/Lab-17_quiz.Rmd)
+18 | Nov 3 | Statistics I | [Introduction to Data in R](https://learn.datacamp.com/courses/introduction-to-data-in-r) <br> [Introduction to Statistics in R](https://learn.datacamp.com/courses/introduction-to-statistics-in-r)
+19 | Nov 5 | Statistics II | [Correlation and Regression in R](https://learn.datacamp.com/courses/correlation-and-regression-in-r)
+20 | Nov 10 | Class cancelled | 
+21 | Nov 12 | Basics of RNA-seq | [In-class](Lab-21/Lab-21.Rmd)
 22 | Nov 17 | Working with RNA-seq data I| 
 23 | Nov 19 | Working with RNA-seq data II| 
 24 | Nov 24 | Differential gene expression analyses |
