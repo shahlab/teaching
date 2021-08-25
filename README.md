@@ -9,3 +9,5 @@ The main focus of this course is to learn R programming and apply it towards ana
 \[[Fall 2019](2019-Fall-CompGen)\]
 
 \[[Fall 2020](2020-Fall-CompGen)\]
+
+\[[Fall 2021](2021-Fall-CompGen)\]
