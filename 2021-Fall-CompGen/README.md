@@ -111,13 +111,13 @@ Although the bulk of the communication will take place via [Canvas](https://rutg
 ### Virtual office hours
 Virtual office hours will be held via Zoom by the two teaching assistant during the following hours. The instructor will hold office hours by prior appointment.
 
-Tue 4:00 pm - 5:30 pm
-Fri 4:00 pm - 5:30 pm
-[Sukanya Das Zoom](https://rutgers-hipaa.zoom.us/j/91688172735)
+Tue 3:30 pm - 4:30 pm
+Thu 3:30 pm - 4:30 pm
+[Sukanya Das Zoom](https://rutgers.zoom.us/j/91688172735?pwd=Q2NBVWlhZmlNcFFOcUo3R1lOWTZBdz09)
 
 Tue 12:00 pm - 1:00 pm
 Thu 12:00 pm - 1:00 pm
-[John Favate Zoom](https://rutgers.zoom.us/j/95136223806)
+[John Favate Zoom](https://rutgers.zoom.us/j/95136223806?pwd=d0t6M0VuMVRqRGdyYkMyNE5iWkk5UT09)
 
 ## Course Activities
 
