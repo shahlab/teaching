@@ -1,0 +1,70 @@
+---
+title: "Lab 01 - Introductions, setup, and variables"
+author: "Premal Shah"
+date: "Sep 07, 2021"
+output: 
+  html_notebook:
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+---
+
+## Syllabus
+
+The course syllabus can be found [here](https://github.com/shahlab/teaching/tree/master/2021-Fall-CompGen/README.md). This is going to be a live document and will be updated throughout the semester.
+
+## Working on Amarel
+- VPN
+- [OnDemand](ondemand.hpc.rutgers.edu)
+- Set up scripts
+
+## For independent practice
+
+- Download R from [r-project.org](https://www.r-project.org/)
+- Download RStudio IDE from [rstudio.com](https://www.rstudio.com/products/rstudio/download/)
+
+## Where is everything in RStudio?
+
+- Source 
+- Console
+- Environment, History
+- Files, Plots, Packages, Help, Viewer
+
+## What can do you in R
+- [Make interactive documents](http://timelyportfolio.github.io/rCharts_nyt_home_price/)
+- Build web-based applications
+  - [CDC data](https://gallery.shinyapps.io/CDCPlot/)
+  - [Malaria simulations](https://econometricsbysimulation.shinyapps.io/Dynamic-Pro/)
+  - [EVome app](https://myevome.shinyapps.io/evome-app/)
+- Presentations (including PowerPoint presentations)
+- [Write books and papers](https://bookdown.org/yihui/bookdown/)
+
+## Working with R Notebooks
+- [RMarkdown](https://rmarkdown.rstudio.com/lesson-1.html)
+- Code chunks
+
+## R - a powerful calculator
+
+## Variables in R
+
+### Assign values to variables
+
+### See the current value of variable
+
+### Operate directly on variables
+
+### Naming conventions
+  - DO NOT start with a number (1xyz, 4abc, etc.)
+  - Numbers after characters are OK (variable1, variable2, etc.)
+  - Be descriptive. Use `tab` to autofill
+  
+### Save output of operations to new variables
+
+### Assigning new values to existing variables
+
+## Logical operators (==, <, >, !, &, |)
+
+## Exercise 1.1 (Question, Code, Answer)
+1. Create three variables and check if either of the first two variables are greater than the third.
+2. Create three variables and check if the sum of the first two variables is greater than the third variable.
+3. Create four variables and check if the product of the first two variables is the same as the product of the last two variables.

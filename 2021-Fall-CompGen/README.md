@@ -62,7 +62,7 @@ All course materials can be downloaded from this [GitHub repo](https://github.co
 
 Class | Date | Topic | Learning Materials
 :----- | ---: | :-- | :--
-1 | Sep 7 | Introductions and setup |[Amarel instructions](Lab-01/Amarel_instructions.txt)
+1 | Sep 7 | Introductions and setup |[Amarel instructions](Lab-01/Amarel_instructions.txt) <br> [In-class](Lab-01/Lab-01.Rmd)
 2 | Sep 9 | Variables | 
 3 | Sep 14 | Variables and Vectors | 
 4 | Sep 16 | Matrices and Dataframes | 
@@ -115,9 +115,9 @@ Tue 4:00 pm - 5:30 pm
 Fri 4:00 pm - 5:30 pm
 [Sukanya Das Zoom](https://rutgers-hipaa.zoom.us/j/91688172735)
 
-Wed 4:00 pm - 5:30 pm
-Thu 4:00 pm - 5:30 pm
-[John Favate Zoom](https://rutgers-hipaa.zoom.us/j/91006054779)
+Tue 12:00 pm - 1:00 pm
+Thu 12:00 pm - 1:00 pm
+[John Favate Zoom](https://rutgers.zoom.us/j/95136223806)
 
 ## Course Activities
 

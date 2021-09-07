@@ -2,17 +2,17 @@ RStudio for Teaching
 
 During Class
 
-Partition: 				main
+Partition: 		main
 Number of hours: 		3
 Num Cores			1
-Memory in GB			4
+Memory in GB		4
 extra slurm options		--reservation=gen303-Tues (gen303-Thurs)
 
 
 For homework
 
-Partition: 				genetics_1
+Partition: 		genetics_1
 Number of hours: 		3
 Num Cores			1
-Memory in GB			4
+Memory in GB		4
 extra slurm options		--job-name=prstest
