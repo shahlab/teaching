@@ -1,0 +1,33 @@
+---
+title: "Homework template"
+output: 
+  html_document:
+    df_print: paged
+author: "my name here"
+date: "`r Sys.time()`"
+---
+
+<style type="text/css">
+.main-container {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+```{r echo = FALSE}
+######################################################################
+##################### FOLLOW THESE DIRECTIONS ########################
+### 1. Don't delete this code chunk, it won't appear in the output ###
+### 2. Put the homework number in the title field above            ###
+### 3. Put your name in the author field above                     ###
+### 4. Follow the format below, you can delete unnecessary parts   ###
+### 5. Press the knit button when you're done, your code must      ###
+###    run with no errors in order for this to work. If your       ###
+###    code has errors, comment them out                           ###
+######################################################################
+######################################################################
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, fig.align = "center", tidy = FALSE, max.print = 20)
+```
+
+---
