@@ -32,7 +32,7 @@ knitr::opts_chunk$set(warning = FALSE, message = FALSE, fig.align = "center", ti
 
 ---
 
-Due date: Tuesday, Sep 16, 1:00 pm EST
+Due date: Tuesday, Sep 14, 1:00 pm EST
 
 1. Create three variables and check if two of the three variables are the same.
 2. The molecular weights of amino acids are listed [here](https://www.thermofisher.com/us/en/home/references/ambion-tech-support/rna-tools-and-calculators/proteins-and-amino-acids.html). 
