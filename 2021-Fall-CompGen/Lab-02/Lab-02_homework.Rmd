@@ -1,0 +1,42 @@
+---
+title: "Homework template"
+output: 
+  html_document:
+    df_print: paged
+author: "my name here"
+date: "`r Sys.time()`"
+---
+
+<style type="text/css">
+.main-container {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+```{r echo = FALSE}
+######################################################################
+##################### FOLLOW THESE DIRECTIONS ########################
+### 1. Don't delete this code chunk, it won't appear in the output ###
+### 2. Put your name in the author field above                     ###
+### 3. Write the code for all questions in this R Notebook         ###
+### 4. ALWAYS comment your code.                                   ###
+### 5. Press the knit button when you're done, your code must      ###
+###    run with no errors in order for this to work. If your       ###
+###    code has errors, comment them out                           ###
+######################################################################
+######################################################################
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, fig.align = "center", tidy = FALSE, max.print = 20)
+```
+
+---
+
+Due date: Tuesday, Sep 16, 1:00 pm EST
+
+1. Create three variables and check if two of the three variables are the same.
+2. The molecular weights of amino acids are listed [here](https://www.thermofisher.com/us/en/home/references/ambion-tech-support/rna-tools-and-calculators/proteins-and-amino-acids.html). 
+Calculate the molecular weight of this polypeptide - "EKEYLKK"
+3. How would you check if the molecular weights of Isoleucine and Leucine are the same? Also check if the molecular weight of Proline is greater than that of Histidine.
+4. Create two numeric vectors of length 3 and combine them into a third vector. Create a new vector with ONLY the second elements of first two vectors.
+5. What happens when you reference an index greater than the length of a vector? What happens when your index is a negative number?
