@@ -1,0 +1,103 @@
+---
+title: "Lab 03 - Vectors and Matrices"
+author: "Premal Shah"
+date: "Sep 14, 2021"
+output: 
+  html_notebook:
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+---
+
+## Homework from Lab-02
+1. Create three variables and check if two of the three variables are the same.
+2. The molecular weights of amino acids are listed [here](https://www.thermofisher.com/us/en/home/references/ambion-tech-support/rna-tools-and-calculators/proteins-and-amino-acids.html). 
+Calculate the molecular weight of this polypeptide - "EKEYLKK"
+3. How would you check if the molecular weights of Isoleucine and Leucine are the same? Also check if the molecular weight of Proline is greater than that of Histidine.
+4. Create two numeric vectors of length 3 and combine them into a third vector. Create a new vector with ONLY the second elements of first two vectors.
+5. What happens when you reference an index greater than the length of a vector? What happens when your index is a negative number?
+
+## Exercise 3.1
+
+1. Find the sum of the first and the last element of a vector.
+2. What happens when you add two numeric vectors of the same length?
+3. What happens when you add two numeric vectors of the different lengths?
+
+## Subset a vector - recap
+- Using indices
+- Using names
+- Using other vectors
+- Using logical variables/vectors
+
+## Sequence function
+- What if you have a really large vector of say 100 or even 1000 elements?
+- What about a vector of only even numbers between 1 and 100?
+
+## Repeat function
+- How would you create a vector of 100 1s?
+
+## Exercise 3.2
+1. From the vector of all numbers from 100 to 200, create a new vector with only multiples of 5.
+2. Create a vector of all multiples of 10 between 1 and 100 in DECREASING order?
+3. What values are in the 3rd and 7th element of the above vector?
+4. Create the following vectors
+![](vectors_exercise.png)
+
+## Matrices
+
+### Creating a matrix
+
+### Accessing elements of a matrix
+
+### Subsetting a matrix into vectors
+
+
+## Dataframes
+- What if you wanted different _types_ of data in each column?
+
+### Creating a data frame
+
+### Accessing and subsetting data frames
+- Like a matrix
+- Using column names
+
+## Reading external files
+
+### Working with vectors and data frames
+```{r, eval=FALSE}
+# Length gives you number of columns
+length()
+
+# Dimensions of a data frame
+dim()
+
+# Number of rows of a data frame
+nrow()
+
+# Number of columns of a data frame
+ncol()
+
+# Identify type of objects
+class()
+
+# Structure of a data frame
+str()
+
+# Summary functions
+min()
+max()
+mean()
+sd()
+
+# Summarize data in all columns
+summary()
+
+# Check the type of data in a column
+is.logical()
+is.numeric()
+is.na()
+```
+
+## Exercise 3.3
+1. Create a new data frame which contains only the first three columns of the old data frame.
+2. How many observations have __new_cases__ values in them?

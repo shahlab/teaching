@@ -63,8 +63,8 @@ All course materials can be downloaded from this [GitHub repo](https://github.co
 Class | Date | Topic | Learning Materials
 :----- | ---: | :-- | :--
 1 | Sep 7 | Introductions, setup, and variables |[Amarel instructions](Lab-01/Amarel_instructions.txt) <br> [In-class](Lab-01/Lab-01.Rmd)
-2 | Sep 9 | Variables and Vectors I | [In-class](Lab-02/Lab-02.Rmd) <br> [Homework](Lab-02/Lab-02_homework.Rmd)
-3 | Sep 14 | Vectors II | 
+2 | Sep 9 | Variables and Vectors | [In-class](Lab-02/Lab-02.Rmd) <br> [Homework](Lab-02/Lab-02_homework.Rmd)
+3 | Sep 14 | Vectors and Matrices | [In-class](Lab-03/Lab-03.Rmd)
 4 | Sep 16 | Matrices and Dataframes | 
  | Sep 21 | Amarel maintenance | 
 5 | Sep 23 | Quiz 01 | 
