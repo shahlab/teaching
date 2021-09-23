@@ -65,9 +65,9 @@ Class | Date | Topic | Learning Materials
 1 | Sep 7 | Introductions, setup, and variables |[Amarel instructions](Lab-01/Amarel_instructions.txt) <br> [In-class](Lab-01/Lab-01.Rmd)
 2 | Sep 9 | Variables and Vectors | [In-class](Lab-02/Lab-02.Rmd) <br> [Homework](Lab-02/Lab-02_homework.Rmd)
 3 | Sep 14 | Vectors and Matrices | [In-class](Lab-03/Lab-03.Rmd)
-4 | Sep 16 | Quiz 01 and Data frames | [In-class](Lab-04/Lab-04.Rmd)
+4 | Sep 16 | Quiz 01 | [In-class](Lab-04/Lab-04.Rmd) <br> [Quiz](Lab-04/Shah_Quiz_01.Rmd)
  | Sep 21 | Amarel maintenance | 
-5 | Sep 23 | Quiz 01 | 
+5 | Sep 23 | Data frames and conditional statements | [In-class](Lab-05/Lab-05.Rmd) 
 6 | Sep 28 | Conditional statements | 
 7 | Sep 30 | Loops | 
 8 | Oct 5 | Loops and functions | 

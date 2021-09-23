@@ -1,0 +1,180 @@
+---
+title: "Quiz 01"
+author: ""
+date: "Sep 16, 2021"
+output: 
+  html_notebook:
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+---
+
+<style type="text/css">
+.main-container {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+```{r echo = FALSE}
+######################################################################
+##################### FOLLOW THESE DIRECTIONS ########################
+### 1. Don't delete this code chunk, it won't appear in the output ###
+### 2. Put your name in the author field above                     ###
+### 3. Write the code for all questions in this R Notebook         ###
+### 4. ALWAYS comment your code.                                   ###
+### 5. Press the knit button when you're done, your code must      ###
+###    run with no errors in order for this to work. If your       ###
+###    code has errors, comment them out                           ###
+######################################################################
+######################################################################
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, fig.align = "center", tidy = FALSE, max.print = 20)
+```
+
+## Questions
+1. Create two character vectors of length 3. Create a new combined vector EXCLUDING (without) the second elements of both vectors. (1 pt)
+```{r}
+# create two vectors
+char_vec1 <- c("A", "B", "C")
+char_vec2 <- c("Q", "W", "E")
+
+# Method 1
+vec_comb_1 <- c(char_vec1[1], char_vec1[3], char_vec2[1], char_vec2[3])
+vec_comb_1
+
+# Method 2
+vec_comb_2 <- c(char_vec1[-2], char_vec2[-2])
+vec_comb_2
+```
+
+
+2. Create a vector of all multiples of 7 between 10 and 100 in DECREASING order? (1 pt)
+```{r}
+# Method 1
+vec_mult_7 <- seq(from = 98, to = 10, by = -7)
+vec_mult_7
+
+# Method 2
+vec_num_100_10 <- seq(from = 100, to = 10, by = -1)
+vec_num_100_10
+
+mod7 <- vec_num_100_10 %% 7 # Find the modulo of 7
+mod7
+log_mod7 <- mod7 == 0 # Find which elements are divisible by 7 and create a logical vector
+log_mod7
+vec_num_100_10[log_mod7] # Use the logical vector to subset 
+
+# Combined method 2
+vec_num_100_10[vec_num_100_10 %% 7 == 0]
+vec_num_100_10[vec_num_100_10 %% 17 == 0]
+
+# Don't do this
+(100:10)[(100:10) %% 7 == 0]
+```
+
+
+3. Create any 3x3 numeric matrix. Create a vector of sums of elements in each column using two different methods. (2 pts)
+```{r}
+num_mat <- matrix(data = 1:9, nrow = 3) # Create a numeric matrix
+num_mat
+
+# Method 1
+sum_vec1 <- sum(num_mat[, 1])
+sum_vec2 <- sum(num_mat[, 2])
+sum_vec3 <- sum(num_mat[, 3])
+
+c(sum_vec1, sum_vec2, sum_vec3)
+c(sum(num_mat[, 1]), sum(num_mat[, 2]), sum(num_mat[, 3]))
+
+# Method 2 (DataCamp)
+colSums(num_mat)
+#rowSums()
+
+# Method 3
+num_mat
+num_mat[1, ]
+num_mat[2, ]
+num_mat[1, ] + num_mat[2, ]
+num_mat[1, ] + num_mat[2, ] + num_mat[3, ]
+```
+
+
+4. Create a named numeric vector of numbers 1 through 6. The names of elements of this vector should be A through F. (1 pt)
+```{r}
+num_vec <- 1:6
+names(num_vec) <- c("A", "B", "C", "D", "E", "F")
+# names(num_vec) <- c(A, B, C, D, E, F)
+num_vec
+
+LETTERS
+letters
+
+names(num_vec) <- LETTERS[1:6]
+num_vec
+```
+
+
+5. & 6. Create the following vectors using `rep` function (1 pt each)
+![](Q5.png)
+```{r}
+# Method 1
+rep(x = c("A", "C", "B"), each = 4)
+rep(x = c("A", "C", "B"), times = 4) # This is wrong
+
+# Method 2
+c(rep(x = "A", times = 4), rep(x = "C", times = 4), rep(x = "B", times = 4))
+
+# Method 3
+rep(x = c("A", "C", "B"), times = c(4, 4, 4))
+rep(x = c("A", "C", "B"), times = rep(x = 4, times = 3))
+
+```
+
+
+![](Q6.png)
+```{r}
+rep(x = c("A", "1", "TRUE"), times = 4)
+
+rep(x = c("A", 1, TRUE), times = 4) # c() function coerces all the elements to be character elements
+
+rep(x = c("A", "1", "TRUE", " "), times = 4)
+```
+
+
+7. What does the function `dim()` do? What happens when you apply `dim()` to a vector and matrix? (1 pt)
+```{r}
+# ?dim
+
+dim(num_vec)
+dim(num_mat)
+
+# Number of elements in a vector
+num_vec
+length(num_vec)
+```
+
+
+8. What happens when you add two numeric matrices of size 3x3? What happens when you add two numeric matrices of different sizes (say 3x3 and 4x4)? What happens when you add a vector to a numeric matrix? (2 pts)
+```{r}
+num_mat
+
+num_mat2 <- matrix(data = 10:18, nrow = 3)
+num_mat2
+
+num_mat + num_mat2
+
+num_mat_4x4 <- matrix(data = 1:16, nrow = 4)
+num_mat_4x4
+
+# num_mat + num_mat_4x4 This would give an error
+
+num_mat
+num_vec
+num_mat + num_vec
+```
+
+
+
+
+

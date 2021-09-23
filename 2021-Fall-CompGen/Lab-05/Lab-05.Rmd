@@ -1,0 +1,97 @@
+---
+title: "Lab 05 - Data frames and conditional statements"
+author: "Premal Shah"
+date: "Sep 23, 2021"
+output: 
+  html_notebook:
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+---
+
+
+## Dataframes
+- What if you wanted different _types_ of data in each column?
+
+### Creating a data frame
+```{r}
+my_data_frame <- data.frame(Gene = c("gene1", "gene2", "gene3"),
+                            Length = c(100, 200, 300),
+                            Disease = c(TRUE, FALSE, TRUE))
+my_data_frame
+```
+
+
+### Accessing and subsetting data frames
+- Like a matrix
+- Using column names
+
+## Reading external files
+
+### Working with vectors and data frames
+```{r, eval=FALSE}
+# Length gives you number of columns
+length()
+
+# Dimensions of a data frame
+dim()
+
+# Number of rows of a data frame
+nrow()
+
+# Number of columns of a data frame
+ncol()
+
+# Identify type of objects
+class()
+
+# Structure of a data frame
+str()
+
+# Summary functions
+min()
+max()
+mean()
+sd()
+
+# Summarize data in all columns
+summary()
+
+# Check the type of data in a column
+is.logical()
+is.numeric()
+is.na()
+```
+
+## Exercise 5.1
+1. Create a new data frame which contains only the first three columns of the old data frame.
+2. How many observations have __daily_vaccinations__ values in them?
+
+## Vectorized operations (detour)
+
+## Locating and extracting values
+- Using logical variables
+- `which` function
+- `%in%` function
+
+## Exercise 5.2
+1. How many observations are there for the `New Jersey` in the data frame?
+2. Which state has the highest number of __people_vaccinated__? 
+3. Is the state with the most number of __people_vaccinated__ also the state with the most __people_fully_vaccinated_per_hundred__?
+
+## Tabulate
+
+## Sample
+- Sampling with/without replacement
+- Biased sampling
+
+### Exercise 5.3
+1. What happens when you sample more values than the number of elements from a vector with `replace=FALSE`?
+2. Generate 1000 coin tosses from a fair coin and tabulate the results?
+3. Generate 1000 coin tosses from a biased coin where the likelihood of HEADS is twice that of TAILS.
+4. Generate 1000 rolls of a biased die with where even numbers are three times as likely as odd numbers.
+
+## Conditional statements
+- if, else statement
+- `ifelse` for vectorized operations
+
