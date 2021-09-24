@@ -1,0 +1,44 @@
+---
+title: "Homework from Lab-05"
+output: 
+  html_document:
+    df_print: paged
+author: "my name here"
+date: "`r Sys.time()`"
+---
+
+<style type="text/css">
+.main-container {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+```{r echo = FALSE}
+######################################################################
+##################### FOLLOW THESE DIRECTIONS ########################
+### 1. Don't delete this code chunk, it won't appear in the output ###
+### 2. Put your name in the author field above                     ###
+### 3. Write the code for all questions in this R Notebook         ###
+### 4. ALWAYS comment your code.                                   ###
+### 5. Press the knit button when you're done, your code must      ###
+###    run with no errors in order for this to work. If your       ###
+###    code has errors, comment them out                           ###
+######################################################################
+######################################################################
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, fig.align = "center", tidy = FALSE, max.print = 20)
+```
+
+---
+
+Due date: Tuesday, Sep 28, 1:00 pm EST
+
+To answer the following questions, plese read in the us_state_vaccinations.csv file.
+
+1. Create a data frame that contains only positive values (no NA or negative values) of __daily_vaccinations__. (3 pts)
+2. Which column has the most number of missing observations? (3 pts)
+3. On which date did New Jersey have the most number of __daily_vaccinations__? (4 pts)
+
+Bonus question
+4. Without using the function unique (we haven't covered this in class), find out how many unique locations are in the file. (2 pts)
