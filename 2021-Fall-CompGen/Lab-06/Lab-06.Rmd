@@ -1,0 +1,44 @@
+---
+title: "Lab 06 - Data frames and conditional statements"
+author: "Premal Shah"
+date: "Sep 28, 2021"
+output: 
+  html_notebook:
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+---
+
+## Homework from Lab-05
+
+To answer the following questions, please read in the us_state_vaccinations.csv file.
+
+1. Create a data frame that contains only positive values (no NA or negative values) of __daily_vaccinations__. (3 pts)
+2. Which column has the most number of missing observations? (3 pts)
+3. On which date did New Jersey have the most number of __daily_vaccinations__? (4 pts)
+
+### Bonus question
+4. Without using the function unique (we haven't covered this in class), find out how many unique locations are in the file. (2 pts)
+
+### Question from previous exercise
+Is the state with the most number of __people_vaccinated__ also the state with the most __people_fully_vaccinated_per_hundred__?
+
+## Tabulate
+
+## Sample
+- Sampling with/without replacement
+- Biased sampling
+
+### Exercise 6.1
+1. What happens when you sample more values than the number of elements from a vector with `replace=FALSE`?
+2. Generate 1000 coin tosses from a fair coin and tabulate the results?
+3. Generate 1000 coin tosses from a biased coin where the likelihood of HEADS is twice that of TAILS.
+4. Generate 1000 rolls of a biased die with where even numbers are three times as likely as odd numbers.
+
+## Conditional statements
+- if, else statement
+- `ifelse` for vectorized operations
+
+### Exercise 6.2
+1. Create a new vector with data from `new_tests` column. Replace all NAs with 0. Tabulate your results.
+2. How would you add/append this above result to the original dataset?

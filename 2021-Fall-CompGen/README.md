@@ -68,7 +68,7 @@ Class | Date | Topic | Learning Materials
 4 | Sep 16 | Quiz 01 | [In-class](Lab-04/Lab-04.Rmd) <br> [Quiz](Lab-04/Shah_Quiz_01.Rmd)
  | Sep 21 | Amarel maintenance | 
 5 | Sep 23 | Data frames | [In-class](Lab-05/Lab-05.Rmd) <br> [Homework](Lab-05/Lab-05_homework.Rmd)
-6 | Sep 28 | Conditional statements | 
+6 | Sep 28 | Data frames and Conditional statements | [In-class](Lab-06/Lab-06.Rmd) 
 7 | Sep 30 | Loops | 
 8 | Oct 5 | Loops and functions | 
 9 | Oct 7 | Lists and strings | 
