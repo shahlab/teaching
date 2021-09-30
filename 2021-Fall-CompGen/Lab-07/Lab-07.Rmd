@@ -1,0 +1,31 @@
+---
+title: "Lab 07 - Loops"
+author: "Premal Shah"
+date: "Sep 30, 2021"
+output: 
+  html_notebook:
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+---
+
+## Loops
+- `for` loops with indices
+- factorial example
+
+## Exercise 7.1
+1. Count the number of 4s in sample of 1000 unbiased die rolls using `for` loops.
+2. Using `for` loops, count the number of NAs in `daily_vaccinations`.
+
+## Nested loops
+
+## Exercise 7.2
+1. Write a `for` loop to estimate the 7-day running average of `daily_vaccinations` for `New Jersey`.
+
+## Indefinite loops
+- `while` loop
+
+## Exercise 7.3
+1. Keep rolling an unbiased dice until you see a 1. How many dice rolls did it take?
+2. You have a biased dice where even numbers are 3 times as likely as odd numbers. Keep rolling it until you see a 5. 
+3. Stop rolling the above dice till you see a 1 or once you have rolled the dice 10 times, whichever comes first.

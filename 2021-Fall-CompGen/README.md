@@ -69,18 +69,18 @@ Class | Date | Topic | Learning Materials
  | Sep 21 | Amarel maintenance | 
 5 | Sep 23 | Data frames | [In-class](Lab-05/Lab-05.Rmd) <br> [Homework](Lab-05/Lab-05_homework.Rmd)
 6 | Sep 28 | Data frames and Conditional statements | [In-class](Lab-06/Lab-06.Rmd) 
-7 | Sep 30 | Loops | 
-8 | Oct 5 | Loops and functions | 
-9 | Oct 7 | Lists and strings | 
+7 | Sep 30 | Loops | [In-class](Lab-07/Lab-07.Rmd) 
+8 | Oct 5 | Lists and strings | 
+9 | Oct 7 | Quiz 02 | 
 10 | Oct 12 | Advanced data wrangling - tidyverse I | 
 11 | Oct 14 | Advanced data wrangling - tidyverse II | 
  | Oct 19 | Amarel maintenance | 
 12 | Oct 21 | Data visualization - ggplot2 | 
-13 | Oct 26 | Quiz 02 and recap | 
+13 | Oct 26 | Quiz 03 and recap | 
 14 | Oct 28 | Introduction to bioconductor - Rle and IRanges | 
 15 | Nov 2 | Working with genome annotations and sequences - GRanges + Biostrings | 
 16 | Nov 4 | Working with genome sequences - Biostrings  | 
-17 | Nov 9 | Quiz 03 and recap | 
+17 | Nov 9 | Quiz 04 and recap | 
 18 | Nov 11 | Statistics | 
  | Nov 16 | Amarel maintenance | 
 19 | Nov 18 | Basics of RNA-seq | 
