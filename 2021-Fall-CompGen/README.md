@@ -69,9 +69,9 @@ Class | Date | Topic | Learning Materials
  | Sep 21 | Amarel maintenance | 
 5 | Sep 23 | Data frames | [In-class](Lab-05/Lab-05.Rmd) <br> [Homework](Lab-05/Lab-05_homework.Rmd)
 6 | Sep 28 | Data frames and Conditional statements | [In-class](Lab-06/Lab-06.Rmd) 
-7 | Sep 30 | Loops | [In-class](Lab-07/Lab-07.Rmd) 
-8 | Oct 5 | Lists and strings | 
-9 | Oct 7 | Quiz 02 | 
+7 | Sep 30 | Loops | [In-class](Lab-07/Lab-07.Rmd) <br> [Homework](Lab-05/Lab-05_homework.Rmd)
+8 | Oct 5 | Loops, functions, and lists | [In-class](Lab-08/Lab-08.Rmd) 
+9 | Oct 7 | Quiz 02 and strings | 
 10 | Oct 12 | Advanced data wrangling - tidyverse I | 
 11 | Oct 14 | Advanced data wrangling - tidyverse II | 
  | Oct 19 | Amarel maintenance | 

@@ -1,0 +1,42 @@
+---
+title: "Homework from Lab-07"
+output: 
+  html_document:
+    df_print: paged
+author: "my name here"
+date: "`r Sys.time()`"
+---
+
+<style type="text/css">
+.main-container {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+```{r echo = FALSE}
+######################################################################
+##################### FOLLOW THESE DIRECTIONS ########################
+### 1. Don't delete this code chunk, it won't appear in the output ###
+### 2. Put your name in the author field above                     ###
+### 3. Write the code for all questions in this R Notebook         ###
+### 4. ALWAYS comment your code.                                   ###
+### 5. Press the knit button when you're done, your code must      ###
+###    run with no errors in order for this to work. If your       ###
+###    code has errors, comment them out                           ###
+######################################################################
+######################################################################
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, fig.align = "center", tidy = FALSE, max.print = 20)
+```
+
+---
+
+Due date: Tuesday, Oct 05, 1:00 pm EST
+
+1. Write a `for` loop to calculate the length of a vector (you cannot use the function `length` anywhere). (2 pts)
+2. Write a `for` loop to reverse the order in a vector. For example, if you start with (1,2,3,4,5) it should return (5,4,3,2,1). (3 pts)
+3. Write a nested `for` loop to calculate sums of rows of a matrix. This is equivalent to `rowsums`. You cannot use `sum` function. (5 pts)
+
+Bonus pts
+1. Write a nested `for` loop to return the first 10 numbers of the Fibonacci series. (3 pts)
