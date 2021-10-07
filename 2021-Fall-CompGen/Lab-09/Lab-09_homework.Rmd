@@ -1,0 +1,46 @@
+---
+title: "Homework from Lab-09"
+output: 
+  html_document:
+    df_print: paged
+author: "my name here"
+date: "`r Sys.time()`"
+---
+
+<style type="text/css">
+.main-container {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+```{r echo = FALSE}
+######################################################################
+##################### FOLLOW THESE DIRECTIONS ########################
+### 1. Don't delete this code chunk, it won't appear in the output ###
+### 2. Put your name in the author field above                     ###
+### 3. Write the code for all questions in this R Notebook         ###
+### 4. ALWAYS comment your code.                                   ###
+### 5. Press the knit button when you're done, your code must      ###
+###    run with no errors in order for this to work. If your       ###
+###    code has errors, comment them out                           ###
+######################################################################
+######################################################################
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, fig.align = "center", tidy = FALSE, max.print = 20)
+```
+
+---
+
+Due date: Tuesday, Oct 12, 1:00 pm EST
+
+```{r}
+char_vec <- c("hello-1", "this-2", "is-3-1", "a-4-1", "char-5", "vector-6")
+```
+
+
+1. Extract the first three letters from each element of the character vector above. (2 pts)
+2. Extract the last three letters from each element of the character vector above. (3 pts)
+3. How would you create a *vector* of the following elements
+  *A1, A2, A3, B1, B2, B3, C1, C2, C3, D1, D2, D3*? (2 pts)
+4. How would you create the following *element* "A1+A2+A3+B1+B2+B3+C1+C2+C3+D1+D2+D3"? (3 pts)
