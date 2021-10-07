@@ -1,0 +1,32 @@
+---
+title: "Lab 09 - Lists and strings"
+author: "Premal Shah"
+date: "Oct 07, 2021"
+output: 
+  html_notebook:
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+---
+
+## Exercise 9.1
+1. Create a list with the following elements - numeric vector, matrix, data frame.
+2. Add a character vector to the above list without recreating the entire list.
+3. Create a list of two lists. How would you access elements in this data structure?
+
+
+## Strings
+
+Functions to work with strings
+ - `nchar`
+ - `substr`
+ - `strsplit`
+ - `paste` 
+
+## Exercise 9.2
+
+1. Extract the first three letters from each element of the character vector above.
+2. Extract the last three letters from each element of the character vector above.
+3. How would you create a *vector* of the following elements
+  *A1, A2, A3, B1, B2, B3, C1, C2, C3, D1, D2, D3*?
+4. How would you create the following *element* "A1+A2+A3+B1+B2+B3+C1+C2+C3+D1+D2+D3"?

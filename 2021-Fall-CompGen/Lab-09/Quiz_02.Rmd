@@ -1,0 +1,40 @@
+---
+title: "Quiz 02"
+author: ""
+date: "Oct 07, 2021"
+output: 
+  html_notebook:
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+---
+
+<style type="text/css">
+.main-container {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+```{r echo = FALSE}
+######################################################################
+##################### FOLLOW THESE DIRECTIONS ########################
+### 1. Don't delete this code chunk, it won't appear in the output ###
+### 2. Put your name in the author field above                     ###
+### 3. Write the code for all questions in this R Notebook         ###
+### 4. ALWAYS comment your code.                                   ###
+### 5. Press the knit button when you're done, your code must      ###
+###    run with no errors in order for this to work. If your       ###
+###    code has errors, comment them out                           ###
+######################################################################
+######################################################################
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, fig.align = "center", tidy = FALSE, max.print = 20)
+```
+
+Read in the US vaccination data 
+
+1. Using a `for` loop, calculate the ratio of `people_fully_vaccinated_per_hundred` over `total_vaccinations_per_hundred` for New Jersey. (2 pts)
+2. Write a nested `for` loop to calculate the average `daily_vaccinations_per_million` for each state. Which state has the highest average? (3 pts)
+3. I have a bag that contains 1 red ball, 5 green balls, and 44 yellow balls. Write a code to keep drawing balls from this bag till you see either a red or a green ball. (3 pts)
+4. Write your own function that returns the smallest and largest values in a vector of numbers. (2 pts)
