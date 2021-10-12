@@ -1,0 +1,191 @@
+---
+title: "Lab-10 Introduction to tidyverse"
+author: "Premal Shah"
+date: "Oct 06, 2020"
+output: 
+  html_notebook:
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+---
+
+**Remember to check the cheat sheets! Go to Help > Cheat sheets > Data transformation with dplyr**
+
+## Load packages
+
+```{r}
+
+```
+
+## Read in covid data
+
+`tidyverse` functions generally use `_` instead of `.` in the name.
+```{r}
+
+```
+
+Tidyverse functions work best with **tidy data**, that is, each row is an observation and each column is a variable. Each row tells you everything you could know about a single data point, in our case, a date for a given location. Most data is not tidy and requires reshaping. Data produced by machines is more likely to be tidy than if produced by humans.  
+
+The below data is not tidy, there is a single row which contains 3 different observations of 3 different days for a single state.
+```{r}
+data.frame(
+  location = c("Alabama"),
+  day1=0,
+  day2=5,
+  day3=27
+)
+```
+
+## Tibbles
+
+`tibbles` and `data.frames` share similar structures but have some differences under the hood that make `tibbles` perform better on larger datasets. Tidyverse functions work with both object classes.
+```{r}
+
+```
+
+Rarely, there are functional differences that may or may not lead to incompatibilities. For example, indexing a `tibble` using a column name results in a 1 column `tibble`, whereas doing the same on a `data.frame` results in a `vector`.
+```{r}
+
+```
+
+In general, we use the words `tibble` and `data frame` interchangeably.
+
+## Pipes
+
+`tidyverse` has it's own version of the `|>` operator, `%>%`, these are functionally equivalent in most cases but behave differently under the hood. The `tidyverse` pipe preceded the `base` R pipe. A difference is as follows, this works
+```{r}
+
+```
+
+This will not
+```{r eval = FALSE}
+
+```
+
+The `.` represents the output from the left hand side of a pipe, this notation is not true for the `base` R pipe. The dot can be omitted and is generally taken as the first argument in the next function. That is, the following are equivalent.
+```{r}
+
+```
+
+## Verbs
+
+Tidyverse has functions that make managing data in R easier.
+
+### `filter`
+
+The `filter` function allows us to pick rows of data meeting certain criteria. For example, find all rows for New Jersey:
+```{r}
+
+```
+
+Notice that you **do not** have to quote column names. This is true so long as they do not contain special characters like spaces/symbols.
+
+Compound criteria also work, find all NJ rows where `total_vaccnations` is more than 300,000. Notice the base R method does not ignore NA, but the tidyverse methods do.
+```{r}
+
+```
+
+### `arrange`
+
+`arrange` reorders a data frame based on some criteria
+```{r}
+
+```
+
+### `pull`
+
+`pull` takes a column as a vector, this is somewhat analogous to using the `$` to get a column as a vector
+```{r}
+
+```
+
+## Function chains
+
+Pipes allow us to chain functions. What are the top 10 dates for NJ with the highest `people_fully_vaccinated_per_hundred`?
+```{r}
+
+```
+
+Unsurprisingly, the proportion of people vaccinated increases each day.
+
+## Exercise 10.1
+
+Use tidyverse functions to answer the following questions
+
+1. Use only the `filter` function to answer the following question. Create a variable called `co_df` that is a data frame that only has data from Colorado in it. Prove that it worked, show that the location column only contains "Colorado".
+```{r}
+
+```
+
+2. Create a variable called `co_df_sorted` that is the Colorado only data frame sorted in decreasing order of the `daily_vaccinations` column.
+```{r}
+
+```
+
+3. Create a variable called `top_5_dates` that is a vector of the top 5 days in Colorado with the highest number of `daily_vaccinations`.
+```{r}
+
+```
+
+4. Starting with `covid_tbl` and using a single chain of commands, answer question number 3, assign the result to `top_5_dates_chain`
+```{r}
+
+```
+
+## More verbs
+
+### `select`
+
+`select` allows us pick certain columns from a data frame.
+```{r}
+
+```
+
+You can also remove columns
+```{r}
+
+```
+
+You can reorder columns, though the order of the columns doesn't matter except for visual inspection purposes. 
+```{r}
+
+```
+
+You can select based on index
+```{r}
+
+```
+
+### `mutate`
+
+`mutate` allows us to add columns to a data frame, they appear at the end of the dataset.
+```{r}
+
+```
+
+You can add multiple columns at once, they can even depend on each other so long as you do them in order.
+```{r}
+
+```
+
+## Exercise 10.2
+
+1. Create a new data frame called `covid_diff` that a has a new column called `diff` that is the difference between `people_vaccinated` and `people_fully_vaccinated`.
+```{r}
+
+```
+
+2. From `covid_diff`, create a new data frame that only contains the `date`, `location`, and `diff` columns, call this new data frame `small_df`.
+```{r}
+
+```
+
+3. What location has the smallest value in the diff column? Assign this to `small_loc`
+```{r}
+
+```
+
+4. Starting from `covid_tbl` and using a single chain of commands, answer question 3, assign the result to `small_loc_chain`
+```{r}
+
+```
