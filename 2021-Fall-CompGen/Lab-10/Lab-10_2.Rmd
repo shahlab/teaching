@@ -1,0 +1,139 @@
+---
+title: "Lab-10_2 Introduction to tidyverse II"
+author: "Premal Shah"
+date: "Oct 08, 2020"
+output: 
+  html_notebook:
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+---
+
+**Remember to check the cheat sheets! Go to Help > Cheat sheets > Data transformation with dplyr**
+
+Load the package and dataset.
+```{r}
+
+```
+
+## Verbs
+
+Tidyverse lets us easily analyze large sets of data and compute summary statistics. We already know the `summary` function can gives us summary stats but what if we wanted summary stat per location, date, or something else?
+```{r}
+
+```
+
+### `group_by` and `summarise`
+
+`group_by` and `summarise` (also `summarize`) are generally used together and allow us quickly perform operations based on subsets of data. Example: find the mean and variance of `daily_vaccinations`
+```{r}
+
+```
+
+`summarise` is considerably more powerful when used with `group_by`. Example: find the mean and variance for  `daily_vaccinations` for each location. With base R, we had to do this
+```{r}
+
+```
+
+But with tidyverse, this is easy.
+```{r}
+
+```
+
+Internally, `group_by` performs operations for every unique combination of the grouping variables, in this case, each unique location. You could group by many variables if there were more, but this dataset has none. You should use `ungroup` when you're done with your groups. We could also check by date
+```{r}
+
+```
+
+`group_by` can also be used with other functions like `mutate`. This makes a group specific mean column and then finds the difference between a rows `daily_vaccinations` and the new mean column. Note the use of `ungroup`.
+```{r}
+
+```
+
+## Exercise 11.1
+
+1. Starting with `covid`, create a data frame called `state_min_max` that contains 3 columns, the location and the minimum and maximum of the `people_fully_vaccinated`, these new cols should be called `min_vax` and `max_vax`. Remove the "United States" from the data frame.
+```{r}
+
+```
+
+2. Which location has the largest difference between the min and max columns? Starting at `state_min_max` answer this question and assign the result to `biggest_gain`
+```{r}
+
+```
+
+3. What about the smallest difference? Assign this to `smallest_gain`
+```{r}
+
+```
+
+## Joins
+
+Data about the same thing can come from multiple files, consider this built in dataset about arrests made in each of the 50 US states.
+```{r}
+(arrests <- as_tibble(USArrests, rownames = "location"))
+```
+
+If we want to compare this data with our covid data, we can use join functions. There are many join functions
+```{r eval = FALSE}
+# join y to x, return all rows in x, matching on colname
+left_join(x, y, by = "colname")
+
+# join x to y, return all rows in y, matching on colname
+right_join(x, y, by = "colname")
+
+# return all rows in x and y, matching on colname
+full_join(x, y, by = "colname")
+
+# return all rows from x with a match in y
+semi_join(x, y)
+
+# return all rows from x without a match in y
+anti_join(x, y)
+```
+
+For example, we can join the `arrests` values to our `state_min_max`. This returns all 64 rows, meaning the non-US state territories will get NAs in the new columns where that location was not present in arrests.
+```{r}
+
+```
+
+See the difference right join makes, it only returns the 50 states.
+```{r}
+
+```
+
+## Exercise 11.2
+
+Given these hypothetical datasets about 26 genes, answer the following questions
+```{r}
+# run this chunk without altering its contents
+set.seed(5)
+
+df1 <- data.frame(
+  gene = paste("gene", letters),
+  expression = sample(1:1e6, 26)
+)
+
+df2 <- data.frame(
+  gene = paste("gene", letters[sample(1:26, 14)]),
+  disease = rep(c(TRUE, FALSE), 7)
+)
+
+df1 
+df2
+```
+
+1. Using only the join functions, create a data frame called `disease_df` that has columns of `gene`, `expression`, and `disease` and contains all 26 genes.
+```{r}
+
+```
+
+2. Using only the join functions, create a data frame that has the same 3 columns, but only shows expression values for genes with non-missing values in the disease column, call it `disease_only_df`.
+```{r}
+
+```
+
+3. Create a new data frame called `gene_stats` which shows the mean and variance separately for all genes with a given disease status, including those with a disease status of NA. The resulting data frame should have 3 columns, `disease`, `mean_exp`, `var_exp`. Hint: look at `disease_df`.
+```{r}
+
+```
