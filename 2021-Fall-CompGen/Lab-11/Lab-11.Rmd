@@ -1,0 +1,214 @@
+---
+title: "Lab-11 Introduction to tidyverse II"
+author: "John Favate"
+date: "Oct 14, 2021"
+output: 
+  html_notebook:
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+---
+
+**Remember to check the cheat sheets! Go to Help > Cheat sheets > Data transformation with dplyr**
+
+## Exercise 11.1
+
+```{r}
+library(tidyverse)
+```
+
+1. Starting with the original data frame, create a data frame called `state_min_max` that contains 3 columns, the location and the minimum and maximum of the `people_fully_vaccinated`, these new cols should be called `min_vax` and `max_vax`. Remove the "United States" from the data frame.
+```{r}
+
+```
+
+2. Starting at `state_min_max`, make a new column that shows if a states `min_vax` is less than or greater than the median of all states `min_vax`. Do the same for `max_vax`. Hint: there is a `median` function.
+```{r}
+
+```
+
+3. Which locations have both their `min_vax` and `max_vax` greater than the respective medians? Your answer should be a data frame that shows at a minimum, the location, the min and max vax, and the difference between the min and max vax columns and their respective medians. 
+```{r}
+
+```
+
+## Joins
+
+Data about the same thing can come from multiple files, consider this built in dataset about arrests made in each of the 50 US states.
+```{r}
+(arrests <- as_tibble(USArrests, rownames = "location"))
+```
+
+If we want to compare this data with our covid data, we can use join functions. There are many join functions
+```{r eval = FALSE}
+# join y to x, return all rows in x, matching on colname
+left_join(x, y, by = "colname")
+
+# join x to y, return all rows in y, matching on colname
+right_join(x, y, by = "colname")
+
+# return all rows in x and y, matching on colname
+full_join(x, y, by = "colname")
+
+# return all rows from x with a match in y
+semi_join(x, y)
+
+# return all rows from x without a match in y
+anti_join(x, y)
+```
+
+For example, we can join the `arrests` values to our `state_min_max`. This returns all 64 rows, meaning the non-US state territories will get NAs in the new columns where that location was not present in arrests.
+```{r}
+
+```
+
+See the difference right join makes, it only returns the 50 states.
+```{r}
+
+```
+
+### pivots
+
+Tidy data is generally best for the computer but sometimes data needs to be in other arrangements, `pivot_wider` and `pivot_longer` can help us reshape data frames. Consider this example
+```{r}
+(small_df <- covid %>% 
+  select(date, location, total_vaccinations))
+```
+
+`pivot_wider` makes a data frame wider, i.e. having more columns than it currently does
+```{r}
+
+```
+
+`pivot_longer` undoes that action and is generally used when presented with data that has what could be a variable as column names. The date is information about a data point, hence it could be in a column called date.
+```{r}
+
+```
+
+## Scoped functions
+
+The point of programming languages is to make the computer do the work for us, scoped functions help us with that. What if we want to select all columns of a certain class?
+```{r}
+# select all columns that contain numeric data
+
+
+# select all columns that contain character data
+
+```
+
+Scoped functions apply to filter too. Show rows that only contain complete cases, that is, no values are NA in any column.
+```{r}
+
+```
+
+They apply to mutate as well, log10 transform each numeric column.
+```{r}
+
+```
+
+You can pick columns that contain certain words
+```{r}
+# get date, location, and all cols that contain "per"
+
+
+# get all cols that start with "people"
+
+```
+
+## Exercise 11.2
+
+Given these hypothetical datasets about 26 genes, answer the following questions. Run this chunk without altering it. 
+```{r}
+set.seed(5)
+
+exp.vec <- sample(1:1e6, 26)
+
+exp.vec2 <- sample(1:100, 26)
+
+exp.vec3 <- sample(1e3:1e4, 26)
+
+genes <- paste("gene", letters)
+
+df1 <- data.frame(sample=c("a", "b", "c"))
+
+for (i in 1:length(exp.vec)){
+  df1 <- df1 %>% 
+    mutate("gene_{letters[i]}" := c(exp.vec[i], exp.vec2[i], exp.vec3[i]))
+}
+
+df2 <- data.frame(
+  gene = paste0("gene_", letters[sample(1:26, 14)]),
+  disease = rep(c(TRUE, FALSE), 7)
+)
+
+df1
+df2
+```
+
+1. Join `df1` and `df2` to s single data frame that is tidy and contains all data from both data frames. Hint: scoped selection works with `pivot` functions. Call the new data frame `disease_df`
+```{r}
+
+```
+
+2. Using only the join functions, find out which genes in `df1` do not have matched data in `df2`, the best answer returns the names of those genes.
+```{r}
+
+```
+
+## `ifelse` and `case_when`
+
+We've seen `ifelse` statements before, they help us make decisions, they can be used in mutate. Example: the most recent date is 2021-09-22 we define red zones as states with less than 2 million `people_fully_vaccinated`, what states are those?
+```{r}
+
+```
+
+`case_when` is particularly useful inside mutate when you want to create a new variable that relies on a complex combination of existing variables - straight from the help file, see ?case_when. Example: The most recent date is 2021-09-22, we consider any location with fewer than 47 `people_fully_vaccinated_per_hundred` or less than 2 million `people_fully_vaccinated` as red zones where you don't want to go. What states are those?
+```{r}
+
+```
+
+Note the use of TRUE, which is saying if it doesn't meet any of the previous conditions but has a value, make it green.
+
+## Exercise 11.3
+
+1. Here are vectors of all US states, east coast states, and west coast states. Classify the locations into 4 categories, east coast, west coast, a US state but not on a coast, or somewhere else and make a separate data frame for each of them. 
+```{r}
+east_coast <- c("Connecticut", "Delaware", "Florida", "Georgia", "Maine", "New Hampshire", "Massachusetts", "Rhode Island", "New York State", "New Jersey", "Maryland", "Virginia", "North Carolina", "South Carolina")
+
+west_coast <- c("Washington", "California", "Oregon")
+
+all_states <- c(unique(arrests$location), "New York State")
+```
+
+```{r}
+
+```
+
+## `separate` and `split`
+
+Making each of those data frames is a pain, `split` can help us with that. `split` makes a list of n number of data frames based on n number of unique categories asked for
+```{r}
+
+```
+
+You can split on multiple columns too, **DON"T PREVIEW THIS** you'll crash your browser.
+```{r eval = FALSE}
+
+```
+
+You can use `lapply` on lists of data frames to perform operations
+```{r}
+
+```
+
+`separate` allows us to separate a single column into multiple columns based on some criterion.
+```{r}
+
+```
+
+### Exercise 11.4
+
+1. For 2021, make a single list that contains one data frame per month and location. **DON'T PREVIEW THIS (you may crash your browser)**. Assign your result to a variable and don't look at it. Instead, prove that your answer is correct in some other way. Hint: there are 50 states but only 9 months because the data was taken in September.
+```{r}
+
+```
