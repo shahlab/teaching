@@ -73,10 +73,10 @@ Class | Date | Topic | Learning Materials
 8 | Oct 5 | Loops, functions, and lists | [In-class](Lab-08/Lab-08.Rmd) 
 9 | Oct 7 | Quiz 02 and strings | [In-class](Lab-09/Lab-09.Rmd) <br> [Quiz](Lab-09/Quiz_02.Rmd) <br> [Homework](Lab-09/Lab-09_homework.Rmd)
 10 | Oct 12 | Advanced data wrangling - tidyverse I | [In-class-1](Lab-10/Lab-10.Rmd) <br> [In-class-2](Lab-10/Lab-10_2.Rmd)
-11 | Oct 14 | Advanced data wrangling - tidyverse II | [In-class-1](Lab-11/Lab-11.Rmd)  
+11 | Oct 14 | Advanced data wrangling - tidyverse II | [In-class](Lab-11/Lab-11.Rmd)  
  | Oct 19 | Amarel maintenance | 
-12 | Oct 21 | Data visualization - ggplot2 | [In-class-1](Lab-12/Lab-12.Rmd) 
-13 | Oct 26 | Quiz 03 and recap | 
+12 | Oct 21 | Data visualization - ggplot2 | [In-class](Lab-12/Lab-12.Rmd) 
+13 | Oct 26 | Quiz 03 and recap | [Quiz](Lab-13/Quiz-03.Rmd)
 14 | Oct 28 | Introduction to bioconductor - Rle and IRanges | 
 15 | Nov 2 | Working with genome annotations and sequences - GRanges + Biostrings | 
 16 | Nov 4 | Working with genome sequences - Biostrings  | 
