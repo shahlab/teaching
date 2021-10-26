@@ -1,0 +1,82 @@
+---
+title: "Quiz 03"
+author: ""
+date: "Oct 26, 2021"
+output: 
+  html_notebook:
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+---
+
+<style type="text/css">
+.main-container {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+```{r echo = FALSE}
+######################################################################
+##################### FOLLOW THESE DIRECTIONS ########################
+### 1. Don't delete this code chunk, it won't appear in the output ###
+### 2. Put your name in the author field above                     ###
+### 3. Write the code for all questions in this R Notebook         ###
+### 4. ALWAYS comment your code.                                   ###
+### 5. Press the knit button when you're done, your code must      ###
+###    run with no errors in order for this to work. If your       ###
+###    code has errors, comment them out                           ###
+######################################################################
+######################################################################
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, fig.align = "center", tidy = FALSE, max.print = 20)
+```
+
+## Use the plot_data from Lab-12 to answer questions 1 and 2.
+
+1. Ribosome-density of a gene is a ratio of its RPF value to it mRNA value. Calculate ribosome-densities of all genes and identify the chromosome that has the highest average ribosome-density. (2 pts)
+
+2. Make a boxplot of ribosome-densities of genes where x-axis has chromosome ids. Appropriately transform the axis. (2 pts)
+
+## Using the quiz_data.csv file to answer questions 3 and 4.
+
+3. Create a table with the maximum `daily_vaccinations_per_million` per state. Then using `case_when` classify states into 'low rate' (< 10000), 'moderate rate' (>= 10000 and < 15000), and 'high rate' (>= 15000). (3 pts)
+
+(Bonus:) Identify the group which has most number of states. (1 pt)
+
+4. Find out the month in which the `total_vaccinations_per_hundred` crossed 80 for the first time in each state. (3 pts)
+
+(Bonus:) Which month had the most number of states crossing this threshold? (1 pt)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
