@@ -1,0 +1,139 @@
+---
+title: "Lab-15 Working with genome annotations and sequences - GRanges + Biostrings"
+author: "Premal Shah"
+date: "Nov 2, 2021"
+output: 
+  html_notebook:
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+---
+
+```{r, eval = FALSE}
+.libPaths('/projects/community/py-image/2019.10A/bd387/anaconda3-intel17/envs/shahclass/lib/R/library')
+```
+
+
+## Genomic Ranges
+```{r}
+# Load package
+```
+
+### Structure of genomic ranges
+```{r}
+# Creating an IRanges object
+
+
+# Creating a GRanges object
+
+
+# Structure of a GRanges object
+```
+
+```{r}
+# Slot names are also individual functions
+seqnames()
+strand()
+ranges()
+seqinfo()
+```
+
+### Sequence information of GRanges
+```{r}
+# Adding sequence/genome information to a GRanges object using Seqinfo
+
+```
+
+
+### Genomic ranges with metadata
+```{r}
+# data.frame S3 object
+# DataFrame S4 object - elementMetadata
+
+```
+
+```{r}
+# Extracting metadata from GRanges
+
+# Converting elementMetadata into an S3 object (tibble)
+
+# Converting S3 object into elementMetadata (S4 object)
+
+```
+
+
+## Yeast dataset
+http://sgd-archive.yeastgenome.org/sequence/S288C_reference/genome_releases/
+```{r}
+# Load in yeast genome annotation file
+
+```
+
+
+## Exercise 15.1
+1. How many chromosomes are there in the yeast genome?
+2. How many genes encode tRNAs?
+
+
+## Annotation Hub
+```{r}
+# Load package
+
+# Download the Annotation Hub database
+
+# Display the database
+```
+
+```{r}
+# Extract annotation from Annotation Hub
+```
+
+
+## Biostrings
+### Strings, StringSet, and alphabet
+
+```{r}
+# Base strings (recap)
+```
+
+
+```{r}
+# Load package
+```
+
+```{r}
+# Create simple DNA, RNA, and AA strings
+
+# Alphabet of strings
+```
+
+```{r}
+# Create StringSets and access individual strings
+
+```
+
+
+### Working with FASTA file
+```{r}
+# Read in FASTA file
+```
+
+
+```{r}
+# Extract sequences
+
+# Extract sequence corresponding to a GRanges object
+
+```
+
+## Working with Biostrings
+```{r}
+width() # Get the lengths of each DNAString in a DNAStringSet
+length()
+
+sort() # Sort the DNAStringSet by sequence of DNAStrings
+
+reverseComplement() # Find the DNA sequence of the opposite strand
+```
+
+
