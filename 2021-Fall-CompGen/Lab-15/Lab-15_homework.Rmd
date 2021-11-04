@@ -1,0 +1,44 @@
+---
+title: "Homework from Lab-15"
+output: 
+  html_document:
+    df_print: paged
+author: "my name here"
+date: "`r Sys.time()`"
+---
+
+<style type="text/css">
+.main-container {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+```{r echo = FALSE}
+######################################################################
+##################### FOLLOW THESE DIRECTIONS ########################
+### 1. Don't delete this code chunk, it won't appear in the output ###
+### 2. Put your name in the author field above                     ###
+### 3. Write the code for all questions in this R Notebook         ###
+### 4. ALWAYS comment your code.                                   ###
+### 5. Press the knit button when you're done, your code must      ###
+###    run with no errors in order for this to work. If your       ###
+###    code has errors, comment them out                           ###
+######################################################################
+######################################################################
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, fig.align = "center", tidy = FALSE, max.print = 20)
+```
+
+---
+Due date: Tuesday, Nov 04, 1:00 pm EST
+
+Read in saccharomyces_cerevisiae.gff and saccharomyces_cerevisiae.fasta file and answer the following questions.
+
+1. There are 6600 protein-coding genes in the yeast genome. How many of these genes are on the positive strand versus negative strand? (2 pts)
+2. What fraction of these genes are on the mitochondria? (2 pts)
+3. Which chromosome has the most number of tRNAs? (2 pts)
+4. Find the longest gene on chromosome II and get it's sequence. (4 pts)
+
+Bonus question:
+1. How many of the 6600 protein-coding genes have introns?
