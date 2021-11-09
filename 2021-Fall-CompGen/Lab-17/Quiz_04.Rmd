@@ -1,0 +1,53 @@
+---
+title: "Quiz 04"
+author: ""
+date: "Nov 09, 2021"
+output: 
+  html_notebook:
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+---
+
+<style type="text/css">
+.main-container {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+```{r echo = FALSE}
+######################################################################
+##################### FOLLOW THESE DIRECTIONS ########################
+### 1. Don't delete this code chunk, it won't appear in the output ###
+### 2. Put your name in the author field above                     ###
+### 3. Write the code for all questions in this R Notebook         ###
+### 4. ALWAYS comment your code.                                   ###
+### 5. Press the knit button when you're done, your code must      ###
+###    run with no errors in order for this to work. If your       ###
+###    code has errors, comment them out                           ###
+######################################################################
+######################################################################
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, fig.align = "center", tidy = FALSE, max.print = 20)
+```
+
+- Read in the saccharomyces_cerevisiae.fasta and saccharomyces_cerevisiae.gff to answer the questions 
+```{r}
+.libPaths('/projects/community/py-image/2019.10A/bd387/anaconda3-intel17/envs/shahclass/lib/R/library')
+library(rtracklayer)
+library(Biostrings)
+library(tidyverse)
+
+yeast_gff <- readGFFAsGRanges("saccharomyces_cerevisiae.gff")
+yeast_fasta <- readDNAStringSet("saccharomyces_cerevisiae.fasta")
+```
+
+1. Using the genome annotation file, create a density plot of gene lengths of all `tRNA_gene`. (2 pts)
+2. Create a DNAStringSet of all `tRNA_gene` sequences of length 72 bp. Be aware of strand orientation. (3 pts)
+
+Use the code from Lab-16 to create a DNAStringSet of CDS of all intron-less genes in yeast.
+
+3. How many genes have stretches of 4 guanines (GGGG), and which gene has the most number of these stretches? Count overlapping stretches as well. For instance GGGGG = 2 GGGG stretches (3 pts)
+4. Starting with CDS of all intron-less genes in yeast, make a scatterplot of the ratio of Lys/Arg amino acids on the y-axis and CDS length of genes on the x-axis. Appropriately transform the axes. (2 pts)
+

@@ -1,0 +1,48 @@
+---
+title: "Lab-17 Working with genome sequences - Biostrings"
+author: "Premal Shah"
+date: "Nov 09, 2021"
+output: 
+  html_notebook:
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+---
+
+## Load packages
+```{r}
+.libPaths('/projects/community/py-image/2019.10A/bd387/anaconda3-intel17/envs/shahclass/lib/R/library')
+library(Biostrings)
+library(rtracklayer)
+library(tidyverse)
+```
+
+## Subsetting Biostrings
+```{r, eval=FALSE}
+subseq(DNAString/DNAStringSet, start = , end = , width = )
+```
+
+## Pattern Matching
+- Count the number of times a pattern is found in Biostrings
+```{r, eval=FALSE}
+# For single DNAString/AAString
+countPattern(PATTERN, SUBJECT, MISMATCH ARGS)
+
+# For DNAStringSet/AAStringSet
+vcountPattern(PATTERN, SUBJECT, MISMATCH ARGS)
+```
+
+## Pattern Matching
+- Find locations of patterns in Biostrings
+```{r, eval=FALSE}
+# For single DNAString/AAString
+matchPattern(PATTERN, SUBJECT, MISMATCH ARGS)
+
+# For DNAStringSet/AAStringSet
+vmatchPattern(PATTERN, SUBJECT, MISMATCH ARGS)
+```
+
+## Exercise 17.1
+1. Create forward and reverse primers that are 30bp long for each CDS in the yeast genome. 
+2. Which CDS in the yeast genome have long stretches (15 bp) of same nucleotide? Which bases are repeated more often? 
+3. Which amino acids are most abundant in the C-terminal ends (last 5 residues) of yeast proteins?

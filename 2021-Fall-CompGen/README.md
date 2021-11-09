@@ -80,7 +80,7 @@ Class | Date | Topic | Learning Materials
 14 | Oct 28 | Introduction to bioconductor - Rle and IRanges | [In-class](Lab-14/Lab-14.Rmd) 
 15 | Nov 2 | Working with genome annotations and sequences - GRanges + Biostrings | [In-class](Lab-15/Lab-15.Rmd) <br> [Homework](Lab-15/Lab-15_homework.Rmd)
 16 | Nov 4 | Working with genome sequences - Biostrings  | [In-class](Lab-16/Lab-16.Rmd) 
-17 | Nov 9 | Quiz 04 and recap | 
+17 | Nov 9 | Quiz 04 and recap | [Quiz](Lab-17/Quiz-04.Rmd) <br> [In-class](Lab-17/Lab-17.Rmd)
 18 | Nov 11 | Statistics | 
  | Nov 16 | Amarel maintenance | 
 19 | Nov 18 | Basics of RNA-seq | 
