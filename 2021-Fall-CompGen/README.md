@@ -81,13 +81,13 @@ Class | Date | Topic | Learning Materials
 15 | Nov 2 | Working with genome annotations and sequences - GRanges + Biostrings | [In-class](Lab-15/Lab-15.Rmd) <br> [Homework](Lab-15/Lab-15_homework.Rmd)
 16 | Nov 4 | Working with genome sequences - Biostrings  | [In-class](Lab-16/Lab-16.Rmd) 
 17 | Nov 9 | Quiz 04 and recap | [Quiz](Lab-17/Quiz-04.Rmd) <br> [In-class](Lab-17/Lab-17.Rmd)
-18 | Nov 11 | Statistics | 
+18 | Nov 11 | Statistics | DataCamp modules 
  | Nov 16 | Amarel maintenance | 
-19 | Nov 18 | Basics of RNA-seq | 
-20 | Nov 23 | Working with RNA-seq data I | 
-21 | Nov 30 | Working with RNA-seq data II | 
-22 | Dec 2 | Differential gene expression analyses | 
-23 | Dec 7 | Functional analyses of differentially expressed genes | 
+19 | Nov 18 | Basics of RNA-seq | [In-class](Lab-RNAseq/Lab-RNAseq.Rmd)
+20 | Nov 23 | Working with RNA-seq data | ^ 
+21 | Nov 30 | Differential gene expression analyses | ^
+22 | Dec 2 | Functional analyses of differentially expressed genes | ^
+23 | Dec 7 | Shiny | 
 24 | Dec 9 | Group project discussions |
 
 ## Website and Communication
