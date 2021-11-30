@@ -84,9 +84,9 @@ Class | Date | Topic | Learning Materials
 18 | Nov 11 | Statistics | DataCamp modules 
  | Nov 16 | Amarel maintenance | 
 19 | Nov 18 | Basics of RNA-seq | [In-class](Lab-RNAseq/Lab-RNAseq.Rmd)
-20 | Nov 23 | Working with RNA-seq data | ^ 
-21 | Nov 30 | Differential gene expression analyses | ^
-22 | Dec 2 | Functional analyses of differentially expressed genes | ^
+20 | Nov 23 | Working with RNA-seq data | ^^^
+21 | Nov 30 | Differential gene expression analyses | ^^^
+22 | Dec 2 | Functional analyses of differentially expressed genes | ^^^
 23 | Dec 7 | Shiny | 
 24 | Dec 9 | Group project discussions |
 
