@@ -1,0 +1,16 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+## Remove sequencing adapters
+[Illumina adapaters](https://support-docs.illumina.com/SHARE/AdapterSeq/illumina-adapter-sequences.pdf)
+
+TruSeq adapter - AGATCGGAAGAGCACACGTCTGAACTCCAGTCA
+
+```{bash eval=F}
+mkdir /scratch/prs114/original
+mkdir /scratch/prs114/trimmed
+mv ~/data/* /scratch/prs114/original
+```
+

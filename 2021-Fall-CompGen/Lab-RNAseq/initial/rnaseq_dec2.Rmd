@@ -1,0 +1,104 @@
+---
+title: "Functional analysis of differentially expressed genes"
+output: 
+  html_document:
+    df_print: paged
+author: "John Favate"
+date: "`r Sys.time()`"
+---
+
+<style type="text/css">
+.main-container {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+```{r echo = FALSE}
+######################################################################
+##################### FOLLOW THESE DIRECTIONS ########################
+### 1. Don't delete this code chunk, it won't appear in the output ###
+### 2. Put your name in the author field above                     ###
+### 3. Write the code for all questions in this R Notebook         ###
+### 4. ALWAYS comment your code.                                   ###
+### 5. Press the knit button when you're done, your code must      ###
+###    run with no errors in order for this to work. If your       ###
+###    code has errors, comment them out                           ###
+######################################################################
+######################################################################
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, fig.align = "center", tidy = FALSE, max.print = 20)
+```
+
+---
+
+### Install some packages
+```{r}
+BiocManager::install("clusterProfiler")
+BiocManager::install("org.Sc.sgd.db")
+```
+
+
+### What categories of genes are altered?
+
+The gene ontology consortium http://geneontology.org/ has a way for us to analyze which functional categories our genes belong to. The GO website directs you to http://pantherdb.org/, which is where we can upload our results. 
+```{r}
+library(tidyverse)
+library(clusterProfiler)
+library(org.Sc.sgd.db)
+
+# load our data remember to change my netid jsf149 to yours
+```
+
+# Using the Gene Ontology consortium website 
+
+The GO website requests lists of gene identifiers and we'd like to consider up and downregulated genes separately. Ideally, we have files that contain lists of up and downregulated genes, we can generate these automatically. 
+```{r}
+
+```
+
+Finally, we want just the gene names from each. GO programs generally expect a particular "gene name". In this case we're lucky and it's what we have sans `_mRNA`
+```{r}
+
+```
+
+### Using clusterprofiler 
+
+The GO website is useful but doing more than a few samples will be cumbersome. Some R packages can help.
+
+
+Clusterprofiler has many methods of functional analysis, see https://bioconductor.org/packages/release/bioc/vignettes/clusterProfiler/inst/doc/clusterProfiler.html.  
+We will try one method, a KEGG (Kyoto encyclopedia of genes and genomes) overrepresentation test. This test simply requires a vector of gene names we think are important, namely those that are statistically significant and up/downregulated.
+```{r}
+
+```
+
+Unfortunately GO in clusterprofiler needs different gene names than what we have. We can convert them.
+```{r}
+
+```
+
+Run the GO test on each dataset
+```{r}
+
+```
+
+We can plot them with built in functions
+```{r}
+
+```
+
+Or extract the data and save it for ourselves
+```{r}
+
+```
+
+We can run other kinds of tests like gene set enrichment analysis (GSEA) that use information other than the names. GSEA in clusterprofiler takes an ordered vector where the elements are fold-changes sorted in decreasing order and the names are the names of the gene. Fortunately the names we have work with this. Create this vector. 
+```{r}
+
+```
+
+```{r}
+
+```
+

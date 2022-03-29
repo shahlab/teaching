@@ -1,0 +1,135 @@
+---
+title: "Differential expression"
+output: 
+  html_document:
+    df_print: paged
+author: "John Favate"
+date: "`r Sys.time()`"
+---
+
+<style type="text/css">
+.main-container {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+```{r echo = FALSE}
+######################################################################
+##################### FOLLOW THESE DIRECTIONS ########################
+### 1. Don't delete this code chunk, it won't appear in the output ###
+### 2. Put your name in the author field above                     ###
+### 3. Write the code for all questions in this R Notebook         ###
+### 4. ALWAYS comment your code.                                   ###
+### 5. Press the knit button when you're done, your code must      ###
+###    run with no errors in order for this to work. If your       ###
+###    code has errors, comment them out                           ###
+######################################################################
+######################################################################
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, fig.align = "center", tidy = FALSE, max.print = 20)
+```
+
+---
+
+### Read in the files
+
+```{r}
+library(tidyverse)
+library(DESeq2)
+```
+
+Find the file locations with `dir` and read them in all at once with `lapply`. You need to replace my netid `jsf149` with yours.
+```{r}
+
+```
+
+Use `bind_rows` to combine each file to a single data frame, generate a rounded counts column because many programs require integers. We also generate new TPMs from these rounded counts.
+```{r}
+
+```
+
+### Cursory inspection of the data
+
+How many reads per sample? Simply sum the reads in each sample. 
+```{r}
+
+```
+
+Read count distributions
+```{r}
+
+```
+
+TPM distributions
+```{r}
+
+```
+
+How many genes were not detected and have 0 counts? These are not visible in the above plots because of the log transformation of the x-axis.
+```{r}
+
+```
+
+### Differential expression
+
+DESeq requires this data structure
+
+| gene | mut 1 | mut 2 | mut 3 | wt 1 | wt 2 | wt 3 |
+|:----:|:-----:|:-----:|:-----:|:----:|:----:|:----:|
+|   a  |   24  |   37  |   19  |  30  |  26  |  31  |
+|   b  |   5   |   7   |   4   |  14  |  10  |   8  |
+|   c  |   78  |   90  |  100  |  148 |  155 |  133 |
+|   d  |  100  |  120  |   85  |  99  |  89  |  79  |
+
+But our data is not like the above. We must reshape our data to this shape, a matrix of counts with gene names as the rownames.
+```{r}
+
+```
+
+It also requires a data frame that specifies information about the samples, in our case, the genotype. These must be an ordered factor, **this step is very important**. The row order of this data frame must match the column order of the count matrix.
+```{r}
+
+```
+
+The ordering in this case is `wt` `mut`, meaning that when the comparison is made, it will display changes from wt to mut, a ratio of mut/wt. This is a stepwise process, more complete details can be found at https://bioconductor.org/packages/release/bioc/vignettes/DESeq2/inst/doc/DESeq2.html
+```{r}
+
+```
+
+How does shrinkage affect our results? The code in this block isn't as important as what the graphs show us. Shrinkage reduces large fold changes that arise from genes with very low counts. Genes with very low counts in both conditions are unreliable even if they appear to have large differences. 
+```{r fig.width = 9, fig.height = 5}
+
+```
+
+### Interpreting the DGE
+
+Read in the data, though it's already here if you ran the above. 
+```{r}
+
+```
+
+Make sure we ran DESeq correctly, find some significant genes and make sure the TPMs in each sample are correct. 
+```{r}
+
+```
+
+Volcano plot
+```{r}
+
+```
+
+We can improve this visualization by limiting the x and y axis and marking those points that exceed our limits. First, set some cutoffs.
+```{r}
+
+```
+
+Then, add new columns based on our cutoffs
+```{r}
+
+```
+
+Plot the changes.
+```{r fig.width = 6, fig.height = 4.5}
+
+```

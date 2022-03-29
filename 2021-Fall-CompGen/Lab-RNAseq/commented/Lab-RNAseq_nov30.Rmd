@@ -1,0 +1,260 @@
+---
+title: "Differential gene expression analysis"
+output: 
+  html_document:
+    df_print: paged
+author: "John Favate"
+date: "`r Sys.time()`"
+---
+
+<style type="text/css">
+.main-container {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+```{r echo = FALSE}
+######################################################################
+##################### FOLLOW THESE DIRECTIONS ########################
+### 1. Don't delete this code chunk, it won't appear in the output ###
+### 2. Put your name in the author field above                     ###
+### 3. Write the code for all questions in this R Notebook         ###
+### 4. ALWAYS comment your code.                                   ###
+### 5. Press the knit button when you're done, your code must      ###
+###    run with no errors in order for this to work. If your       ###
+###    code has errors, comment them out                           ###
+######################################################################
+######################################################################
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, fig.align = "center", tidy = FALSE, max.print = 20)
+```
+
+---
+
+### Read in the files
+
+```{r}
+library(tidyverse)
+library(DESeq2)
+```
+
+Find the file locations with `dir` and read them in all at once with `lapply`. You need to replace my netid `jsf149` with yours.
+```{r}
+file.locs <- dir("/home/jsf149/gen303/kallisto", recursive = TRUE, pattern = ".tsv", full.names = TRUE)
+
+names(file.locs) <- file.locs %>% 
+  str_remove("/home/jsf149/gen303/kallisto/") %>% 
+  str_remove("/abundance.tsv")
+
+file.list <- lapply(file.locs, read_tsv)
+```
+
+Use `bind_rows` to combine each file to a single data frame, generate a rounded counts column because many programs require integers. We also generate new TPMs from these rounded counts.
+```{r}
+all.data <- bind_rows(file.list, .id = "sample") %>% 
+  separate(sample, into = c("genotype", "replicate"), sep = "_", remove = FALSE) %>% 
+  group_by(sample) %>% 
+  mutate(rounded_counts = round(est_counts),
+         norm_counts = rounded_counts/eff_length,
+         new_tpm = 1e6*norm_counts/sum(norm_counts)) %>% 
+  ungroup()
+
+head(all.data)
+```
+
+### Cursory inspection of the data
+
+How many reads per sample? Simply sum the reads in each sample. 
+```{r}
+all.data %>% 
+  group_by(sample) %>% 
+  summarise(total_reds = sum(rounded_counts))
+```
+
+Read count distributions
+```{r}
+all.data %>% 
+  ggplot(., aes(rounded_counts))+
+  geom_histogram(bins = 100)+
+  facet_grid(genotype ~ replicate)+
+  scale_x_log10()
+```
+
+TPM distributions
+```{r}
+all.data %>% 
+  ggplot(., aes(new_tpm))+
+  geom_histogram(bins = 100)+
+  facet_grid(genotype ~ replicate)+
+  scale_x_log10()
+```
+
+How many genes were not detected and have 0 counts? These are not visible in the above plots because of the log transformation of the x-axis.
+```{r}
+all.data %>% 
+  mutate(zero_counts = rounded_counts == 0) %>% 
+  group_by(genotype, replicate, zero_counts) %>% 
+  tally() %>% 
+  ungroup()
+```
+
+### Differential expression
+
+DESeq requires this data structure
+
+| gene | mut 1 | mut 2 | mut 3 | wt 1 | wt 2 | wt 3 |
+|:----:|:-----:|:-----:|:-----:|:----:|:----:|:----:|
+|   a  |   24  |   37  |   19  |  30  |  26  |  31  |
+|   b  |   5   |   7   |   4   |  14  |  10  |   8  |
+|   c  |   78  |   90  |  100  |  148 |  155 |  133 |
+|   d  |  100  |  120  |   85  |  99  |  89  |  79  |
+
+But our data is not like the above. We must reshape our data to this shape, a matrix of counts with gene names as the rownames.
+```{r}
+count.mat <- all.data %>% 
+  select(sample, target_id, rounded_counts) %>% 
+  pivot_wider(names_from = sample, values_from = rounded_counts) %>% 
+  column_to_rownames("target_id") %>% 
+  as.matrix()
+
+head(count.mat)
+```
+
+It also requires a data frame that specifies information about the samples, in our case, the genotype. These must be an ordered factor, **this step is very important**. The row order of this data frame must match the column order of the count matrix.
+```{r}
+conditions.df <-
+  data.frame(condition = factor(c("mut", "mut", "mut", "wt", "wt", "wt"), levels = c("wt", "mut")))
+```
+
+The ordering in this case is `wt` `mut`, meaning that when the comparison is made, it will display changes from wt to mut, a ratio of mut/wt. This is a stepwise process, more complete details can be found at https://bioconductor.org/packages/release/bioc/vignettes/DESeq2/inst/doc/DESeq2.html
+```{r}
+# step 1
+d1 <- DESeqDataSetFromMatrix(countData = count.mat,   # our count matrix
+                             colData = conditions.df, # our conditions df
+                             design = ~ condition)    # the design forumla
+
+# step 2
+d2 <- DESeq(d1)
+
+# step 3: shrinkage, optional but highly suggested
+d3 <- lfcShrink(d2, coef = 2, type = "apeglm")
+
+# step 3 if apeglm doesn't work 
+d3 <- lfcShrink(d2, coef = 2, type = "normal")
+
+# extract results as a data frame, making row name into a column in the process
+deseq.results <- d3 %>% 
+  as_tibble(rownames = "target_id")
+
+# save the results
+write_csv(deseq.results, "/home/jsf149/gen303/deseq_results.csv")
+```
+
+How does shrinkage affect our results? The code in this block isn't as important as what the graphs show us. Shrinkage reduces large fold changes that arise from genes with very low counts. Genes with very low counts in both conditions are unreliable even if they appear to have large differences. 
+```{r fig.width = 9, fig.height = 5}
+d2.results <- results(d2) %>%
+  as_tibble(rownames = "target_id")
+
+d3.results <- d3 %>%
+  as_tibble(rownames = "target_id")
+
+both.results <- bind_rows(
+  "before shrinkage" = d2.results,
+  "after shrinkage" = d3.results,
+  .id = "type"
+)
+
+both.results %>%
+    mutate(is_sig = case_when(is.na(padj) | padj > .01 ~ FALSE,
+                              TRUE ~ TRUE),
+           type = factor(type, c("before shrinkage", "after shrinkage"))) %>%
+    arrange(is_sig) %>%
+    ggplot(., aes(baseMean, log2FoldChange, color = is_sig)) +
+    geom_point(size = 1) +
+    scale_x_log10(labels = scales::label_number_si()) +
+    theme_bw() +
+    theme(panel.grid.minor = element_blank(),
+          text = element_text(size = 14),
+          legend.position = "bottom") +
+    scale_color_manual(values = c("grey60", "firebrick1")) +
+    labs(x = expression(paste(log[10], "(base mean)")),
+         y = expression(paste(log[2], "(fold change)")))+
+    scale_y_continuous(limits = c(-25, 5))+
+  facet_wrap(~type)
+```
+
+### Interpreting the DGE
+
+Read in the data, though it's already here if you ran the above. 
+```{r}
+(deseq.results <- read_csv("/home/jsf149/gen303/deseq_results.csv"))
+```
+
+Make sure we ran DESeq correctly, find some significant genes and make sure the TPMs in each sample are correct. 
+```{r}
+# find the most significant gene with negative fold change, should have high TPM
+# in WT, low in mutant
+neg.gene <- deseq.results %>% 
+  filter(log2FoldChange < 0) %>% 
+  arrange(padj) %>% 
+  pull(target_id) %>% 
+  .[1]
+
+# find the most significant gene with positive fold change, should have high TPM
+# in mutant, low in WT
+pos.gene <- deseq.results %>% 
+  filter(log2FoldChange > 0) %>% 
+  arrange(padj) %>% 
+  pull(target_id) %>% 
+  .[1]
+
+all.data %>% 
+  mutate(sample = factor(sample, levels = c("WT_1", "WT_2", "WT_3", "mut_1", "mut_2", "mut_3"))) %>% 
+  filter(target_id %in% c(neg.gene, pos.gene)) %>% 
+  ggplot(., aes(x = sample, y = new_tpm))+
+  geom_col()+
+  facet_wrap(~target_id, scales = "free")
+```
+
+Volcano plot
+```{r}
+deseq.results %>% 
+  ggplot(., aes(log2FoldChange, -log10(padj), color = padj <= .01))+
+  geom_point()
+```
+
+We can improve this visualization by limiting the x and y axis and marking those points that exceed our limits. First, set some cutoffs.
+```{r}
+x.cutoff <- 2
+y.cutoff <- 10
+sig.cutoff <- .01
+```
+
+Then, add new columns based on our cutoffs
+```{r}
+deseq.results2 <- deseq.results %>% 
+  filter(!is.na(padj) & !is.na(log2FoldChange)) %>% 
+  mutate(l10p = -log10(padj),
+         color = case_when(l10p > y.cutoff ~ "y_high",
+                           padj <= sig.cutoff ~ "y_ok",
+                           TRUE ~ "not_sig"),
+         new_y = ifelse(l10p > y.cutoff, y.cutoff, l10p),
+         new_x = case_when(log2FoldChange > x.cutoff ~ x.cutoff,
+                           log2FoldChange < -x.cutoff ~ -2,
+                           TRUE ~ log2FoldChange),
+         shape = ifelse(abs(log2FoldChange) > x.cutoff, "x_high", "x_ok"))
+```
+
+Plot the changes.
+```{r fig.width = 5, fig.height = 4.5}
+ggplot(deseq.results2, aes(x = new_x, y = new_y, color = color, shape = shape))+
+  geom_point()+
+  scale_color_manual(values = c("grey60", "firebrick", "firebrick1"), guide = "none")+
+  scale_shape_manual(values = c("square", "circle"), guide = "none")+
+  theme_bw()+
+  theme(panel.grid = element_blank(),
+        text = element_text(size = 14))+
+  labs(x = expression(paste(log[2], "(fold change)")),
+       y = expression(paste(-log[10], "(q-value)")))
+```

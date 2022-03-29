@@ -1,0 +1,144 @@
+---
+title: "Basics of RNA-seq and working with RNA-seq data"
+author: "Premal Shah"
+date: "Nov 18, 2021"
+output: 
+  html_notebook:
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+---
+
+## RNA-seqlopedia
+https://rnaseq.uoregon.edu/
+
+## Sequencing technologies
+- Next-gen (2nd gen): [Illumina](https://www.youtube.com/watch?v=fCd6B5HRaZ8)
+- Third-gen: [Nanopore](https://www.youtube.com/watch?v=E9-Rm5AoZGw)
+## 
+
+## GEO Database
+[GEO database](https://www.ncbi.nlm.nih.gov/geo/)
+
+## Nedialkova study
+[GEO data](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE67387)
+
+SRR1944924
+SRR1944925
+SRR1944926
+SRR1944927
+SRR1944928
+SRR1944929
+
+We will use [parallel-fastq-dump](https://github.com/rvalieris/parallel-fastq-dump)
+```{bash eval=F}
+export PATH=/projects/community/py-image/2019.10A/bd387/anaconda3-intel17/bin:$PATH
+source activate shahclass
+
+parallel-fastq-dump -t 4 -s SRR1944924 SRR1944925 SRR1944926 SRR1944927 SRR1944928 SRR1944929
+```
+
+## Quality control
+```{r}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("Rqc")
+```
+
+```{r}
+library(Rqc)
+
+rqc(path = "~/data",
+    pattern = "fastq",
+    n = 1000,
+    outdir = "~/data/",
+    workers = 4)
+```
+
+
+## Remove sequencing adapters
+[Illumina adapaters]([Illumina adapaters](https://support-docs.illumina.com/SHARE/AdapterSeq/illumina-adapter-sequences.pdf)
+
+TruSeq adapter - AGATCGGAAGAGCACACGTCTGAACTCCAGTCA
+
+```{bash eval=F}
+mkdir /scratch/prs114/original
+mkdir /scratch/prs114/trimmed
+mv ~/data/* /scratch/prs114/original
+```
+
+```{bash eval=F}
+
+cutadapt -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA -j 4 -o /scratch/prs114/trimmed/WT_1.fastq /scratch/prs114/original/SRR1944924.fastq
+cutadapt -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA -j 4 -o /scratch/prs114/trimmed/WT_2.fastq /scratch/prs114/original/SRR1944925.fastq
+cutadapt -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA -j 4 -o /scratch/prs114/trimmed/WT_3.fastq /scratch/prs114/original/SRR1944926.fastq
+cutadapt -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA -j 4 -o /scratch/prs114/trimmed/mut_1.fastq /scratch/prs114/original/SRR1944927.fastq
+cutadapt -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA -j 4 -o /scratch/prs114/trimmed/mut_2.fastq /scratch/prs114/original/SRR1944928.fastq
+cutadapt -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA -j 4 -o /scratch/prs114/trimmed/mut_3.fastq /scratch/prs114/original/SRR1944929.fastq
+```
+
+# Create a custom yeast transcriptome
+```{r}
+library(rtracklayer)
+library(Biostrings)
+```
+
+```{r}
+yeast.fasta <- readDNAStringSet("~/gen303/Lab-15/saccharomyces_cerevisiae.fasta")
+yeast.gff <- readGFFAsGRanges("~/gen303/Lab-15/saccharomyces_cerevisiae.gff")
+```
+
+```{r}
+yeast.fasta
+yeast.gff
+
+# Create a gff of only mRNA sequences
+yeast.mrna <- yeast.gff[yeast.gff$type == "mRNA"]
+yeast.mrna
+
+# Get the sequences corresponding to mRNAs
+yeast.mrna.seq <- yeast.fasta[yeast.mrna]
+yeast.mrna.seq
+
+# Fix the names
+names(yeast.mrna.seq) <- yeast.mrna$Name
+
+yeast.mrna.seq
+
+# Get the reverse complement of sequences that are on the negative strand
+yeast.mrna.seq[strand(yeast.mrna) == "-"] <- reverseComplement(yeast.mrna.seq[strand(yeast.mrna) == "-"])
+
+yeast.mrna.seq
+
+# Write the DNAStringSet to a FASTA file
+writeXStringSet(yeast.mrna.seq, filepath = "/scratch/prs114/yeast.mrna.fasta")
+```
+
+## Kallisto alignment (pseudo-) and quantification
+```{bash eval = F}
+kallisto index -i /scratch/prs114/yeast.mrna.kallisto /scratch/prs114/yeast.mrna.fasta
+
+mkdir /scratch/prs114/kallisto
+
+kallisto quant -i /scratch/prs114/yeast.mrna.kallisto --single -l 50 -s 2 -o /scratch/prs114/kallisto/WT_1 /scratch/prs114/trimmed/WT_1.fastq
+kallisto quant -i /scratch/prs114/yeast.mrna.kallisto --single -l 50 -s 2 -o /scratch/prs114/kallisto/WT_2 /scratch/prs114/trimmed/WT_2.fastq
+kallisto quant -i /scratch/prs114/yeast.mrna.kallisto --single -l 50 -s 2 -o /scratch/prs114/kallisto/WT_3 /scratch/prs114/trimmed/WT_3.fastq
+kallisto quant -i /scratch/prs114/yeast.mrna.kallisto --single -l 50 -s 2 -o /scratch/prs114/kallisto/mut_1 /scratch/prs114/trimmed/mut_1.fastq
+kallisto quant -i /scratch/prs114/yeast.mrna.kallisto --single -l 50 -s 2 -o /scratch/prs114/kallisto/mut_2 /scratch/prs114/trimmed/mut_2.fastq
+kallisto quant -i /scratch/prs114/yeast.mrna.kallisto --single -l 50 -s 2 -o /scratch/prs114/kallisto/mut_3 /scratch/prs114/trimmed/mut_3.fastq
+```
+
+
+```{r eval = F}
+TPM (transcripts per million) = (Num of reads * 1e6)/(Eff_Length * Total reads in sample)
+```
+
+
+
+
+
+
+
+
+

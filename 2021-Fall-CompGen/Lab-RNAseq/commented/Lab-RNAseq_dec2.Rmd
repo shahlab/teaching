@@ -1,0 +1,176 @@
+---
+title: "Functional analysis"
+output: 
+  html_document:
+    df_print: paged
+author: "John Favate"
+date: "`r Sys.time()`"
+---
+
+<style type="text/css">
+.main-container {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+```{r echo = FALSE}
+######################################################################
+##################### FOLLOW THESE DIRECTIONS ########################
+### 1. Don't delete this code chunk, it won't appear in the output ###
+### 2. Put your name in the author field above                     ###
+### 3. Write the code for all questions in this R Notebook         ###
+### 4. ALWAYS comment your code.                                   ###
+### 5. Press the knit button when you're done, your code must      ###
+###    run with no errors in order for this to work. If your       ###
+###    code has errors, comment them out                           ###
+######################################################################
+######################################################################
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, fig.align = "center", tidy = FALSE, max.print = 20)
+```
+
+---
+
+### Install some packages
+```{r}
+BiocManager::install("clusterProfiler")
+BiocManager::install("org.Sc.sgd.db")
+```
+
+### What categories of genes are altered?
+
+The gene ontology consortium http://geneontology.org/ has a way for us to analyze which functional categories our genes belong to. The GO website directs you to http://pantherdb.org/, which is where we can upload our results. 
+```{r}
+library(tidyverse)
+library(clusterProfiler)
+library(org.Sc.sgd.db)
+
+# load our data remember to change my netid jsf149 to yours
+deseq.results <- read_csv("/home/jsf149/gen303/kallisto/deseq_results.csv") %>% 
+  mutate(target_id = str_remove(target_id, "_mRNA"))
+
+deseq.results
+```
+
+# Using the Gene Ontology consortium website 
+
+The GO website requests lists of gene identifiers and we'd like to consider up and downregulated genes separately. Ideally, we have files that contain lists of up and downregulated genes, we can generate these automatically. 
+```{r}
+# set a significance cutoff 
+sig.cutoff <- .01
+
+# make separate df's for upreg, downreg, and not significant genes
+df.list <- deseq.results %>% 
+  mutate(sig = case_when(
+    is.na(padj) | padj > sig.cutoff ~ "ns",          # not significant genes
+    padj <= sig.cutoff & log2FoldChange > 0 ~ "up",  # upregulated genes
+    padj <= sig.cutoff & log2FoldChange < 0 ~ "down" # downregulated genes
+  )) %>% 
+  filter(sig != "ns") %>% # don't care about not sig genes
+  split(.$sig) # make 1 data frame per unique element in sig column
+
+df.list
+```
+
+Finally, we want just the gene names from each. GO programs generally expect a particular "gene name". In this case we're lucky and it's what we have sans `_mRNA`
+```{r}
+lapply(df.list, function(x){
+  # retrieve the names as a vector and remove the _mRNA part
+  genes <- x$target_id %>% 
+    str_remove("_mRNA")
+  
+  # create a file name to save to, you'll need to change my netid to yours
+  fname <- paste0("/home/jsf149/gen303/kallisto/", x$sig[1], "_genes.txt")
+  
+  # save the file
+  write_lines(x$target_id, fname)
+})
+```
+
+### Using clusterprofiler 
+
+The GO website is useful but doing more than a few samples will be cumbersome. Some R packages can help.
+
+Clusterprofiler has many methods of functional analysis, see https://bioconductor.org/packages/release/bioc/vignettes/clusterProfiler/inst/doc/clusterProfiler.html.  
+We will try one method, a KEGG (Kyoto encyclopedia of genes and genomes) overrepresentation test. This test simply requires a vector of gene names we think are important, namely those that are statistically significant and up/downregulated.
+```{r}
+gene.names.list <- lapply(df.list, function(x){
+  return(x$target_id)
+})
+```
+
+Unfortunately GO in clusterprofiler needs different gene names than what we have. We can convert them.
+```{r}
+new.names.list <- lapply(df.list, function(x){
+  # extract the gene names
+  gene.names <- x$target_id
+  
+  # convert them
+  translated <- bitr(geneID = gene.names,
+       fromType = "ORF",
+       toType = "ENTREZID",
+       OrgDb = org.Sc.sgd.db
+       ) %>% 
+    filter(!is.na(ENTREZID))
+  
+  # extract the translated names
+  new.names <- translated$ENTREZID
+  
+  return(new.names)
+})
+```
+
+Run the GO test on each dataset
+```{r}
+go.results <- lapply(new.names.list, function(x){
+  enrichGO(x,
+           OrgDb = org.Sc.sgd.db,
+           ont="BP")
+})
+```
+
+We can plot them with built in functions
+```{r fig.width = 8, fig.height = 6}
+lapply(names(go.results.list), function(x){
+  # extract the results from the list
+  results <- go.results.list[[x]]
+  
+  # save the figure as a variable
+  figure <- dotplot(results)+labs(title = paste("Categories from", x, "regulated genes"))
+  
+  # create a file path to write to 
+  fname <- paste0("/home/jsf149/gen303/kallisto/", x, "_go_categories.png")
+  
+  # save the figure
+  ggsave(filename = fname, plot = figure, width = 8, height = 6)
+})
+```
+
+Or extract the data and save it for ourselves
+```{r}
+go.df <- lapply(go.results, as_tibble) %>% 
+  bind_rows(.id = "direction")
+
+go.df
+```
+
+We can run other kinds of tests like gene set enrichment analysis (GSEA) that use information other than the names. GSEA in clusterprofiler takes an ordered vector where the elements are fold-changes sorted in decreasing order and the names are the names of the gene. Fortunately the names we have work with this. Create this vector. 
+```{r}
+arranged.df <- deseq.results %>% 
+  filter(!is.na(log2FoldChange)) %>% # remove genes with no fold change
+  arrange(desc(log2FoldChange))      # arrange the data in decreasing order of fold change
+
+# create a named vector of fold changes
+fc.vec <- setNames(arranged.df$log2FoldChange, arranged.df$target_id)
+```
+
+Preview these results as a plot and a table
+```{r}
+kegg.results <- gseKEGG(fc.vec, "sce")
+
+as_tibble(kegg.results)
+
+dotplot(kegg.results)
+```
+

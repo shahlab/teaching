@@ -1,0 +1,13 @@
+name: yeast_rnaseq_appl
+title: yeast_rnaseq_appl
+username:
+account: prs114
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 5285926
+bundleId: 5341802
+url: https://prs114.shinyapps.io/yeast_rnaseq_appl/
+when: 1638905962.07052
+lastSyncTime: 1638905962.07054
+asMultiple: FALSE
+asStatic: FALSE
